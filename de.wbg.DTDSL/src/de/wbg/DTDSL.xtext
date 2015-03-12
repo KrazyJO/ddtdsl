@@ -1,0 +1,73 @@
+grammar de.wbg.DTDSL with org.eclipse.xtext.common.Terminals
+
+generate dTDSL "http://www.wbg.de/DTDSL"
+
+DTDSL:
+	'parserName' '=' parserName=STRING ';'
+	'parserType' '=' type=('javaObject' | 'string') ';'
+	objDescription+=Abstract*
+	imports+=importStatement*
+	start=StartPoint
+//	objDescription+=Abstract*
+;
+
+importStatement:
+	'import' importClass=ID ';'
+;
+
+StartPoint:
+	'beginWith' '=' begin=[ObjectDescription] ';'
+;
+
+Abstract:
+	ObjectDescription | Choice | Many
+;
+
+ObjectDescription:
+	name=ID ':' '{' description+=ObjectDescriptionInner* '}'
+;
+
+ObjectDescriptionInner:
+	ObjectAttribute | ObjectNext
+;
+
+ObjectAttribute:
+	'hasAttribute' attributes=ID 'ofType' (types=Type 'as' keyword=Keyword | inner=[ObjectDescription]) ';'	
+;
+
+ObjectNext:
+	'hasNext' attribute=JavaCodeOrID 'as' objectDesription=[ObjectDescription] ';'
+;
+
+JavaCodeOrID:
+	('java' ':' code=STRING) | id=ID
+;
+
+Type:
+	'int' | 'float' | 'String' 
+;
+
+//Description:
+//	 'beginWith' '=' des=Obj ';'
+//;
+
+Many:
+	{Many}
+	'(' description+=ObjectDescriptionInner* ')' '*'	
+;
+
+Choice:
+	'(' options+=Keyword ('|' options+=Keyword)* ')'
+;
+
+Maybe:
+	'(' object=Abstract | id=[ObjectDescription] ')' '?'
+;
+
+Keyword:
+	name='Key' | name='Value' | name=ID
+;
+
+//Obj:
+//	STRING | Keyword 
+//;

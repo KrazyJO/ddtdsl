@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.wbg.DTDSL/src-gen" editDirectory="/de.wbg.DTDSL.edit/src"
+    editorDirectory="/de.wbg.DTDSL.editor/src" modelPluginID="de.wbg.DTDSL" forceOverwrite="true"
+    modelName="DTDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="de.wbg.DTDSL.edit"
+    editorPluginID="de.wbg.DTDSL.editor" runtimeVersion="2.10">
+  <genPackages prefix="DTDSL" basePackage="de.wbg" disposableProviderFactory="true"
+      fileExtensions="dtdsl" ecorePackage="DTDSL.ecore#/">
+    <genClasses ecoreClass="DTDSL.ecore#//DTDSL">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//DTDSL/parserName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//DTDSL/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//DTDSL/objDescription"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//DTDSL/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//DTDSL/start"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//importStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//importStatement/importClass"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//StartPoint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DTDSL.ecore#//StartPoint/begin"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//Abstract"/>
+    <genClasses ecoreClass="DTDSL.ecore#//ObjectDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//ObjectDescription/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//ObjectDescription/description"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//ObjectDescriptionInner"/>
+    <genClasses ecoreClass="DTDSL.ecore#//ObjectAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//ObjectAttribute/attributes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//ObjectAttribute/types"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//ObjectAttribute/keyword"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DTDSL.ecore#//ObjectAttribute/inner"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//ObjectNext">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//ObjectNext/attribute"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DTDSL.ecore#//ObjectNext/objectDesription"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//JavaCodeOrID">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//JavaCodeOrID/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//JavaCodeOrID/id"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//Many">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//Many/description"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//Choice">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//Choice/options"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//Maybe">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//Maybe/object"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DTDSL.ecore#//Maybe/id"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//Keyword">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//Keyword/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
