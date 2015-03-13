@@ -1,5 +1,5 @@
-parserName = "ObjectParser";
-parserType = javaObject; 
+parserName = "SimpleNextParser";
+parserType = javaObject;
 
 Skv: {
 	hasAttribute s ofType String as Key;
