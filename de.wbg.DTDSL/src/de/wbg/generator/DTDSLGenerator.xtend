@@ -179,7 +179,31 @@ catch (NoSuchFieldException | SecurityException | IllegalArgumentException | Ill
 	
 	def CharSequence compile(ObjectNext n)
 	{
-		'''		//Next: «n.attribute.code»
+		'''		//Next: 
+		«if (n.attribute.code == null)
+		{
+			var ret = '''//kein code: «n.attribute.id»
+			'''
+			ret += '''
+			try {
+				Field f = o.getClass().getDeclaredField("«n.attribute.id»"); //NoSuchFieldException
+				f.setAccessible(true);
+				Object next = (Object) f.get(o); //IllegalAccessException
+			
+				parse«n.objectDesription.name»(next, n);
+			}
+			catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e)
+			{
+				e.printStackTrace();
+			}
+			'''
+			ret
+		}
+		else
+		{
+			'''//code: «n.attribute.code»'''
+		}
+		»
 		'''	
 	}
 }
