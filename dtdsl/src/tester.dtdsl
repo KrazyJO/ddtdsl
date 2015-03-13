@@ -1,16 +1,16 @@
 parserName = "ObjectParser";
 parserType = javaObject; 
 
-Json: {
+Skv: {
 	hasAttribute s ofType String as Key;
 	hasAttribute i ofType int as Value;
-	hasNext next as Json;
+	hasNext next as Inner;
 }
 
 Inner:
 {
-	hasAttribute value ofType Inner;
-	hasNext java : "this.getNext();"  as Inner;
+	hasAttribute s ofType String as Key;
+	hasAttribute i ofType int as Value;
 }
 
-beginWith = Json;
+beginWith = Skv;

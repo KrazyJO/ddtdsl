@@ -2,8 +2,8 @@ package de.wbg.dtdsl;
 
 public class SimpleKeyValue {
 
-	public String s;
-	public int i;
+	private String s;
+	private int i;
 	
 	public SimpleKeyValue next;
 	
@@ -21,5 +21,13 @@ public class SimpleKeyValue {
 	
 	public String getS() {
 		return s;
+	}
+	
+	public SimpleKeyValue getNext() {
+		return next;
+	}
+	
+	public void setNext(SimpleKeyValue next) {
+		this.next = next;
 	}
 }
