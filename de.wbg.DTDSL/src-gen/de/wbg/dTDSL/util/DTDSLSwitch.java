@@ -154,10 +154,11 @@ public class DTDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DTDSLPackage.MAYBE:
+      case DTDSLPackage.OBJECT_MAYBE:
       {
-        Maybe maybe = (Maybe)theEObject;
-        T result = caseMaybe(maybe);
+        ObjectMaybe objectMaybe = (ObjectMaybe)theEObject;
+        T result = caseObjectMaybe(objectMaybe);
+        if (result == null) result = caseObjectDescriptionInner(objectMaybe);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -349,17 +350,17 @@ public class DTDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Maybe</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Object Maybe</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Maybe</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Object Maybe</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseMaybe(Maybe object)
+  public T caseObjectMaybe(ObjectMaybe object)
   {
     return null;
   }

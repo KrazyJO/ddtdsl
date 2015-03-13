@@ -33,21 +33,21 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTypeJavaObjectKeyword_6_0_0 = (Keyword)cTypeAlternatives_6_0.eContents().get(0);
 		private final Keyword cTypeStringKeyword_6_0_1 = (Keyword)cTypeAlternatives_6_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cObjDescriptionAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cObjDescriptionAbstractParserRuleCall_8_0 = (RuleCall)cObjDescriptionAssignment_8.eContents().get(0);
-		private final Assignment cImportsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cImportsImportStatementParserRuleCall_9_0 = (RuleCall)cImportsAssignment_9.eContents().get(0);
+		private final Assignment cImportsAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cImportsImportStatementParserRuleCall_8_0 = (RuleCall)cImportsAssignment_8.eContents().get(0);
+		private final Assignment cObjDescriptionAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cObjDescriptionAbstractParserRuleCall_9_0 = (RuleCall)cObjDescriptionAssignment_9.eContents().get(0);
 		private final Assignment cStartAssignment_10 = (Assignment)cGroup.eContents().get(10);
 		private final RuleCall cStartStartPointParserRuleCall_10_0 = (RuleCall)cStartAssignment_10.eContents().get(0);
 		
 		////	objDescription+=Abstract*
 		//DTDSL:
-		//	"parserName" "=" parserName=STRING ";" "parserType" "=" type=("javaObject" | "string") ";" objDescription+=Abstract*
-		//	imports+=importStatement* start=StartPoint;
+		//	"parserName" "=" parserName=STRING ";" "parserType" "=" type=("javaObject" | "string") ";" imports+=importStatement*
+		//	objDescription+=Abstract* start=StartPoint;
 		public ParserRule getRule() { return rule; }
 
-		//"parserName" "=" parserName=STRING ";" "parserType" "=" type=("javaObject" | "string") ";" objDescription+=Abstract*
-		//imports+=importStatement* start=StartPoint
+		//"parserName" "=" parserName=STRING ";" "parserType" "=" type=("javaObject" | "string") ";" imports+=importStatement*
+		//objDescription+=Abstract* start=StartPoint
 		public Group getGroup() { return cGroup; }
 
 		//"parserName"
@@ -86,17 +86,17 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//";"
 		public Keyword getSemicolonKeyword_7() { return cSemicolonKeyword_7; }
 
-		//objDescription+=Abstract*
-		public Assignment getObjDescriptionAssignment_8() { return cObjDescriptionAssignment_8; }
-
-		//Abstract
-		public RuleCall getObjDescriptionAbstractParserRuleCall_8_0() { return cObjDescriptionAbstractParserRuleCall_8_0; }
-
 		//imports+=importStatement*
-		public Assignment getImportsAssignment_9() { return cImportsAssignment_9; }
+		public Assignment getImportsAssignment_8() { return cImportsAssignment_8; }
 
 		//importStatement
-		public RuleCall getImportsImportStatementParserRuleCall_9_0() { return cImportsImportStatementParserRuleCall_9_0; }
+		public RuleCall getImportsImportStatementParserRuleCall_8_0() { return cImportsImportStatementParserRuleCall_8_0; }
+
+		//objDescription+=Abstract*
+		public Assignment getObjDescriptionAssignment_9() { return cObjDescriptionAssignment_9; }
+
+		//Abstract
+		public RuleCall getObjDescriptionAbstractParserRuleCall_9_0() { return cObjDescriptionAbstractParserRuleCall_9_0; }
 
 		//start=StartPoint
 		public Assignment getStartAssignment_10() { return cStartAssignment_10; }
@@ -238,12 +238,13 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cObjectAttributeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cObjectNextParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cObjectMaybeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//ObjectDescriptionInner:
-		//	ObjectAttribute | ObjectNext;
+		//	ObjectAttribute | ObjectNext | ObjectMaybe;
 		public ParserRule getRule() { return rule; }
 
-		//ObjectAttribute | ObjectNext
+		//ObjectAttribute | ObjectNext | ObjectMaybe
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ObjectAttribute
@@ -251,6 +252,9 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ObjectNext
 		public RuleCall getObjectNextParserRuleCall_1() { return cObjectNextParserRuleCall_1; }
+
+		//ObjectMaybe
+		public RuleCall getObjectMaybeParserRuleCall_2() { return cObjectMaybeParserRuleCall_2; }
 	}
 
 	public class ObjectAttributeElements extends AbstractParserRuleElementFinder {
@@ -447,10 +451,10 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		////	 'beginWith' '=' des=Obj ';'
 		////;
 		//Many:
-		//	{Many} "(" description+=ObjectDescriptionInner* ")" "*";
+		//	{Many} "(" description=ObjectDescriptionInner ")" "*";
 		public ParserRule getRule() { return rule; }
 
-		//{Many} "(" description+=ObjectDescriptionInner* ")" "*"
+		//{Many} "(" description=ObjectDescriptionInner ")" "*"
 		public Group getGroup() { return cGroup; }
 
 		//{Many}
@@ -459,7 +463,7 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//description+=ObjectDescriptionInner*
+		//description=ObjectDescriptionInner
 		public Assignment getDescriptionAssignment_2() { return cDescriptionAssignment_2; }
 
 		//ObjectDescriptionInner
@@ -516,8 +520,8 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 
-	public class MaybeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Maybe");
+	public class ObjectMaybeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ObjectMaybe");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
@@ -530,7 +534,7 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Keyword cQuestionMarkKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
-		//Maybe:
+		//ObjectMaybe:
 		//	"(" object=Abstract | id=[ObjectDescription] ")" "?";
 		public ParserRule getRule() { return rule; }
 
@@ -619,7 +623,7 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final TypeElements pType;
 	private final ManyElements pMany;
 	private final ChoiceElements pChoice;
-	private final MaybeElements pMaybe;
+	private final ObjectMaybeElements pObjectMaybe;
 	private final KeywordElements pKeyword;
 	
 	private final Grammar grammar;
@@ -643,7 +647,7 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pType = new TypeElements();
 		this.pMany = new ManyElements();
 		this.pChoice = new ChoiceElements();
-		this.pMaybe = new MaybeElements();
+		this.pObjectMaybe = new ObjectMaybeElements();
 		this.pKeyword = new KeywordElements();
 	}
 	
@@ -676,8 +680,8 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////	objDescription+=Abstract*
 	//DTDSL:
-	//	"parserName" "=" parserName=STRING ";" "parserType" "=" type=("javaObject" | "string") ";" objDescription+=Abstract*
-	//	imports+=importStatement* start=StartPoint;
+	//	"parserName" "=" parserName=STRING ";" "parserType" "=" type=("javaObject" | "string") ";" imports+=importStatement*
+	//	objDescription+=Abstract* start=StartPoint;
 	public DTDSLElements getDTDSLAccess() {
 		return pDTDSL;
 	}
@@ -727,7 +731,7 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ObjectDescriptionInner:
-	//	ObjectAttribute | ObjectNext;
+	//	ObjectAttribute | ObjectNext | ObjectMaybe;
 	public ObjectDescriptionInnerElements getObjectDescriptionInnerAccess() {
 		return pObjectDescriptionInner;
 	}
@@ -780,7 +784,7 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 	////	 'beginWith' '=' des=Obj ';'
 	////;
 	//Many:
-	//	{Many} "(" description+=ObjectDescriptionInner* ")" "*";
+	//	{Many} "(" description=ObjectDescriptionInner ")" "*";
 	public ManyElements getManyAccess() {
 		return pMany;
 	}
@@ -799,14 +803,14 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getChoiceAccess().getRule();
 	}
 
-	//Maybe:
+	//ObjectMaybe:
 	//	"(" object=Abstract | id=[ObjectDescription] ")" "?";
-	public MaybeElements getMaybeAccess() {
-		return pMaybe;
+	public ObjectMaybeElements getObjectMaybeAccess() {
+		return pObjectMaybe;
 	}
 	
-	public ParserRule getMaybeRule() {
-		return getMaybeAccess().getRule();
+	public ParserRule getObjectMaybeRule() {
+		return getObjectMaybeAccess().getRule();
 	}
 
 	////Obj:

@@ -152,17 +152,17 @@ ruleDTDSL returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDTDSLAccess().getObjDescriptionAbstractParserRuleCall_8_0()); 
+	        newCompositeNode(grammarAccess.getDTDSLAccess().getImportsImportStatementParserRuleCall_8_0()); 
 	    }
-		lv_objDescription_8_0=ruleAbstract		{
+		lv_imports_8_0=ruleimportStatement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDTDSLRule());
 	        }
        		add(
        			$current, 
-       			"objDescription",
-        		lv_objDescription_8_0, 
-        		"Abstract");
+       			"imports",
+        		lv_imports_8_0, 
+        		"importStatement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -170,17 +170,17 @@ ruleDTDSL returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDTDSLAccess().getImportsImportStatementParserRuleCall_9_0()); 
+	        newCompositeNode(grammarAccess.getDTDSLAccess().getObjDescriptionAbstractParserRuleCall_9_0()); 
 	    }
-		lv_imports_9_0=ruleimportStatement		{
+		lv_objDescription_9_0=ruleAbstract		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDTDSLRule());
 	        }
        		add(
        			$current, 
-       			"imports",
-        		lv_imports_9_0, 
-        		"importStatement");
+       			"objDescription",
+        		lv_objDescription_9_0, 
+        		"Abstract");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -453,6 +453,16 @@ ruleObjectDescriptionInner returns [EObject current=null]
     this_ObjectNext_1=ruleObjectNext
     { 
         $current = $this_ObjectNext_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getObjectDescriptionInnerAccess().getObjectMaybeParserRuleCall_2()); 
+    }
+    this_ObjectMaybe_2=ruleObjectMaybe
+    { 
+        $current = $this_ObjectMaybe_2.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -771,7 +781,7 @@ ruleMany returns [EObject current=null]
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getManyRule());
 	        }
-       		add(
+       		set(
        			$current, 
        			"description",
         		lv_description_2_0, 
@@ -780,7 +790,7 @@ ruleMany returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_3=')' 
+)	otherlv_3=')' 
     {
     	newLeafNode(otherlv_3, grammarAccess.getManyAccess().getRightParenthesisKeyword_3());
     }
@@ -861,6 +871,69 @@ ruleChoice returns [EObject current=null]
 ;
 
 
+
+
+
+// Entry rule entryRuleObjectMaybe
+entryRuleObjectMaybe returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getObjectMaybeRule()); }
+	 iv_ruleObjectMaybe=ruleObjectMaybe 
+	 { $current=$iv_ruleObjectMaybe.current; } 
+	 EOF 
+;
+
+// Rule ObjectMaybe
+ruleObjectMaybe returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((	otherlv_0='(' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getObjectMaybeAccess().getLeftParenthesisKeyword_0_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getObjectMaybeAccess().getObjectAbstractParserRuleCall_0_1_0()); 
+	    }
+		lv_object_1_0=ruleAbstract		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getObjectMaybeRule());
+	        }
+       		set(
+       			$current, 
+       			"object",
+        		lv_object_1_0, 
+        		"Abstract");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+    |((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getObjectMaybeRule());
+	        }
+        }
+	otherlv_2=RULE_ID
+	{
+		newLeafNode(otherlv_2, grammarAccess.getObjectMaybeAccess().getIdObjectDescriptionCrossReference_1_0_0()); 
+	}
+
+)
+)	otherlv_3=')' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getObjectMaybeAccess().getRightParenthesisKeyword_1_1());
+    }
+	otherlv_4='?' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getObjectMaybeAccess().getQuestionMarkKeyword_1_2());
+    }
+))
+;
 
 
 

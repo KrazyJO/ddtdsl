@@ -130,9 +130,9 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
         return createChoiceAdapter();
       }
       @Override
-      public Adapter caseMaybe(Maybe object)
+      public Adapter caseObjectMaybe(ObjectMaybe object)
       {
-        return createMaybeAdapter();
+        return createObjectMaybeAdapter();
       }
       @Override
       public Adapter caseKeyword(Keyword object)
@@ -327,16 +327,16 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.Maybe <em>Maybe</em>}'.
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.ObjectMaybe <em>Object Maybe</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.wbg.dTDSL.Maybe
+   * @see de.wbg.dTDSL.ObjectMaybe
    * @generated
    */
-  public Adapter createMaybeAdapter()
+  public Adapter createObjectMaybeAdapter()
   {
     return null;
   }

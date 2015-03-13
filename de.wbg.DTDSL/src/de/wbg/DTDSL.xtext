@@ -5,8 +5,8 @@ generate dTDSL "http://www.wbg.de/DTDSL"
 DTDSL:
 	'parserName' '=' parserName=STRING ';'
 	'parserType' '=' type=('javaObject' | 'string') ';'
-	objDescription+=Abstract*
 	imports+=importStatement*
+	objDescription+=Abstract*
 	start=StartPoint
 //	objDescription+=Abstract*
 ;
@@ -28,7 +28,7 @@ ObjectDescription:
 ;
 
 ObjectDescriptionInner:
-	ObjectAttribute | ObjectNext
+	ObjectAttribute | ObjectNext | ObjectMaybe
 ;
 
 ObjectAttribute:
@@ -53,14 +53,14 @@ Type:
 
 Many:
 	{Many}
-	'(' description+=ObjectDescriptionInner* ')' '*'	
+	'(' description=ObjectDescriptionInner ')' '*'	
 ;
 
 Choice:
 	'(' options+=Keyword ('|' options+=Keyword)* ')'
 ;
 
-Maybe:
+ObjectMaybe:
 	'(' object=Abstract | id=[ObjectDescription] ')' '?'
 ;
 

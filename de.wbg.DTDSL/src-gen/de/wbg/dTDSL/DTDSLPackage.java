@@ -85,22 +85,22 @@ public interface DTDSLPackage extends EPackage
   int DTDSL__TYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Obj Description</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DTDSL__OBJ_DESCRIPTION = 2;
-
-  /**
    * The feature id for the '<em><b>Imports</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DTDSL__IMPORTS = 3;
+  int DTDSL__IMPORTS = 2;
+
+  /**
+   * The feature id for the '<em><b>Obj Description</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DTDSL__OBJ_DESCRIPTION = 3;
 
   /**
    * The feature id for the '<em><b>Start</b></em>' containment reference.
@@ -391,7 +391,7 @@ public interface DTDSLPackage extends EPackage
   int MANY = 9;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' containment reference list.
+   * The feature id for the '<em><b>Description</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -437,14 +437,14 @@ public interface DTDSLPackage extends EPackage
   int CHOICE_FEATURE_COUNT = ABSTRACT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link de.wbg.dTDSL.impl.MaybeImpl <em>Maybe</em>}' class.
+   * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectMaybeImpl <em>Object Maybe</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.wbg.dTDSL.impl.MaybeImpl
-   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getMaybe()
+   * @see de.wbg.dTDSL.impl.ObjectMaybeImpl
+   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectMaybe()
    * @generated
    */
-  int MAYBE = 11;
+  int OBJECT_MAYBE = 11;
 
   /**
    * The feature id for the '<em><b>Object</b></em>' containment reference.
@@ -453,7 +453,7 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MAYBE__OBJECT = 0;
+  int OBJECT_MAYBE__OBJECT = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' reference.
@@ -462,16 +462,16 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MAYBE__ID = 1;
+  int OBJECT_MAYBE__ID = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Maybe</em>' class.
+   * The number of structural features of the '<em>Object Maybe</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MAYBE_FEATURE_COUNT = 2;
+  int OBJECT_MAYBE_FEATURE_COUNT = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.KeywordImpl <em>Keyword</em>}' class.
@@ -535,17 +535,6 @@ public interface DTDSLPackage extends EPackage
   EAttribute getDTDSL_Type();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.DTDSL#getObjDescription <em>Obj Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Obj Description</em>'.
-   * @see de.wbg.dTDSL.DTDSL#getObjDescription()
-   * @see #getDTDSL()
-   * @generated
-   */
-  EReference getDTDSL_ObjDescription();
-
-  /**
    * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.DTDSL#getImports <em>Imports</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -555,6 +544,17 @@ public interface DTDSLPackage extends EPackage
    * @generated
    */
   EReference getDTDSL_Imports();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.DTDSL#getObjDescription <em>Obj Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Obj Description</em>'.
+   * @see de.wbg.dTDSL.DTDSL#getObjDescription()
+   * @see #getDTDSL()
+   * @generated
+   */
+  EReference getDTDSL_ObjDescription();
 
   /**
    * Returns the meta object for the containment reference '{@link de.wbg.dTDSL.DTDSL#getStart <em>Start</em>}'.
@@ -790,10 +790,10 @@ public interface DTDSLPackage extends EPackage
   EClass getMany();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.Many#getDescription <em>Description</em>}'.
+   * Returns the meta object for the containment reference '{@link de.wbg.dTDSL.Many#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Description</em>'.
+   * @return the meta object for the containment reference '<em>Description</em>'.
    * @see de.wbg.dTDSL.Many#getDescription()
    * @see #getMany()
    * @generated
@@ -822,36 +822,36 @@ public interface DTDSLPackage extends EPackage
   EReference getChoice_Options();
 
   /**
-   * Returns the meta object for class '{@link de.wbg.dTDSL.Maybe <em>Maybe</em>}'.
+   * Returns the meta object for class '{@link de.wbg.dTDSL.ObjectMaybe <em>Object Maybe</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Maybe</em>'.
-   * @see de.wbg.dTDSL.Maybe
+   * @return the meta object for class '<em>Object Maybe</em>'.
+   * @see de.wbg.dTDSL.ObjectMaybe
    * @generated
    */
-  EClass getMaybe();
+  EClass getObjectMaybe();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.wbg.dTDSL.Maybe#getObject <em>Object</em>}'.
+   * Returns the meta object for the containment reference '{@link de.wbg.dTDSL.ObjectMaybe#getObject <em>Object</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Object</em>'.
-   * @see de.wbg.dTDSL.Maybe#getObject()
-   * @see #getMaybe()
+   * @see de.wbg.dTDSL.ObjectMaybe#getObject()
+   * @see #getObjectMaybe()
    * @generated
    */
-  EReference getMaybe_Object();
+  EReference getObjectMaybe_Object();
 
   /**
-   * Returns the meta object for the reference '{@link de.wbg.dTDSL.Maybe#getId <em>Id</em>}'.
+   * Returns the meta object for the reference '{@link de.wbg.dTDSL.ObjectMaybe#getId <em>Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Id</em>'.
-   * @see de.wbg.dTDSL.Maybe#getId()
-   * @see #getMaybe()
+   * @see de.wbg.dTDSL.ObjectMaybe#getId()
+   * @see #getObjectMaybe()
    * @generated
    */
-  EReference getMaybe_Id();
+  EReference getObjectMaybe_Id();
 
   /**
    * Returns the meta object for class '{@link de.wbg.dTDSL.Keyword <em>Keyword</em>}'.
@@ -924,20 +924,20 @@ public interface DTDSLPackage extends EPackage
     EAttribute DTDSL__TYPE = eINSTANCE.getDTDSL_Type();
 
     /**
-     * The meta object literal for the '<em><b>Obj Description</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DTDSL__OBJ_DESCRIPTION = eINSTANCE.getDTDSL_ObjDescription();
-
-    /**
      * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference DTDSL__IMPORTS = eINSTANCE.getDTDSL_Imports();
+
+    /**
+     * The meta object literal for the '<em><b>Obj Description</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DTDSL__OBJ_DESCRIPTION = eINSTANCE.getDTDSL_ObjDescription();
 
     /**
      * The meta object literal for the '<em><b>Start</b></em>' containment reference feature.
@@ -1134,7 +1134,7 @@ public interface DTDSLPackage extends EPackage
     EClass MANY = eINSTANCE.getMany();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1160,14 +1160,14 @@ public interface DTDSLPackage extends EPackage
     EReference CHOICE__OPTIONS = eINSTANCE.getChoice_Options();
 
     /**
-     * The meta object literal for the '{@link de.wbg.dTDSL.impl.MaybeImpl <em>Maybe</em>}' class.
+     * The meta object literal for the '{@link de.wbg.dTDSL.impl.ObjectMaybeImpl <em>Object Maybe</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.wbg.dTDSL.impl.MaybeImpl
-     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getMaybe()
+     * @see de.wbg.dTDSL.impl.ObjectMaybeImpl
+     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectMaybe()
      * @generated
      */
-    EClass MAYBE = eINSTANCE.getMaybe();
+    EClass OBJECT_MAYBE = eINSTANCE.getObjectMaybe();
 
     /**
      * The meta object literal for the '<em><b>Object</b></em>' containment reference feature.
@@ -1175,7 +1175,7 @@ public interface DTDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MAYBE__OBJECT = eINSTANCE.getMaybe_Object();
+    EReference OBJECT_MAYBE__OBJECT = eINSTANCE.getObjectMaybe_Object();
 
     /**
      * The meta object literal for the '<em><b>Id</b></em>' reference feature.
@@ -1183,7 +1183,7 @@ public interface DTDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MAYBE__ID = eINSTANCE.getMaybe_Id();
+    EReference OBJECT_MAYBE__ID = eINSTANCE.getObjectMaybe_Id();
 
     /**
      * The meta object literal for the '{@link de.wbg.dTDSL.impl.KeywordImpl <em>Keyword</em>}' class.

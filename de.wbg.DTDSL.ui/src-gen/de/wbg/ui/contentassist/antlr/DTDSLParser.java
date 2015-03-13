@@ -43,7 +43,7 @@ public class DTDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getObjectAttributeAccess().getAlternatives_3(), "rule__ObjectAttribute__Alternatives_3");
 					put(grammarAccess.getJavaCodeOrIDAccess().getAlternatives(), "rule__JavaCodeOrID__Alternatives");
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
-					put(grammarAccess.getMaybeAccess().getAlternatives(), "rule__Maybe__Alternatives");
+					put(grammarAccess.getObjectMaybeAccess().getAlternatives(), "rule__ObjectMaybe__Alternatives");
 					put(grammarAccess.getKeywordAccess().getAlternatives(), "rule__Keyword__Alternatives");
 					put(grammarAccess.getDTDSLAccess().getGroup(), "rule__DTDSL__Group__0");
 					put(grammarAccess.getImportStatementAccess().getGroup(), "rule__ImportStatement__Group__0");
@@ -56,12 +56,12 @@ public class DTDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getManyAccess().getGroup(), "rule__Many__Group__0");
 					put(grammarAccess.getChoiceAccess().getGroup(), "rule__Choice__Group__0");
 					put(grammarAccess.getChoiceAccess().getGroup_2(), "rule__Choice__Group_2__0");
-					put(grammarAccess.getMaybeAccess().getGroup_0(), "rule__Maybe__Group_0__0");
-					put(grammarAccess.getMaybeAccess().getGroup_1(), "rule__Maybe__Group_1__0");
+					put(grammarAccess.getObjectMaybeAccess().getGroup_0(), "rule__ObjectMaybe__Group_0__0");
+					put(grammarAccess.getObjectMaybeAccess().getGroup_1(), "rule__ObjectMaybe__Group_1__0");
 					put(grammarAccess.getDTDSLAccess().getParserNameAssignment_2(), "rule__DTDSL__ParserNameAssignment_2");
 					put(grammarAccess.getDTDSLAccess().getTypeAssignment_6(), "rule__DTDSL__TypeAssignment_6");
-					put(grammarAccess.getDTDSLAccess().getObjDescriptionAssignment_8(), "rule__DTDSL__ObjDescriptionAssignment_8");
-					put(grammarAccess.getDTDSLAccess().getImportsAssignment_9(), "rule__DTDSL__ImportsAssignment_9");
+					put(grammarAccess.getDTDSLAccess().getImportsAssignment_8(), "rule__DTDSL__ImportsAssignment_8");
+					put(grammarAccess.getDTDSLAccess().getObjDescriptionAssignment_9(), "rule__DTDSL__ObjDescriptionAssignment_9");
 					put(grammarAccess.getDTDSLAccess().getStartAssignment_10(), "rule__DTDSL__StartAssignment_10");
 					put(grammarAccess.getImportStatementAccess().getImportClassAssignment_1(), "rule__ImportStatement__ImportClassAssignment_1");
 					put(grammarAccess.getStartPointAccess().getBeginAssignment_2(), "rule__StartPoint__BeginAssignment_2");
@@ -78,8 +78,8 @@ public class DTDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getManyAccess().getDescriptionAssignment_2(), "rule__Many__DescriptionAssignment_2");
 					put(grammarAccess.getChoiceAccess().getOptionsAssignment_1(), "rule__Choice__OptionsAssignment_1");
 					put(grammarAccess.getChoiceAccess().getOptionsAssignment_2_1(), "rule__Choice__OptionsAssignment_2_1");
-					put(grammarAccess.getMaybeAccess().getObjectAssignment_0_1(), "rule__Maybe__ObjectAssignment_0_1");
-					put(grammarAccess.getMaybeAccess().getIdAssignment_1_0(), "rule__Maybe__IdAssignment_1_0");
+					put(grammarAccess.getObjectMaybeAccess().getObjectAssignment_0_1(), "rule__ObjectMaybe__ObjectAssignment_0_1");
+					put(grammarAccess.getObjectMaybeAccess().getIdAssignment_1_0(), "rule__ObjectMaybe__IdAssignment_1_0");
 					put(grammarAccess.getKeywordAccess().getNameAssignment_0(), "rule__Keyword__NameAssignment_0");
 					put(grammarAccess.getKeywordAccess().getNameAssignment_1(), "rule__Keyword__NameAssignment_1");
 					put(grammarAccess.getKeywordAccess().getNameAssignment_2(), "rule__Keyword__NameAssignment_2");

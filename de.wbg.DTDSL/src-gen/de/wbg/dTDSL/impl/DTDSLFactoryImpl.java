@@ -75,7 +75,7 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
       case DTDSLPackage.JAVA_CODE_OR_ID: return createJavaCodeOrID();
       case DTDSLPackage.MANY: return createMany();
       case DTDSLPackage.CHOICE: return createChoice();
-      case DTDSLPackage.MAYBE: return createMaybe();
+      case DTDSLPackage.OBJECT_MAYBE: return createObjectMaybe();
       case DTDSLPackage.KEYWORD: return createKeyword();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -208,10 +208,10 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Maybe createMaybe()
+  public ObjectMaybe createObjectMaybe()
   {
-    MaybeImpl maybe = new MaybeImpl();
-    return maybe;
+    ObjectMaybeImpl objectMaybe = new ObjectMaybeImpl();
+    return objectMaybe;
   }
 
   /**

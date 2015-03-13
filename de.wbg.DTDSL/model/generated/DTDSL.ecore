@@ -4,10 +4,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="DTDSL">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parserName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="objDescription" upperBound="-1"
-        eType="#//Abstract" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="#//importStatement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objDescription" upperBound="-1"
+        eType="#//Abstract" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//StartPoint"
         containment="true"/>
   </eClassifiers>
@@ -41,14 +41,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Many" eSuperTypes="#//Abstract">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1"
-        eType="#//ObjectDescriptionInner" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//ObjectDescriptionInner"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Choice" eSuperTypes="#//Abstract">
     <eStructuralFeatures xsi:type="ecore:EReference" name="options" upperBound="-1"
         eType="#//Keyword" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Maybe">
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectMaybe" eSuperTypes="#//ObjectDescriptionInner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="object" eType="#//Abstract"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//ObjectDescription"/>

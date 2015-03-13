@@ -122,13 +122,13 @@ public interface DTDSLFactory extends EFactory
   Choice createChoice();
 
   /**
-   * Returns a new object of class '<em>Maybe</em>'.
+   * Returns a new object of class '<em>Object Maybe</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Maybe</em>'.
+   * @return a new object of class '<em>Object Maybe</em>'.
    * @generated
    */
-  Maybe createMaybe();
+  ObjectMaybe createObjectMaybe();
 
   /**
    * Returns a new object of class '<em>Keyword</em>'.

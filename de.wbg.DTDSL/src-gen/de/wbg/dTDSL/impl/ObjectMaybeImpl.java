@@ -4,8 +4,8 @@ package de.wbg.dTDSL.impl;
 
 import de.wbg.dTDSL.Abstract;
 import de.wbg.dTDSL.DTDSLPackage;
-import de.wbg.dTDSL.Maybe;
 import de.wbg.dTDSL.ObjectDescription;
+import de.wbg.dTDSL.ObjectMaybe;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -14,23 +14,22 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Maybe</b></em>'.
+ * An implementation of the model object '<em><b>Object Maybe</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.wbg.dTDSL.impl.MaybeImpl#getObject <em>Object</em>}</li>
- *   <li>{@link de.wbg.dTDSL.impl.MaybeImpl#getId <em>Id</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.impl.ObjectMaybeImpl#getObject <em>Object</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.impl.ObjectMaybeImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MaybeImpl extends MinimalEObjectImpl.Container implements Maybe
+public class ObjectMaybeImpl extends ObjectDescriptionInnerImpl implements ObjectMaybe
 {
   /**
    * The cached value of the '{@link #getObject() <em>Object</em>}' containment reference.
@@ -57,7 +56,7 @@ public class MaybeImpl extends MinimalEObjectImpl.Container implements Maybe
    * <!-- end-user-doc -->
    * @generated
    */
-  protected MaybeImpl()
+  protected ObjectMaybeImpl()
   {
     super();
   }
@@ -70,7 +69,7 @@ public class MaybeImpl extends MinimalEObjectImpl.Container implements Maybe
   @Override
   protected EClass eStaticClass()
   {
-    return DTDSLPackage.Literals.MAYBE;
+    return DTDSLPackage.Literals.OBJECT_MAYBE;
   }
 
   /**
@@ -94,7 +93,7 @@ public class MaybeImpl extends MinimalEObjectImpl.Container implements Maybe
     object = newObject;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DTDSLPackage.MAYBE__OBJECT, oldObject, newObject);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_MAYBE__OBJECT, oldObject, newObject);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -111,14 +110,14 @@ public class MaybeImpl extends MinimalEObjectImpl.Container implements Maybe
     {
       NotificationChain msgs = null;
       if (object != null)
-        msgs = ((InternalEObject)object).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DTDSLPackage.MAYBE__OBJECT, null, msgs);
+        msgs = ((InternalEObject)object).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DTDSLPackage.OBJECT_MAYBE__OBJECT, null, msgs);
       if (newObject != null)
-        msgs = ((InternalEObject)newObject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DTDSLPackage.MAYBE__OBJECT, null, msgs);
+        msgs = ((InternalEObject)newObject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DTDSLPackage.OBJECT_MAYBE__OBJECT, null, msgs);
       msgs = basicSetObject(newObject, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.MAYBE__OBJECT, newObject, newObject));
+      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_MAYBE__OBJECT, newObject, newObject));
   }
 
   /**
@@ -135,7 +134,7 @@ public class MaybeImpl extends MinimalEObjectImpl.Container implements Maybe
       if (id != oldId)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DTDSLPackage.MAYBE__ID, oldId, id));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DTDSLPackage.OBJECT_MAYBE__ID, oldId, id));
       }
     }
     return id;
@@ -161,7 +160,7 @@ public class MaybeImpl extends MinimalEObjectImpl.Container implements Maybe
     ObjectDescription oldId = id;
     id = newId;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.MAYBE__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_MAYBE__ID, oldId, id));
   }
 
   /**
@@ -174,7 +173,7 @@ public class MaybeImpl extends MinimalEObjectImpl.Container implements Maybe
   {
     switch (featureID)
     {
-      case DTDSLPackage.MAYBE__OBJECT:
+      case DTDSLPackage.OBJECT_MAYBE__OBJECT:
         return basicSetObject(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -190,9 +189,9 @@ public class MaybeImpl extends MinimalEObjectImpl.Container implements Maybe
   {
     switch (featureID)
     {
-      case DTDSLPackage.MAYBE__OBJECT:
+      case DTDSLPackage.OBJECT_MAYBE__OBJECT:
         return getObject();
-      case DTDSLPackage.MAYBE__ID:
+      case DTDSLPackage.OBJECT_MAYBE__ID:
         if (resolve) return getId();
         return basicGetId();
     }
@@ -209,10 +208,10 @@ public class MaybeImpl extends MinimalEObjectImpl.Container implements Maybe
   {
     switch (featureID)
     {
-      case DTDSLPackage.MAYBE__OBJECT:
+      case DTDSLPackage.OBJECT_MAYBE__OBJECT:
         setObject((Abstract)newValue);
         return;
-      case DTDSLPackage.MAYBE__ID:
+      case DTDSLPackage.OBJECT_MAYBE__ID:
         setId((ObjectDescription)newValue);
         return;
     }
@@ -229,10 +228,10 @@ public class MaybeImpl extends MinimalEObjectImpl.Container implements Maybe
   {
     switch (featureID)
     {
-      case DTDSLPackage.MAYBE__OBJECT:
+      case DTDSLPackage.OBJECT_MAYBE__OBJECT:
         setObject((Abstract)null);
         return;
-      case DTDSLPackage.MAYBE__ID:
+      case DTDSLPackage.OBJECT_MAYBE__ID:
         setId((ObjectDescription)null);
         return;
     }
@@ -249,12 +248,12 @@ public class MaybeImpl extends MinimalEObjectImpl.Container implements Maybe
   {
     switch (featureID)
     {
-      case DTDSLPackage.MAYBE__OBJECT:
+      case DTDSLPackage.OBJECT_MAYBE__OBJECT:
         return object != null;
-      case DTDSLPackage.MAYBE__ID:
+      case DTDSLPackage.OBJECT_MAYBE__ID:
         return id != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //MaybeImpl
+} //ObjectMaybeImpl

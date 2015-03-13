@@ -183,6 +183,17 @@ public class Node extends Element{
 			{
 				this.parent = node;
 			}
+			
+			public int getTotalLength()
+			{
+				int i = this.children.size();
+				for (Element e: this.children)
+				{
+					i += e.getTotalLength();
+				}
+				
+				return i;
+			}
 		}
 		'''
 	}

@@ -8,9 +8,9 @@ import de.wbg.dTDSL.DTDSLPackage;
 import de.wbg.dTDSL.JavaCodeOrID;
 import de.wbg.dTDSL.Keyword;
 import de.wbg.dTDSL.Many;
-import de.wbg.dTDSL.Maybe;
 import de.wbg.dTDSL.ObjectAttribute;
 import de.wbg.dTDSL.ObjectDescription;
+import de.wbg.dTDSL.ObjectMaybe;
 import de.wbg.dTDSL.ObjectNext;
 import de.wbg.dTDSL.StartPoint;
 import de.wbg.dTDSL.importStatement;
@@ -67,12 +67,6 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case DTDSLPackage.MAYBE:
-				if(context == grammarAccess.getMaybeRule()) {
-					sequence_Maybe(context, (Maybe) semanticObject); 
-					return; 
-				}
-				else break;
 			case DTDSLPackage.OBJECT_ATTRIBUTE:
 				if(context == grammarAccess.getObjectAttributeRule() ||
 				   context == grammarAccess.getObjectDescriptionInnerRule()) {
@@ -84,6 +78,13 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				if(context == grammarAccess.getAbstractRule() ||
 				   context == grammarAccess.getObjectDescriptionRule()) {
 					sequence_ObjectDescription(context, (ObjectDescription) semanticObject); 
+					return; 
+				}
+				else break;
+			case DTDSLPackage.OBJECT_MAYBE:
+				if(context == grammarAccess.getObjectDescriptionInnerRule() ||
+				   context == grammarAccess.getObjectMaybeRule()) {
+					sequence_ObjectMaybe(context, (ObjectMaybe) semanticObject); 
 					return; 
 				}
 				else break;
@@ -121,7 +122,7 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (parserName=STRING (type='javaObject' | type='string') objDescription+=Abstract* imports+=importStatement* start=StartPoint)
+	 *     (parserName=STRING (type='javaObject' | type='string') imports+=importStatement* objDescription+=Abstract* start=StartPoint)
 	 */
 	protected void sequence_DTDSL(EObject context, DTDSL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -148,19 +149,17 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (description+=ObjectDescriptionInner*)
+	 *     description=ObjectDescriptionInner
 	 */
 	protected void sequence_Many(EObject context, Many semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (object=Abstract | id=[ObjectDescription|ID])
-	 */
-	protected void sequence_Maybe(EObject context, Maybe semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DTDSLPackage.Literals.MANY__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DTDSLPackage.Literals.MANY__DESCRIPTION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getManyAccess().getDescriptionObjectDescriptionInnerParserRuleCall_2_0(), semanticObject.getDescription());
+		feeder.finish();
 	}
 	
 	
@@ -178,6 +177,15 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (name=ID description+=ObjectDescriptionInner*)
 	 */
 	protected void sequence_ObjectDescription(EObject context, ObjectDescription semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (object=Abstract | id=[ObjectDescription|ID])
+	 */
+	protected void sequence_ObjectMaybe(EObject context, ObjectMaybe semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

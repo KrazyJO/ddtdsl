@@ -33,8 +33,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getParserName <em>Parser Name</em>}</li>
  *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getType <em>Type</em>}</li>
- *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getObjDescription <em>Obj Description</em>}</li>
  *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getObjDescription <em>Obj Description</em>}</li>
  *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getStart <em>Start</em>}</li>
  * </ul>
  * </p>
@@ -84,16 +84,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
   protected String type = TYPE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getObjDescription() <em>Obj Description</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getObjDescription()
-   * @generated
-   * @ordered
-   */
-  protected EList<Abstract> objDescription;
-
-  /**
    * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -102,6 +92,16 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
    * @ordered
    */
   protected EList<importStatement> imports;
+
+  /**
+   * The cached value of the '{@link #getObjDescription() <em>Obj Description</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getObjDescription()
+   * @generated
+   * @ordered
+   */
+  protected EList<Abstract> objDescription;
 
   /**
    * The cached value of the '{@link #getStart() <em>Start</em>}' containment reference.
@@ -185,20 +185,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Abstract> getObjDescription()
-  {
-    if (objDescription == null)
-    {
-      objDescription = new EObjectContainmentEList<Abstract>(Abstract.class, this, DTDSLPackage.DTDSL__OBJ_DESCRIPTION);
-    }
-    return objDescription;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<importStatement> getImports()
   {
     if (imports == null)
@@ -206,6 +192,20 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
       imports = new EObjectContainmentEList<importStatement>(importStatement.class, this, DTDSLPackage.DTDSL__IMPORTS);
     }
     return imports;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Abstract> getObjDescription()
+  {
+    if (objDescription == null)
+    {
+      objDescription = new EObjectContainmentEList<Abstract>(Abstract.class, this, DTDSLPackage.DTDSL__OBJ_DESCRIPTION);
+    }
+    return objDescription;
   }
 
   /**
@@ -266,10 +266,10 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
   {
     switch (featureID)
     {
-      case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
-        return ((InternalEList<?>)getObjDescription()).basicRemove(otherEnd, msgs);
       case DTDSLPackage.DTDSL__IMPORTS:
         return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
+      case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
+        return ((InternalEList<?>)getObjDescription()).basicRemove(otherEnd, msgs);
       case DTDSLPackage.DTDSL__START:
         return basicSetStart(null, msgs);
     }
@@ -290,10 +290,10 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
         return getParserName();
       case DTDSLPackage.DTDSL__TYPE:
         return getType();
-      case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
-        return getObjDescription();
       case DTDSLPackage.DTDSL__IMPORTS:
         return getImports();
+      case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
+        return getObjDescription();
       case DTDSLPackage.DTDSL__START:
         return getStart();
     }
@@ -317,13 +317,13 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
       case DTDSLPackage.DTDSL__TYPE:
         setType((String)newValue);
         return;
-      case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
-        getObjDescription().clear();
-        getObjDescription().addAll((Collection<? extends Abstract>)newValue);
-        return;
       case DTDSLPackage.DTDSL__IMPORTS:
         getImports().clear();
         getImports().addAll((Collection<? extends importStatement>)newValue);
+        return;
+      case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
+        getObjDescription().clear();
+        getObjDescription().addAll((Collection<? extends Abstract>)newValue);
         return;
       case DTDSLPackage.DTDSL__START:
         setStart((StartPoint)newValue);
@@ -348,11 +348,11 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
       case DTDSLPackage.DTDSL__TYPE:
         setType(TYPE_EDEFAULT);
         return;
-      case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
-        getObjDescription().clear();
-        return;
       case DTDSLPackage.DTDSL__IMPORTS:
         getImports().clear();
+        return;
+      case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
+        getObjDescription().clear();
         return;
       case DTDSLPackage.DTDSL__START:
         setStart((StartPoint)null);
@@ -375,10 +375,10 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
         return PARSER_NAME_EDEFAULT == null ? parserName != null : !PARSER_NAME_EDEFAULT.equals(parserName);
       case DTDSLPackage.DTDSL__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-      case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
-        return objDescription != null && !objDescription.isEmpty();
       case DTDSLPackage.DTDSL__IMPORTS:
         return imports != null && !imports.isEmpty();
+      case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
+        return objDescription != null && !objDescription.isEmpty();
       case DTDSLPackage.DTDSL__START:
         return start != null;
     }
