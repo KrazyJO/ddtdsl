@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import de.wbg.dtdsl2.SimpleKeyValue;
+
 
 
 public class TestClass {
@@ -60,5 +62,23 @@ public class TestClass {
 		assertTrue("childOfNext: attribute name should be \"i\"", childOfNext.getName() == "i");
 //		assertTrue("childOfNext: should be value", !childOfNext.isKey());
 		assertTrue("childOfNext: value should be \"2\", but is " + childOfNext.getValue(), childOfNext.getValue().equals( "2"));
+	}
+	
+	@Test
+	public void testTotalLength()
+	{
+		SimpleKeyValue skv = new SimpleKeyValue();
+		skv.setI(1);
+		skv.setS("eins");
+		
+		SimpleKeyValue skv2 = new SimpleKeyValue();
+		skv2.setI(2);
+		skv2.setS("zwei");
+		skv.setNext(skv2);
+		
+		SimpleNextParser p = new SimpleNextParser();
+		Head o = p.parse(skv);
+		
+		System.out.println("total length: " + o.getTotalLength());
 	}
 }

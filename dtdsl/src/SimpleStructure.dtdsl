@@ -4,13 +4,7 @@ parserType = javaObject;
 Skv: {
 	hasAttribute s ofType String as Key;
 	hasAttribute i ofType int as Value;
-//	hasNext next as Inner;
 }
 
-Inner:
-{
-	hasAttribute s ofType String as Key;
-	hasAttribute i ofType int as Value;
-}
 
 beginWith = Skv;

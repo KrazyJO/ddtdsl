@@ -1,4 +1,4 @@
-package de.wbg.dtdsl;
+package de.wbg.dtdsl2;
 
 public class SimpleKeyValue {
 
