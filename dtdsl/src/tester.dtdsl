@@ -1,0 +1,16 @@
+parserName = "ObjectParser";
+parserType = javaObject; 
+
+Json: {
+	hasAttribute s ofType String as Key;
+	hasAttribute i ofType int as Value;
+	hasNext next as Json;
+}
+
+Inner:
+{
+	hasAttribute value ofType Inner;
+	hasNext java : "this.getNext();"  as Inner;
+}
+
+beginWith = Json;
