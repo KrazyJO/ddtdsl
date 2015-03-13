@@ -14,6 +14,7 @@ import de.wbg.dTDSL.ObjectDescription
 import de.wbg.NodeGen
 import de.wbg.dTDSL.ObjectAttribute
 import de.wbg.dTDSL.ObjectNext
+import de.wbg.ExceptionGen
 
 /**
  * Generates code from your model files on save.
@@ -30,8 +31,14 @@ class DTDSLGenerator implements IGenerator {
 //				.join(', '))
 
 		var nodeGen = new NodeGen()
+		var exceptionGen = new ExceptionGen()
 
 		fsa.generateFile('de/wbg/dtdsl/Node.java', nodeGen.generateNode)
+		fsa.generateFile('de/wbg/dtdsl/Head.java', nodeGen.generateHead)
+		fsa.generateFile('de/wbg/dtdsl/Attribute.java', nodeGen.generateAttribute)
+		fsa.generateFile('de/wbg/dtdsl/Element.java', nodeGen.generateElement)
+
+		fsa.generateFile('de/wbg/dtdsl/ParserException.java', exceptionGen.exceptionGenerator)
 
 		for (model: resource.allContents.toIterable.filter(DTDSL))
 		{
@@ -60,22 +67,29 @@ class DTDSLGenerator implements IGenerator {
 		
 		class «model.parserName.toFirstUpper» {
 			
-			private Node headNode;
-			private Node actualNode;
+			private Head headNode;
+			private Element actualNode;
 			
 			public «model.parserName.toFirstUpper»()
 			{
-				this.headNode = new Node();
-				this.headNode.setKey(false);
-				this.headNode.setName("HeadNode");
-				this.headNode.setValue("none");
+				this.headNode = new Head();
+«««				this.headNode.setKey(false);
+«««				this.headNode.setName("HeadNode");
+«««				this.headNode.setValue("none");
 				this.actualNode = this.headNode;
 			}
 			
-			public Node parse(Object o)
+			public Head parse(Object o)
 			{
 				//model.start
-				parse«model.start.begin.name»(o, actualNode);
+				try {
+					parse«model.start.begin.name»(o, actualNode);
+				}
+				catch (Exception e)
+				{
+					System.err.println(e.getMessage());
+					//e.printStackTrace();
+				}
 				
 				return headNode;
 			}
@@ -86,12 +100,8 @@ class DTDSLGenerator implements IGenerator {
 			if (d instanceof ObjectDescription) 
 			{
 				ret+=
-				'''	private void parse«d.name»(Object o, Node n)
+				'''	private void parse«d.name»(Object o, Element n) throws Exception
 	{
-		Node node = new Node();
-		node.setParent(actualNode);
-		n.getChildren().add(node);
-		
 		'''for (i: d.description)
 			{
 				if (i instanceof ObjectAttribute) {ret += i.compile}
@@ -126,7 +136,11 @@ class DTDSLGenerator implements IGenerator {
 		//«a.types» «a.attributes» as «a.keyword.name»;
 		«if (a.keyword.name == 'Key')
 		{
-			'''try {
+			'''Node node = new Node();
+node.setParent(n);
+n.addChild(node);
+	
+try {
 	Field f = o.getClass().getDeclaredField("«a.attributes»"); //NoSuchFieldException
 	f.setAccessible(true);
 	«a.types» iWantThis = («a.types») f.get(o); //IllegalAccessException
@@ -135,16 +149,18 @@ class DTDSLGenerator implements IGenerator {
 	node.setValue(String.valueOf(iWantThis));
 	node.setKey(true);
 } 
-catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e)
+catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 {
-	e.printStackTrace();
-}'''
+	//e.printStackTrace();
+	throw new ParserException("Error while parsing «a.keyword.name»: «a.types» «a.attributes»");
+}
+'''
 		}
 		else if (a.keyword.name == 'Value')
 		{
 			'''try {
-	Node valueNode = new Node();
-	valueNode.setKey(false);
+	Attribute valueNode = new Attribute();
+	valueNode.setType("value");
 
 	Field f = o.getClass().getDeclaredField("«a.attributes»"); //NoSuchFieldException
 	f.setAccessible(true);
@@ -152,13 +168,15 @@ catch (NoSuchFieldException | SecurityException | IllegalArgumentException | Ill
 
 	valueNode.setName("«a.attributes»");
 	valueNode.setValue(String.valueOf(iWantThis));
-
+	valueNode.setType("value");
+	
 	valueNode.setParent(node);
 	node.getChildren().add(valueNode);
 }
-catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e)
+catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 {
-	e.printStackTrace();
+	//e.printStackTrace();
+	throw new ParserException("Error while parsing «a.keyword.name»: «a.types» «a.attributes»");
 }
 '''
 
@@ -192,9 +210,9 @@ catch (NoSuchFieldException | SecurityException | IllegalArgumentException | Ill
 			
 				parse«n.objectDesription.name»(next, n);
 			}
-			catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e)
+			catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 			{
-				e.printStackTrace();
+				throw new ParserException("Error while parsing «n.attribute.id»");
 			}
 			'''
 			ret
