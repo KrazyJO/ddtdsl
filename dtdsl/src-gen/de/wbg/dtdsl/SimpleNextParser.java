@@ -33,9 +33,7 @@ class SimpleNextParser {
 	{
 		Node newNode = new Node("node"+n.increaseNodeNumber());
 		newNode.setParent(n);
-		n.addChild(newNode);
-	
-	
+		n.addChild(newNode);	
 		//{Element copy = n.copy();
 		try 
 		{
@@ -48,7 +46,12 @@ class SimpleNextParser {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	
@@ -64,7 +67,12 @@ class SimpleNextParser {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	
@@ -80,7 +88,12 @@ class SimpleNextParser {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	
@@ -169,9 +182,7 @@ class SimpleNextParser {
 	{
 		Node newNode = new Node("node"+n.increaseNodeNumber());
 		newNode.setParent(n);
-		n.addChild(newNode);
-	
-	
+		n.addChild(newNode);	
 		//{Element copy = n.copy();
 		try 
 		{
@@ -184,7 +195,12 @@ class SimpleNextParser {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	
@@ -200,7 +216,12 @@ class SimpleNextParser {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	

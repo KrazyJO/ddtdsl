@@ -2,7 +2,7 @@ parserName = "JSONSimple";
 parserType = javaObject;
 
 JSONSimple: {
-	hasAttribute table ofType HashMap;
+//	hasAttribute table ofType HashMap;
 }
 
 HashMap: {

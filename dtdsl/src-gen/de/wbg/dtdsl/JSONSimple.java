@@ -33,38 +33,14 @@ class JSONSimple {
 	{
 		Node newNode = new Node("node"+n.increaseNodeNumber());
 		newNode.setParent(n);
-		n.addChild(newNode);
-	
-	
-		//{Element copy = n.copy();
-		try 
-		{
-			parseJSONSimpleAttributeTable(o, newNode);
-		}
-		catch (ParserException e)
-		{
-			newNode.setParent(null);
-			n.removeChild(newNode);
-			throw e;
-		}
-		
-		//actualNode.getChildren().add(node);
-		
-		actualNode = n;
-	
+		n.addChild(newNode);	
 }
 		
-	public void parseJSONSimpleAttributeTable(Object o, Element n) throws Exception
-	{
-		//Attribute
-}
 	private void parseHashMap(Object o, Element n) throws Exception
 	{
 		Node newNode = new Node("node"+n.increaseNodeNumber());
 		newNode.setParent(n);
-		n.addChild(newNode);
-	
-	
+		n.addChild(newNode);	
 }
 		
 }

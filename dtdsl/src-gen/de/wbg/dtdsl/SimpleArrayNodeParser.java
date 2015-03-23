@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-class SimpleArrayParser {
+class SimpleArrayNodeParser {
 	
 	private Head headNode;
 	private Element actualNode;
 	
-	public SimpleArrayParser()
+	public SimpleArrayNodeParser()
 	{
 		
 	}
@@ -40,18 +40,17 @@ class SimpleArrayParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			//many Next
 			Field f = o.getClass().getDeclaredField("children");
 			f.setAccessible(true);
 			Object next = (Object) f.get(o);
 			Head manyHead = new Head("MANYHEAD");
 			
-			//String instance = this.getInstance(next);
 			if (next instanceof Object[])
 			{
-				for (int index = 0; index < ((Object[])next).length; index++)
+				Object[] array = (Object[]) next;
+				for (int index = 0; index < array.length; index++)
 				{
-					parseSkv(((Object[])next)[index], manyHead);
+					parseSkv(array[index], manyHead);
 				}
 			}
 			else if (next instanceof ArrayList)
@@ -73,8 +72,8 @@ class SimpleArrayParser {
 			
 			for (Element el : manyHead.getChildren())
 			{
-				n.addChild(el);
-				el.setParent(n);
+				newNode.addChild(el);
+				el.setParent(newNode);
 			}
 		}
 		catch (ParserException e)
@@ -95,7 +94,7 @@ class SimpleArrayParser {
 	
 }
 		
-	public void parseStartSkv(Object o, Element n) throws Exception
+	public void parseManyStartChildren(Object o, Element n) throws Exception
 	{
 		//many
 	}

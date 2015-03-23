@@ -33,9 +33,7 @@ class SimpleMaybeNextParser {
 	{
 		Node newNode = new Node("node"+n.increaseNodeNumber());
 		newNode.setParent(n);
-		n.addChild(newNode);
-	
-	
+		n.addChild(newNode);	
 		//{Element copy = n.copy();
 		try 
 		{
@@ -48,7 +46,12 @@ class SimpleMaybeNextParser {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	
@@ -64,7 +67,12 @@ class SimpleMaybeNextParser {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	
@@ -95,7 +103,12 @@ class SimpleMaybeNextParser {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	
@@ -184,9 +197,7 @@ class SimpleMaybeNextParser {
 	{
 		Node newNode = new Node("node"+n.increaseNodeNumber());
 		newNode.setParent(n);
-		n.addChild(newNode);
-	
-	
+		n.addChild(newNode);	
 		//{Element copy = n.copy();
 		try 
 		{
@@ -199,7 +210,12 @@ class SimpleMaybeNextParser {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	
@@ -215,7 +231,12 @@ class SimpleMaybeNextParser {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	

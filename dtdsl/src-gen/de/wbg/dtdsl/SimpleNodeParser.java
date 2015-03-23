@@ -33,9 +33,7 @@ class SimpleNodeParser {
 	{
 		Node newNode = new Node("node"+n.increaseNodeNumber());
 		newNode.setParent(n);
-		n.addChild(newNode);
-	
-	
+		n.addChild(newNode);	
 		//{Element copy = n.copy();
 		try 
 		{
@@ -48,7 +46,12 @@ class SimpleNodeParser {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	
@@ -64,7 +67,12 @@ class SimpleNodeParser {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	
@@ -80,7 +88,12 @@ class SimpleNodeParser {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	
@@ -158,7 +171,7 @@ try
 }
 catch(NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 {
-	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@ea305bb (attributes: next)");
+	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@78592a33 (attributes: next)");
 }
 catch (ParserException e)
 {
@@ -170,9 +183,7 @@ catch (ParserException e)
 	{
 		Node newNode = new Node("node"+n.increaseNodeNumber());
 		newNode.setParent(n);
-		n.addChild(newNode);
-	
-	
+		n.addChild(newNode);	
 		//{Element copy = n.copy();
 		try 
 		{
@@ -185,7 +196,12 @@ catch (ParserException e)
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	
@@ -201,7 +217,12 @@ catch (ParserException e)
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	

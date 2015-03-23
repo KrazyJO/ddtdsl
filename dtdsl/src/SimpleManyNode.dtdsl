@@ -1,9 +1,9 @@
-parserName = "SimpleArrayParser";
+parserName = "SimpleArrayNodeParser";
 parserType = javaObject;
 
-Start isNoNode: 
+Start: 
 {
-	hasNext children as Skv*;
+	hasNode children as Skv*;
 }
 
 Skv: 
