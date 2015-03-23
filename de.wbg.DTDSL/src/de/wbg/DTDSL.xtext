@@ -18,7 +18,7 @@ Abstract:
 ;
 
 ObjectDescription:
-	name=ID (noNode='isNoNode')? ':' '{' description+=ObjectDescriptionInner* '}'
+	name=ID ':' '{' description+=ObjectDescriptionInner* '}'
 ;
 
 ObjectNodeType:
@@ -30,8 +30,12 @@ ObjectDescriptionInner:
 ;
 
 ObjectAttribute:
-	'hasAttribute' attributes=ID 'ofType' (types=Type | inner=[ObjectDescription])
+	'hasAttribute' attributes=ID 'ofType' types=Type 
 ;
+
+//ObjectAttribute:
+//	'hasAttribute' attributes=ID 'ofType' (types=Type | inner=[ObjectDescription])
+//;
 
 //ObjectNode:
 //	'hasNode' attributes=ID 'ofType' (types=Type 'as' keyword=Keyword | inner=[ObjectDescription]) ';'	

@@ -178,22 +178,13 @@ public interface DTDSLPackage extends EPackage
   int OBJECT_DESCRIPTION__NAME = ABSTRACT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>No Node</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_DESCRIPTION__NO_NODE = ABSTRACT_FEATURE_COUNT + 1;
-
-  /**
    * The feature id for the '<em><b>Description</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBJECT_DESCRIPTION__DESCRIPTION = ABSTRACT_FEATURE_COUNT + 2;
+  int OBJECT_DESCRIPTION__DESCRIPTION = ABSTRACT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Object Description</em>' class.
@@ -202,7 +193,7 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_DESCRIPTION_FEATURE_COUNT = ABSTRACT_FEATURE_COUNT + 3;
+  int OBJECT_DESCRIPTION_FEATURE_COUNT = ABSTRACT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectDescriptionInnerImpl <em>Object Description Inner</em>}' class.
@@ -252,22 +243,13 @@ public interface DTDSLPackage extends EPackage
   int OBJECT_ATTRIBUTE__TYPES = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Inner</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_ATTRIBUTE__INNER = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>Object Attribute</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBJECT_ATTRIBUTE_FEATURE_COUNT = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 3;
+  int OBJECT_ATTRIBUTE_FEATURE_COUNT = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectNodeImpl <em>Object Node</em>}' class.
@@ -628,17 +610,6 @@ public interface DTDSLPackage extends EPackage
   EAttribute getObjectDescription_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.ObjectDescription#getNoNode <em>No Node</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>No Node</em>'.
-   * @see de.wbg.dTDSL.ObjectDescription#getNoNode()
-   * @see #getObjectDescription()
-   * @generated
-   */
-  EAttribute getObjectDescription_NoNode();
-
-  /**
    * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.ObjectDescription#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -690,17 +661,6 @@ public interface DTDSLPackage extends EPackage
    * @generated
    */
   EAttribute getObjectAttribute_Types();
-
-  /**
-   * Returns the meta object for the reference '{@link de.wbg.dTDSL.ObjectAttribute#getInner <em>Inner</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Inner</em>'.
-   * @see de.wbg.dTDSL.ObjectAttribute#getInner()
-   * @see #getObjectAttribute()
-   * @generated
-   */
-  EReference getObjectAttribute_Inner();
 
   /**
    * Returns the meta object for class '{@link de.wbg.dTDSL.ObjectNode <em>Object Node</em>}'.
@@ -1015,14 +975,6 @@ public interface DTDSLPackage extends EPackage
     EAttribute OBJECT_DESCRIPTION__NAME = eINSTANCE.getObjectDescription_Name();
 
     /**
-     * The meta object literal for the '<em><b>No Node</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OBJECT_DESCRIPTION__NO_NODE = eINSTANCE.getObjectDescription_NoNode();
-
-    /**
      * The meta object literal for the '<em><b>Description</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1065,14 +1017,6 @@ public interface DTDSLPackage extends EPackage
      * @generated
      */
     EAttribute OBJECT_ATTRIBUTE__TYPES = eINSTANCE.getObjectAttribute_Types();
-
-    /**
-     * The meta object literal for the '<em><b>Inner</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OBJECT_ATTRIBUTE__INNER = eINSTANCE.getObjectAttribute_Inner();
 
     /**
      * The meta object literal for the '{@link de.wbg.dTDSL.impl.ObjectNodeImpl <em>Object Node</em>}' class.

@@ -300,50 +300,35 @@ ruleObjectDescription returns [EObject current=null]
 	    }
 
 )
-)(
-(
-		lv_noNode_1_0=	'isNoNode' 
+)	otherlv_1=':' 
     {
-        newLeafNode(lv_noNode_1_0, grammarAccess.getObjectDescriptionAccess().getNoNodeIsNoNodeKeyword_1_0());
+    	newLeafNode(otherlv_1, grammarAccess.getObjectDescriptionAccess().getColonKeyword_1());
     }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getObjectDescriptionRule());
-	        }
-       		setWithLastConsumed($current, "noNode", lv_noNode_1_0, "isNoNode");
-	    }
-
-)
-)?	otherlv_2=':' 
+	otherlv_2='{' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getObjectDescriptionAccess().getColonKeyword_2());
-    }
-	otherlv_3='{' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getObjectDescriptionAccess().getLeftCurlyBracketKeyword_3());
+    	newLeafNode(otherlv_2, grammarAccess.getObjectDescriptionAccess().getLeftCurlyBracketKeyword_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getObjectDescriptionAccess().getDescriptionObjectDescriptionInnerParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getObjectDescriptionAccess().getDescriptionObjectDescriptionInnerParserRuleCall_3_0()); 
 	    }
-		lv_description_4_0=ruleObjectDescriptionInner		{
+		lv_description_3_0=ruleObjectDescriptionInner		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getObjectDescriptionRule());
 	        }
        		add(
        			$current, 
        			"description",
-        		lv_description_4_0, 
+        		lv_description_3_0, 
         		"ObjectDescriptionInner");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_5='}' 
+)*	otherlv_4='}' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getObjectDescriptionAccess().getRightCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_4, grammarAccess.getObjectDescriptionAccess().getRightCurlyBracketKeyword_4());
     }
 )
 ;
@@ -478,10 +463,10 @@ ruleObjectAttribute returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getObjectAttributeAccess().getOfTypeKeyword_2());
     }
-((
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getObjectAttributeAccess().getTypesTypeParserRuleCall_3_0_0()); 
+	        newCompositeNode(grammarAccess.getObjectAttributeAccess().getTypesTypeParserRuleCall_3_0()); 
 	    }
 		lv_types_3_0=ruleType		{
 	        if ($current==null) {
@@ -496,21 +481,7 @@ ruleObjectAttribute returns [EObject current=null]
 	    }
 
 )
-)
-    |(
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getObjectAttributeRule());
-	        }
-        }
-	otherlv_4=RULE_ID
-	{
-		newLeafNode(otherlv_4, grammarAccess.getObjectAttributeAccess().getInnerObjectDescriptionCrossReference_3_1_0()); 
-	}
-
-)
-)))
+))
 ;
 
 

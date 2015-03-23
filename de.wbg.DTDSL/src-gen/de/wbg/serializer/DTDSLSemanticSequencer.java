@@ -144,10 +144,20 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (attributes=ID (types=Type | inner=[ObjectDescription|ID]))
+	 *     (attributes=ID types=Type)
 	 */
 	protected void sequence_ObjectAttribute(EObject context, ObjectAttribute semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__ATTRIBUTES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__ATTRIBUTES));
+			if(transientValues.isValueTransient(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__TYPES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__TYPES));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getObjectAttributeAccess().getAttributesIDTerminalRuleCall_1_0(), semanticObject.getAttributes());
+		feeder.accept(grammarAccess.getObjectAttributeAccess().getTypesTypeParserRuleCall_3_0(), semanticObject.getTypes());
+		feeder.finish();
 	}
 	
 	
@@ -162,7 +172,7 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID noNode='isNoNode'? description+=ObjectDescriptionInner*)
+	 *     (name=ID description+=ObjectDescriptionInner*)
 	 */
 	protected void sequence_ObjectDescription(EObject context, ObjectDescription semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

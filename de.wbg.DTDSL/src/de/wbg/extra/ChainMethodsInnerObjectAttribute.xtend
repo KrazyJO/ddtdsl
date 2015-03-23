@@ -18,7 +18,7 @@ class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
 			this.returnValue  = this.returnValue + '''		//Attribute
 		'''
 		
-			if (i.inner == null) {
+//			if (i.inner == null) {
 				this.returnValue  = this.returnValue + '''		//inner == null
 		//«i.types» «i.attributes» as ;
 				'''
@@ -51,13 +51,13 @@ class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
 	
 	'''
 	
-			}
-			else
-			{
-				this.returnValue = this.returnValue + '''
-				}
-				'''
-			}
+//			}
+//			else
+//			{
+//				this.returnValue = this.returnValue + '''
+//				}
+//				'''
+//			}
 			
 		}
 		else

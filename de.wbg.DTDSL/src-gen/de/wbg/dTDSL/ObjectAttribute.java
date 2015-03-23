@@ -13,7 +13,6 @@ package de.wbg.dTDSL;
  * <ul>
  *   <li>{@link de.wbg.dTDSL.ObjectAttribute#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link de.wbg.dTDSL.ObjectAttribute#getTypes <em>Types</em>}</li>
- *   <li>{@link de.wbg.dTDSL.ObjectAttribute#getInner <em>Inner</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,31 +73,5 @@ public interface ObjectAttribute extends ObjectDescriptionInner, ObjectMaybeInne
    * @generated
    */
   void setTypes(String value);
-
-  /**
-   * Returns the value of the '<em><b>Inner</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Inner</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Inner</em>' reference.
-   * @see #setInner(ObjectDescription)
-   * @see de.wbg.dTDSL.DTDSLPackage#getObjectAttribute_Inner()
-   * @model
-   * @generated
-   */
-  ObjectDescription getInner();
-
-  /**
-   * Sets the value of the '{@link de.wbg.dTDSL.ObjectAttribute#getInner <em>Inner</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Inner</em>' reference.
-   * @see #getInner()
-   * @generated
-   */
-  void setInner(ObjectDescription value);
 
 } // ObjectAttribute

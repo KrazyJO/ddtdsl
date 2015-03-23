@@ -17,7 +17,6 @@
 'hasNext'=34
 'hasNode'=32
 'int'=15
-'isNoNode'=41
 'java'=35
 'javaObject'=11
 'long'=16
@@ -66,4 +65,3 @@ T__37=37
 T__38=38
 T__39=39
 T__40=40
-T__41=41

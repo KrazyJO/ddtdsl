@@ -150,19 +150,17 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Assignment cNoNodeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cNoNodeIsNoNodeKeyword_1_0 = (Keyword)cNoNodeAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cDescriptionAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cDescriptionObjectDescriptionInnerParserRuleCall_4_0 = (RuleCall)cDescriptionAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cDescriptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDescriptionObjectDescriptionInnerParserRuleCall_3_0 = (RuleCall)cDescriptionAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ObjectDescription:
-		//	name=ID noNode="isNoNode"? ":" "{" description+=ObjectDescriptionInner* "}";
+		//	name=ID ":" "{" description+=ObjectDescriptionInner* "}";
 		public ParserRule getRule() { return rule; }
 
-		//name=ID noNode="isNoNode"? ":" "{" description+=ObjectDescriptionInner* "}"
+		//name=ID ":" "{" description+=ObjectDescriptionInner* "}"
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -171,26 +169,20 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 
-		//noNode="isNoNode"?
-		public Assignment getNoNodeAssignment_1() { return cNoNodeAssignment_1; }
-
-		//"isNoNode"
-		public Keyword getNoNodeIsNoNodeKeyword_1_0() { return cNoNodeIsNoNodeKeyword_1_0; }
-
 		//":"
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
 		//description+=ObjectDescriptionInner*
-		public Assignment getDescriptionAssignment_4() { return cDescriptionAssignment_4; }
+		public Assignment getDescriptionAssignment_3() { return cDescriptionAssignment_3; }
 
 		//ObjectDescriptionInner
-		public RuleCall getDescriptionObjectDescriptionInnerParserRuleCall_4_0() { return cDescriptionObjectDescriptionInnerParserRuleCall_4_0; }
+		public RuleCall getDescriptionObjectDescriptionInnerParserRuleCall_3_0() { return cDescriptionObjectDescriptionInnerParserRuleCall_3_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class ObjectNodeTypeElements extends AbstractParserRuleElementFinder {
@@ -264,18 +256,14 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAttributesAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAttributesIDTerminalRuleCall_1_0 = (RuleCall)cAttributesAssignment_1.eContents().get(0);
 		private final Keyword cOfTypeKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Assignment cTypesAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
-		private final RuleCall cTypesTypeParserRuleCall_3_0_0 = (RuleCall)cTypesAssignment_3_0.eContents().get(0);
-		private final Assignment cInnerAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
-		private final CrossReference cInnerObjectDescriptionCrossReference_3_1_0 = (CrossReference)cInnerAssignment_3_1.eContents().get(0);
-		private final RuleCall cInnerObjectDescriptionIDTerminalRuleCall_3_1_0_1 = (RuleCall)cInnerObjectDescriptionCrossReference_3_1_0.eContents().get(1);
+		private final Assignment cTypesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTypesTypeParserRuleCall_3_0 = (RuleCall)cTypesAssignment_3.eContents().get(0);
 		
 		//ObjectAttribute:
-		//	"hasAttribute" attributes=ID "ofType" (types=Type | inner=[ObjectDescription]);
+		//	"hasAttribute" attributes=ID "ofType" types=Type;
 		public ParserRule getRule() { return rule; }
 
-		//"hasAttribute" attributes=ID "ofType" (types=Type | inner=[ObjectDescription])
+		//"hasAttribute" attributes=ID "ofType" types=Type
 		public Group getGroup() { return cGroup; }
 
 		//"hasAttribute"
@@ -290,23 +278,11 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//"ofType"
 		public Keyword getOfTypeKeyword_2() { return cOfTypeKeyword_2; }
 
-		//types=Type | inner=[ObjectDescription]
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
-
 		//types=Type
-		public Assignment getTypesAssignment_3_0() { return cTypesAssignment_3_0; }
+		public Assignment getTypesAssignment_3() { return cTypesAssignment_3; }
 
 		//Type
-		public RuleCall getTypesTypeParserRuleCall_3_0_0() { return cTypesTypeParserRuleCall_3_0_0; }
-
-		//inner=[ObjectDescription]
-		public Assignment getInnerAssignment_3_1() { return cInnerAssignment_3_1; }
-
-		//[ObjectDescription]
-		public CrossReference getInnerObjectDescriptionCrossReference_3_1_0() { return cInnerObjectDescriptionCrossReference_3_1_0; }
-
-		//ID
-		public RuleCall getInnerObjectDescriptionIDTerminalRuleCall_3_1_0_1() { return cInnerObjectDescriptionIDTerminalRuleCall_3_1_0_1; }
+		public RuleCall getTypesTypeParserRuleCall_3_0() { return cTypesTypeParserRuleCall_3_0; }
 	}
 
 	public class ObjectNodeElements extends AbstractParserRuleElementFinder {
@@ -320,6 +296,9 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cInnerObjectDescriptionCrossReference_3_0 = (CrossReference)cInnerAssignment_3.eContents().get(0);
 		private final RuleCall cInnerObjectDescriptionIDTerminalRuleCall_3_0_1 = (RuleCall)cInnerObjectDescriptionCrossReference_3_0.eContents().get(1);
 		
+		////ObjectAttribute:
+		////	'hasAttribute' attributes=ID 'ofType' (types=Type | inner=[ObjectDescription])
+		////;
 		////ObjectNode:
 		////	'hasNode' attributes=ID 'ofType' (types=Type 'as' keyword=Keyword | inner=[ObjectDescription]) ';'	
 		////;
@@ -752,7 +731,7 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ObjectDescription:
-	//	name=ID noNode="isNoNode"? ":" "{" description+=ObjectDescriptionInner* "}";
+	//	name=ID ":" "{" description+=ObjectDescriptionInner* "}";
 	public ObjectDescriptionElements getObjectDescriptionAccess() {
 		return pObjectDescription;
 	}
@@ -782,7 +761,7 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ObjectAttribute:
-	//	"hasAttribute" attributes=ID "ofType" (types=Type | inner=[ObjectDescription]);
+	//	"hasAttribute" attributes=ID "ofType" types=Type;
 	public ObjectAttributeElements getObjectAttributeAccess() {
 		return pObjectAttribute;
 	}
@@ -791,6 +770,9 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getObjectAttributeAccess().getRule();
 	}
 
+	////ObjectAttribute:
+	////	'hasAttribute' attributes=ID 'ofType' (types=Type | inner=[ObjectDescription])
+	////;
 	////ObjectNode:
 	////	'hasNode' attributes=ID 'ofType' (types=Type 'as' keyword=Keyword | inner=[ObjectDescription]) ';'	
 	////;

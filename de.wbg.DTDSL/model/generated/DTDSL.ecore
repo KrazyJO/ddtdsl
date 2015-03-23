@@ -15,7 +15,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Abstract"/>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectDescription" eSuperTypes="#//Abstract">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noNode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1"
         eType="#//ObjectDescriptionInner" containment="true"/>
   </eClassifiers>
@@ -23,7 +22,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="ObjectAttribute" eSuperTypes="#//ObjectDescriptionInner #//ObjectMaybeInner">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="types" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inner" eType="#//ObjectDescription"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectNode" eSuperTypes="#//ObjectDescriptionInner #//ObjectMaybeInner">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

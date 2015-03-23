@@ -4,12 +4,10 @@ package de.wbg.dTDSL.impl;
 
 import de.wbg.dTDSL.DTDSLPackage;
 import de.wbg.dTDSL.ObjectAttribute;
-import de.wbg.dTDSL.ObjectDescription;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -22,7 +20,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link de.wbg.dTDSL.impl.ObjectAttributeImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link de.wbg.dTDSL.impl.ObjectAttributeImpl#getTypes <em>Types</em>}</li>
- *   <li>{@link de.wbg.dTDSL.impl.ObjectAttributeImpl#getInner <em>Inner</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,16 +66,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
    * @ordered
    */
   protected String types = TYPES_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getInner() <em>Inner</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInner()
-   * @generated
-   * @ordered
-   */
-  protected ObjectDescription inner;
 
   /**
    * <!-- begin-user-doc -->
@@ -152,49 +139,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
    * <!-- end-user-doc -->
    * @generated
    */
-  public ObjectDescription getInner()
-  {
-    if (inner != null && inner.eIsProxy())
-    {
-      InternalEObject oldInner = (InternalEObject)inner;
-      inner = (ObjectDescription)eResolveProxy(oldInner);
-      if (inner != oldInner)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DTDSLPackage.OBJECT_ATTRIBUTE__INNER, oldInner, inner));
-      }
-    }
-    return inner;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ObjectDescription basicGetInner()
-  {
-    return inner;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setInner(ObjectDescription newInner)
-  {
-    ObjectDescription oldInner = inner;
-    inner = newInner;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_ATTRIBUTE__INNER, oldInner, inner));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -204,9 +148,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
         return getAttributes();
       case DTDSLPackage.OBJECT_ATTRIBUTE__TYPES:
         return getTypes();
-      case DTDSLPackage.OBJECT_ATTRIBUTE__INNER:
-        if (resolve) return getInner();
-        return basicGetInner();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -226,9 +167,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
         return;
       case DTDSLPackage.OBJECT_ATTRIBUTE__TYPES:
         setTypes((String)newValue);
-        return;
-      case DTDSLPackage.OBJECT_ATTRIBUTE__INNER:
-        setInner((ObjectDescription)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -250,9 +188,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
       case DTDSLPackage.OBJECT_ATTRIBUTE__TYPES:
         setTypes(TYPES_EDEFAULT);
         return;
-      case DTDSLPackage.OBJECT_ATTRIBUTE__INNER:
-        setInner((ObjectDescription)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -271,8 +206,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
         return ATTRIBUTES_EDEFAULT == null ? attributes != null : !ATTRIBUTES_EDEFAULT.equals(attributes);
       case DTDSLPackage.OBJECT_ATTRIBUTE__TYPES:
         return TYPES_EDEFAULT == null ? types != null : !TYPES_EDEFAULT.equals(types);
-      case DTDSLPackage.OBJECT_ATTRIBUTE__INNER:
-        return inner != null;
     }
     return super.eIsSet(featureID);
   }

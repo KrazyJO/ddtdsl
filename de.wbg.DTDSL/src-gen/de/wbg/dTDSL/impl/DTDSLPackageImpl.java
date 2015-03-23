@@ -299,19 +299,9 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getObjectDescription_NoNode()
-  {
-    return (EAttribute)objectDescriptionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getObjectDescription_Description()
   {
-    return (EReference)objectDescriptionEClass.getEStructuralFeatures().get(2);
+    return (EReference)objectDescriptionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -352,16 +342,6 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
   public EAttribute getObjectAttribute_Types()
   {
     return (EAttribute)objectAttributeEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getObjectAttribute_Inner()
-  {
-    return (EReference)objectAttributeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -597,7 +577,6 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
 
     objectDescriptionEClass = createEClass(OBJECT_DESCRIPTION);
     createEAttribute(objectDescriptionEClass, OBJECT_DESCRIPTION__NAME);
-    createEAttribute(objectDescriptionEClass, OBJECT_DESCRIPTION__NO_NODE);
     createEReference(objectDescriptionEClass, OBJECT_DESCRIPTION__DESCRIPTION);
 
     objectDescriptionInnerEClass = createEClass(OBJECT_DESCRIPTION_INNER);
@@ -605,7 +584,6 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     objectAttributeEClass = createEClass(OBJECT_ATTRIBUTE);
     createEAttribute(objectAttributeEClass, OBJECT_ATTRIBUTE__ATTRIBUTES);
     createEAttribute(objectAttributeEClass, OBJECT_ATTRIBUTE__TYPES);
-    createEReference(objectAttributeEClass, OBJECT_ATTRIBUTE__INNER);
 
     objectNodeEClass = createEClass(OBJECT_NODE);
     createEAttribute(objectNodeEClass, OBJECT_NODE__ATTRIBUTES);
@@ -689,7 +667,6 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
 
     initEClass(objectDescriptionEClass, ObjectDescription.class, "ObjectDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getObjectDescription_Name(), ecorePackage.getEString(), "name", null, 0, 1, ObjectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getObjectDescription_NoNode(), ecorePackage.getEString(), "noNode", null, 0, 1, ObjectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getObjectDescription_Description(), this.getObjectDescriptionInner(), null, "description", null, 0, -1, ObjectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectDescriptionInnerEClass, ObjectDescriptionInner.class, "ObjectDescriptionInner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -697,7 +674,6 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     initEClass(objectAttributeEClass, ObjectAttribute.class, "ObjectAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getObjectAttribute_Attributes(), ecorePackage.getEString(), "attributes", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getObjectAttribute_Types(), ecorePackage.getEString(), "types", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getObjectAttribute_Inner(), this.getObjectDescription(), null, "inner", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectNodeEClass, ObjectNode.class, "ObjectNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getObjectNode_Attributes(), ecorePackage.getEString(), "attributes", null, 0, 1, ObjectNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

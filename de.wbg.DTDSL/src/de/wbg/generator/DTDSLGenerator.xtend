@@ -184,15 +184,11 @@ class DTDSLGenerator implements IGenerator {
 			ret+=
 			'''	private void parse«d.name»(Object o, Element n) throws Exception
 	{
-	«if (d.noNode == null)
-	{
-		'''	Node newNode = new Node("node"+n.increaseNodeNumber());
-	newNode.setParent(n);
-	n.addChild(newNode);'''
-	}»
-	
-	
-	'''for (i: d.description)
+		Node newNode = new Node("node"+n.increaseNodeNumber());
+		newNode.setParent(n);
+		n.addChild(newNode);	
+	'''
+	for (i: d.description)
 		{
 			ret +=
 			'''		//{Element copy = n.copy();
@@ -220,8 +216,6 @@ class DTDSLGenerator implements IGenerator {
 		}»
 			''' 
 			
-			if (d.noNode == null)
-			{
 				ret+=
 			'''		}
 		catch (ParserException e)
@@ -231,20 +225,16 @@ class DTDSLGenerator implements IGenerator {
 			throw e;
 		}
 		
-		//actualNode.getChildren().add(node);
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}
 		
 		actualNode = n;
 	
 			'''		
-			}
-			else
-			{
-			ret += '''		}		
-		catch (ParserException e)
-		{
-			throw e;
-		}'''
-		}
 			
 		}
 		ret+= '''
@@ -265,7 +255,46 @@ class DTDSLGenerator implements IGenerator {
 		
 		if (i instanceof ObjectAttribute)
 		{
-			ret += '''//many Attribute'''
+			ret += 
+			'''
+			Field f = o.getClass().getDeclaredField("«i.attributes»");
+			f.setAccessible(true);
+			Object next = (Object) f.get(o);
+			Head manyHead = new Head("MANYHEAD");
+			
+			if (next instanceof «i.types»[])
+			{
+				«i.types»[] array = («i.types»[])next;
+				for (int index = 0; index < array.length; index++)
+				{
+					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(array[index], manyHead);
+				}
+			}
+			else if (next instanceof ArrayList)
+			{
+				ArrayList al = (ArrayList)next;
+				for (int index = 0; index < al.size(); index++)
+				{
+					«i.types» obj = («i.types»)al.get(index);
+					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(obj, manyHead);
+				}
+			}
+			else if (next instanceof LinkedList)
+			{
+				LinkedList al = (LinkedList)next;
+				for (int index = 0; index < al.size(); index++)
+				{
+					«i.types» obj = («i.types»)al.get(index);
+					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(obj, manyHead);
+				}
+			}
+			
+			for (Element el: manyHead.getChildren())
+			{
+				newNode.addChild(el);
+				el.setParent(newNode);
+			}
+			'''
 		}
 		else if (i instanceof ObjectNext)
 		{
@@ -320,7 +349,43 @@ class DTDSLGenerator implements IGenerator {
 		}
 		else if (i instanceof ObjectNode)
 		{
-			ret += '''//many Node'''	
+			ret += '''
+				Field f = o.getClass().getDeclaredField("«i.attributes»");
+				f.setAccessible(true);
+				Object next = (Object) f.get(o);
+				Head manyHead = new Head("MANYHEAD");
+				
+				if (next instanceof Object[])
+				{
+					Object[] array = (Object[]) next;
+					for (int index = 0; index < array.length; index++)
+					{
+						parse«i.inner.name.toFirstUpper»(array[index], manyHead);
+					}
+				}
+				else if (next instanceof ArrayList)
+				{
+					ArrayList al = (ArrayList)next;
+					for (Object obj: al)
+					{
+						parse«i.inner.name.toFirstUpper»(obj, manyHead);
+					}
+				}
+				else if (next instanceof LinkedList)
+				{
+					LinkedList al = (LinkedList)next;
+					for (Object obj: al)
+					{
+						parse«i.inner.name.toFirstUpper»(obj, manyHead);
+					}
+				}
+				
+				for (Element el : manyHead.getChildren())
+				{
+					newNode.addChild(el);
+					el.setParent(newNode);
+				}
+			'''	
 		}
 		
 		ret
@@ -387,7 +452,7 @@ class DTDSLGenerator implements IGenerator {
 		var ret = '''		//Attribute
 		'''
 		
-		if (a.inner == null) {
+//		if (a.inner == null) {
 			ret += '''		//inner == null
 //«a.types» «a.attributes» as ;
 			'''
@@ -418,7 +483,7 @@ class DTDSLGenerator implements IGenerator {
 	}
 '''
 
-		}
+//		}
 
 		ret
 	}

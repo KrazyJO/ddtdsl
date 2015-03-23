@@ -19,14 +19,12 @@
     <genClasses ecoreClass="DTDSL.ecore#//Abstract"/>
     <genClasses ecoreClass="DTDSL.ecore#//ObjectDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//ObjectDescription/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//ObjectDescription/noNode"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//ObjectDescription/description"/>
     </genClasses>
     <genClasses ecoreClass="DTDSL.ecore#//ObjectDescriptionInner"/>
     <genClasses ecoreClass="DTDSL.ecore#//ObjectAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//ObjectAttribute/attributes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//ObjectAttribute/types"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DTDSL.ecore#//ObjectAttribute/inner"/>
     </genClasses>
     <genClasses ecoreClass="DTDSL.ecore#//ObjectNode">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//ObjectNode/attributes"/>

@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.wbg.dTDSL.ObjectDescription#getName <em>Name</em>}</li>
- *   <li>{@link de.wbg.dTDSL.ObjectDescription#getNoNode <em>No Node</em>}</li>
  *   <li>{@link de.wbg.dTDSL.ObjectDescription#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
@@ -49,32 +48,6 @@ public interface ObjectDescription extends Abstract
    * @generated
    */
   void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>No Node</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>No Node</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>No Node</em>' attribute.
-   * @see #setNoNode(String)
-   * @see de.wbg.dTDSL.DTDSLPackage#getObjectDescription_NoNode()
-   * @model
-   * @generated
-   */
-  String getNoNode();
-
-  /**
-   * Sets the value of the '{@link de.wbg.dTDSL.ObjectDescription#getNoNode <em>No Node</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>No Node</em>' attribute.
-   * @see #getNoNode()
-   * @generated
-   */
-  void setNoNode(String value);
 
   /**
    * Returns the value of the '<em><b>Description</b></em>' containment reference list.
