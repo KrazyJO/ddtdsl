@@ -12,13 +12,13 @@ public class SimpleHashMap {
 		val0.setValue(0);
 		
 		SimpleValue val1 = new SimpleValue();
-		val0.setValue(1);
+		val1.setValue(1);
 		
 		SimpleValue val2 = new SimpleValue();
-		val0.setValue(2);
+		val2.setValue(2);
 		
 		SimpleValue val3 = new SimpleValue();
-		val0.setValue(3);
+		val3.setValue(3);
 		
 		this.children = new HashMap<>();
 		this.children.put("null", val0);
