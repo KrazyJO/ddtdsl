@@ -2,9 +2,8 @@ parserName = "SimpleParser";
 parserType = javaObject; 
 
 Skv: {
-	hasAttribute s ofType String as Key;
-	hasAttribute i ofType int as Value;
+	hasAttribute s ofType String;
+	hasAttribute i ofType int;
 }
-
 
 beginWith = Skv;

@@ -1,0 +1,15 @@
+parserName = "SimpleArrayParser";
+parserType = javaObject;
+
+Start isNoNode: 
+{
+	hasNext children as Skv*;
+}
+
+Skv: 
+{
+	hasAttribute i ofType int;
+	hasAttribute s ofType String;
+}
+
+beginWith = Start;

@@ -1,0 +1,285 @@
+package de.wbg.dtdsl;
+
+import java.lang.reflect.Field;
+
+class SimpleMaybeNextParser {
+	
+	private Head headNode;
+	private Element actualNode;
+	
+	public SimpleMaybeNextParser()
+	{
+		
+	}
+	
+	public Head parse(Object o)
+	{
+		this.headNode = new Head("HEAD");
+		this.actualNode = this.headNode;
+		//model.start
+		try {
+			parseSkv(o, actualNode);
+		}
+		catch (Exception e)
+		{
+			System.err.println(e.getMessage());
+			//e.printStackTrace();
+		}
+		
+		return headNode;
+	}
+	
+	private void parseSkv(Object o, Element n) throws Exception
+	{
+		Node newNode = new Node("node"+n.increaseNodeNumber());
+		newNode.setParent(n);
+		n.addChild(newNode);
+	
+	
+		//{Element copy = n.copy();
+		try 
+		{
+			parseSkvAttributeS(o, newNode);
+		}
+		catch (ParserException e)
+		{
+			newNode.setParent(null);
+			n.removeChild(newNode);
+			throw e;
+		}
+		
+		//actualNode.getChildren().add(node);
+		
+		actualNode = n;
+	
+		//{Element copy = n.copy();
+		try 
+		{
+			parseSkvAttributeI(o, newNode);
+		}
+		catch (ParserException e)
+		{
+			newNode.setParent(null);
+			n.removeChild(newNode);
+			throw e;
+		}
+		
+		//actualNode.getChildren().add(node);
+		
+		actualNode = n;
+	
+		//{Element copy = n.copy();
+		try 
+		{
+			Element maybeHead = new Element("MAYBEHEAD");
+			Object temp = o;
+			try
+			{
+				parseSkvNext(temp, maybeHead);
+				for (Element child: maybeHead.getChildren())
+				{
+					n.addChild(child);
+					child.setParent(n);
+				}
+			} 
+			catch (ParserException e) 
+			{
+				//destroy reference
+				maybeHead = null;
+			}
+		}
+		catch (ParserException e)
+		{
+			newNode.setParent(null);
+			n.removeChild(newNode);
+			throw e;
+		}
+		
+		//actualNode.getChildren().add(node);
+		
+		actualNode = n;
+	
+}
+		
+	public void parseSkvAttributeS(Object o, Element n) throws Exception
+	{
+		//Attribute
+		//inner == null
+		//String s as ;
+		int oldAttributeNumber = n.getAttributeNumber();
+		try {
+			
+			Field f = o.getClass().getDeclaredField("s"); //NoSuchFieldException
+			f.setAccessible(true);
+			String iWantThis = (String) f.get(o); //IllegalAccessException
+		
+			Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
+			valueNode.setType("value");
+		
+			valueNode.setName("s");
+			valueNode.setValue(String.valueOf(iWantThis));
+			valueNode.setType("value");
+			
+			valueNode.setParent(n);
+			n.getChildren().add(valueNode);
+		}
+		catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
+		{
+			//e.printStackTrace();
+			n.setAttributeNumber(oldAttributeNumber);
+			throw new ParserException("Error while parsing : String s");
+		}
+	}
+	
+	public void parseSkvAttributeI(Object o, Element n) throws Exception
+	{
+		//Attribute
+		//inner == null
+		//int i as ;
+		int oldAttributeNumber = n.getAttributeNumber();
+		try {
+			
+			Field f = o.getClass().getDeclaredField("i"); //NoSuchFieldException
+			f.setAccessible(true);
+			int iWantThis = (int) f.get(o); //IllegalAccessException
+		
+			Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
+			valueNode.setType("value");
+		
+			valueNode.setName("i");
+			valueNode.setValue(String.valueOf(iWantThis));
+			valueNode.setType("value");
+			
+			valueNode.setParent(n);
+			n.getChildren().add(valueNode);
+		}
+		catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
+		{
+			//e.printStackTrace();
+			n.setAttributeNumber(oldAttributeNumber);
+			throw new ParserException("Error while parsing : int i");
+		}
+	}
+	
+	public void parseSkvNext(Object o, Element n) throws Exception
+	{
+		//Next: 
+		//kein code: next
+		try {
+			Field f = o.getClass().getDeclaredField("next"); //NoSuchFieldException
+			f.setAccessible(true);
+			Object next = (Object) f.get(o); //IllegalAccessException
+		
+			parseNext(next, n);
+			actualNode = n;
+		}
+		catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
+		{
+			throw new ParserException("Error while parsing next");
+		}
+		
+		///maybe
+	}
+	private void parseNext(Object o, Element n) throws Exception
+	{
+		Node newNode = new Node("node"+n.increaseNodeNumber());
+		newNode.setParent(n);
+		n.addChild(newNode);
+	
+	
+		//{Element copy = n.copy();
+		try 
+		{
+			parseNextAttributeS(o, newNode);
+		}
+		catch (ParserException e)
+		{
+			newNode.setParent(null);
+			n.removeChild(newNode);
+			throw e;
+		}
+		
+		//actualNode.getChildren().add(node);
+		
+		actualNode = n;
+	
+		//{Element copy = n.copy();
+		try 
+		{
+			parseNextAttributeI(o, newNode);
+		}
+		catch (ParserException e)
+		{
+			newNode.setParent(null);
+			n.removeChild(newNode);
+			throw e;
+		}
+		
+		//actualNode.getChildren().add(node);
+		
+		actualNode = n;
+	
+}
+		
+	public void parseNextAttributeS(Object o, Element n) throws Exception
+	{
+		//Attribute
+		//inner == null
+		//String s as ;
+		int oldAttributeNumber = n.getAttributeNumber();
+		try {
+			
+			Field f = o.getClass().getDeclaredField("s"); //NoSuchFieldException
+			f.setAccessible(true);
+			String iWantThis = (String) f.get(o); //IllegalAccessException
+		
+			Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
+			valueNode.setType("value");
+		
+			valueNode.setName("s");
+			valueNode.setValue(String.valueOf(iWantThis));
+			valueNode.setType("value");
+			
+			valueNode.setParent(n);
+			n.getChildren().add(valueNode);
+		}
+		catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
+		{
+			//e.printStackTrace();
+			n.setAttributeNumber(oldAttributeNumber);
+			throw new ParserException("Error while parsing : String s");
+		}
+	}
+	
+	public void parseNextAttributeI(Object o, Element n) throws Exception
+	{
+		//Attribute
+		//inner == null
+		//int i as ;
+		int oldAttributeNumber = n.getAttributeNumber();
+		try {
+			
+			Field f = o.getClass().getDeclaredField("i"); //NoSuchFieldException
+			f.setAccessible(true);
+			int iWantThis = (int) f.get(o); //IllegalAccessException
+		
+			Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
+			valueNode.setType("value");
+		
+			valueNode.setName("i");
+			valueNode.setValue(String.valueOf(iWantThis));
+			valueNode.setType("value");
+			
+			valueNode.setParent(n);
+			n.getChildren().add(valueNode);
+		}
+		catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
+		{
+			//e.printStackTrace();
+			n.setAttributeNumber(oldAttributeNumber);
+			throw new ParserException("Error while parsing : int i");
+		}
+	}
+	
+}
+		

@@ -1,13 +1,13 @@
-parserName = "SimpleNextParser";
+parserName = "SimpleJavaCode";
 parserType = javaObject;
 
 Skv: {
 	hasAttribute s ofType String;
 	hasAttribute i ofType int;
-	hasNext next as Next;
+	hasNext java: "getNext();" as Inner;
 }
 
-Next:
+Inner:
 {
 	hasAttribute s ofType String;
 	hasAttribute i ofType int;

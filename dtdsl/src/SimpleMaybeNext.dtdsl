@@ -1,10 +1,10 @@
-parserName = "SimpleNextParser";
+parserName = "SimpleMaybeNextParser";
 parserType = javaObject;
 
 Skv: {
 	hasAttribute s ofType String;
 	hasAttribute i ofType int;
-	hasNext next as Next;
+	hasNext next as Next?;
 }
 
 Next:
@@ -13,4 +13,4 @@ Next:
 	hasAttribute i ofType int;
 }
 
-beginWith = Skv;
+beginWith = Skv; 
