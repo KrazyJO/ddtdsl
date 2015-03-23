@@ -379,6 +379,29 @@ class DTDSLGenerator implements IGenerator {
 						parse«i.inner.name.toFirstUpper»(obj, manyHead);
 					}
 				}
+				else if (next instanceof HashMap)
+				{
+					HashMap hashMap = (HashMap) next;
+					
+					for (Object entry : hashMap.keySet())
+					{
+«««						Node entryNode = new Node("node" + newNode.increaseNodeNumber());
+«««						node.setKey(true);
+«««						node.setValue(String.valueOf(entry));
+«««						node.setName(entry.getClass().toString().replace("class ", ""));
+						
+«««						//Attribute
+						Object valueForEntry = hashMap.get(entry);
+«««						Attribute attribute = new Attribute("attribute" + node.increaseAttributeNumber());
+«««						attribute.setName("children");
+						
+						parse«i.inner.name.toFirstUpper»(valueForEntry, manyHead);
+						Node act = manyHead.getNodeByName("MANYHEAD.node"+(manyHead.size()-1));
+						act.setKey(true);
+						act.setValue(String.valueOf(entry));
+						act.setName(entry.getClass().toString().replace("class ", ""));
+					}
+				}
 				
 				for (Element el : manyHead.getChildren())
 				{

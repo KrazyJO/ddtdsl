@@ -14,8 +14,16 @@ StartPoint:
 ;
 
 Abstract:
-	ObjectDescription //| ObjectChoice | ObjectMany
+	ObjectDescription //| ObjectHashMapDescription
 ;
+
+//ObjectHashMapDescription:
+//	name=ID 'as' 'HashMap' ':' '{' description=ObjectHashMapDescriptionInner '}'
+//;
+//
+//ObjectHashMapDescriptionInner:
+//	
+//;
 
 ObjectDescription:
 	name=ID ':' '{' description+=ObjectDescriptionInner* '}'
