@@ -65,17 +65,18 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
     switch (eClass.getClassifierID())
     {
       case DTDSLPackage.DTDSL: return createDTDSL();
-      case DTDSLPackage.IMPORT_STATEMENT: return createimportStatement();
       case DTDSLPackage.START_POINT: return createStartPoint();
       case DTDSLPackage.ABSTRACT: return createAbstract();
       case DTDSLPackage.OBJECT_DESCRIPTION: return createObjectDescription();
       case DTDSLPackage.OBJECT_DESCRIPTION_INNER: return createObjectDescriptionInner();
       case DTDSLPackage.OBJECT_ATTRIBUTE: return createObjectAttribute();
+      case DTDSLPackage.OBJECT_NODE: return createObjectNode();
       case DTDSLPackage.OBJECT_NEXT: return createObjectNext();
       case DTDSLPackage.JAVA_CODE_OR_ID: return createJavaCodeOrID();
-      case DTDSLPackage.MANY: return createMany();
-      case DTDSLPackage.CHOICE: return createChoice();
+      case DTDSLPackage.OBJECT_MANY: return createObjectMany();
+      case DTDSLPackage.OBJECT_CHOICE: return createObjectChoice();
       case DTDSLPackage.OBJECT_MAYBE: return createObjectMaybe();
+      case DTDSLPackage.OBJECT_MAYBE_INNER: return createObjectMaybeInner();
       case DTDSLPackage.KEYWORD: return createKeyword();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -91,17 +92,6 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
   {
     DTDSLImpl dtdsl = new DTDSLImpl();
     return dtdsl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public importStatement createimportStatement()
-  {
-    importStatementImpl importStatement = new importStatementImpl();
-    return importStatement;
   }
 
   /**
@@ -164,6 +154,17 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ObjectNode createObjectNode()
+  {
+    ObjectNodeImpl objectNode = new ObjectNodeImpl();
+    return objectNode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ObjectNext createObjectNext()
   {
     ObjectNextImpl objectNext = new ObjectNextImpl();
@@ -186,10 +187,10 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Many createMany()
+  public ObjectMany createObjectMany()
   {
-    ManyImpl many = new ManyImpl();
-    return many;
+    ObjectManyImpl objectMany = new ObjectManyImpl();
+    return objectMany;
   }
 
   /**
@@ -197,10 +198,10 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Choice createChoice()
+  public ObjectChoice createObjectChoice()
   {
-    ChoiceImpl choice = new ChoiceImpl();
-    return choice;
+    ObjectChoiceImpl objectChoice = new ObjectChoiceImpl();
+    return objectChoice;
   }
 
   /**
@@ -212,6 +213,17 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
   {
     ObjectMaybeImpl objectMaybe = new ObjectMaybeImpl();
     return objectMaybe;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ObjectMaybeInner createObjectMaybeInner()
+  {
+    ObjectMaybeInnerImpl objectMaybeInner = new ObjectMaybeInnerImpl();
+    return objectMaybeInner;
   }
 
   /**

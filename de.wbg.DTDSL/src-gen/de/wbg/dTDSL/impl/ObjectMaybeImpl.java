@@ -2,10 +2,10 @@
  */
 package de.wbg.dTDSL.impl;
 
-import de.wbg.dTDSL.Abstract;
 import de.wbg.dTDSL.DTDSLPackage;
 import de.wbg.dTDSL.ObjectDescription;
 import de.wbg.dTDSL.ObjectMaybe;
+import de.wbg.dTDSL.ObjectMaybeInner;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.wbg.dTDSL.impl.ObjectMaybeImpl#getObject <em>Object</em>}</li>
- *   <li>{@link de.wbg.dTDSL.impl.ObjectMaybeImpl#getId <em>Id</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.impl.ObjectMaybeImpl#getOption <em>Option</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.impl.ObjectMaybeImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,24 +32,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ObjectMaybeImpl extends ObjectDescriptionInnerImpl implements ObjectMaybe
 {
   /**
-   * The cached value of the '{@link #getObject() <em>Object</em>}' containment reference.
+   * The cached value of the '{@link #getOption() <em>Option</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getObject()
+   * @see #getOption()
    * @generated
    * @ordered
    */
-  protected Abstract object;
+  protected ObjectDescription option;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' reference.
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected ObjectDescription id;
+  protected ObjectMaybeInner description;
 
   /**
    * <!-- begin-user-doc -->
@@ -77,9 +77,19 @@ public class ObjectMaybeImpl extends ObjectDescriptionInnerImpl implements Objec
    * <!-- end-user-doc -->
    * @generated
    */
-  public Abstract getObject()
+  public ObjectDescription getOption()
   {
-    return object;
+    if (option != null && option.eIsProxy())
+    {
+      InternalEObject oldOption = (InternalEObject)option;
+      option = (ObjectDescription)eResolveProxy(oldOption);
+      if (option != oldOption)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DTDSLPackage.OBJECT_MAYBE__OPTION, oldOption, option));
+      }
+    }
+    return option;
   }
 
   /**
@@ -87,13 +97,46 @@ public class ObjectMaybeImpl extends ObjectDescriptionInnerImpl implements Objec
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetObject(Abstract newObject, NotificationChain msgs)
+  public ObjectDescription basicGetOption()
   {
-    Abstract oldObject = object;
-    object = newObject;
+    return option;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOption(ObjectDescription newOption)
+  {
+    ObjectDescription oldOption = option;
+    option = newOption;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_MAYBE__OPTION, oldOption, option));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ObjectMaybeInner getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDescription(ObjectMaybeInner newDescription, NotificationChain msgs)
+  {
+    ObjectMaybeInner oldDescription = description;
+    description = newDescription;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_MAYBE__OBJECT, oldObject, newObject);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_MAYBE__DESCRIPTION, oldDescription, newDescription);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -104,63 +147,20 @@ public class ObjectMaybeImpl extends ObjectDescriptionInnerImpl implements Objec
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setObject(Abstract newObject)
+  public void setDescription(ObjectMaybeInner newDescription)
   {
-    if (newObject != object)
+    if (newDescription != description)
     {
       NotificationChain msgs = null;
-      if (object != null)
-        msgs = ((InternalEObject)object).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DTDSLPackage.OBJECT_MAYBE__OBJECT, null, msgs);
-      if (newObject != null)
-        msgs = ((InternalEObject)newObject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DTDSLPackage.OBJECT_MAYBE__OBJECT, null, msgs);
-      msgs = basicSetObject(newObject, msgs);
+      if (description != null)
+        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DTDSLPackage.OBJECT_MAYBE__DESCRIPTION, null, msgs);
+      if (newDescription != null)
+        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DTDSLPackage.OBJECT_MAYBE__DESCRIPTION, null, msgs);
+      msgs = basicSetDescription(newDescription, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_MAYBE__OBJECT, newObject, newObject));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ObjectDescription getId()
-  {
-    if (id != null && id.eIsProxy())
-    {
-      InternalEObject oldId = (InternalEObject)id;
-      id = (ObjectDescription)eResolveProxy(oldId);
-      if (id != oldId)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DTDSLPackage.OBJECT_MAYBE__ID, oldId, id));
-      }
-    }
-    return id;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ObjectDescription basicGetId()
-  {
-    return id;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setId(ObjectDescription newId)
-  {
-    ObjectDescription oldId = id;
-    id = newId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_MAYBE__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_MAYBE__DESCRIPTION, newDescription, newDescription));
   }
 
   /**
@@ -173,8 +173,8 @@ public class ObjectMaybeImpl extends ObjectDescriptionInnerImpl implements Objec
   {
     switch (featureID)
     {
-      case DTDSLPackage.OBJECT_MAYBE__OBJECT:
-        return basicSetObject(null, msgs);
+      case DTDSLPackage.OBJECT_MAYBE__DESCRIPTION:
+        return basicSetDescription(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -189,11 +189,11 @@ public class ObjectMaybeImpl extends ObjectDescriptionInnerImpl implements Objec
   {
     switch (featureID)
     {
-      case DTDSLPackage.OBJECT_MAYBE__OBJECT:
-        return getObject();
-      case DTDSLPackage.OBJECT_MAYBE__ID:
-        if (resolve) return getId();
-        return basicGetId();
+      case DTDSLPackage.OBJECT_MAYBE__OPTION:
+        if (resolve) return getOption();
+        return basicGetOption();
+      case DTDSLPackage.OBJECT_MAYBE__DESCRIPTION:
+        return getDescription();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -208,11 +208,11 @@ public class ObjectMaybeImpl extends ObjectDescriptionInnerImpl implements Objec
   {
     switch (featureID)
     {
-      case DTDSLPackage.OBJECT_MAYBE__OBJECT:
-        setObject((Abstract)newValue);
+      case DTDSLPackage.OBJECT_MAYBE__OPTION:
+        setOption((ObjectDescription)newValue);
         return;
-      case DTDSLPackage.OBJECT_MAYBE__ID:
-        setId((ObjectDescription)newValue);
+      case DTDSLPackage.OBJECT_MAYBE__DESCRIPTION:
+        setDescription((ObjectMaybeInner)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -228,11 +228,11 @@ public class ObjectMaybeImpl extends ObjectDescriptionInnerImpl implements Objec
   {
     switch (featureID)
     {
-      case DTDSLPackage.OBJECT_MAYBE__OBJECT:
-        setObject((Abstract)null);
+      case DTDSLPackage.OBJECT_MAYBE__OPTION:
+        setOption((ObjectDescription)null);
         return;
-      case DTDSLPackage.OBJECT_MAYBE__ID:
-        setId((ObjectDescription)null);
+      case DTDSLPackage.OBJECT_MAYBE__DESCRIPTION:
+        setDescription((ObjectMaybeInner)null);
         return;
     }
     super.eUnset(featureID);
@@ -248,10 +248,10 @@ public class ObjectMaybeImpl extends ObjectDescriptionInnerImpl implements Objec
   {
     switch (featureID)
     {
-      case DTDSLPackage.OBJECT_MAYBE__OBJECT:
-        return object != null;
-      case DTDSLPackage.OBJECT_MAYBE__ID:
-        return id != null;
+      case DTDSLPackage.OBJECT_MAYBE__OPTION:
+        return option != null;
+      case DTDSLPackage.OBJECT_MAYBE__DESCRIPTION:
+        return description != null;
     }
     return super.eIsSet(featureID);
   }

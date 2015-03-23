@@ -20,7 +20,7 @@ package de.wbg.dTDSL;
  * @model
  * @generated
  */
-public interface ObjectNext extends ObjectDescriptionInner
+public interface ObjectNext extends ObjectDescriptionInner, ObjectMaybeInner
 {
   /**
    * Returns the value of the '<em><b>Attribute</b></em>' containment reference.

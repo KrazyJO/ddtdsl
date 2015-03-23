@@ -85,22 +85,13 @@ public interface DTDSLPackage extends EPackage
   int DTDSL__TYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DTDSL__IMPORTS = 2;
-
-  /**
    * The feature id for the '<em><b>Obj Description</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DTDSL__OBJ_DESCRIPTION = 3;
+  int DTDSL__OBJ_DESCRIPTION = 2;
 
   /**
    * The feature id for the '<em><b>Start</b></em>' containment reference.
@@ -109,7 +100,7 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DTDSL__START = 4;
+  int DTDSL__START = 3;
 
   /**
    * The number of structural features of the '<em>DTDSL</em>' class.
@@ -118,35 +109,7 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DTDSL_FEATURE_COUNT = 5;
-
-  /**
-   * The meta object id for the '{@link de.wbg.dTDSL.impl.importStatementImpl <em>import Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.wbg.dTDSL.impl.importStatementImpl
-   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getimportStatement()
-   * @generated
-   */
-  int IMPORT_STATEMENT = 1;
-
-  /**
-   * The feature id for the '<em><b>Import Class</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_STATEMENT__IMPORT_CLASS = 0;
-
-  /**
-   * The number of structural features of the '<em>import Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT_STATEMENT_FEATURE_COUNT = 1;
+  int DTDSL_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.StartPointImpl <em>Start Point</em>}' class.
@@ -156,7 +119,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStartPoint()
    * @generated
    */
-  int START_POINT = 2;
+  int START_POINT = 1;
 
   /**
    * The feature id for the '<em><b>Begin</b></em>' reference.
@@ -184,7 +147,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getAbstract()
    * @generated
    */
-  int ABSTRACT = 3;
+  int ABSTRACT = 2;
 
   /**
    * The number of structural features of the '<em>Abstract</em>' class.
@@ -203,7 +166,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectDescription()
    * @generated
    */
-  int OBJECT_DESCRIPTION = 4;
+  int OBJECT_DESCRIPTION = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -215,13 +178,22 @@ public interface DTDSLPackage extends EPackage
   int OBJECT_DESCRIPTION__NAME = ABSTRACT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>No Node</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DESCRIPTION__NO_NODE = ABSTRACT_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Description</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBJECT_DESCRIPTION__DESCRIPTION = ABSTRACT_FEATURE_COUNT + 1;
+  int OBJECT_DESCRIPTION__DESCRIPTION = ABSTRACT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Object Description</em>' class.
@@ -230,7 +202,7 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_DESCRIPTION_FEATURE_COUNT = ABSTRACT_FEATURE_COUNT + 2;
+  int OBJECT_DESCRIPTION_FEATURE_COUNT = ABSTRACT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectDescriptionInnerImpl <em>Object Description Inner</em>}' class.
@@ -240,7 +212,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectDescriptionInner()
    * @generated
    */
-  int OBJECT_DESCRIPTION_INNER = 5;
+  int OBJECT_DESCRIPTION_INNER = 4;
 
   /**
    * The number of structural features of the '<em>Object Description Inner</em>' class.
@@ -259,7 +231,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectAttribute()
    * @generated
    */
-  int OBJECT_ATTRIBUTE = 6;
+  int OBJECT_ATTRIBUTE = 5;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' attribute.
@@ -280,22 +252,13 @@ public interface DTDSLPackage extends EPackage
   int OBJECT_ATTRIBUTE__TYPES = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBJECT_ATTRIBUTE__KEYWORD = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 2;
-
-  /**
    * The feature id for the '<em><b>Inner</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBJECT_ATTRIBUTE__INNER = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 3;
+  int OBJECT_ATTRIBUTE__INNER = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Object Attribute</em>' class.
@@ -304,7 +267,44 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_ATTRIBUTE_FEATURE_COUNT = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 4;
+  int OBJECT_ATTRIBUTE_FEATURE_COUNT = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectNodeImpl <em>Object Node</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.wbg.dTDSL.impl.ObjectNodeImpl
+   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectNode()
+   * @generated
+   */
+  int OBJECT_NODE = 6;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_NODE__ATTRIBUTES = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Inner</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_NODE__INNER = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Object Node</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_NODE_FEATURE_COUNT = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectNextImpl <em>Object Next</em>}' class.
@@ -381,42 +381,42 @@ public interface DTDSLPackage extends EPackage
   int JAVA_CODE_OR_ID_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link de.wbg.dTDSL.impl.ManyImpl <em>Many</em>}' class.
+   * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectManyImpl <em>Object Many</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.wbg.dTDSL.impl.ManyImpl
-   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getMany()
+   * @see de.wbg.dTDSL.impl.ObjectManyImpl
+   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectMany()
    * @generated
    */
-  int MANY = 9;
+  int OBJECT_MANY = 9;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' containment reference.
+   * The feature id for the '<em><b>Option</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MANY__DESCRIPTION = ABSTRACT_FEATURE_COUNT + 0;
+  int OBJECT_MANY__OPTION = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Many</em>' class.
+   * The number of structural features of the '<em>Object Many</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MANY_FEATURE_COUNT = ABSTRACT_FEATURE_COUNT + 1;
+  int OBJECT_MANY_FEATURE_COUNT = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link de.wbg.dTDSL.impl.ChoiceImpl <em>Choice</em>}' class.
+   * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectChoiceImpl <em>Object Choice</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.wbg.dTDSL.impl.ChoiceImpl
-   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getChoice()
+   * @see de.wbg.dTDSL.impl.ObjectChoiceImpl
+   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectChoice()
    * @generated
    */
-  int CHOICE = 10;
+  int OBJECT_CHOICE = 10;
 
   /**
    * The feature id for the '<em><b>Options</b></em>' containment reference list.
@@ -425,16 +425,16 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHOICE__OPTIONS = ABSTRACT_FEATURE_COUNT + 0;
+  int OBJECT_CHOICE__OPTIONS = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Choice</em>' class.
+   * The number of structural features of the '<em>Object Choice</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CHOICE_FEATURE_COUNT = ABSTRACT_FEATURE_COUNT + 1;
+  int OBJECT_CHOICE_FEATURE_COUNT = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectMaybeImpl <em>Object Maybe</em>}' class.
@@ -447,22 +447,22 @@ public interface DTDSLPackage extends EPackage
   int OBJECT_MAYBE = 11;
 
   /**
-   * The feature id for the '<em><b>Object</b></em>' containment reference.
+   * The feature id for the '<em><b>Option</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBJECT_MAYBE__OBJECT = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 0;
+  int OBJECT_MAYBE__OPTION = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' reference.
+   * The feature id for the '<em><b>Description</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBJECT_MAYBE__ID = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 1;
+  int OBJECT_MAYBE__DESCRIPTION = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Object Maybe</em>' class.
@@ -474,6 +474,25 @@ public interface DTDSLPackage extends EPackage
   int OBJECT_MAYBE_FEATURE_COUNT = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectMaybeInnerImpl <em>Object Maybe Inner</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.wbg.dTDSL.impl.ObjectMaybeInnerImpl
+   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectMaybeInner()
+   * @generated
+   */
+  int OBJECT_MAYBE_INNER = 12;
+
+  /**
+   * The number of structural features of the '<em>Object Maybe Inner</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_MAYBE_INNER_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.KeywordImpl <em>Keyword</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -481,7 +500,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getKeyword()
    * @generated
    */
-  int KEYWORD = 12;
+  int KEYWORD = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -535,17 +554,6 @@ public interface DTDSLPackage extends EPackage
   EAttribute getDTDSL_Type();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.DTDSL#getImports <em>Imports</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Imports</em>'.
-   * @see de.wbg.dTDSL.DTDSL#getImports()
-   * @see #getDTDSL()
-   * @generated
-   */
-  EReference getDTDSL_Imports();
-
-  /**
    * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.DTDSL#getObjDescription <em>Obj Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -566,27 +574,6 @@ public interface DTDSLPackage extends EPackage
    * @generated
    */
   EReference getDTDSL_Start();
-
-  /**
-   * Returns the meta object for class '{@link de.wbg.dTDSL.importStatement <em>import Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>import Statement</em>'.
-   * @see de.wbg.dTDSL.importStatement
-   * @generated
-   */
-  EClass getimportStatement();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.importStatement#getImportClass <em>Import Class</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Import Class</em>'.
-   * @see de.wbg.dTDSL.importStatement#getImportClass()
-   * @see #getimportStatement()
-   * @generated
-   */
-  EAttribute getimportStatement_ImportClass();
 
   /**
    * Returns the meta object for class '{@link de.wbg.dTDSL.StartPoint <em>Start Point</em>}'.
@@ -639,6 +626,17 @@ public interface DTDSLPackage extends EPackage
    * @generated
    */
   EAttribute getObjectDescription_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.ObjectDescription#getNoNode <em>No Node</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>No Node</em>'.
+   * @see de.wbg.dTDSL.ObjectDescription#getNoNode()
+   * @see #getObjectDescription()
+   * @generated
+   */
+  EAttribute getObjectDescription_NoNode();
 
   /**
    * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.ObjectDescription#getDescription <em>Description</em>}'.
@@ -694,17 +692,6 @@ public interface DTDSLPackage extends EPackage
   EAttribute getObjectAttribute_Types();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.wbg.dTDSL.ObjectAttribute#getKeyword <em>Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Keyword</em>'.
-   * @see de.wbg.dTDSL.ObjectAttribute#getKeyword()
-   * @see #getObjectAttribute()
-   * @generated
-   */
-  EReference getObjectAttribute_Keyword();
-
-  /**
    * Returns the meta object for the reference '{@link de.wbg.dTDSL.ObjectAttribute#getInner <em>Inner</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -714,6 +701,38 @@ public interface DTDSLPackage extends EPackage
    * @generated
    */
   EReference getObjectAttribute_Inner();
+
+  /**
+   * Returns the meta object for class '{@link de.wbg.dTDSL.ObjectNode <em>Object Node</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Object Node</em>'.
+   * @see de.wbg.dTDSL.ObjectNode
+   * @generated
+   */
+  EClass getObjectNode();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.ObjectNode#getAttributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Attributes</em>'.
+   * @see de.wbg.dTDSL.ObjectNode#getAttributes()
+   * @see #getObjectNode()
+   * @generated
+   */
+  EAttribute getObjectNode_Attributes();
+
+  /**
+   * Returns the meta object for the reference '{@link de.wbg.dTDSL.ObjectNode#getInner <em>Inner</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Inner</em>'.
+   * @see de.wbg.dTDSL.ObjectNode#getInner()
+   * @see #getObjectNode()
+   * @generated
+   */
+  EReference getObjectNode_Inner();
 
   /**
    * Returns the meta object for class '{@link de.wbg.dTDSL.ObjectNext <em>Object Next</em>}'.
@@ -780,46 +799,46 @@ public interface DTDSLPackage extends EPackage
   EAttribute getJavaCodeOrID_Id();
 
   /**
-   * Returns the meta object for class '{@link de.wbg.dTDSL.Many <em>Many</em>}'.
+   * Returns the meta object for class '{@link de.wbg.dTDSL.ObjectMany <em>Object Many</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Many</em>'.
-   * @see de.wbg.dTDSL.Many
+   * @return the meta object for class '<em>Object Many</em>'.
+   * @see de.wbg.dTDSL.ObjectMany
    * @generated
    */
-  EClass getMany();
+  EClass getObjectMany();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.wbg.dTDSL.Many#getDescription <em>Description</em>}'.
+   * Returns the meta object for the containment reference '{@link de.wbg.dTDSL.ObjectMany#getOption <em>Option</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Description</em>'.
-   * @see de.wbg.dTDSL.Many#getDescription()
-   * @see #getMany()
+   * @return the meta object for the containment reference '<em>Option</em>'.
+   * @see de.wbg.dTDSL.ObjectMany#getOption()
+   * @see #getObjectMany()
    * @generated
    */
-  EReference getMany_Description();
+  EReference getObjectMany_Option();
 
   /**
-   * Returns the meta object for class '{@link de.wbg.dTDSL.Choice <em>Choice</em>}'.
+   * Returns the meta object for class '{@link de.wbg.dTDSL.ObjectChoice <em>Object Choice</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Choice</em>'.
-   * @see de.wbg.dTDSL.Choice
+   * @return the meta object for class '<em>Object Choice</em>'.
+   * @see de.wbg.dTDSL.ObjectChoice
    * @generated
    */
-  EClass getChoice();
+  EClass getObjectChoice();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.Choice#getOptions <em>Options</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.ObjectChoice#getOptions <em>Options</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Options</em>'.
-   * @see de.wbg.dTDSL.Choice#getOptions()
-   * @see #getChoice()
+   * @see de.wbg.dTDSL.ObjectChoice#getOptions()
+   * @see #getObjectChoice()
    * @generated
    */
-  EReference getChoice_Options();
+  EReference getObjectChoice_Options();
 
   /**
    * Returns the meta object for class '{@link de.wbg.dTDSL.ObjectMaybe <em>Object Maybe</em>}'.
@@ -832,26 +851,36 @@ public interface DTDSLPackage extends EPackage
   EClass getObjectMaybe();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.wbg.dTDSL.ObjectMaybe#getObject <em>Object</em>}'.
+   * Returns the meta object for the reference '{@link de.wbg.dTDSL.ObjectMaybe#getOption <em>Option</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Object</em>'.
-   * @see de.wbg.dTDSL.ObjectMaybe#getObject()
+   * @return the meta object for the reference '<em>Option</em>'.
+   * @see de.wbg.dTDSL.ObjectMaybe#getOption()
    * @see #getObjectMaybe()
    * @generated
    */
-  EReference getObjectMaybe_Object();
+  EReference getObjectMaybe_Option();
 
   /**
-   * Returns the meta object for the reference '{@link de.wbg.dTDSL.ObjectMaybe#getId <em>Id</em>}'.
+   * Returns the meta object for the containment reference '{@link de.wbg.dTDSL.ObjectMaybe#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Id</em>'.
-   * @see de.wbg.dTDSL.ObjectMaybe#getId()
+   * @return the meta object for the containment reference '<em>Description</em>'.
+   * @see de.wbg.dTDSL.ObjectMaybe#getDescription()
    * @see #getObjectMaybe()
    * @generated
    */
-  EReference getObjectMaybe_Id();
+  EReference getObjectMaybe_Description();
+
+  /**
+   * Returns the meta object for class '{@link de.wbg.dTDSL.ObjectMaybeInner <em>Object Maybe Inner</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Object Maybe Inner</em>'.
+   * @see de.wbg.dTDSL.ObjectMaybeInner
+   * @generated
+   */
+  EClass getObjectMaybeInner();
 
   /**
    * Returns the meta object for class '{@link de.wbg.dTDSL.Keyword <em>Keyword</em>}'.
@@ -924,14 +953,6 @@ public interface DTDSLPackage extends EPackage
     EAttribute DTDSL__TYPE = eINSTANCE.getDTDSL_Type();
 
     /**
-     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DTDSL__IMPORTS = eINSTANCE.getDTDSL_Imports();
-
-    /**
      * The meta object literal for the '<em><b>Obj Description</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -946,24 +967,6 @@ public interface DTDSLPackage extends EPackage
      * @generated
      */
     EReference DTDSL__START = eINSTANCE.getDTDSL_Start();
-
-    /**
-     * The meta object literal for the '{@link de.wbg.dTDSL.impl.importStatementImpl <em>import Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.wbg.dTDSL.impl.importStatementImpl
-     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getimportStatement()
-     * @generated
-     */
-    EClass IMPORT_STATEMENT = eINSTANCE.getimportStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Import Class</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPORT_STATEMENT__IMPORT_CLASS = eINSTANCE.getimportStatement_ImportClass();
 
     /**
      * The meta object literal for the '{@link de.wbg.dTDSL.impl.StartPointImpl <em>Start Point</em>}' class.
@@ -1012,6 +1015,14 @@ public interface DTDSLPackage extends EPackage
     EAttribute OBJECT_DESCRIPTION__NAME = eINSTANCE.getObjectDescription_Name();
 
     /**
+     * The meta object literal for the '<em><b>No Node</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OBJECT_DESCRIPTION__NO_NODE = eINSTANCE.getObjectDescription_NoNode();
+
+    /**
      * The meta object literal for the '<em><b>Description</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1056,12 +1067,30 @@ public interface DTDSLPackage extends EPackage
     EAttribute OBJECT_ATTRIBUTE__TYPES = eINSTANCE.getObjectAttribute_Types();
 
     /**
-     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Inner</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OBJECT_ATTRIBUTE__KEYWORD = eINSTANCE.getObjectAttribute_Keyword();
+    EReference OBJECT_ATTRIBUTE__INNER = eINSTANCE.getObjectAttribute_Inner();
+
+    /**
+     * The meta object literal for the '{@link de.wbg.dTDSL.impl.ObjectNodeImpl <em>Object Node</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.wbg.dTDSL.impl.ObjectNodeImpl
+     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectNode()
+     * @generated
+     */
+    EClass OBJECT_NODE = eINSTANCE.getObjectNode();
+
+    /**
+     * The meta object literal for the '<em><b>Attributes</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OBJECT_NODE__ATTRIBUTES = eINSTANCE.getObjectNode_Attributes();
 
     /**
      * The meta object literal for the '<em><b>Inner</b></em>' reference feature.
@@ -1069,7 +1098,7 @@ public interface DTDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OBJECT_ATTRIBUTE__INNER = eINSTANCE.getObjectAttribute_Inner();
+    EReference OBJECT_NODE__INNER = eINSTANCE.getObjectNode_Inner();
 
     /**
      * The meta object literal for the '{@link de.wbg.dTDSL.impl.ObjectNextImpl <em>Object Next</em>}' class.
@@ -1124,32 +1153,32 @@ public interface DTDSLPackage extends EPackage
     EAttribute JAVA_CODE_OR_ID__ID = eINSTANCE.getJavaCodeOrID_Id();
 
     /**
-     * The meta object literal for the '{@link de.wbg.dTDSL.impl.ManyImpl <em>Many</em>}' class.
+     * The meta object literal for the '{@link de.wbg.dTDSL.impl.ObjectManyImpl <em>Object Many</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.wbg.dTDSL.impl.ManyImpl
-     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getMany()
+     * @see de.wbg.dTDSL.impl.ObjectManyImpl
+     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectMany()
      * @generated
      */
-    EClass MANY = eINSTANCE.getMany();
+    EClass OBJECT_MANY = eINSTANCE.getObjectMany();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Option</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MANY__DESCRIPTION = eINSTANCE.getMany_Description();
+    EReference OBJECT_MANY__OPTION = eINSTANCE.getObjectMany_Option();
 
     /**
-     * The meta object literal for the '{@link de.wbg.dTDSL.impl.ChoiceImpl <em>Choice</em>}' class.
+     * The meta object literal for the '{@link de.wbg.dTDSL.impl.ObjectChoiceImpl <em>Object Choice</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.wbg.dTDSL.impl.ChoiceImpl
-     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getChoice()
+     * @see de.wbg.dTDSL.impl.ObjectChoiceImpl
+     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectChoice()
      * @generated
      */
-    EClass CHOICE = eINSTANCE.getChoice();
+    EClass OBJECT_CHOICE = eINSTANCE.getObjectChoice();
 
     /**
      * The meta object literal for the '<em><b>Options</b></em>' containment reference list feature.
@@ -1157,7 +1186,7 @@ public interface DTDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CHOICE__OPTIONS = eINSTANCE.getChoice_Options();
+    EReference OBJECT_CHOICE__OPTIONS = eINSTANCE.getObjectChoice_Options();
 
     /**
      * The meta object literal for the '{@link de.wbg.dTDSL.impl.ObjectMaybeImpl <em>Object Maybe</em>}' class.
@@ -1170,20 +1199,30 @@ public interface DTDSLPackage extends EPackage
     EClass OBJECT_MAYBE = eINSTANCE.getObjectMaybe();
 
     /**
-     * The meta object literal for the '<em><b>Object</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Option</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OBJECT_MAYBE__OBJECT = eINSTANCE.getObjectMaybe_Object();
+    EReference OBJECT_MAYBE__OPTION = eINSTANCE.getObjectMaybe_Option();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OBJECT_MAYBE__ID = eINSTANCE.getObjectMaybe_Id();
+    EReference OBJECT_MAYBE__DESCRIPTION = eINSTANCE.getObjectMaybe_Description();
+
+    /**
+     * The meta object literal for the '{@link de.wbg.dTDSL.impl.ObjectMaybeInnerImpl <em>Object Maybe Inner</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.wbg.dTDSL.impl.ObjectMaybeInnerImpl
+     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectMaybeInner()
+     * @generated
+     */
+    EClass OBJECT_MAYBE_INNER = eINSTANCE.getObjectMaybeInner();
 
     /**
      * The meta object literal for the '{@link de.wbg.dTDSL.impl.KeywordImpl <em>Keyword</em>}' class.

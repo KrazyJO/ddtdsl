@@ -3,18 +3,32 @@
  */
 package de.wbg.generator
 
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IGenerator
-import org.eclipse.xtext.generator.IFileSystemAccess
-import de.wbg.dTDSL.DTDSL
-import de.wbg.dTDSL.Choice
-import de.wbg.dTDSL.Many
-import de.wbg.dTDSL.Keyword
-import de.wbg.dTDSL.ObjectDescription
-import de.wbg.NodeGen
-import de.wbg.dTDSL.ObjectAttribute
-import de.wbg.dTDSL.ObjectNext
 import de.wbg.ExceptionGen
+import de.wbg.ExtraMethodsGen
+import de.wbg.NodeGen
+import de.wbg.dTDSL.Abstract
+import de.wbg.dTDSL.DTDSL
+import de.wbg.dTDSL.ObjectAttribute
+import de.wbg.dTDSL.ObjectDescription
+import de.wbg.dTDSL.ObjectDescriptionInner
+import de.wbg.dTDSL.ObjectMany
+import de.wbg.dTDSL.ObjectMaybe
+import de.wbg.dTDSL.ObjectNext
+import de.wbg.dTDSL.ObjectNode
+import de.wbg.extra.ChainMaybe
+import de.wbg.extra.ObjectMaybeAttribute
+import de.wbg.extra.ObjectMaybeNext
+import de.wbg.extra.ObjectMaybeNode
+import java.util.LinkedList
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.xtext.generator.IGenerator
+import de.wbg.extra.ChainMethodsInner
+import de.wbg.extra.ChainMethodsInnerObjectAttribute
+import de.wbg.extra.ChainMethodsInnerObjectMany
+import de.wbg.extra.ChainMethodsInnerObjectMaybe
+import de.wbg.extra.ChainMethodsInnerObjectNext
+import de.wbg.extra.ChainMethodsInnerObjectNode
 
 /**
  * Generates code from your model files on save.
@@ -23,15 +37,27 @@ import de.wbg.ExceptionGen
  */
 class DTDSLGenerator implements IGenerator {
 	
+	var needGetInstanceGenerated = false;
+	var LinkedList<ChainMaybe> objectMaybeChain;
+	var LinkedList<ChainMethodsInner> methodsInnerChain;
+	
+	def boolean getNeedGetInstanceGenerated()
+	{
+		this.needGetInstanceGenerated
+	}
+	
+	def void setNeedGetInstanceGenerated(boolean value)
+	{
+		this.needGetInstanceGenerated = value
+	}
+	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
 
+		needGetInstanceGenerated = false;
 		var nodeGen = new NodeGen()
 		var exceptionGen = new ExceptionGen()
+		this.initObjectMaybeChain();
+		this.initMethodsInnerChain();
 
 		fsa.generateFile('de/wbg/dtdsl/Node.java', nodeGen.generateNode)
 		fsa.generateFile('de/wbg/dtdsl/Head.java', nodeGen.generateHead)
@@ -39,6 +65,12 @@ class DTDSLGenerator implements IGenerator {
 		fsa.generateFile('de/wbg/dtdsl/Element.java', nodeGen.generateElement)
 
 		fsa.generateFile('de/wbg/dtdsl/ParserException.java', exceptionGen.exceptionGenerator)
+
+		for (model: resource.allContents.toIterable.filter(DTDSL))
+		{
+			//extra Durchlauf für needGetInstanceGenerated (damit die imports generiert werden)
+			model.compile();
+		}
 
 		for (model: resource.allContents.toIterable.filter(DTDSL))
 		{
@@ -64,6 +96,14 @@ class DTDSLGenerator implements IGenerator {
 		package de.wbg.dtdsl;
 		
 		import java.lang.reflect.Field;
+		«if (needGetInstanceGenerated)
+		{
+			'''
+			import java.util.ArrayList;
+			import java.util.HashMap;
+			import java.util.LinkedList;
+			'''				
+		}»
 		
 		class «model.parserName.toFirstUpper» {
 			
@@ -72,15 +112,13 @@ class DTDSLGenerator implements IGenerator {
 			
 			public «model.parserName.toFirstUpper»()
 			{
-				this.headNode = new Head();
-«««				this.headNode.setKey(false);
-«««				this.headNode.setName("HeadNode");
-«««				this.headNode.setValue("none");
-				this.actualNode = this.headNode;
+				
 			}
 			
 			public Head parse(Object o)
 			{
+				this.headNode = new Head("HEAD");
+				this.actualNode = this.headNode;
 				//model.start
 				try {
 					parse«model.start.begin.name»(o, actualNode);
@@ -95,34 +133,252 @@ class DTDSLGenerator implements IGenerator {
 			}
 			
 		'''
+		
+		
 		for (d: model.objDescription)
 		{
-			if (d instanceof ObjectDescription) 
-			{
-				ret+=
-				'''	private void parse«d.name»(Object o, Element n) throws Exception
-	{
-		'''for (i: d.description)
-			{
-				if (i instanceof ObjectAttribute) {ret += i.compile}
-				if (i instanceof ObjectNext) {ret += i.compile}
-						
-			}
-			ret+= '''		//actualNode.getChildren().add(node);
-		actualNode = n;
-	}
-			
-			'''	
-			}
-			
+			ret += compileMethods(d)
+			//alle Fields innerhalb des Objektes
+			if (d instanceof ObjectDescription) {ret += d.compileMethodsInner}
 			
 		}
 		
-		ret += '''
+		if (needGetInstanceGenerated)
+		{
+			var generator = new ExtraMethodsGen
+			ret += generator.generateGetInstance 
 		}
+		
+		ret += '''}
 		
 		'''
 		
+		ret
+	}
+	
+	def CharSequence compileMethodsInner(ObjectDescription d)
+	{
+		var ret = ''''''
+		
+		for (i: d.description)
+		{
+			for (entry: methodsInnerChain)
+			{
+				if (entry.handle(d, i))
+				{
+					ret += entry.returnValue
+				}
+			}
+		}	
+		
+		ret
+	}
+	
+	def CharSequence compileMethods(Abstract d)
+	{
+		var ret = ''''''
+		
+		if (d instanceof ObjectDescription) 
+		{
+			
+			ret+=
+			'''	private void parse«d.name»(Object o, Element n) throws Exception
+	{
+	«if (d.noNode == null)
+	{
+		'''	Node newNode = new Node("node"+n.increaseNodeNumber());
+	newNode.setParent(n);
+	n.addChild(newNode);'''
+	}»
+	
+	
+	'''for (i: d.description)
+		{
+			ret +=
+			'''		//{Element copy = n.copy();
+		try 
+		{
+			«if (i instanceof ObjectAttribute)
+		{
+			'''parse«d.name.toFirstUpper»Attribute«i.attributes.toFirstUpper »(o, «i.argument»);''' 
+		}
+		else if (i instanceof ObjectNext)
+		{
+			'''parse«d.name.toFirstUpper»«i.objectDesription.name.toFirstUpper»(o, «i.argument»);'''
+		} 
+		else if (i instanceof ObjectNode)
+		{
+			'''parse«d.name.toFirstUpper»«i.attributes.toFirstUpper»(o, «i.argument»);'''
+		}
+		else if (i instanceof ObjectMaybe)
+		{
+			this.compileMethodMaybeCall(i, d)
+		}
+		else if (i instanceof ObjectMany)
+		{
+			this.compileMethodeManyCall(i, d)
+		}»
+			''' 
+			
+			if (d.noNode == null)
+			{
+				ret+=
+			'''		}
+		catch (ParserException e)
+		{
+			newNode.setParent(null);
+			n.removeChild(newNode);
+			throw e;
+		}
+		
+		//actualNode.getChildren().add(node);
+		
+		actualNode = n;
+	
+			'''		
+			}
+			else
+			{
+			ret += '''		}		
+		catch (ParserException e)
+		{
+			throw e;
+		}'''
+		}
+			
+		}
+		ret+= '''
+}
+		
+		'''	
+		
+		}
+			
+		ret
+	}
+	
+	def compileMethodeManyCall(ObjectMany many, ObjectDescription description) 
+	{
+		var ret = ''''''
+		
+		var i = many.option
+		
+		if (i instanceof ObjectAttribute)
+		{
+			ret += '''//many Attribute'''
+		}
+		else if (i instanceof ObjectNext)
+		{
+			ret += '''//many Next
+			'''
+			if (i.objectDesription != null)
+			{
+				var String call;
+				if (i.attribute.id != null )
+				{
+					call = i.attribute.id
+				}
+				ret += '''
+				Field f = o.getClass().getDeclaredField("«call»");
+				f.setAccessible(true);
+				Object next = (Object) f.get(o);
+				Head manyHead = new Head("MANYHEAD");
+				
+				//String instance = this.getInstance(next);
+				if (next instanceof Object[])
+				{
+					for (int index = 0; index < ((Object[])next).length; index++)
+					{
+						parse«i.objectDesription.name.toFirstUpper»(((Object[])next)[index], manyHead);
+					}
+				}
+				else if (next instanceof ArrayList)
+				{
+					ArrayList al = (ArrayList)next;
+					for (Object obj: al)
+					{
+						parse«i.objectDesription.name.toFirstUpper»(obj, manyHead);
+					}
+				}
+				else if (next instanceof LinkedList)
+				{
+					LinkedList al = (LinkedList)next;
+					for (Object obj: al)
+					{
+						parse«i.objectDesription.name.toFirstUpper»(obj, manyHead);
+					}
+				}
+				
+				for (Element el : manyHead.getChildren())
+				{
+					n.addChild(el);
+					el.setParent(n);
+				}
+				'''
+				
+			}
+		}
+		else if (i instanceof ObjectNode)
+		{
+			ret += '''//many Node'''	
+		}
+		
+		ret
+	}
+
+
+	def CharSequence compileMethodMaybeCall(ObjectMaybe i, ObjectDescription d)
+	{
+		if (i.description != null)
+		{
+			var inner = i.description;
+			var CharSequence rValue;
+			for (entry: this.objectMaybeChain)
+			{
+				if (entry.handle(inner, d, i))
+				{
+					rValue = entry.returnValue;
+				}
+			}
+			
+			rValue
+		}
+		else
+		{
+				//i.option ist gesetzt
+				'''parse«i.option.name.toFirstUpper»();'''
+				
+		}
+	}
+	
+	def CharSequence compileMany(ObjectMany m)
+	{
+		'''		//many
+		'''
+	}
+	
+	def CharSequence compile(ObjectNode n)
+	{
+		var ret = ''' //Node
+		'''
+		
+		ret += '''
+		try
+		{
+			Field f = o.getClass().getDeclaredField("«n.attributes»");
+			f.setAccessible(true);
+			Object next = (Object) f.get(o);
+			parse«n.inner.name.toFirstUpper»(next, n);
+		}
+		catch(NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
+		{
+			throw new ParserException("Error while parsing «n.attributes» in «n»");
+		}
+		catch (ParserException e)
+		{
+			throw e;
+		}
+					'''
 		ret
 	}
 	
@@ -133,65 +389,37 @@ class DTDSLGenerator implements IGenerator {
 		
 		if (a.inner == null) {
 			ret += '''		//inner == null
-		//«a.types» «a.attributes» as «a.keyword.name»;
-		«if (a.keyword.name == 'Key')
-		{
-			'''Node node = new Node();
-node.setParent(n);
-n.addChild(node);
+//«a.types» «a.attributes» as ;
+			'''
+			
+		
+			ret += '''		int oldAttributeNumber = n.getAttributeNumber();
+	try {
+
+		Field f = o.getClass().getDeclaredField("«a.attributes»"); //NoSuchFieldException
+		f.setAccessible(true);
+		«a.types» iWantThis = («a.types») f.get(o); //IllegalAccessException
 	
-try {
-	Field f = o.getClass().getDeclaredField("«a.attributes»"); //NoSuchFieldException
-	f.setAccessible(true);
-	«a.types» iWantThis = («a.types») f.get(o); //IllegalAccessException
-
-	node.setName("«a.attributes»");
-	node.setValue(String.valueOf(iWantThis));
-	node.setKey(true);
-} 
-catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
-{
-	//e.printStackTrace();
-	throw new ParserException("Error while parsing «a.keyword.name»: «a.types» «a.attributes»");
-}
-'''
-		}
-		else if (a.keyword.name == 'Value')
-		{
-			'''try {
-	Attribute valueNode = new Attribute();
-	valueNode.setType("value");
-
-	Field f = o.getClass().getDeclaredField("«a.attributes»"); //NoSuchFieldException
-	f.setAccessible(true);
-	«a.types» iWantThis = («a.types») f.get(o); //IllegalAccessException
-
-	valueNode.setName("«a.attributes»");
-	valueNode.setValue(String.valueOf(iWantThis));
-	valueNode.setType("value");
+		Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
+		valueNode.setType("value");
 	
-	valueNode.setParent(node);
-	node.getChildren().add(valueNode);
-}
-catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
-{
-	//e.printStackTrace();
-	throw new ParserException("Error while parsing «a.keyword.name»: «a.types» «a.attributes»");
-}
+		valueNode.setName("«a.attributes»");
+		valueNode.setValue(String.valueOf(iWantThis));
+		valueNode.setType("value");
+		
+		valueNode.setParent(n);
+		n.getChildren().add(valueNode);
+	}
+	catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
+	{
+		//e.printStackTrace();
+		n.setAttributeNumber(oldAttributeNumber);
+		throw new ParserException("Error while parsing : «a.types» «a.attributes»");
+	}
 '''
 
-
-		}»
-			'''
-		} else {
-			ret += '''		//inner == «a.inner.name»
-			'''
 		}
-		
-		ret += '''
-		
-		'''
-		
+
 		ret
 	}
 	
@@ -209,11 +437,13 @@ catch (NoSuchFieldException | SecurityException | IllegalArgumentException | Ill
 				Object next = (Object) f.get(o); //IllegalAccessException
 			
 				parse«n.objectDesription.name»(next, n);
+				actualNode = n;
 			}
 			catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 			{
 				throw new ParserException("Error while parsing «n.attribute.id»");
 			}
+
 			'''
 			ret
 		}
@@ -223,5 +453,39 @@ catch (NoSuchFieldException | SecurityException | IllegalArgumentException | Ill
 		}
 		»
 		'''	
+	}
+	
+	def CharSequence getArgument(ObjectDescriptionInner d)
+	{
+		if (d instanceof ObjectNext)
+		{
+			'''n'''
+		}
+		else if (d instanceof ObjectAttribute)
+		{
+			'''newNode'''
+		} 
+		else
+		{
+			'''newNode'''
+		}
+	}
+	
+	//not for compiling
+	def void initObjectMaybeChain()
+	{
+		this.objectMaybeChain = new LinkedList<ChainMaybe>();
+		this.objectMaybeChain.add(new ObjectMaybeAttribute);
+		this.objectMaybeChain.add(new ObjectMaybeNode);
+		this.objectMaybeChain.add(new ObjectMaybeNext);
+	}
+	
+	def initMethodsInnerChain() {
+		this.methodsInnerChain = new LinkedList<ChainMethodsInner>()
+		this.methodsInnerChain.add(new ChainMethodsInnerObjectAttribute)
+		this.methodsInnerChain.add(new ChainMethodsInnerObjectMany(this))
+		this.methodsInnerChain.add(new ChainMethodsInnerObjectMaybe(this))
+		this.methodsInnerChain.add(new ChainMethodsInnerObjectNext)
+		this.methodsInnerChain.add(new ChainMethodsInnerObjectNode)
 	}
 }

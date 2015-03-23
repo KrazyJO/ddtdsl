@@ -5,14 +5,8 @@ generate dTDSL "http://www.wbg.de/DTDSL"
 DTDSL:
 	'parserName' '=' parserName=STRING ';'
 	'parserType' '=' type=('javaObject' | 'string') ';'
-	imports+=importStatement*
 	objDescription+=Abstract*
 	start=StartPoint
-//	objDescription+=Abstract*
-;
-
-importStatement:
-	'import' importClass=ID ';'
 ;
 
 StartPoint:
@@ -20,23 +14,35 @@ StartPoint:
 ;
 
 Abstract:
-	ObjectDescription | Choice | Many
+	ObjectDescription //| ObjectChoice | ObjectMany
 ;
 
 ObjectDescription:
-	name=ID ':' '{' description+=ObjectDescriptionInner* '}'
+	name=ID (noNode='isNoNode')? ':' '{' description+=ObjectDescriptionInner* '}'
+;
+
+ObjectNodeType:
+	'Node' | 'Attribute'
 ;
 
 ObjectDescriptionInner:
-	ObjectAttribute | ObjectNext | ObjectMaybe
+	(ObjectNode | ObjectAttribute | ObjectNext | ObjectMaybe | ObjectMany | ObjectChoice) ';'
 ;
 
 ObjectAttribute:
-	'hasAttribute' attributes=ID 'ofType' (types=Type 'as' keyword=Keyword | inner=[ObjectDescription]) ';'	
+	'hasAttribute' attributes=ID 'ofType' (types=Type | inner=[ObjectDescription])
+;
+
+//ObjectNode:
+//	'hasNode' attributes=ID 'ofType' (types=Type 'as' keyword=Keyword | inner=[ObjectDescription]) ';'	
+//;
+
+ObjectNode:
+	'hasNode' attributes=ID 'as' inner=[ObjectDescription]
 ;
 
 ObjectNext:
-	'hasNext' attribute=JavaCodeOrID 'as' objectDesription=[ObjectDescription] ';'
+	'hasNext' attribute=JavaCodeOrID 'as' objectDesription=[ObjectDescription]
 ;
 
 JavaCodeOrID:
@@ -44,30 +50,25 @@ JavaCodeOrID:
 ;
 
 Type:
-	'int' | 'float' | 'String' 
+  'boolean' | 'short' | 'int' | 'long' | 'float' | 'double' | 'char' | 'String'  | 'byte'
 ;
 
-//Description:
-//	 'beginWith' '=' des=Obj ';'
-//;
-
-Many:
-	{Many}
-	'(' description=ObjectDescriptionInner ')' '*'	
+ObjectMany:
+	option=ObjectMaybeInner '*'	
 ;
 
-Choice:
-	'(' options+=Keyword ('|' options+=Keyword)* ')'
+ObjectChoice:
+	'(' options+=ObjectMaybeInner ('|' options+=ObjectMaybeInner)* ')'
 ;
 
 ObjectMaybe:
-	'(' object=Abstract | id=[ObjectDescription] ')' '?'
+	option=[ObjectDescription] | description=ObjectMaybeInner '?'
+;
+
+ObjectMaybeInner:
+	ObjectNext | ObjectNode | ObjectAttribute
 ;
 
 Keyword:
 	name='Key' | name='Value' | name=ID
 ;
-
-//Obj:
-//	STRING | Keyword 
-//;

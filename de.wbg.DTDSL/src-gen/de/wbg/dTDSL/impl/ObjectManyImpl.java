@@ -3,8 +3,8 @@
 package de.wbg.dTDSL.impl;
 
 import de.wbg.dTDSL.DTDSLPackage;
-import de.wbg.dTDSL.Many;
-import de.wbg.dTDSL.ObjectDescriptionInner;
+import de.wbg.dTDSL.ObjectMany;
+import de.wbg.dTDSL.ObjectMaybeInner;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,35 +16,35 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Many</b></em>'.
+ * An implementation of the model object '<em><b>Object Many</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.wbg.dTDSL.impl.ManyImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.impl.ObjectManyImpl#getOption <em>Option</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ManyImpl extends AbstractImpl implements Many
+public class ObjectManyImpl extends ObjectDescriptionInnerImpl implements ObjectMany
 {
   /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
+   * The cached value of the '{@link #getOption() <em>Option</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
+   * @see #getOption()
    * @generated
    * @ordered
    */
-  protected ObjectDescriptionInner description;
+  protected ObjectMaybeInner option;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ManyImpl()
+  protected ObjectManyImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class ManyImpl extends AbstractImpl implements Many
   @Override
   protected EClass eStaticClass()
   {
-    return DTDSLPackage.Literals.MANY;
+    return DTDSLPackage.Literals.OBJECT_MANY;
   }
 
   /**
@@ -65,9 +65,9 @@ public class ManyImpl extends AbstractImpl implements Many
    * <!-- end-user-doc -->
    * @generated
    */
-  public ObjectDescriptionInner getDescription()
+  public ObjectMaybeInner getOption()
   {
-    return description;
+    return option;
   }
 
   /**
@@ -75,13 +75,13 @@ public class ManyImpl extends AbstractImpl implements Many
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetDescription(ObjectDescriptionInner newDescription, NotificationChain msgs)
+  public NotificationChain basicSetOption(ObjectMaybeInner newOption, NotificationChain msgs)
   {
-    ObjectDescriptionInner oldDescription = description;
-    description = newDescription;
+    ObjectMaybeInner oldOption = option;
+    option = newOption;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DTDSLPackage.MANY__DESCRIPTION, oldDescription, newDescription);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_MANY__OPTION, oldOption, newOption);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +92,20 @@ public class ManyImpl extends AbstractImpl implements Many
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDescription(ObjectDescriptionInner newDescription)
+  public void setOption(ObjectMaybeInner newOption)
   {
-    if (newDescription != description)
+    if (newOption != option)
     {
       NotificationChain msgs = null;
-      if (description != null)
-        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DTDSLPackage.MANY__DESCRIPTION, null, msgs);
-      if (newDescription != null)
-        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DTDSLPackage.MANY__DESCRIPTION, null, msgs);
-      msgs = basicSetDescription(newDescription, msgs);
+      if (option != null)
+        msgs = ((InternalEObject)option).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DTDSLPackage.OBJECT_MANY__OPTION, null, msgs);
+      if (newOption != null)
+        msgs = ((InternalEObject)newOption).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DTDSLPackage.OBJECT_MANY__OPTION, null, msgs);
+      msgs = basicSetOption(newOption, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.MANY__DESCRIPTION, newDescription, newDescription));
+      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_MANY__OPTION, newOption, newOption));
   }
 
   /**
@@ -118,8 +118,8 @@ public class ManyImpl extends AbstractImpl implements Many
   {
     switch (featureID)
     {
-      case DTDSLPackage.MANY__DESCRIPTION:
-        return basicSetDescription(null, msgs);
+      case DTDSLPackage.OBJECT_MANY__OPTION:
+        return basicSetOption(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +134,8 @@ public class ManyImpl extends AbstractImpl implements Many
   {
     switch (featureID)
     {
-      case DTDSLPackage.MANY__DESCRIPTION:
-        return getDescription();
+      case DTDSLPackage.OBJECT_MANY__OPTION:
+        return getOption();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +150,8 @@ public class ManyImpl extends AbstractImpl implements Many
   {
     switch (featureID)
     {
-      case DTDSLPackage.MANY__DESCRIPTION:
-        setDescription((ObjectDescriptionInner)newValue);
+      case DTDSLPackage.OBJECT_MANY__OPTION:
+        setOption((ObjectMaybeInner)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +167,8 @@ public class ManyImpl extends AbstractImpl implements Many
   {
     switch (featureID)
     {
-      case DTDSLPackage.MANY__DESCRIPTION:
-        setDescription((ObjectDescriptionInner)null);
+      case DTDSLPackage.OBJECT_MANY__OPTION:
+        setOption((ObjectMaybeInner)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,10 +184,10 @@ public class ManyImpl extends AbstractImpl implements Many
   {
     switch (featureID)
     {
-      case DTDSLPackage.MANY__DESCRIPTION:
-        return description != null;
+      case DTDSLPackage.OBJECT_MANY__OPTION:
+        return option != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ManyImpl
+} //ObjectManyImpl

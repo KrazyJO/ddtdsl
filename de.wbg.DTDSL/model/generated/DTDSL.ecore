@@ -4,15 +4,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="DTDSL">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parserName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
-        eType="#//importStatement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="objDescription" upperBound="-1"
         eType="#//Abstract" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//StartPoint"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="importStatement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StartPoint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="begin" eType="#//ObjectDescription"/>
@@ -20,18 +15,21 @@
   <eClassifiers xsi:type="ecore:EClass" name="Abstract"/>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectDescription" eSuperTypes="#//Abstract">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noNode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1"
         eType="#//ObjectDescriptionInner" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectDescriptionInner"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ObjectAttribute" eSuperTypes="#//ObjectDescriptionInner">
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectAttribute" eSuperTypes="#//ObjectDescriptionInner #//ObjectMaybeInner">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="types" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="keyword" eType="#//Keyword"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inner" eType="#//ObjectDescription"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ObjectNext" eSuperTypes="#//ObjectDescriptionInner">
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectNode" eSuperTypes="#//ObjectDescriptionInner #//ObjectMaybeInner">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inner" eType="#//ObjectDescription"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectNext" eSuperTypes="#//ObjectDescriptionInner #//ObjectMaybeInner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//JavaCodeOrID"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="objectDesription" eType="#//ObjectDescription"/>
@@ -40,19 +38,20 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Many" eSuperTypes="#//Abstract">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//ObjectDescriptionInner"
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectMany" eSuperTypes="#//ObjectDescriptionInner">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" eType="#//ObjectMaybeInner"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Choice" eSuperTypes="#//Abstract">
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectChoice" eSuperTypes="#//ObjectDescriptionInner">
     <eStructuralFeatures xsi:type="ecore:EReference" name="options" upperBound="-1"
-        eType="#//Keyword" containment="true"/>
+        eType="#//ObjectMaybeInner" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectMaybe" eSuperTypes="#//ObjectDescriptionInner">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="object" eType="#//Abstract"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" eType="#//ObjectDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//ObjectMaybeInner"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//ObjectDescription"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectMaybeInner"/>
   <eClassifiers xsi:type="ecore:EClass" name="Keyword">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

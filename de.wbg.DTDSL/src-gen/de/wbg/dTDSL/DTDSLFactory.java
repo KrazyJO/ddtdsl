@@ -32,15 +32,6 @@ public interface DTDSLFactory extends EFactory
   DTDSL createDTDSL();
 
   /**
-   * Returns a new object of class '<em>import Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>import Statement</em>'.
-   * @generated
-   */
-  importStatement createimportStatement();
-
-  /**
    * Returns a new object of class '<em>Start Point</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -86,6 +77,15 @@ public interface DTDSLFactory extends EFactory
   ObjectAttribute createObjectAttribute();
 
   /**
+   * Returns a new object of class '<em>Object Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Object Node</em>'.
+   * @generated
+   */
+  ObjectNode createObjectNode();
+
+  /**
    * Returns a new object of class '<em>Object Next</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -104,22 +104,22 @@ public interface DTDSLFactory extends EFactory
   JavaCodeOrID createJavaCodeOrID();
 
   /**
-   * Returns a new object of class '<em>Many</em>'.
+   * Returns a new object of class '<em>Object Many</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Many</em>'.
+   * @return a new object of class '<em>Object Many</em>'.
    * @generated
    */
-  Many createMany();
+  ObjectMany createObjectMany();
 
   /**
-   * Returns a new object of class '<em>Choice</em>'.
+   * Returns a new object of class '<em>Object Choice</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Choice</em>'.
+   * @return a new object of class '<em>Object Choice</em>'.
    * @generated
    */
-  Choice createChoice();
+  ObjectChoice createObjectChoice();
 
   /**
    * Returns a new object of class '<em>Object Maybe</em>'.
@@ -129,6 +129,15 @@ public interface DTDSLFactory extends EFactory
    * @generated
    */
   ObjectMaybe createObjectMaybe();
+
+  /**
+   * Returns a new object of class '<em>Object Maybe Inner</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Object Maybe Inner</em>'.
+   * @generated
+   */
+  ObjectMaybeInner createObjectMaybeInner();
 
   /**
    * Returns a new object of class '<em>Keyword</em>'.

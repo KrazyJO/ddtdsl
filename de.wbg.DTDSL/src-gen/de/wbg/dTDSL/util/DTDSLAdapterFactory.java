@@ -80,11 +80,6 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
         return createDTDSLAdapter();
       }
       @Override
-      public Adapter caseimportStatement(importStatement object)
-      {
-        return createimportStatementAdapter();
-      }
-      @Override
       public Adapter caseStartPoint(StartPoint object)
       {
         return createStartPointAdapter();
@@ -110,6 +105,11 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
         return createObjectAttributeAdapter();
       }
       @Override
+      public Adapter caseObjectNode(ObjectNode object)
+      {
+        return createObjectNodeAdapter();
+      }
+      @Override
       public Adapter caseObjectNext(ObjectNext object)
       {
         return createObjectNextAdapter();
@@ -120,19 +120,24 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
         return createJavaCodeOrIDAdapter();
       }
       @Override
-      public Adapter caseMany(Many object)
+      public Adapter caseObjectMany(ObjectMany object)
       {
-        return createManyAdapter();
+        return createObjectManyAdapter();
       }
       @Override
-      public Adapter caseChoice(Choice object)
+      public Adapter caseObjectChoice(ObjectChoice object)
       {
-        return createChoiceAdapter();
+        return createObjectChoiceAdapter();
       }
       @Override
       public Adapter caseObjectMaybe(ObjectMaybe object)
       {
         return createObjectMaybeAdapter();
+      }
+      @Override
+      public Adapter caseObjectMaybeInner(ObjectMaybeInner object)
+      {
+        return createObjectMaybeInnerAdapter();
       }
       @Override
       public Adapter caseKeyword(Keyword object)
@@ -172,21 +177,6 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDTDSLAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.importStatement <em>import Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.wbg.dTDSL.importStatement
-   * @generated
-   */
-  public Adapter createimportStatementAdapter()
   {
     return null;
   }
@@ -267,6 +257,21 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.ObjectNode <em>Object Node</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.wbg.dTDSL.ObjectNode
+   * @generated
+   */
+  public Adapter createObjectNodeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.ObjectNext <em>Object Next</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -297,31 +302,31 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.Many <em>Many</em>}'.
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.ObjectMany <em>Object Many</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.wbg.dTDSL.Many
+   * @see de.wbg.dTDSL.ObjectMany
    * @generated
    */
-  public Adapter createManyAdapter()
+  public Adapter createObjectManyAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.Choice <em>Choice</em>}'.
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.ObjectChoice <em>Object Choice</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.wbg.dTDSL.Choice
+   * @see de.wbg.dTDSL.ObjectChoice
    * @generated
    */
-  public Adapter createChoiceAdapter()
+  public Adapter createObjectChoiceAdapter()
   {
     return null;
   }
@@ -337,6 +342,21 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createObjectMaybeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.ObjectMaybeInner <em>Object Maybe Inner</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.wbg.dTDSL.ObjectMaybeInner
+   * @generated
+   */
+  public Adapter createObjectMaybeInnerAdapter()
   {
     return null;
   }

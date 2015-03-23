@@ -13,7 +13,6 @@ package de.wbg.dTDSL;
  * <ul>
  *   <li>{@link de.wbg.dTDSL.ObjectAttribute#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link de.wbg.dTDSL.ObjectAttribute#getTypes <em>Types</em>}</li>
- *   <li>{@link de.wbg.dTDSL.ObjectAttribute#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link de.wbg.dTDSL.ObjectAttribute#getInner <em>Inner</em>}</li>
  * </ul>
  * </p>
@@ -22,7 +21,7 @@ package de.wbg.dTDSL;
  * @model
  * @generated
  */
-public interface ObjectAttribute extends ObjectDescriptionInner
+public interface ObjectAttribute extends ObjectDescriptionInner, ObjectMaybeInner
 {
   /**
    * Returns the value of the '<em><b>Attributes</b></em>' attribute.
@@ -75,32 +74,6 @@ public interface ObjectAttribute extends ObjectDescriptionInner
    * @generated
    */
   void setTypes(String value);
-
-  /**
-   * Returns the value of the '<em><b>Keyword</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Keyword</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Keyword</em>' containment reference.
-   * @see #setKeyword(Keyword)
-   * @see de.wbg.dTDSL.DTDSLPackage#getObjectAttribute_Keyword()
-   * @model containment="true"
-   * @generated
-   */
-  Keyword getKeyword();
-
-  /**
-   * Sets the value of the '{@link de.wbg.dTDSL.ObjectAttribute#getKeyword <em>Keyword</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Keyword</em>' containment reference.
-   * @see #getKeyword()
-   * @generated
-   */
-  void setKeyword(Keyword value);
 
   /**
    * Returns the value of the '<em><b>Inner</b></em>' reference.

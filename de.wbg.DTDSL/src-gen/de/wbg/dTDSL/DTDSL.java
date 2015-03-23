@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.wbg.dTDSL.DTDSL#getParserName <em>Parser Name</em>}</li>
  *   <li>{@link de.wbg.dTDSL.DTDSL#getType <em>Type</em>}</li>
- *   <li>{@link de.wbg.dTDSL.DTDSL#getImports <em>Imports</em>}</li>
  *   <li>{@link de.wbg.dTDSL.DTDSL#getObjDescription <em>Obj Description</em>}</li>
  *   <li>{@link de.wbg.dTDSL.DTDSL#getStart <em>Start</em>}</li>
  * </ul>
@@ -79,22 +78,6 @@ public interface DTDSL extends EObject
    * @generated
    */
   void setType(String value);
-
-  /**
-   * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
-   * The list contents are of type {@link de.wbg.dTDSL.importStatement}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Imports</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Imports</em>' containment reference list.
-   * @see de.wbg.dTDSL.DTDSLPackage#getDTDSL_Imports()
-   * @model containment="true"
-   * @generated
-   */
-  EList<importStatement> getImports();
 
   /**
    * Returns the value of the '<em><b>Obj Description</b></em>' containment reference list.

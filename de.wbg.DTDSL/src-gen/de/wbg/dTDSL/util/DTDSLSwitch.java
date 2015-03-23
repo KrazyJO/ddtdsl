@@ -79,13 +79,6 @@ public class DTDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DTDSLPackage.IMPORT_STATEMENT:
-      {
-        importStatement importStatement = (importStatement)theEObject;
-        T result = caseimportStatement(importStatement);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case DTDSLPackage.START_POINT:
       {
         StartPoint startPoint = (StartPoint)theEObject;
@@ -120,6 +113,16 @@ public class DTDSLSwitch<T> extends Switch<T>
         ObjectAttribute objectAttribute = (ObjectAttribute)theEObject;
         T result = caseObjectAttribute(objectAttribute);
         if (result == null) result = caseObjectDescriptionInner(objectAttribute);
+        if (result == null) result = caseObjectMaybeInner(objectAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DTDSLPackage.OBJECT_NODE:
+      {
+        ObjectNode objectNode = (ObjectNode)theEObject;
+        T result = caseObjectNode(objectNode);
+        if (result == null) result = caseObjectDescriptionInner(objectNode);
+        if (result == null) result = caseObjectMaybeInner(objectNode);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -128,6 +131,7 @@ public class DTDSLSwitch<T> extends Switch<T>
         ObjectNext objectNext = (ObjectNext)theEObject;
         T result = caseObjectNext(objectNext);
         if (result == null) result = caseObjectDescriptionInner(objectNext);
+        if (result == null) result = caseObjectMaybeInner(objectNext);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -138,19 +142,19 @@ public class DTDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DTDSLPackage.MANY:
+      case DTDSLPackage.OBJECT_MANY:
       {
-        Many many = (Many)theEObject;
-        T result = caseMany(many);
-        if (result == null) result = caseAbstract(many);
+        ObjectMany objectMany = (ObjectMany)theEObject;
+        T result = caseObjectMany(objectMany);
+        if (result == null) result = caseObjectDescriptionInner(objectMany);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DTDSLPackage.CHOICE:
+      case DTDSLPackage.OBJECT_CHOICE:
       {
-        Choice choice = (Choice)theEObject;
-        T result = caseChoice(choice);
-        if (result == null) result = caseAbstract(choice);
+        ObjectChoice objectChoice = (ObjectChoice)theEObject;
+        T result = caseObjectChoice(objectChoice);
+        if (result == null) result = caseObjectDescriptionInner(objectChoice);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -159,6 +163,13 @@ public class DTDSLSwitch<T> extends Switch<T>
         ObjectMaybe objectMaybe = (ObjectMaybe)theEObject;
         T result = caseObjectMaybe(objectMaybe);
         if (result == null) result = caseObjectDescriptionInner(objectMaybe);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DTDSLPackage.OBJECT_MAYBE_INNER:
+      {
+        ObjectMaybeInner objectMaybeInner = (ObjectMaybeInner)theEObject;
+        T result = caseObjectMaybeInner(objectMaybeInner);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -185,22 +196,6 @@ public class DTDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDTDSL(DTDSL object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>import Statement</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>import Statement</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseimportStatement(importStatement object)
   {
     return null;
   }
@@ -286,6 +281,22 @@ public class DTDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Object Node</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Object Node</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseObjectNode(ObjectNode object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Object Next</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -318,33 +329,33 @@ public class DTDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Many</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Object Many</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Many</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Object Many</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseMany(Many object)
+  public T caseObjectMany(ObjectMany object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Choice</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Object Choice</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Choice</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Object Choice</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseChoice(Choice object)
+  public T caseObjectChoice(ObjectChoice object)
   {
     return null;
   }
@@ -361,6 +372,22 @@ public class DTDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseObjectMaybe(ObjectMaybe object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Object Maybe Inner</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Object Maybe Inner</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseObjectMaybeInner(ObjectMaybeInner object)
   {
     return null;
   }

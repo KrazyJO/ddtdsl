@@ -2,9 +2,9 @@
  */
 package de.wbg.dTDSL.impl;
 
-import de.wbg.dTDSL.Choice;
 import de.wbg.dTDSL.DTDSLPackage;
-import de.wbg.dTDSL.Keyword;
+import de.wbg.dTDSL.ObjectChoice;
+import de.wbg.dTDSL.ObjectMaybeInner;
 
 import java.util.Collection;
 
@@ -20,18 +20,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Choice</b></em>'.
+ * An implementation of the model object '<em><b>Object Choice</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.wbg.dTDSL.impl.ChoiceImpl#getOptions <em>Options</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.impl.ObjectChoiceImpl#getOptions <em>Options</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ChoiceImpl extends AbstractImpl implements Choice
+public class ObjectChoiceImpl extends ObjectDescriptionInnerImpl implements ObjectChoice
 {
   /**
    * The cached value of the '{@link #getOptions() <em>Options</em>}' containment reference list.
@@ -41,14 +41,14 @@ public class ChoiceImpl extends AbstractImpl implements Choice
    * @generated
    * @ordered
    */
-  protected EList<Keyword> options;
+  protected EList<ObjectMaybeInner> options;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ChoiceImpl()
+  protected ObjectChoiceImpl()
   {
     super();
   }
@@ -61,7 +61,7 @@ public class ChoiceImpl extends AbstractImpl implements Choice
   @Override
   protected EClass eStaticClass()
   {
-    return DTDSLPackage.Literals.CHOICE;
+    return DTDSLPackage.Literals.OBJECT_CHOICE;
   }
 
   /**
@@ -69,11 +69,11 @@ public class ChoiceImpl extends AbstractImpl implements Choice
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Keyword> getOptions()
+  public EList<ObjectMaybeInner> getOptions()
   {
     if (options == null)
     {
-      options = new EObjectContainmentEList<Keyword>(Keyword.class, this, DTDSLPackage.CHOICE__OPTIONS);
+      options = new EObjectContainmentEList<ObjectMaybeInner>(ObjectMaybeInner.class, this, DTDSLPackage.OBJECT_CHOICE__OPTIONS);
     }
     return options;
   }
@@ -88,7 +88,7 @@ public class ChoiceImpl extends AbstractImpl implements Choice
   {
     switch (featureID)
     {
-      case DTDSLPackage.CHOICE__OPTIONS:
+      case DTDSLPackage.OBJECT_CHOICE__OPTIONS:
         return ((InternalEList<?>)getOptions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -104,7 +104,7 @@ public class ChoiceImpl extends AbstractImpl implements Choice
   {
     switch (featureID)
     {
-      case DTDSLPackage.CHOICE__OPTIONS:
+      case DTDSLPackage.OBJECT_CHOICE__OPTIONS:
         return getOptions();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -121,9 +121,9 @@ public class ChoiceImpl extends AbstractImpl implements Choice
   {
     switch (featureID)
     {
-      case DTDSLPackage.CHOICE__OPTIONS:
+      case DTDSLPackage.OBJECT_CHOICE__OPTIONS:
         getOptions().clear();
-        getOptions().addAll((Collection<? extends Keyword>)newValue);
+        getOptions().addAll((Collection<? extends ObjectMaybeInner>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,7 +139,7 @@ public class ChoiceImpl extends AbstractImpl implements Choice
   {
     switch (featureID)
     {
-      case DTDSLPackage.CHOICE__OPTIONS:
+      case DTDSLPackage.OBJECT_CHOICE__OPTIONS:
         getOptions().clear();
         return;
     }
@@ -156,10 +156,10 @@ public class ChoiceImpl extends AbstractImpl implements Choice
   {
     switch (featureID)
     {
-      case DTDSLPackage.CHOICE__OPTIONS:
+      case DTDSLPackage.OBJECT_CHOICE__OPTIONS:
         return options != null && !options.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ChoiceImpl
+} //ObjectChoiceImpl

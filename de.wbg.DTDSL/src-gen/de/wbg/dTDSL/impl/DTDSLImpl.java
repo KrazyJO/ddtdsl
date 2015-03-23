@@ -6,7 +6,6 @@ import de.wbg.dTDSL.Abstract;
 import de.wbg.dTDSL.DTDSL;
 import de.wbg.dTDSL.DTDSLPackage;
 import de.wbg.dTDSL.StartPoint;
-import de.wbg.dTDSL.importStatement;
 
 import java.util.Collection;
 
@@ -33,7 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getParserName <em>Parser Name</em>}</li>
  *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getType <em>Type</em>}</li>
- *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getObjDescription <em>Obj Description</em>}</li>
  *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getStart <em>Start</em>}</li>
  * </ul>
@@ -82,16 +80,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
    * @ordered
    */
   protected String type = TYPE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getImports()
-   * @generated
-   * @ordered
-   */
-  protected EList<importStatement> imports;
 
   /**
    * The cached value of the '{@link #getObjDescription() <em>Obj Description</em>}' containment reference list.
@@ -185,20 +173,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<importStatement> getImports()
-  {
-    if (imports == null)
-    {
-      imports = new EObjectContainmentEList<importStatement>(importStatement.class, this, DTDSLPackage.DTDSL__IMPORTS);
-    }
-    return imports;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Abstract> getObjDescription()
   {
     if (objDescription == null)
@@ -266,8 +240,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
   {
     switch (featureID)
     {
-      case DTDSLPackage.DTDSL__IMPORTS:
-        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
       case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
         return ((InternalEList<?>)getObjDescription()).basicRemove(otherEnd, msgs);
       case DTDSLPackage.DTDSL__START:
@@ -290,8 +262,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
         return getParserName();
       case DTDSLPackage.DTDSL__TYPE:
         return getType();
-      case DTDSLPackage.DTDSL__IMPORTS:
-        return getImports();
       case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
         return getObjDescription();
       case DTDSLPackage.DTDSL__START:
@@ -316,10 +286,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
         return;
       case DTDSLPackage.DTDSL__TYPE:
         setType((String)newValue);
-        return;
-      case DTDSLPackage.DTDSL__IMPORTS:
-        getImports().clear();
-        getImports().addAll((Collection<? extends importStatement>)newValue);
         return;
       case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
         getObjDescription().clear();
@@ -348,9 +314,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
       case DTDSLPackage.DTDSL__TYPE:
         setType(TYPE_EDEFAULT);
         return;
-      case DTDSLPackage.DTDSL__IMPORTS:
-        getImports().clear();
-        return;
       case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
         getObjDescription().clear();
         return;
@@ -375,8 +338,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
         return PARSER_NAME_EDEFAULT == null ? parserName != null : !PARSER_NAME_EDEFAULT.equals(parserName);
       case DTDSLPackage.DTDSL__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-      case DTDSLPackage.DTDSL__IMPORTS:
-        return imports != null && !imports.isEmpty();
       case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
         return objDescription != null && !objDescription.isEmpty();
       case DTDSLPackage.DTDSL__START:

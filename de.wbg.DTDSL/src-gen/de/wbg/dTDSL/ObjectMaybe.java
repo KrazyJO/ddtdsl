@@ -11,8 +11,8 @@ package de.wbg.dTDSL;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.wbg.dTDSL.ObjectMaybe#getObject <em>Object</em>}</li>
- *   <li>{@link de.wbg.dTDSL.ObjectMaybe#getId <em>Id</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.ObjectMaybe#getOption <em>Option</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.ObjectMaybe#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,55 +23,55 @@ package de.wbg.dTDSL;
 public interface ObjectMaybe extends ObjectDescriptionInner
 {
   /**
-   * Returns the value of the '<em><b>Object</b></em>' containment reference.
+   * Returns the value of the '<em><b>Option</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Object</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Option</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Object</em>' containment reference.
-   * @see #setObject(Abstract)
-   * @see de.wbg.dTDSL.DTDSLPackage#getObjectMaybe_Object()
-   * @model containment="true"
-   * @generated
-   */
-  Abstract getObject();
-
-  /**
-   * Sets the value of the '{@link de.wbg.dTDSL.ObjectMaybe#getObject <em>Object</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Object</em>' containment reference.
-   * @see #getObject()
-   * @generated
-   */
-  void setObject(Abstract value);
-
-  /**
-   * Returns the value of the '<em><b>Id</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Id</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' reference.
-   * @see #setId(ObjectDescription)
-   * @see de.wbg.dTDSL.DTDSLPackage#getObjectMaybe_Id()
+   * @return the value of the '<em>Option</em>' reference.
+   * @see #setOption(ObjectDescription)
+   * @see de.wbg.dTDSL.DTDSLPackage#getObjectMaybe_Option()
    * @model
    * @generated
    */
-  ObjectDescription getId();
+  ObjectDescription getOption();
 
   /**
-   * Sets the value of the '{@link de.wbg.dTDSL.ObjectMaybe#getId <em>Id</em>}' reference.
+   * Sets the value of the '{@link de.wbg.dTDSL.ObjectMaybe#getOption <em>Option</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' reference.
-   * @see #getId()
+   * @param value the new value of the '<em>Option</em>' reference.
+   * @see #getOption()
    * @generated
    */
-  void setId(ObjectDescription value);
+  void setOption(ObjectDescription value);
+
+  /**
+   * Returns the value of the '<em><b>Description</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Description</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Description</em>' containment reference.
+   * @see #setDescription(ObjectMaybeInner)
+   * @see de.wbg.dTDSL.DTDSLPackage#getObjectMaybe_Description()
+   * @model containment="true"
+   * @generated
+   */
+  ObjectMaybeInner getDescription();
+
+  /**
+   * Sets the value of the '{@link de.wbg.dTDSL.ObjectMaybe#getDescription <em>Description</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Description</em>' containment reference.
+   * @see #getDescription()
+   * @generated
+   */
+  void setDescription(ObjectMaybeInner value);
 
 } // ObjectMaybe

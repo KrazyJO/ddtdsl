@@ -3,19 +3,20 @@
 package de.wbg.dTDSL.impl;
 
 import de.wbg.dTDSL.Abstract;
-import de.wbg.dTDSL.Choice;
 import de.wbg.dTDSL.DTDSLFactory;
 import de.wbg.dTDSL.DTDSLPackage;
 import de.wbg.dTDSL.JavaCodeOrID;
 import de.wbg.dTDSL.Keyword;
-import de.wbg.dTDSL.Many;
 import de.wbg.dTDSL.ObjectAttribute;
+import de.wbg.dTDSL.ObjectChoice;
 import de.wbg.dTDSL.ObjectDescription;
 import de.wbg.dTDSL.ObjectDescriptionInner;
+import de.wbg.dTDSL.ObjectMany;
 import de.wbg.dTDSL.ObjectMaybe;
+import de.wbg.dTDSL.ObjectMaybeInner;
 import de.wbg.dTDSL.ObjectNext;
+import de.wbg.dTDSL.ObjectNode;
 import de.wbg.dTDSL.StartPoint;
-import de.wbg.dTDSL.importStatement;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -38,13 +39,6 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * @generated
    */
   private EClass dtdslEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass importStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -86,6 +80,13 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass objectNodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass objectNextEClass = null;
 
   /**
@@ -100,14 +101,14 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass manyEClass = null;
+  private EClass objectManyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass choiceEClass = null;
+  private EClass objectChoiceEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -115,6 +116,13 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * @generated
    */
   private EClass objectMaybeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass objectMaybeInnerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -221,7 +229,7 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDTDSL_Imports()
+  public EReference getDTDSL_ObjDescription()
   {
     return (EReference)dtdslEClass.getEStructuralFeatures().get(2);
   }
@@ -231,39 +239,9 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDTDSL_ObjDescription()
-  {
-    return (EReference)dtdslEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getDTDSL_Start()
   {
-    return (EReference)dtdslEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getimportStatement()
-  {
-    return importStatementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getimportStatement_ImportClass()
-  {
-    return (EAttribute)importStatementEClass.getEStructuralFeatures().get(0);
+    return (EReference)dtdslEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -321,9 +299,19 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getObjectDescription_NoNode()
+  {
+    return (EAttribute)objectDescriptionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getObjectDescription_Description()
   {
-    return (EReference)objectDescriptionEClass.getEStructuralFeatures().get(1);
+    return (EReference)objectDescriptionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -371,7 +359,7 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getObjectAttribute_Keyword()
+  public EReference getObjectAttribute_Inner()
   {
     return (EReference)objectAttributeEClass.getEStructuralFeatures().get(2);
   }
@@ -381,9 +369,29 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getObjectAttribute_Inner()
+  public EClass getObjectNode()
   {
-    return (EReference)objectAttributeEClass.getEStructuralFeatures().get(3);
+    return objectNodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getObjectNode_Attributes()
+  {
+    return (EAttribute)objectNodeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getObjectNode_Inner()
+  {
+    return (EReference)objectNodeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -451,9 +459,9 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMany()
+  public EClass getObjectMany()
   {
-    return manyEClass;
+    return objectManyEClass;
   }
 
   /**
@@ -461,9 +469,9 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMany_Description()
+  public EReference getObjectMany_Option()
   {
-    return (EReference)manyEClass.getEStructuralFeatures().get(0);
+    return (EReference)objectManyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -471,9 +479,9 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getChoice()
+  public EClass getObjectChoice()
   {
-    return choiceEClass;
+    return objectChoiceEClass;
   }
 
   /**
@@ -481,9 +489,9 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getChoice_Options()
+  public EReference getObjectChoice_Options()
   {
-    return (EReference)choiceEClass.getEStructuralFeatures().get(0);
+    return (EReference)objectChoiceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -501,7 +509,7 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getObjectMaybe_Object()
+  public EReference getObjectMaybe_Option()
   {
     return (EReference)objectMaybeEClass.getEStructuralFeatures().get(0);
   }
@@ -511,9 +519,19 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getObjectMaybe_Id()
+  public EReference getObjectMaybe_Description()
   {
     return (EReference)objectMaybeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getObjectMaybeInner()
+  {
+    return objectMaybeInnerEClass;
   }
 
   /**
@@ -569,12 +587,8 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     dtdslEClass = createEClass(DTDSL);
     createEAttribute(dtdslEClass, DTDSL__PARSER_NAME);
     createEAttribute(dtdslEClass, DTDSL__TYPE);
-    createEReference(dtdslEClass, DTDSL__IMPORTS);
     createEReference(dtdslEClass, DTDSL__OBJ_DESCRIPTION);
     createEReference(dtdslEClass, DTDSL__START);
-
-    importStatementEClass = createEClass(IMPORT_STATEMENT);
-    createEAttribute(importStatementEClass, IMPORT_STATEMENT__IMPORT_CLASS);
 
     startPointEClass = createEClass(START_POINT);
     createEReference(startPointEClass, START_POINT__BEGIN);
@@ -583,6 +597,7 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
 
     objectDescriptionEClass = createEClass(OBJECT_DESCRIPTION);
     createEAttribute(objectDescriptionEClass, OBJECT_DESCRIPTION__NAME);
+    createEAttribute(objectDescriptionEClass, OBJECT_DESCRIPTION__NO_NODE);
     createEReference(objectDescriptionEClass, OBJECT_DESCRIPTION__DESCRIPTION);
 
     objectDescriptionInnerEClass = createEClass(OBJECT_DESCRIPTION_INNER);
@@ -590,8 +605,11 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     objectAttributeEClass = createEClass(OBJECT_ATTRIBUTE);
     createEAttribute(objectAttributeEClass, OBJECT_ATTRIBUTE__ATTRIBUTES);
     createEAttribute(objectAttributeEClass, OBJECT_ATTRIBUTE__TYPES);
-    createEReference(objectAttributeEClass, OBJECT_ATTRIBUTE__KEYWORD);
     createEReference(objectAttributeEClass, OBJECT_ATTRIBUTE__INNER);
+
+    objectNodeEClass = createEClass(OBJECT_NODE);
+    createEAttribute(objectNodeEClass, OBJECT_NODE__ATTRIBUTES);
+    createEReference(objectNodeEClass, OBJECT_NODE__INNER);
 
     objectNextEClass = createEClass(OBJECT_NEXT);
     createEReference(objectNextEClass, OBJECT_NEXT__ATTRIBUTE);
@@ -601,15 +619,17 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     createEAttribute(javaCodeOrIDEClass, JAVA_CODE_OR_ID__CODE);
     createEAttribute(javaCodeOrIDEClass, JAVA_CODE_OR_ID__ID);
 
-    manyEClass = createEClass(MANY);
-    createEReference(manyEClass, MANY__DESCRIPTION);
+    objectManyEClass = createEClass(OBJECT_MANY);
+    createEReference(objectManyEClass, OBJECT_MANY__OPTION);
 
-    choiceEClass = createEClass(CHOICE);
-    createEReference(choiceEClass, CHOICE__OPTIONS);
+    objectChoiceEClass = createEClass(OBJECT_CHOICE);
+    createEReference(objectChoiceEClass, OBJECT_CHOICE__OPTIONS);
 
     objectMaybeEClass = createEClass(OBJECT_MAYBE);
-    createEReference(objectMaybeEClass, OBJECT_MAYBE__OBJECT);
-    createEReference(objectMaybeEClass, OBJECT_MAYBE__ID);
+    createEReference(objectMaybeEClass, OBJECT_MAYBE__OPTION);
+    createEReference(objectMaybeEClass, OBJECT_MAYBE__DESCRIPTION);
+
+    objectMaybeInnerEClass = createEClass(OBJECT_MAYBE_INNER);
 
     keywordEClass = createEClass(KEYWORD);
     createEAttribute(keywordEClass, KEYWORD__NAME);
@@ -646,21 +666,21 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     // Add supertypes to classes
     objectDescriptionEClass.getESuperTypes().add(this.getAbstract());
     objectAttributeEClass.getESuperTypes().add(this.getObjectDescriptionInner());
+    objectAttributeEClass.getESuperTypes().add(this.getObjectMaybeInner());
+    objectNodeEClass.getESuperTypes().add(this.getObjectDescriptionInner());
+    objectNodeEClass.getESuperTypes().add(this.getObjectMaybeInner());
     objectNextEClass.getESuperTypes().add(this.getObjectDescriptionInner());
-    manyEClass.getESuperTypes().add(this.getAbstract());
-    choiceEClass.getESuperTypes().add(this.getAbstract());
+    objectNextEClass.getESuperTypes().add(this.getObjectMaybeInner());
+    objectManyEClass.getESuperTypes().add(this.getObjectDescriptionInner());
+    objectChoiceEClass.getESuperTypes().add(this.getObjectDescriptionInner());
     objectMaybeEClass.getESuperTypes().add(this.getObjectDescriptionInner());
 
     // Initialize classes and features; add operations and parameters
     initEClass(dtdslEClass, de.wbg.dTDSL.DTDSL.class, "DTDSL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDTDSL_ParserName(), ecorePackage.getEString(), "parserName", null, 0, 1, de.wbg.dTDSL.DTDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDTDSL_Type(), ecorePackage.getEString(), "type", null, 0, 1, de.wbg.dTDSL.DTDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDTDSL_Imports(), this.getimportStatement(), null, "imports", null, 0, -1, de.wbg.dTDSL.DTDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDTDSL_ObjDescription(), this.getAbstract(), null, "objDescription", null, 0, -1, de.wbg.dTDSL.DTDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDTDSL_Start(), this.getStartPoint(), null, "start", null, 0, 1, de.wbg.dTDSL.DTDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(importStatementEClass, importStatement.class, "importStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getimportStatement_ImportClass(), ecorePackage.getEString(), "importClass", null, 0, 1, importStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(startPointEClass, StartPoint.class, "StartPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStartPoint_Begin(), this.getObjectDescription(), null, "begin", null, 0, 1, StartPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -669,6 +689,7 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
 
     initEClass(objectDescriptionEClass, ObjectDescription.class, "ObjectDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getObjectDescription_Name(), ecorePackage.getEString(), "name", null, 0, 1, ObjectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getObjectDescription_NoNode(), ecorePackage.getEString(), "noNode", null, 0, 1, ObjectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getObjectDescription_Description(), this.getObjectDescriptionInner(), null, "description", null, 0, -1, ObjectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectDescriptionInnerEClass, ObjectDescriptionInner.class, "ObjectDescriptionInner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -676,8 +697,11 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     initEClass(objectAttributeEClass, ObjectAttribute.class, "ObjectAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getObjectAttribute_Attributes(), ecorePackage.getEString(), "attributes", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getObjectAttribute_Types(), ecorePackage.getEString(), "types", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getObjectAttribute_Keyword(), this.getKeyword(), null, "keyword", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getObjectAttribute_Inner(), this.getObjectDescription(), null, "inner", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(objectNodeEClass, ObjectNode.class, "ObjectNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getObjectNode_Attributes(), ecorePackage.getEString(), "attributes", null, 0, 1, ObjectNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObjectNode_Inner(), this.getObjectDescription(), null, "inner", null, 0, 1, ObjectNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectNextEClass, ObjectNext.class, "ObjectNext", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getObjectNext_Attribute(), this.getJavaCodeOrID(), null, "attribute", null, 0, 1, ObjectNext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -687,15 +711,17 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     initEAttribute(getJavaCodeOrID_Code(), ecorePackage.getEString(), "code", null, 0, 1, JavaCodeOrID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getJavaCodeOrID_Id(), ecorePackage.getEString(), "id", null, 0, 1, JavaCodeOrID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(manyEClass, Many.class, "Many", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMany_Description(), this.getObjectDescriptionInner(), null, "description", null, 0, 1, Many.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(objectManyEClass, ObjectMany.class, "ObjectMany", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getObjectMany_Option(), this.getObjectMaybeInner(), null, "option", null, 0, 1, ObjectMany.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(choiceEClass, Choice.class, "Choice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getChoice_Options(), this.getKeyword(), null, "options", null, 0, -1, Choice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(objectChoiceEClass, ObjectChoice.class, "ObjectChoice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getObjectChoice_Options(), this.getObjectMaybeInner(), null, "options", null, 0, -1, ObjectChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectMaybeEClass, ObjectMaybe.class, "ObjectMaybe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getObjectMaybe_Object(), this.getAbstract(), null, "object", null, 0, 1, ObjectMaybe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getObjectMaybe_Id(), this.getObjectDescription(), null, "id", null, 0, 1, ObjectMaybe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObjectMaybe_Option(), this.getObjectDescription(), null, "option", null, 0, 1, ObjectMaybe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObjectMaybe_Description(), this.getObjectMaybeInner(), null, "description", null, 0, 1, ObjectMaybe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(objectMaybeInnerEClass, ObjectMaybeInner.class, "ObjectMaybeInner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(keywordEClass, Keyword.class, "Keyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getKeyword_Name(), ecorePackage.getEString(), "name", null, 0, 1, Keyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

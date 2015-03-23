@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.wbg.dTDSL.impl.ObjectDescriptionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.impl.ObjectDescriptionImpl#getNoNode <em>No Node</em>}</li>
  *   <li>{@link de.wbg.dTDSL.impl.ObjectDescriptionImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
@@ -56,6 +57,26 @@ public class ObjectDescriptionImpl extends AbstractImpl implements ObjectDescrip
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getNoNode() <em>No Node</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNoNode()
+   * @generated
+   * @ordered
+   */
+  protected static final String NO_NODE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNoNode() <em>No Node</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNoNode()
+   * @generated
+   * @ordered
+   */
+  protected String noNode = NO_NODE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference list.
@@ -116,6 +137,29 @@ public class ObjectDescriptionImpl extends AbstractImpl implements ObjectDescrip
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getNoNode()
+  {
+    return noNode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNoNode(String newNoNode)
+  {
+    String oldNoNode = noNode;
+    noNode = newNoNode;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_DESCRIPTION__NO_NODE, oldNoNode, noNode));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<ObjectDescriptionInner> getDescription()
   {
     if (description == null)
@@ -153,6 +197,8 @@ public class ObjectDescriptionImpl extends AbstractImpl implements ObjectDescrip
     {
       case DTDSLPackage.OBJECT_DESCRIPTION__NAME:
         return getName();
+      case DTDSLPackage.OBJECT_DESCRIPTION__NO_NODE:
+        return getNoNode();
       case DTDSLPackage.OBJECT_DESCRIPTION__DESCRIPTION:
         return getDescription();
     }
@@ -172,6 +218,9 @@ public class ObjectDescriptionImpl extends AbstractImpl implements ObjectDescrip
     {
       case DTDSLPackage.OBJECT_DESCRIPTION__NAME:
         setName((String)newValue);
+        return;
+      case DTDSLPackage.OBJECT_DESCRIPTION__NO_NODE:
+        setNoNode((String)newValue);
         return;
       case DTDSLPackage.OBJECT_DESCRIPTION__DESCRIPTION:
         getDescription().clear();
@@ -194,6 +243,9 @@ public class ObjectDescriptionImpl extends AbstractImpl implements ObjectDescrip
       case DTDSLPackage.OBJECT_DESCRIPTION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case DTDSLPackage.OBJECT_DESCRIPTION__NO_NODE:
+        setNoNode(NO_NODE_EDEFAULT);
+        return;
       case DTDSLPackage.OBJECT_DESCRIPTION__DESCRIPTION:
         getDescription().clear();
         return;
@@ -213,6 +265,8 @@ public class ObjectDescriptionImpl extends AbstractImpl implements ObjectDescrip
     {
       case DTDSLPackage.OBJECT_DESCRIPTION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case DTDSLPackage.OBJECT_DESCRIPTION__NO_NODE:
+        return NO_NODE_EDEFAULT == null ? noNode != null : !NO_NODE_EDEFAULT.equals(noNode);
       case DTDSLPackage.OBJECT_DESCRIPTION__DESCRIPTION:
         return description != null && !description.isEmpty();
     }
@@ -232,6 +286,8 @@ public class ObjectDescriptionImpl extends AbstractImpl implements ObjectDescrip
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", noNode: ");
+    result.append(noNode);
     result.append(')');
     return result.toString();
   }
