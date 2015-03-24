@@ -288,6 +288,40 @@ class DTDSLGenerator implements IGenerator {
 					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(obj, manyHead);
 				}
 			}
+			else if (next instanceof HashMap)
+				{
+					HashMap hashMap = (HashMap) next;
+					
+					for (Object entry : hashMap.keySet())
+					{
+«««						Node entryNode = new Node("node" + newNode.increaseNodeNumber());
+«««						node.setKey(true);
+«««						node.setValue(String.valueOf(entry));
+«««						node.setName(entry.getClass().toString().replace("class ", ""));
+						
+«««						//Attribute
+						Object valueForEntry = hashMap.get(entry);
+«««						Attribute attribute = new Attribute("attribute" + node.increaseAttributeNumber());
+«««						attribute.setName("children");
+						
+«««						parse«i.objectDesription.name.toFirstUpper»(valueForEntry, manyHead);
+						//entry is primitiv
+						//=> Node with key -> Attribute with value
+						Node node = new Node("node"+manyHead.increaseNodeNumber());
+						node.setKey(true);
+						node.setValue(String.valueOf(entry));
+						node.setName(entry.getClass().toString().replace("class ", ""));
+						Attribute attrib = new Attribute("attribute"+node.increaseAttributeNumber());
+						attrib.setName("«i.attributes»");
+						attrib.setValue(String.valueOf(hashMap.get(entry)));
+						
+						node.addChild(attrib);
+						attrib.setParent(node);
+						
+						manyHead.addChild(node);
+						node.setParent(manyHead);
+					}
+				}
 			
 			for (Element el: manyHead.getChildren())
 			{
@@ -335,6 +369,29 @@ class DTDSLGenerator implements IGenerator {
 					for (Object obj: al)
 					{
 						parse«i.objectDesription.name.toFirstUpper»(obj, manyHead);
+					}
+				}
+				else if (next instanceof HashMap)
+				{
+					HashMap hashMap = (HashMap) next;
+					
+					for (Object entry : hashMap.keySet())
+					{
+«««						Node entryNode = new Node("node" + newNode.increaseNodeNumber());
+«««						node.setKey(true);
+«««						node.setValue(String.valueOf(entry));
+«««						node.setName(entry.getClass().toString().replace("class ", ""));
+						
+«««						//Attribute
+						Object valueForEntry = hashMap.get(entry);
+«««						Attribute attribute = new Attribute("attribute" + node.increaseAttributeNumber());
+«««						attribute.setName("children");
+						
+						parse«i.objectDesription.name.toFirstUpper»(valueForEntry, manyHead);
+						Node act = manyHead.getNodeByName("MANYHEAD.node"+(manyHead.size()-1));
+						act.setKey(true);
+						act.setValue(String.valueOf(entry));
+						act.setName(entry.getClass().toString().replace("class ", ""));
 					}
 				}
 				
