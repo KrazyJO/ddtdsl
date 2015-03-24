@@ -70,6 +70,22 @@ class SimpleArrayParser {
 					parseSkv(obj, manyHead);
 				}
 			}
+			else if (next instanceof HashMap)
+			{
+				HashMap hashMap = (HashMap) next;
+				
+				for (Object entry : hashMap.keySet())
+				{
+					
+					Object valueForEntry = hashMap.get(entry);
+					
+					parseSkv(valueForEntry, manyHead);
+					Node act = manyHead.getNodeByName("MANYHEAD.node"+(manyHead.size()-1));
+					act.setKey(true);
+					act.setValue(String.valueOf(entry));
+					act.setName(entry.getClass().toString().replace("class ", ""));
+				}
+			}
 			
 			for (Element el : manyHead.getChildren())
 			{

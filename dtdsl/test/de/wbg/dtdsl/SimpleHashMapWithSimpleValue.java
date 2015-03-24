@@ -2,11 +2,11 @@ package de.wbg.dtdsl;
 
 import java.util.HashMap;
 
-public class SimpleHashMap {
+public class SimpleHashMapWithSimpleValue {
 	
 	HashMap<String, SimpleValue> children;
 	
-	public SimpleHashMap()
+	public SimpleHashMapWithSimpleValue()
 	{
 		SimpleValue val0 = new SimpleValue();
 		val0.setValue(0);

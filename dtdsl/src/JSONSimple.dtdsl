@@ -2,13 +2,8 @@ parserName = "JSONSimple";
 parserType = javaObject;
 
 JSONSimple: {
-//hasAttribute table ofType HashMap;
+	hasAttribute children ofType int*;
 }
 
-HashMap: {
-	//for each pair <key, value>
-	
-	
-}
 
 beginWith = JSONSimple;

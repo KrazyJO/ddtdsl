@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-class SimpleHashMapParser {
+class SimpleHashMapNodeParser {
 	
 	private Head headNode;
 	private Element actualNode;
 	
-	public SimpleHashMapParser()
+	public SimpleHashMapNodeParser()
 	{
 		
 	}

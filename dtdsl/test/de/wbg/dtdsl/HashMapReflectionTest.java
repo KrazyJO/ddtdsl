@@ -13,7 +13,7 @@ public class HashMapReflectionTest {
 	@Test
 	public void testHashMapReflection()
 	{
-		SimpleHashMap hashMap = new SimpleHashMap();
+		SimpleHashMapWithSimpleValue hashMap = new SimpleHashMapWithSimpleValue();
 		
 		//hasAttribute children ofType SimpleValue*;
 		/*

@@ -1,4 +1,4 @@
-parserName = "SimpleHashMapParser";
+parserName = "SimpleHashMapNodeParser";
 parserType = javaObject;
 
 
