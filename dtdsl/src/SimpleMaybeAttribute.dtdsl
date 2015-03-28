@@ -1,0 +1,10 @@
+parserName = "SimpleMaybeAttributeParser";
+parserType = javaObject;
+
+Skv:
+{
+	hasAttribute s ofType String;
+	hasAttribute i ofType int?;
+}
+
+beginWith = Skv;

@@ -1,0 +1,16 @@
+parserName = "SimpleJavaCode";
+parserType = javaObject;
+
+Skv: {
+	hasAttribute s ofType String;
+	hasAttribute i ofType int;
+	hasNext java: "getNext();" as Inner;
+}
+
+Inner:
+{
+	hasAttribute s ofType String;
+	hasAttribute i ofType int;
+}
+
+beginWith = Skv;
