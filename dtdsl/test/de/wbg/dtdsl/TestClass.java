@@ -41,13 +41,11 @@ public class TestClass {
 		
 		assertTrue("childOfChildOfO: wrong parent", attrib1.getParent() == childOfO);
 		assertTrue("childOfChildOfO: attribute name should be \"i\", but is " + attrib1.getName(), attrib1.getName() == "i");
-//		assertTrue("childOfChildOfO: should be \"value\", but is ", attrib1.getType().equals("value"));
 		assertEquals(attrib1.getType(), Integer.class);
 		assertTrue("childOfChildOfO: value should be \"1\", but is " + attrib1.getValue(), attrib1.getValue().equals( 1));
 		
 		assertTrue("childOfChildOfO: wrong parent", attrib0.getParent() == childOfO);
 		assertTrue("childOfChildOfO: attribute name should be \"i\", but is " + attrib0.getName(), attrib0.getName() == "s");
-//		assertTrue("childOfChildOfO: should be \"value\", but is ", attrib0.getType().equals("value"));
 		assertEquals(attrib0.getType(), String.class);
 		assertTrue("childOfChildOfO: value should be \"1\", but is " + attrib0.getValue(), attrib0.getValue().equals( "eins"));
 	}
