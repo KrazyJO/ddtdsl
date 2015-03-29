@@ -88,7 +88,8 @@ class JSONSimple {
 						node.setName(entry.getClass().toString().replace("class ", ""));
 						Attribute attrib = new Attribute("attribute"+node.increaseAttributeNumber());
 						attrib.setName("children");
-						attrib.setValue(String.valueOf(hashMap.get(entry)));
+						attrib.setValue(hashMap.get(entry));
+						attrib.setType(hashMap.get(entry).getClass());
 						
 						node.addChild(attrib);
 						attrib.setParent(node);
