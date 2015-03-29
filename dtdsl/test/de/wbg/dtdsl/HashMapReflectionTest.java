@@ -3,9 +3,11 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 
 import org.junit.Test;
+
 import de.wbg.dtdsl.Node;
 import de.wbg.dtdsl.Head;
 import de.wbg.dtdsl.Attribute;
+import de.wbg.dtdsl.testhelper.SimpleHashMapWithSimpleValue;
 
 
 public class HashMapReflectionTest {

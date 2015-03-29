@@ -1,4 +1,4 @@
-package de.wbg.dtdsl;
+package de.wbg.dtdsl.testhelper;
 
 import java.util.ArrayList;
 

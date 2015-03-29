@@ -71,6 +71,32 @@ class SimpleManyAttributeParser {
 					parseManyStartAttributeArray(obj, manyHead);
 				}
 			}
+			else if (next instanceof HashMap)
+				{
+					HashMap hashMap = (HashMap) next;
+					
+					for (Object entry : hashMap.keySet())
+					{
+						
+						Object valueForEntry = hashMap.get(entry);
+						
+						//entry is primitiv
+						//=> Node with key -> Attribute with value
+						Node node = new Node("node"+manyHead.increaseNodeNumber());
+						node.setKey(true);
+						node.setValue(String.valueOf(entry));
+						node.setName(entry.getClass().toString().replace("class ", ""));
+						Attribute attrib = new Attribute("attribute"+node.increaseAttributeNumber());
+						attrib.setName("array");
+						attrib.setValue(String.valueOf(hashMap.get(entry)));
+						
+						node.addChild(attrib);
+						attrib.setParent(node);
+						
+						manyHead.addChild(node);
+						node.setParent(manyHead);
+					}
+				}
 			
 			for (Element el: manyHead.getChildren())
 			{

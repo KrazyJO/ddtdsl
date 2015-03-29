@@ -1,4 +1,4 @@
-package de.wbg.dtdsl;
+package de.wbg.dtdsl.testhelper;
 
 public class SimpleArrayAttributeI {
 

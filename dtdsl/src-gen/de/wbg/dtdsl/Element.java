@@ -120,6 +120,16 @@ class Element
 		return this.attributeNumber++;
 	}
 	
+	public String getNameForAttribute()
+	{
+		return "attribute"+this.attributeNumber++;
+	}
+	
+	public String getNameForNode()
+	{
+		return "node"+this.nodeNumber++;
+	}
+	
 	public ArrayList<Element> getChildren()
 	{
 		return this.children;
