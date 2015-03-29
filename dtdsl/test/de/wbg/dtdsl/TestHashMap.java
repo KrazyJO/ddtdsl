@@ -48,16 +48,16 @@ public class TestHashMap {
 		
 		assertNotNull(value0);
 		assertEquals("exprected other value name", "value", value0.getName());
-		assertEquals("expected other value", "0", value0.getValue());
+		assertEquals("expected other value", 0, value0.getValue());
 		assertNotNull(value1);
 		assertEquals("exprected other value name", "value", value1.getName());
-		assertEquals("expected other value", "1", value1.getValue());
+		assertEquals("expected other value", 1, value1.getValue());
 		assertNotNull(value2);
 		assertEquals("exprected other value name", "value", value2.getName());
-		assertEquals("expected other value", "2", value2.getValue());
+		assertEquals("expected other value", 2, value2.getValue());
 		assertNotNull(value3);
 		assertEquals("exprected other value name", "value", value3.getName());
-		assertEquals("expected other value", "3", value3.getValue());
+		assertEquals("expected other value", 3, value3.getValue());
 	}
 	
 	@Test
@@ -95,16 +95,16 @@ public class TestHashMap {
 		
 		assertNotNull(value0);
 		assertEquals("exprected other value name", "value", value0.getName());
-		assertEquals("expected other value", "0", value0.getValue());
+		assertEquals("expected other value", 0, value0.getValue());
 		assertNotNull(value1);
 		assertEquals("exprected other value name", "value", value1.getName());
-		assertEquals("expected other value", "1", value1.getValue());
+		assertEquals("expected other value", 1, value1.getValue());
 		assertNotNull(value2);
 		assertEquals("exprected other value name", "value", value2.getName());
-		assertEquals("expected other value", "2", value2.getValue());
+		assertEquals("expected other value", 2, value2.getValue());
 		assertNotNull(value3);
 		assertEquals("exprected other value name", "value", value3.getName());
-		assertEquals("expected other value", "3", value3.getValue());
+		assertEquals("expected other value", 3, value3.getValue());
 	}
 	
 	 @Test

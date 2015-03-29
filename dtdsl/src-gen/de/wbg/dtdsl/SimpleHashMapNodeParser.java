@@ -152,14 +152,14 @@ class SimpleHashMapNodeParser {
 			
 			Field f = o.getClass().getDeclaredField("value"); //NoSuchFieldException
 			f.setAccessible(true);
-			int iWantThis = (int) f.get(o); //IllegalAccessException
+			Object iWantThis = f.get(o); //IllegalAccessException
 		
 			Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
-			valueNode.setType("value");
+			
 		
 			valueNode.setName("value");
-			valueNode.setValue(String.valueOf(iWantThis));
-			valueNode.setType("value");
+			valueNode.setValue(iWantThis);
+			valueNode.setType(iWantThis.getClass());
 			
 			valueNode.setParent(n);
 			n.getChildren().add(valueNode);

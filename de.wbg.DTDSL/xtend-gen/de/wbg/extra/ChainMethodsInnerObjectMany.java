@@ -37,10 +37,7 @@ public class ChainMethodsInnerObjectMany extends ChainMethodsInner {
           String _attributes = ((ObjectAttribute)inner).getAttributes();
           String _firstUpper_1 = StringExtensions.toFirstUpper(_attributes);
           _builder.append(_firstUpper_1, "\t");
-          _builder.append("(");
-          String _types = ((ObjectAttribute)inner).getTypes();
-          _builder.append(_types, "\t");
-          _builder.append(" o, Element n) throws Exception");
+          _builder.append("(Object o, Element n) throws Exception");
           _builder.newLineIfNotEmpty();
           _builder.append("\t");
           _builder.append("{");
@@ -49,7 +46,7 @@ public class ChainMethodsInnerObjectMany extends ChainMethodsInner {
           _builder.append("Attribute valueNode = new Attribute(\"attribute\" + n.increaseAttributeNumber());");
           _builder.newLine();
           _builder.append("\t\t");
-          _builder.append("valueNode.setType(\"value\");");
+          _builder.append("valueNode.setType(o.getClass());");
           _builder.newLine();
           _builder.append("\t");
           _builder.newLine();
@@ -60,10 +57,7 @@ public class ChainMethodsInnerObjectMany extends ChainMethodsInner {
           _builder.append("\");");
           _builder.newLineIfNotEmpty();
           _builder.append("\t\t");
-          _builder.append("valueNode.setValue(String.valueOf(o));");
-          _builder.newLine();
-          _builder.append("\t\t");
-          _builder.append("valueNode.setType(\"value\");");
+          _builder.append("valueNode.setValue(o);");
           _builder.newLine();
           _builder.append("\t\t");
           _builder.newLine();

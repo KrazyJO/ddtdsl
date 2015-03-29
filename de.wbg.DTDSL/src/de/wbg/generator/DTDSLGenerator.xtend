@@ -313,7 +313,9 @@ class DTDSLGenerator implements IGenerator {
 						node.setName(entry.getClass().toString().replace("class ", ""));
 						Attribute attrib = new Attribute("attribute"+node.increaseAttributeNumber());
 						attrib.setName("«i.attributes»");
-						attrib.setValue(String.valueOf(hashMap.get(entry)));
+«««						attrib.setValue(String.valueOf(hashMap.get(entry)));
+						attrib.setValue(hashMap.get(entry));
+						attrib.setType(hashMap.get(entry).getClass());
 						
 						node.addChild(attrib);
 						attrib.setParent(node);
@@ -543,14 +545,15 @@ class DTDSLGenerator implements IGenerator {
 
 		Field f = o.getClass().getDeclaredField("«a.attributes»"); //NoSuchFieldException
 		f.setAccessible(true);
-		«a.types» iWantThis = («a.types») f.get(o); //IllegalAccessException
+«««		«a.types» iWantThis = («a.types») f.get(o); //IllegalAccessException
+		Object iWantThis = f.get(o); 
 	
 		Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
-		valueNode.setType("value");
+		valueNode.setType(iWantThis.getClass());
 	
 		valueNode.setName("«a.attributes»");
-		valueNode.setValue(String.valueOf(iWantThis));
-		valueNode.setType("value");
+		valueNode.setValue(iWantThis);
+«««		valueNode.setType("value");
 		
 		valueNode.setParent(n);
 		n.getChildren().add(valueNode);

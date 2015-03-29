@@ -32,13 +32,13 @@ public class TestMany {
 		assertNotNull(attrib3);
 		
 		assertEquals("wrong attribute name", "array", attrib0.getName());
-		assertEquals("wrong attribute value", "0", attrib0.getValue());
+		assertEquals("wrong attribute value", 0, attrib0.getValue());
 		assertEquals("wrong attribute name", "array", attrib1.getName());
-		assertEquals("wrong attribute value", "1", attrib1.getValue());
+		assertEquals("wrong attribute value", 1, attrib1.getValue());
 		assertEquals("wrong attribute name", "array", attrib2.getName());
-		assertEquals("wrong attribute value", "2", attrib2.getValue());
+		assertEquals("wrong attribute value", 2, attrib2.getValue());
 		assertEquals("wrong attribute name", "array", attrib3.getName());
-		assertEquals("wrong attribute value", "3", attrib3.getValue());
+		assertEquals("wrong attribute value", 3, attrib3.getValue());
 	}
 	
 	@Test
@@ -64,13 +64,13 @@ public class TestMany {
 		assertEquals("wrong number of attributes", 4, node0.size());
 		
 		assertEquals("wrong attribute name", "array", attrib0.getName());
-		assertEquals("wrong attribute value", "0", attrib0.getValue());
+		assertEquals("wrong attribute value", 0, attrib0.getValue());
 		assertEquals("wrong attribute name", "array", attrib1.getName());
-		assertEquals("wrong attribute value", "1", attrib1.getValue());
+		assertEquals("wrong attribute value", 1, attrib1.getValue());
 		assertEquals("wrong attribute name", "array", attrib2.getName());
-		assertEquals("wrong attribute value", "2", attrib2.getValue());
+		assertEquals("wrong attribute value", 2, attrib2.getValue());
 		assertEquals("wrong attribute name", "array", attrib3.getName());
-		assertEquals("wrong attribute value", "3", attrib3.getValue());
+		assertEquals("wrong attribute value", 3, attrib3.getValue());
 	}
 	
 	@Test
@@ -94,13 +94,13 @@ public class TestMany {
 		assertNotNull(attrib3);
 		
 		assertEquals("wrong attribute name", "array", attrib0.getName());
-		assertEquals("wrong attribute value", "0", attrib0.getValue());
+		assertEquals("wrong attribute value", 0, attrib0.getValue());
 		assertEquals("wrong attribute name", "array", attrib1.getName());
-		assertEquals("wrong attribute value", "1", attrib1.getValue());
+		assertEquals("wrong attribute value", 1, attrib1.getValue());
 		assertEquals("wrong attribute name", "array", attrib2.getName());
-		assertEquals("wrong attribute value", "2", attrib2.getValue());
+		assertEquals("wrong attribute value", 2, attrib2.getValue());
 		assertEquals("wrong attribute name", "array", attrib3.getName());
-		assertEquals("wrong attribute value", "3", attrib3.getValue());
+		assertEquals("wrong attribute value", 3, attrib3.getValue());
 	}
 	
 }

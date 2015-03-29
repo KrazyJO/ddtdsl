@@ -35,12 +35,14 @@ public class TestMaybe {
 		
 		assertTrue("childOfChildOfO: wrong parent", attrib1.getParent() == childOfO);
 		assertTrue("childOfChildOfO: attribute name should be \"i\", but is " + attrib1.getName(), attrib1.getName() == "i");
-		assertTrue("childOfChildOfO: should be \"value\", but is ", attrib1.getType().equals("value"));
-		assertTrue("childOfChildOfO: value should be \"1\", but is " + attrib1.getValue(), attrib1.getValue().equals( "1"));
+//		assertTrue("childOfChildOfO: should be \"value\", but is " + attrib1.getType(), attrib1.getType().equals("value"));
+		assertEquals(attrib1.getType(), new Integer(1).getClass());
+		assertTrue("childOfChildOfO: value should be \"1\", but is " + attrib1.getValue(), attrib1.getValue().equals( 1));
 		
 		assertTrue("childOfChildOfO: wrong parent", attrib0.getParent() == childOfO);
 		assertTrue("childOfChildOfO: attribute name should be \"i\", but is " + attrib0.getName(), attrib0.getName() == "s");
-		assertTrue("childOfChildOfO: should be \"value\", but is ", attrib0.getType().equals("value"));
+//		assertTrue("childOfChildOfO: should be \"value\", but is ", attrib0.getType().equals("value"));
+		assertEquals(attrib0.getType(), new String("").getClass());
 		assertTrue("childOfChildOfO: value should be \"1\", but is " + attrib0.getValue(), attrib0.getValue().equals( "eins"));
 	}
 	
@@ -73,7 +75,7 @@ public class TestMaybe {
 		
 		assertEquals("attribute2: wrong parent", attribute2.getParent(), next);
 		assertEquals("attribute2: attribute name should be \"i\"", attribute2.getName(), "i");
-		assertEquals("attribute2: value should be \"2\", but is " + attribute2.getValue(), attribute2.getValue(), "1");
+		assertEquals("attribute2: value should be \"2\", but is " + attribute2.getValue(), attribute2.getValue(), 1);
 		
 		next = (Node)o.getChildren().get(1);
 		attribute1 = (Attribute)next.getChildren().get(0);
@@ -88,7 +90,7 @@ public class TestMaybe {
 		
 		assertTrue("attribute2: wrong parent", attribute2.getParent() == next);
 		assertTrue("attribute2: attribute name should be \"i\", but is " + attribute2.getName(), attribute2.getName() == "i");
-		assertTrue("attribute2: value should be \"2\", but is " + attribute2.getValue(), attribute2.getValue().equals( "2"));
+		assertTrue("attribute2: value should be 2, but is " + attribute2.getValue(), attribute2.getValue().equals( 2));
 		
 		skv.setNext(null);
 		Head o2 = p.parse(skv);
@@ -127,7 +129,7 @@ public class TestMaybe {
 		assertNotNull(headNodeNodeAttrib1);
 		assertNotNull(headNodeNodeAttrib2);
 		assertEquals("wrong attrib", "i", headNodeNodeAttrib1.getName());
-		assertEquals("wrong attrib", "2", headNodeNodeAttrib1.getValue());
+		assertEquals("wrong attrib", 2, headNodeNodeAttrib1.getValue());
 		assertEquals("wrong attrib", "s", headNodeNodeAttrib2.getName());
 		assertEquals("wrong attrib", "zwei", headNodeNodeAttrib2.getValue());
 		

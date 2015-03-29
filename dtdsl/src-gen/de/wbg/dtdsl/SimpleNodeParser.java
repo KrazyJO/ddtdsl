@@ -109,14 +109,14 @@ class SimpleNodeParser {
 			
 			Field f = o.getClass().getDeclaredField("s"); //NoSuchFieldException
 			f.setAccessible(true);
-			String iWantThis = (String) f.get(o); //IllegalAccessException
+			Object iWantThis = f.get(o); //IllegalAccessException
 		
 			Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
-			valueNode.setType("value");
+			
 		
 			valueNode.setName("s");
-			valueNode.setValue(String.valueOf(iWantThis));
-			valueNode.setType("value");
+			valueNode.setValue(iWantThis);
+			valueNode.setType(iWantThis.getClass());
 			
 			valueNode.setParent(n);
 			n.getChildren().add(valueNode);
@@ -139,14 +139,14 @@ class SimpleNodeParser {
 			
 			Field f = o.getClass().getDeclaredField("i"); //NoSuchFieldException
 			f.setAccessible(true);
-			int iWantThis = (int) f.get(o); //IllegalAccessException
+			Object iWantThis = f.get(o); //IllegalAccessException
 		
 			Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
-			valueNode.setType("value");
+			
 		
 			valueNode.setName("i");
-			valueNode.setValue(String.valueOf(iWantThis));
-			valueNode.setType("value");
+			valueNode.setValue(iWantThis);
+			valueNode.setType(iWantThis.getClass());
 			
 			valueNode.setParent(n);
 			n.getChildren().add(valueNode);
@@ -171,7 +171,7 @@ try
 }
 catch(NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 {
-	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@1620ffd1 (attributes: next)");
+	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@26086388 (attributes: next)");
 }
 catch (ParserException e)
 {
@@ -238,14 +238,14 @@ catch (ParserException e)
 			
 			Field f = o.getClass().getDeclaredField("s"); //NoSuchFieldException
 			f.setAccessible(true);
-			String iWantThis = (String) f.get(o); //IllegalAccessException
+			Object iWantThis = f.get(o); //IllegalAccessException
 		
 			Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
-			valueNode.setType("value");
+			
 		
 			valueNode.setName("s");
-			valueNode.setValue(String.valueOf(iWantThis));
-			valueNode.setType("value");
+			valueNode.setValue(iWantThis);
+			valueNode.setType(iWantThis.getClass());
 			
 			valueNode.setParent(n);
 			n.getChildren().add(valueNode);
@@ -268,14 +268,14 @@ catch (ParserException e)
 			
 			Field f = o.getClass().getDeclaredField("i"); //NoSuchFieldException
 			f.setAccessible(true);
-			int iWantThis = (int) f.get(o); //IllegalAccessException
+			Object iWantThis = f.get(o); //IllegalAccessException
 		
 			Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
-			valueNode.setType("value");
+			
 		
 			valueNode.setName("i");
-			valueNode.setValue(String.valueOf(iWantThis));
-			valueNode.setType("value");
+			valueNode.setValue(iWantThis);
+			valueNode.setType(iWantThis.getClass());
 			
 			valueNode.setParent(n);
 			n.getChildren().add(valueNode);

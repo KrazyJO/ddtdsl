@@ -93,10 +93,10 @@ public class Node extends Element{
 		{
 			
 			private String name;
-			private String value;
-			private String type;
+			private Object value;
+			private Class type;
 			
-			public Attribute(String name, String value, String type, String id)
+			public Attribute(String name, Object value, Class type, String id)
 			{
 				super(id);
 				this.name = name;
@@ -134,22 +134,22 @@ public class Node extends Element{
 				this.name = value;
 			}
 			
-			public String getValue()
+			public Object getValue()
 			{
 				return this.value;
 			}
 			
-			public void setValue(String value) 
+			public void setValue(Object value) 
 			{
 				this.value = value;
 			}
 			
-			public String getType()
+			public Class getType()
 			{
 				return this.type;
 			}
 			
-			public void setType(String value) 
+			public void setType(Class value) 
 			{
 				this.type = value;
 			}

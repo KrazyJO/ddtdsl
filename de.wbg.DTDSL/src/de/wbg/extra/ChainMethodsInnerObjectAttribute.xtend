@@ -29,14 +29,17 @@ class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
 			
 			Field f = o.getClass().getDeclaredField("«i.attributes»"); //NoSuchFieldException
 			f.setAccessible(true);
-			«i.types» iWantThis = («i.types») f.get(o); //IllegalAccessException
+«««			«i.types» iWantThis = («i.types») f.get(o); //IllegalAccessException
+			Object iWantThis = f.get(o); //IllegalAccessException
 		
 			Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
-			valueNode.setType("value");
+«««			Attribute valueNode = new Attribute(n.getNameForAttribute());
+			
 		
 			valueNode.setName("«i.attributes»");
-			valueNode.setValue(String.valueOf(iWantThis));
-			valueNode.setType("value");
+			valueNode.setValue(iWantThis);
+«««			valueNode.setType("value");
+			valueNode.setType(iWantThis.getClass());
 			
 			valueNode.setParent(n);
 			n.getChildren().add(valueNode);

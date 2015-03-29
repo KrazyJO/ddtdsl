@@ -88,7 +88,8 @@ class SimpleManyAttributeParser {
 						node.setName(entry.getClass().toString().replace("class ", ""));
 						Attribute attrib = new Attribute("attribute"+node.increaseAttributeNumber());
 						attrib.setName("array");
-						attrib.setValue(String.valueOf(hashMap.get(entry)));
+						attrib.setValue(hashMap.get(entry));
+						attrib.setType(hashMap.get(entry).getClass());
 						
 						node.addChild(attrib);
 						attrib.setParent(node);
@@ -122,14 +123,13 @@ class SimpleManyAttributeParser {
 	
 }
 		
-	public void parseManyStartAttributeArray(int o, Element n) throws Exception
+	public void parseManyStartAttributeArray(Object o, Element n) throws Exception
 	{
 		Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
-		valueNode.setType("value");
+		valueNode.setType(o.getClass());
 	
 		valueNode.setName("array");
-		valueNode.setValue(String.valueOf(o));
-		valueNode.setType("value");
+		valueNode.setValue(o);
 		
 		valueNode.setParent(n);
 		n.getChildren().add(valueNode);

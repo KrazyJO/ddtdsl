@@ -25,14 +25,16 @@ class ChainMethodsInnerObjectMany extends ChainMethodsInner {
 			var inner = i.option
 			if (inner instanceof ObjectAttribute)
 			{
-				this.returnValue = '''	public void parseMany«d.name.toFirstUpper»Attribute«inner.attributes.toFirstUpper»(«inner.types» o, Element n) throws Exception
+				this.returnValue = '''	public void parseMany«d.name.toFirstUpper»Attribute«inner.attributes.toFirstUpper»(Object o, Element n) throws Exception
 	{
 		Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
-		valueNode.setType("value");
+«««		valueNode.setType("value");
+		valueNode.setType(o.getClass());
 	
 		valueNode.setName("«inner.attributes»");
-		valueNode.setValue(String.valueOf(o));
-		valueNode.setType("value");
+«««		valueNode.setValue(String.valueOf(o));
+		valueNode.setValue(o);
+«««		valueNode.setType("value");
 		
 		valueNode.setParent(n);
 		n.getChildren().add(valueNode);

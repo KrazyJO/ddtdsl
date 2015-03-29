@@ -41,12 +41,14 @@ public class TestClass {
 		
 		assertTrue("childOfChildOfO: wrong parent", attrib1.getParent() == childOfO);
 		assertTrue("childOfChildOfO: attribute name should be \"i\", but is " + attrib1.getName(), attrib1.getName() == "i");
-		assertTrue("childOfChildOfO: should be \"value\", but is ", attrib1.getType().equals("value"));
-		assertTrue("childOfChildOfO: value should be \"1\", but is " + attrib1.getValue(), attrib1.getValue().equals( "1"));
+//		assertTrue("childOfChildOfO: should be \"value\", but is ", attrib1.getType().equals("value"));
+		assertEquals(attrib1.getType(), Integer.class);
+		assertTrue("childOfChildOfO: value should be \"1\", but is " + attrib1.getValue(), attrib1.getValue().equals( 1));
 		
 		assertTrue("childOfChildOfO: wrong parent", attrib0.getParent() == childOfO);
 		assertTrue("childOfChildOfO: attribute name should be \"i\", but is " + attrib0.getName(), attrib0.getName() == "s");
-		assertTrue("childOfChildOfO: should be \"value\", but is ", attrib0.getType().equals("value"));
+//		assertTrue("childOfChildOfO: should be \"value\", but is ", attrib0.getType().equals("value"));
+		assertEquals(attrib0.getType(), String.class);
 		assertTrue("childOfChildOfO: value should be \"1\", but is " + attrib0.getValue(), attrib0.getValue().equals( "eins"));
 	}
 	
@@ -80,7 +82,7 @@ public class TestClass {
 		
 		assertTrue("attribute2: wrong parent", attribute2.getParent() == next);
 		assertTrue("attribute2: attribute name should be \"i\"", attribute2.getName() == "i");
-		assertTrue("attribute2: value should be \"2\", but is " + attribute2.getValue(), attribute2.getValue().equals( "1"));
+		assertTrue("attribute2: value should be 1, but is " + attribute2.getValue(), attribute2.getValue().equals( 1));
 		
 		next = (Node)o.getChildren().get(1);
 		attribute1 = (Attribute)next.getChildren().get(0);
@@ -95,7 +97,7 @@ public class TestClass {
 		
 		assertTrue("attribute2: wrong parent", attribute2.getParent() == next);
 		assertTrue("attribute2: attribute name should be \"i\", but is " + attribute2.getName(), attribute2.getName() == "i");
-		assertTrue("attribute2: value should be \"2\", but is " + attribute2.getValue(), attribute2.getValue().equals( "2"));
+		assertTrue("attribute2: value should be 2, but is " + attribute2.getValue(), attribute2.getValue().equals( 2));
 	}
 	
 	@Test
@@ -162,7 +164,7 @@ public class TestClass {
 		assertEquals("attrib1: wrong name", attrib1.getName(), "s");
 		assertEquals("attrib1: wrong value", attrib1.getValue(), "zwei");
 		assertEquals("attrib2: wrong name", attrib2.getName(), "i");
-		assertEquals("attrib2: wrong value", attrib2.getValue(), "2");
+		assertEquals("attrib2: wrong value", attrib2.getValue(), 2);
 		
 	}
 
@@ -195,10 +197,10 @@ public class TestClass {
 		assertEquals(attribute0.getName(), "s");
 		assertEquals(attribute0.getValue(), "eins");
 		assertEquals(attribute1.getName(), "i");
-		assertEquals(attribute1.getValue(), "1");
+		assertEquals(attribute1.getValue(), 1);
 		assertEquals(attribute2.getName(), "s");
 		assertEquals(attribute2.getValue(), "zwei");
 		assertEquals(attribute3.getName(), "i");
-		assertEquals(attribute3.getValue(), "2");
+		assertEquals(attribute3.getValue(), 2);
 	}
 }

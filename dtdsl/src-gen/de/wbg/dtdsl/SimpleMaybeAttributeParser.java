@@ -103,14 +103,14 @@ class SimpleMaybeAttributeParser {
 			
 			Field f = o.getClass().getDeclaredField("s"); //NoSuchFieldException
 			f.setAccessible(true);
-			String iWantThis = (String) f.get(o); //IllegalAccessException
+			Object iWantThis = f.get(o); //IllegalAccessException
 		
 			Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
-			valueNode.setType("value");
+			
 		
 			valueNode.setName("s");
-			valueNode.setValue(String.valueOf(iWantThis));
-			valueNode.setType("value");
+			valueNode.setValue(iWantThis);
+			valueNode.setType(iWantThis.getClass());
 			
 			valueNode.setParent(n);
 			n.getChildren().add(valueNode);
@@ -133,14 +133,13 @@ class SimpleMaybeAttributeParser {
 
 		Field f = o.getClass().getDeclaredField("i"); //NoSuchFieldException
 		f.setAccessible(true);
-		int iWantThis = (int) f.get(o); //IllegalAccessException
+		Object iWantThis = f.get(o); 
 	
 		Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
-		valueNode.setType("value");
+		valueNode.setType(iWantThis.getClass());
 	
 		valueNode.setName("i");
-		valueNode.setValue(String.valueOf(iWantThis));
-		valueNode.setType("value");
+		valueNode.setValue(iWantThis);
 		
 		valueNode.setParent(n);
 		n.getChildren().add(valueNode);
