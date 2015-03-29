@@ -118,7 +118,6 @@ class SimpleMaybeNode {
 	{
 		//Attribute
 		//inner == null
-		//int i as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -140,7 +139,7 @@ class SimpleMaybeNode {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : int i");
+			throw new ParserException("Error while parsing : i");
 		}
 	}
 	
@@ -148,7 +147,6 @@ class SimpleMaybeNode {
 	{
 		//Attribute
 		//inner == null
-		//String s as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -170,7 +168,7 @@ class SimpleMaybeNode {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : String s");
+			throw new ParserException("Error while parsing : s");
 		}
 	}
 	
@@ -186,7 +184,7 @@ try
 }
 catch(NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 {
-	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@4e798efe (attributes: next)");
+	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@1d92df39 (attributes: next)");
 }
 catch (ParserException e)
 {
@@ -247,7 +245,6 @@ catch (ParserException e)
 	{
 		//Attribute
 		//inner == null
-		//int i as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -269,7 +266,7 @@ catch (ParserException e)
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : int i");
+			throw new ParserException("Error while parsing : i");
 		}
 	}
 	
@@ -277,7 +274,6 @@ catch (ParserException e)
 	{
 		//Attribute
 		//inner == null
-		//String s as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -299,7 +295,7 @@ catch (ParserException e)
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : String s");
+			throw new ParserException("Error while parsing : s");
 		}
 	}
 	

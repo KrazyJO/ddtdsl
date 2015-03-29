@@ -103,7 +103,6 @@ class SimpleNodeParser {
 	{
 		//Attribute
 		//inner == null
-		//String s as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -125,7 +124,7 @@ class SimpleNodeParser {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : String s");
+			throw new ParserException("Error while parsing : s");
 		}
 	}
 	
@@ -133,7 +132,6 @@ class SimpleNodeParser {
 	{
 		//Attribute
 		//inner == null
-		//int i as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -155,7 +153,7 @@ class SimpleNodeParser {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : int i");
+			throw new ParserException("Error while parsing : i");
 		}
 	}
 	
@@ -171,7 +169,7 @@ try
 }
 catch(NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 {
-	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@26086388 (attributes: next)");
+	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@25c9de7f (attributes: next)");
 }
 catch (ParserException e)
 {
@@ -232,7 +230,6 @@ catch (ParserException e)
 	{
 		//Attribute
 		//inner == null
-		//String s as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -254,7 +251,7 @@ catch (ParserException e)
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : String s");
+			throw new ParserException("Error while parsing : s");
 		}
 	}
 	
@@ -262,7 +259,6 @@ catch (ParserException e)
 	{
 		//Attribute
 		//inner == null
-		//int i as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -284,7 +280,7 @@ catch (ParserException e)
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : int i");
+			throw new ParserException("Error while parsing : i");
 		}
 	}
 	

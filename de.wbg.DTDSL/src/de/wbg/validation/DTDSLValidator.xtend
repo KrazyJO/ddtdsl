@@ -27,13 +27,14 @@ class DTDSLValidator extends AbstractDTDSLValidator {
 //		}
 //	}
 
-	@Check
-	def objectDescriptionStartsWithCapital(ObjectDescription o)
-	{
-		if (Character.isLowerCase(o.name.charAt(0)))
-		{
-			warning('Name should start with a capital', DTDSLPackage.Literals.OBJECT_DESCRIPTION__NAME)
-		}
-		
-	}
+//	@Check
+//	def objectDescriptionStartsWithCapital(ObjectDescription o)
+//	{
+//		if (Character.isLowerCase(o.name.charAt(0)))
+//		{
+////			warning('Name should start with a capital', DTDSLPackage.Literals.OBJECT_DESCRIPTION__NAME)
+////			warning('Name should start with a capital', DTDSLPackage.Literals.ABSTRACT__NAME)
+//		}
+//		
+//	}
 }

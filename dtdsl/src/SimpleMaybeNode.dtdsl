@@ -1,16 +1,16 @@
 parserName = "SimpleMaybeNode";
 parserType = javaObject;
-Skv:
+Node Skv:
 {
-	hasAttribute i ofType int;
-	hasAttribute s ofType String;
+	hasAttribute i;
+	hasAttribute s;
 	hasNode next as Next?;
 }
 
-Next: 
+Node Next: 
 {
-	hasAttribute i ofType int;
-	hasAttribute s ofType String;	
+	hasAttribute i;
+	hasAttribute s;	
 }
 
 beginWith = Skv;

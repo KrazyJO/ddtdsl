@@ -102,6 +102,7 @@ class DTDSLGenerator implements IGenerator {
 			import java.util.ArrayList;
 			import java.util.HashMap;
 			import java.util.LinkedList;
+			import java.lang.reflect.Array;
 			'''				
 		}»
 		
@@ -262,12 +263,31 @@ class DTDSLGenerator implements IGenerator {
 			Object next = (Object) f.get(o);
 			Head manyHead = new Head("MANYHEAD");
 			
-			if (next instanceof «i.types»[])
+«««			if (next instanceof «i.types»[])
+«««			{
+«««				«i.types»[] array = («i.types»[])next;
+«««				for (int index = 0; index < array.length; index++)
+«««				{
+«««					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(array[index], manyHead);
+«««				}
+«««			}
+			if (next instanceof Object[])
 			{
-				«i.types»[] array = («i.types»[])next;
+				//for not-primitive datatypes
+				
+				Object[] array = (Object[])next;
 				for (int index = 0; index < array.length; index++)
 				{
 					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(array[index], manyHead);
+				}
+			}
+			else if (next.getClass().isArray())
+			{
+				//for primitive datatypes
+				
+				for (int index = 0; index < Array.getLength(next); index++)
+				{
+					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(Array.get(next ,index), manyHead);
 				}
 			}
 			else if (next instanceof ArrayList)
@@ -275,7 +295,7 @@ class DTDSLGenerator implements IGenerator {
 				ArrayList al = (ArrayList)next;
 				for (int index = 0; index < al.size(); index++)
 				{
-					«i.types» obj = («i.types»)al.get(index);
+					Object obj = al.get(index);
 					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(obj, manyHead);
 				}
 			}
@@ -284,7 +304,7 @@ class DTDSLGenerator implements IGenerator {
 				LinkedList al = (LinkedList)next;
 				for (int index = 0; index < al.size(); index++)
 				{
-					«i.types» obj = («i.types»)al.get(index);
+					Object obj = al.get(index);
 					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(obj, manyHead);
 				}
 			}
@@ -536,7 +556,7 @@ class DTDSLGenerator implements IGenerator {
 		
 //		if (a.inner == null) {
 			ret += '''		//inner == null
-//«a.types» «a.attributes» as ;
+«««//«a.types» «a.attributes» as ;
 			'''
 			
 		
@@ -562,7 +582,7 @@ class DTDSLGenerator implements IGenerator {
 	{
 		//e.printStackTrace();
 		n.setAttributeNumber(oldAttributeNumber);
-		throw new ParserException("Error while parsing : «a.types» «a.attributes»");
+		throw new ParserException("Error while parsing : «a.attributes»");
 	}
 '''
 

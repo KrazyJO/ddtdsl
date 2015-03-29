@@ -16,15 +16,16 @@
     <genClasses ecoreClass="DTDSL.ecore#//StartPoint">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DTDSL.ecore#//StartPoint/begin"/>
     </genClasses>
-    <genClasses ecoreClass="DTDSL.ecore#//Abstract"/>
+    <genClasses ecoreClass="DTDSL.ecore#//Abstract">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//Abstract/name"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//StringDescription"/>
     <genClasses ecoreClass="DTDSL.ecore#//ObjectDescription">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//ObjectDescription/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//ObjectDescription/description"/>
     </genClasses>
     <genClasses ecoreClass="DTDSL.ecore#//ObjectDescriptionInner"/>
     <genClasses ecoreClass="DTDSL.ecore#//ObjectAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//ObjectAttribute/attributes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//ObjectAttribute/types"/>
     </genClasses>
     <genClasses ecoreClass="DTDSL.ecore#//ObjectNode">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//ObjectNode/attributes"/>

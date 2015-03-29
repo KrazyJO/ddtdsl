@@ -1,9 +1,9 @@
 parserName = "SimpleManyAttributeParser";
 parserType = javaObject;
 
-Start: 
+Node Start: 
 {
-	hasAttribute array ofType int*;
+	hasAttribute array *;
 }
 
 beginWith = Start;

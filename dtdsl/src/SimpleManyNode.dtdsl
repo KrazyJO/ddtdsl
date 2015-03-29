@@ -1,15 +1,15 @@
 parserName = "SimpleArrayNodeParser";
 parserType = javaObject;
 
-Start: 
+Node Start: 
 {
 	hasNode children as Skv*;
 }
 
-Skv: 
+Node Skv: 
 {
-	hasAttribute i ofType int;
-	hasAttribute s ofType String;
+	hasAttribute i;
+	hasAttribute s;
 }
 
 beginWith = Start;

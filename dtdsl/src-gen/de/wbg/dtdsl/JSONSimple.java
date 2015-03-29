@@ -45,9 +45,9 @@ class JSONSimple {
 			Object next = (Object) f.get(o);
 			Head manyHead = new Head("MANYHEAD");
 			
-			if (next instanceof int[])
+			if (next instanceof Object[])
 			{
-				int[] array = (int[])next;
+				Object[] array = (Object[])next;
 				for (int index = 0; index < array.length; index++)
 				{
 					parseManyJSONSimpleAttributeChildren(array[index], manyHead);
@@ -58,7 +58,7 @@ class JSONSimple {
 				ArrayList al = (ArrayList)next;
 				for (int index = 0; index < al.size(); index++)
 				{
-					int obj = (int)al.get(index);
+					Object obj = al.get(index);
 					parseManyJSONSimpleAttributeChildren(obj, manyHead);
 				}
 			}
@@ -67,7 +67,7 @@ class JSONSimple {
 				LinkedList al = (LinkedList)next;
 				for (int index = 0; index < al.size(); index++)
 				{
-					int obj = (int)al.get(index);
+					Object obj = al.get(index);
 					parseManyJSONSimpleAttributeChildren(obj, manyHead);
 				}
 			}
@@ -88,7 +88,8 @@ class JSONSimple {
 						node.setName(entry.getClass().toString().replace("class ", ""));
 						Attribute attrib = new Attribute("attribute"+node.increaseAttributeNumber());
 						attrib.setName("children");
-						attrib.setValue(String.valueOf(hashMap.get(entry)));
+						attrib.setValue(hashMap.get(entry));
+						attrib.setType(hashMap.get(entry).getClass());
 						
 						node.addChild(attrib);
 						attrib.setParent(node);

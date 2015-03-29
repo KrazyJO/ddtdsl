@@ -118,7 +118,6 @@ class SimpleMaybeNextParser {
 	{
 		//Attribute
 		//inner == null
-		//String s as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -140,7 +139,7 @@ class SimpleMaybeNextParser {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : String s");
+			throw new ParserException("Error while parsing : s");
 		}
 	}
 	
@@ -148,7 +147,6 @@ class SimpleMaybeNextParser {
 	{
 		//Attribute
 		//inner == null
-		//int i as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -170,7 +168,7 @@ class SimpleMaybeNextParser {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : int i");
+			throw new ParserException("Error while parsing : i");
 		}
 	}
 	
@@ -246,7 +244,6 @@ class SimpleMaybeNextParser {
 	{
 		//Attribute
 		//inner == null
-		//String s as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -268,7 +265,7 @@ class SimpleMaybeNextParser {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : String s");
+			throw new ParserException("Error while parsing : s");
 		}
 	}
 	
@@ -276,7 +273,6 @@ class SimpleMaybeNextParser {
 	{
 		//Attribute
 		//inner == null
-		//int i as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -298,7 +294,7 @@ class SimpleMaybeNextParser {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : int i");
+			throw new ParserException("Error while parsing : i");
 		}
 	}
 	

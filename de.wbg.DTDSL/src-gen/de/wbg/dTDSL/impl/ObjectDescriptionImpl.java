@@ -8,15 +8,12 @@ import de.wbg.dTDSL.ObjectDescriptionInner;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -28,7 +25,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.wbg.dTDSL.impl.ObjectDescriptionImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.wbg.dTDSL.impl.ObjectDescriptionImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
@@ -37,26 +33,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ObjectDescriptionImpl extends AbstractImpl implements ObjectDescription
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -86,29 +62,6 @@ public class ObjectDescriptionImpl extends AbstractImpl implements ObjectDescrip
   protected EClass eStaticClass()
   {
     return DTDSLPackage.Literals.OBJECT_DESCRIPTION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_DESCRIPTION__NAME, oldName, name));
   }
 
   /**
@@ -151,8 +104,6 @@ public class ObjectDescriptionImpl extends AbstractImpl implements ObjectDescrip
   {
     switch (featureID)
     {
-      case DTDSLPackage.OBJECT_DESCRIPTION__NAME:
-        return getName();
       case DTDSLPackage.OBJECT_DESCRIPTION__DESCRIPTION:
         return getDescription();
     }
@@ -170,9 +121,6 @@ public class ObjectDescriptionImpl extends AbstractImpl implements ObjectDescrip
   {
     switch (featureID)
     {
-      case DTDSLPackage.OBJECT_DESCRIPTION__NAME:
-        setName((String)newValue);
-        return;
       case DTDSLPackage.OBJECT_DESCRIPTION__DESCRIPTION:
         getDescription().clear();
         getDescription().addAll((Collection<? extends ObjectDescriptionInner>)newValue);
@@ -191,9 +139,6 @@ public class ObjectDescriptionImpl extends AbstractImpl implements ObjectDescrip
   {
     switch (featureID)
     {
-      case DTDSLPackage.OBJECT_DESCRIPTION__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case DTDSLPackage.OBJECT_DESCRIPTION__DESCRIPTION:
         getDescription().clear();
         return;
@@ -211,29 +156,10 @@ public class ObjectDescriptionImpl extends AbstractImpl implements ObjectDescrip
   {
     switch (featureID)
     {
-      case DTDSLPackage.OBJECT_DESCRIPTION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DTDSLPackage.OBJECT_DESCRIPTION__DESCRIPTION:
         return description != null && !description.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //ObjectDescriptionImpl

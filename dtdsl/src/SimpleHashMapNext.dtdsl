@@ -1,14 +1,14 @@
 parserName = "SimpleHashMapNextParser";
 parserType = javaObject;
 
-Start:
+Node Start : 
 {
 	hasNext children as SimpleValue*;	//children ist HashMap
 }
 
-SimpleValue: 
+Node SimpleValue : 
 {
-	hasAttribute value ofType int;
+	hasAttribute value;
 }
 
 beginWith = Start;

@@ -1,5 +1,7 @@
 grammar de.wbg.DTDSL with org.eclipse.xtext.common.Terminals
 
+import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
+
 generate dTDSL "http://www.wbg.de/DTDSL"
 
 DTDSL:
@@ -14,7 +16,7 @@ StartPoint:
 ;
 
 Abstract:
-	ObjectDescription //| ObjectHashMapDescription
+	ObjectDescription | StringDescription //| ObjectHashMapDescription
 ;
 
 //ObjectHashMapDescription:
@@ -25,8 +27,16 @@ Abstract:
 //	
 //;
 
+StringDescription:
+	'String' name=ID ':'  '{' /*description+=StringDescriptionInner* */ '}'
+;
+
+StringDescriptionInner:
+	'inner'
+;
+
 ObjectDescription:
-	name=ID ':' '{' description+=ObjectDescriptionInner* '}'
+	'Node' name=ID ':' '{' description+=ObjectDescriptionInner* '}'
 ;
 
 ObjectNodeType:
@@ -37,9 +47,15 @@ ObjectDescriptionInner:
 	(ObjectNode | ObjectAttribute | ObjectNext | ObjectMaybe | ObjectMany | ObjectChoice) ';'
 ;
 
+//ObjectAttribute:
+//	'hasAttribute' attributes=ID 'ofType' types=Type 
+//;
+
 ObjectAttribute:
-	'hasAttribute' attributes=ID 'ofType' types=Type 
+	'hasAttribute' attributes=ID// 'ofType' types=[jvmTypes::JvmType | QualifiedName] 
 ;
+
+QualifiedName: ID ('.' ID)*;
 
 //ObjectAttribute:
 //	'hasAttribute' attributes=ID 'ofType' (types=Type | inner=[ObjectDescription])
@@ -61,9 +77,9 @@ JavaCodeOrID:
 	('java' ':' code=STRING) | id=ID
 ;
 
-Type:
-  'boolean' | 'short' | 'int' | 'long' | 'float' | 'double' | 'char' | 'String'  | 'byte'
-;
+//Type:
+//  'boolean' | 'short' | 'int' | 'long' | 'float' | 'double' | 'char' | 'String'  | 'byte'
+//;
 
 ObjectMany:
 	option=ObjectMaybeInner '*'	

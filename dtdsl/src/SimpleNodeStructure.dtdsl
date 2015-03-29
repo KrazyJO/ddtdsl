@@ -1,17 +1,17 @@
 parserName = "SimpleNodeParser";
 parserType = javaObject;
 
-Skv:
+Node Skv:
 {
-	hasAttribute s ofType String;
-	hasAttribute i ofType int;
+	hasAttribute s;
+	hasAttribute i;
 	hasNode next as Inner;
 }
 
-Inner:
+Node Inner:
 {
-	hasAttribute s ofType String;
-	hasAttribute i ofType int; 
+	hasAttribute s;
+	hasAttribute i; 
 }
 
 beginWith = Skv;

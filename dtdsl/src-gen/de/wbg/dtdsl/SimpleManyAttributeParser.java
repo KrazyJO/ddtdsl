@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.lang.reflect.Array;
 
 class SimpleManyAttributeParser {
 	
@@ -45,12 +46,23 @@ class SimpleManyAttributeParser {
 			Object next = (Object) f.get(o);
 			Head manyHead = new Head("MANYHEAD");
 			
-			if (next instanceof int[])
+			if (next instanceof Object[])
 			{
-				int[] array = (int[])next;
+				//for not-primitive datatypes
+				
+				Object[] array = (Object[])next;
 				for (int index = 0; index < array.length; index++)
 				{
 					parseManyStartAttributeArray(array[index], manyHead);
+				}
+			}
+			else if (next.getClass().isArray())
+			{
+				//for primitive datatypes
+				
+				for (int index = 0; index < Array.getLength(next); index++)
+				{
+					parseManyStartAttributeArray(Array.get(next ,index), manyHead);
 				}
 			}
 			else if (next instanceof ArrayList)
@@ -58,7 +70,7 @@ class SimpleManyAttributeParser {
 				ArrayList al = (ArrayList)next;
 				for (int index = 0; index < al.size(); index++)
 				{
-					int obj = (int)al.get(index);
+					Object obj = al.get(index);
 					parseManyStartAttributeArray(obj, manyHead);
 				}
 			}
@@ -67,7 +79,7 @@ class SimpleManyAttributeParser {
 				LinkedList al = (LinkedList)next;
 				for (int index = 0; index < al.size(); index++)
 				{
-					int obj = (int)al.get(index);
+					Object obj = al.get(index);
 					parseManyStartAttributeArray(obj, manyHead);
 				}
 			}

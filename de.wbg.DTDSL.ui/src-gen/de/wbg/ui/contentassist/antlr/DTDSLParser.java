@@ -38,18 +38,21 @@ public class DTDSLParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getDTDSLAccess().getTypeAlternatives_6_0(), "rule__DTDSL__TypeAlternatives_6_0");
+					put(grammarAccess.getAbstractAccess().getAlternatives(), "rule__Abstract__Alternatives");
 					put(grammarAccess.getObjectNodeTypeAccess().getAlternatives(), "rule__ObjectNodeType__Alternatives");
 					put(grammarAccess.getObjectDescriptionInnerAccess().getAlternatives_0(), "rule__ObjectDescriptionInner__Alternatives_0");
 					put(grammarAccess.getJavaCodeOrIDAccess().getAlternatives(), "rule__JavaCodeOrID__Alternatives");
-					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 					put(grammarAccess.getObjectMaybeAccess().getAlternatives(), "rule__ObjectMaybe__Alternatives");
 					put(grammarAccess.getObjectMaybeInnerAccess().getAlternatives(), "rule__ObjectMaybeInner__Alternatives");
 					put(grammarAccess.getKeywordAccess().getAlternatives(), "rule__Keyword__Alternatives");
 					put(grammarAccess.getDTDSLAccess().getGroup(), "rule__DTDSL__Group__0");
 					put(grammarAccess.getStartPointAccess().getGroup(), "rule__StartPoint__Group__0");
+					put(grammarAccess.getStringDescriptionAccess().getGroup(), "rule__StringDescription__Group__0");
 					put(grammarAccess.getObjectDescriptionAccess().getGroup(), "rule__ObjectDescription__Group__0");
 					put(grammarAccess.getObjectDescriptionInnerAccess().getGroup(), "rule__ObjectDescriptionInner__Group__0");
 					put(grammarAccess.getObjectAttributeAccess().getGroup(), "rule__ObjectAttribute__Group__0");
+					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
+					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getObjectNodeAccess().getGroup(), "rule__ObjectNode__Group__0");
 					put(grammarAccess.getObjectNextAccess().getGroup(), "rule__ObjectNext__Group__0");
 					put(grammarAccess.getJavaCodeOrIDAccess().getGroup_0(), "rule__JavaCodeOrID__Group_0__0");
@@ -62,10 +65,10 @@ public class DTDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDTDSLAccess().getObjDescriptionAssignment_8(), "rule__DTDSL__ObjDescriptionAssignment_8");
 					put(grammarAccess.getDTDSLAccess().getStartAssignment_9(), "rule__DTDSL__StartAssignment_9");
 					put(grammarAccess.getStartPointAccess().getBeginAssignment_2(), "rule__StartPoint__BeginAssignment_2");
-					put(grammarAccess.getObjectDescriptionAccess().getNameAssignment_0(), "rule__ObjectDescription__NameAssignment_0");
-					put(grammarAccess.getObjectDescriptionAccess().getDescriptionAssignment_3(), "rule__ObjectDescription__DescriptionAssignment_3");
+					put(grammarAccess.getStringDescriptionAccess().getNameAssignment_1(), "rule__StringDescription__NameAssignment_1");
+					put(grammarAccess.getObjectDescriptionAccess().getNameAssignment_1(), "rule__ObjectDescription__NameAssignment_1");
+					put(grammarAccess.getObjectDescriptionAccess().getDescriptionAssignment_4(), "rule__ObjectDescription__DescriptionAssignment_4");
 					put(grammarAccess.getObjectAttributeAccess().getAttributesAssignment_1(), "rule__ObjectAttribute__AttributesAssignment_1");
-					put(grammarAccess.getObjectAttributeAccess().getTypesAssignment_3(), "rule__ObjectAttribute__TypesAssignment_3");
 					put(grammarAccess.getObjectNodeAccess().getAttributesAssignment_1(), "rule__ObjectNode__AttributesAssignment_1");
 					put(grammarAccess.getObjectNodeAccess().getInnerAssignment_3(), "rule__ObjectNode__InnerAssignment_3");
 					put(grammarAccess.getObjectNextAccess().getAttributeAssignment_1(), "rule__ObjectNext__AttributeAssignment_1");

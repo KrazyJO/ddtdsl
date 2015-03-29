@@ -146,7 +146,6 @@ class SimpleHashMapNodeParser {
 	{
 		//Attribute
 		//inner == null
-		//int value as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -168,7 +167,7 @@ class SimpleHashMapNodeParser {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : int value");
+			throw new ParserException("Error while parsing : value");
 		}
 	}
 	

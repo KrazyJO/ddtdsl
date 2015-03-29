@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.wbg.dTDSL.impl.ObjectAttributeImpl#getAttributes <em>Attributes</em>}</li>
- *   <li>{@link de.wbg.dTDSL.impl.ObjectAttributeImpl#getTypes <em>Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,26 +45,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
    * @ordered
    */
   protected String attributes = ATTRIBUTES_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getTypes() <em>Types</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTypes()
-   * @generated
-   * @ordered
-   */
-  protected static final String TYPES_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTypes() <em>Types</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTypes()
-   * @generated
-   * @ordered
-   */
-  protected String types = TYPES_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -116,29 +95,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTypes()
-  {
-    return types;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTypes(String newTypes)
-  {
-    String oldTypes = types;
-    types = newTypes;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_ATTRIBUTE__TYPES, oldTypes, types));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -146,8 +102,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
     {
       case DTDSLPackage.OBJECT_ATTRIBUTE__ATTRIBUTES:
         return getAttributes();
-      case DTDSLPackage.OBJECT_ATTRIBUTE__TYPES:
-        return getTypes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -164,9 +118,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
     {
       case DTDSLPackage.OBJECT_ATTRIBUTE__ATTRIBUTES:
         setAttributes((String)newValue);
-        return;
-      case DTDSLPackage.OBJECT_ATTRIBUTE__TYPES:
-        setTypes((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -185,9 +136,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
       case DTDSLPackage.OBJECT_ATTRIBUTE__ATTRIBUTES:
         setAttributes(ATTRIBUTES_EDEFAULT);
         return;
-      case DTDSLPackage.OBJECT_ATTRIBUTE__TYPES:
-        setTypes(TYPES_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -204,8 +152,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
     {
       case DTDSLPackage.OBJECT_ATTRIBUTE__ATTRIBUTES:
         return ATTRIBUTES_EDEFAULT == null ? attributes != null : !ATTRIBUTES_EDEFAULT.equals(attributes);
-      case DTDSLPackage.OBJECT_ATTRIBUTE__TYPES:
-        return TYPES_EDEFAULT == null ? types != null : !TYPES_EDEFAULT.equals(types);
     }
     return super.eIsSet(featureID);
   }
@@ -223,8 +169,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (attributes: ");
     result.append(attributes);
-    result.append(", types: ");
-    result.append(types);
     result.append(')');
     return result.toString();
   }

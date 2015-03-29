@@ -50,6 +50,15 @@ public interface DTDSLFactory extends EFactory
   Abstract createAbstract();
 
   /**
+   * Returns a new object of class '<em>String Description</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Description</em>'.
+   * @generated
+   */
+  StringDescription createStringDescription();
+
+  /**
    * Returns a new object of class '<em>Object Description</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -93,6 +93,14 @@ public class DTDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DTDSLPackage.STRING_DESCRIPTION:
+      {
+        StringDescription stringDescription = (StringDescription)theEObject;
+        T result = caseStringDescription(stringDescription);
+        if (result == null) result = caseAbstract(stringDescription);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DTDSLPackage.OBJECT_DESCRIPTION:
       {
         ObjectDescription objectDescription = (ObjectDescription)theEObject;
@@ -228,6 +236,22 @@ public class DTDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAbstract(Abstract object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Description</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Description</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringDescription(StringDescription object)
   {
     return null;
   }

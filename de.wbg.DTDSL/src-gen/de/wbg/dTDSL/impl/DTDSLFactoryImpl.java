@@ -67,6 +67,7 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
       case DTDSLPackage.DTDSL: return createDTDSL();
       case DTDSLPackage.START_POINT: return createStartPoint();
       case DTDSLPackage.ABSTRACT: return createAbstract();
+      case DTDSLPackage.STRING_DESCRIPTION: return createStringDescription();
       case DTDSLPackage.OBJECT_DESCRIPTION: return createObjectDescription();
       case DTDSLPackage.OBJECT_DESCRIPTION_INNER: return createObjectDescriptionInner();
       case DTDSLPackage.OBJECT_ATTRIBUTE: return createObjectAttribute();
@@ -114,6 +115,17 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
   {
     AbstractImpl abstract_ = new AbstractImpl();
     return abstract_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringDescription createStringDescription()
+  {
+    StringDescriptionImpl stringDescription = new StringDescriptionImpl();
+    return stringDescription;
   }
 
   /**

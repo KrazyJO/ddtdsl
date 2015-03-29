@@ -14,6 +14,7 @@ import de.wbg.dTDSL.ObjectMaybe;
 import de.wbg.dTDSL.ObjectNext;
 import de.wbg.dTDSL.ObjectNode;
 import de.wbg.dTDSL.StartPoint;
+import de.wbg.dTDSL.StringDescription;
 import de.wbg.services.DTDSLGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
@@ -111,6 +112,13 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case DTDSLPackage.STRING_DESCRIPTION:
+				if(context == grammarAccess.getAbstractRule() ||
+				   context == grammarAccess.getStringDescriptionRule()) {
+					sequence_StringDescription(context, (StringDescription) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
@@ -144,19 +152,16 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (attributes=ID types=Type)
+	 *     attributes=ID
 	 */
 	protected void sequence_ObjectAttribute(EObject context, ObjectAttribute semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__ATTRIBUTES) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__ATTRIBUTES));
-			if(transientValues.isValueTransient(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__TYPES) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__TYPES));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getObjectAttributeAccess().getAttributesIDTerminalRuleCall_1_0(), semanticObject.getAttributes());
-		feeder.accept(grammarAccess.getObjectAttributeAccess().getTypesTypeParserRuleCall_3_0(), semanticObject.getTypes());
 		feeder.finish();
 	}
 	
@@ -254,6 +259,22 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getStartPointAccess().getBeginObjectDescriptionIDTerminalRuleCall_2_0_1(), semanticObject.getBegin());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_StringDescription(EObject context, StringDescription semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DTDSLPackage.Literals.ABSTRACT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DTDSLPackage.Literals.ABSTRACT__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getStringDescriptionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 }

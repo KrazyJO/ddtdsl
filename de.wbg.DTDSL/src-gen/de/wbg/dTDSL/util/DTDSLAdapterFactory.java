@@ -90,6 +90,11 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
         return createAbstractAdapter();
       }
       @Override
+      public Adapter caseStringDescription(StringDescription object)
+      {
+        return createStringDescriptionAdapter();
+      }
+      @Override
       public Adapter caseObjectDescription(ObjectDescription object)
       {
         return createObjectDescriptionAdapter();
@@ -207,6 +212,21 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAbstractAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.StringDescription <em>String Description</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.wbg.dTDSL.StringDescription
+   * @generated
+   */
+  public Adapter createStringDescriptionAdapter()
   {
     return null;
   }
