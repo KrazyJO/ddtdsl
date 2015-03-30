@@ -3,7 +3,6 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dTDSL" nsURI="http://www.wbg.de/DTDSL" nsPrefix="dTDSL">
   <eClassifiers xsi:type="ecore:EClass" name="DTDSL">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parserName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="objDescription" upperBound="-1"
         eType="#//Abstract" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//StartPoint"

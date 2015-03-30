@@ -1,5 +1,4 @@
 parserName = "JSONSimple";
-parserType = javaObject;
 
 Node JSONSimple: {
 	hasAttribute children*;

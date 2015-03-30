@@ -1,6 +1,4 @@
 parserName = "SimpleHashMapNodeParser";
-parserType = javaObject;
-
 
 Node Start:
 {

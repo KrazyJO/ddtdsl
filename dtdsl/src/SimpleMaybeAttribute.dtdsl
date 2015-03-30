@@ -1,5 +1,4 @@
 parserName = "SimpleMaybeAttributeParser";
-parserType = javaObject;
 
 Node Skv:
 {

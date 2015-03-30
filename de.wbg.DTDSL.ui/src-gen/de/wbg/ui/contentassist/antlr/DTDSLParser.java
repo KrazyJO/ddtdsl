@@ -37,7 +37,6 @@ public class DTDSLParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getDTDSLAccess().getTypeAlternatives_6_0(), "rule__DTDSL__TypeAlternatives_6_0");
 					put(grammarAccess.getStartPointAccess().getAlternatives(), "rule__StartPoint__Alternatives");
 					put(grammarAccess.getAbstractAccess().getAlternatives(), "rule__Abstract__Alternatives");
 					put(grammarAccess.getStringDescriptionInnerAccess().getAlternatives(), "rule__StringDescriptionInner__Alternatives");
@@ -66,9 +65,8 @@ public class DTDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getObjectChoiceAccess().getGroup_2(), "rule__ObjectChoice__Group_2__0");
 					put(grammarAccess.getObjectMaybeAccess().getGroup_1(), "rule__ObjectMaybe__Group_1__0");
 					put(grammarAccess.getDTDSLAccess().getParserNameAssignment_2(), "rule__DTDSL__ParserNameAssignment_2");
-					put(grammarAccess.getDTDSLAccess().getTypeAssignment_6(), "rule__DTDSL__TypeAssignment_6");
-					put(grammarAccess.getDTDSLAccess().getObjDescriptionAssignment_8(), "rule__DTDSL__ObjDescriptionAssignment_8");
-					put(grammarAccess.getDTDSLAccess().getStartAssignment_9(), "rule__DTDSL__StartAssignment_9");
+					put(grammarAccess.getDTDSLAccess().getObjDescriptionAssignment_4(), "rule__DTDSL__ObjDescriptionAssignment_4");
+					put(grammarAccess.getDTDSLAccess().getStartAssignment_5(), "rule__DTDSL__StartAssignment_5");
 					put(grammarAccess.getStartPointAccess().getBeginAssignment_0_2(), "rule__StartPoint__BeginAssignment_0_2");
 					put(grammarAccess.getStartPointAccess().getBeginAssignment_1_0(), "rule__StartPoint__BeginAssignment_1_0");
 					put(grammarAccess.getStringDescriptionAccess().getNameAssignment_1(), "rule__StringDescription__NameAssignment_1");

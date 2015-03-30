@@ -1,5 +1,4 @@
 parserName = "SimpleManyAttributeParser";
-parserType = javaObject;
 
 Node Start: 
 {

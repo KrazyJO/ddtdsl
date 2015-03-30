@@ -1,5 +1,4 @@
 parserName = "SimpleStringKeyValue";
-parserType = javaObject;
 
 Node Begin: 
 {

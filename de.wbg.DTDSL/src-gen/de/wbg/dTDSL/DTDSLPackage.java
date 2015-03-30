@@ -76,22 +76,13 @@ public interface DTDSLPackage extends EPackage
   int DTDSL__PARSER_NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DTDSL__TYPE = 1;
-
-  /**
    * The feature id for the '<em><b>Obj Description</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DTDSL__OBJ_DESCRIPTION = 2;
+  int DTDSL__OBJ_DESCRIPTION = 1;
 
   /**
    * The feature id for the '<em><b>Start</b></em>' containment reference.
@@ -100,7 +91,7 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DTDSL__START = 3;
+  int DTDSL__START = 2;
 
   /**
    * The number of structural features of the '<em>DTDSL</em>' class.
@@ -109,7 +100,7 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DTDSL_FEATURE_COUNT = 4;
+  int DTDSL_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.StartPointImpl <em>Start Point</em>}' class.
@@ -571,17 +562,6 @@ public interface DTDSLPackage extends EPackage
   EAttribute getDTDSL_ParserName();
 
   /**
-   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.DTDSL#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see de.wbg.dTDSL.DTDSL#getType()
-   * @see #getDTDSL()
-   * @generated
-   */
-  EAttribute getDTDSL_Type();
-
-  /**
    * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.DTDSL#getObjDescription <em>Obj Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -970,14 +950,6 @@ public interface DTDSLPackage extends EPackage
      * @generated
      */
     EAttribute DTDSL__PARSER_NAME = eINSTANCE.getDTDSL_ParserName();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DTDSL__TYPE = eINSTANCE.getDTDSL_Type();
 
     /**
      * The meta object literal for the '<em><b>Obj Description</b></em>' containment reference list feature.

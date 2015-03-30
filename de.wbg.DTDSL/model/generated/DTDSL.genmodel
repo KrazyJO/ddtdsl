@@ -9,7 +9,6 @@
       fileExtensions="dtdsl" ecorePackage="DTDSL.ecore#/">
     <genClasses ecoreClass="DTDSL.ecore#//DTDSL">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//DTDSL/parserName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//DTDSL/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//DTDSL/objDescription"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//DTDSL/start"/>
     </genClasses>

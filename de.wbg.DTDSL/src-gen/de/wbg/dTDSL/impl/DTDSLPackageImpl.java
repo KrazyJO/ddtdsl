@@ -227,19 +227,9 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDTDSL_Type()
-  {
-    return (EAttribute)dtdslEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getDTDSL_ObjDescription()
   {
-    return (EReference)dtdslEClass.getEStructuralFeatures().get(2);
+    return (EReference)dtdslEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -249,7 +239,7 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    */
   public EReference getDTDSL_Start()
   {
-    return (EReference)dtdslEClass.getEStructuralFeatures().get(3);
+    return (EReference)dtdslEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -594,7 +584,6 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     // Create classes and their features
     dtdslEClass = createEClass(DTDSL);
     createEAttribute(dtdslEClass, DTDSL__PARSER_NAME);
-    createEAttribute(dtdslEClass, DTDSL__TYPE);
     createEReference(dtdslEClass, DTDSL__OBJ_DESCRIPTION);
     createEReference(dtdslEClass, DTDSL__START);
 
@@ -688,7 +677,6 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     // Initialize classes and features; add operations and parameters
     initEClass(dtdslEClass, de.wbg.dTDSL.DTDSL.class, "DTDSL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDTDSL_ParserName(), ecorePackage.getEString(), "parserName", null, 0, 1, de.wbg.dTDSL.DTDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDTDSL_Type(), ecorePackage.getEString(), "type", null, 0, 1, de.wbg.dTDSL.DTDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDTDSL_ObjDescription(), this.getAbstract(), null, "objDescription", null, 0, -1, de.wbg.dTDSL.DTDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDTDSL_Start(), this.getStartPoint(), null, "start", null, 0, 1, de.wbg.dTDSL.DTDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

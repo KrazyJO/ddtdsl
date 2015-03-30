@@ -107,61 +107,19 @@ ruleDTDSL returns [EObject current=null]
     {
     	newLeafNode(otherlv_3, grammarAccess.getDTDSLAccess().getSemicolonKeyword_3());
     }
-	otherlv_4='parserType' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getDTDSLAccess().getParserTypeKeyword_4());
-    }
-	otherlv_5='=' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getDTDSLAccess().getEqualsSignKeyword_5());
-    }
-(
-(
-(
-		lv_type_6_1=	'javaObject' 
-    {
-        newLeafNode(lv_type_6_1, grammarAccess.getDTDSLAccess().getTypeJavaObjectKeyword_6_0_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDTDSLRule());
-	        }
-       		setWithLastConsumed($current, "type", lv_type_6_1, null);
-	    }
-
-    |		lv_type_6_2=	'string' 
-    {
-        newLeafNode(lv_type_6_2, grammarAccess.getDTDSLAccess().getTypeStringKeyword_6_0_1());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getDTDSLRule());
-	        }
-       		setWithLastConsumed($current, "type", lv_type_6_2, null);
-	    }
-
-)
-
-)
-)	otherlv_7=';' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getDTDSLAccess().getSemicolonKeyword_7());
-    }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDTDSLAccess().getObjDescriptionAbstractParserRuleCall_8_0()); 
+	        newCompositeNode(grammarAccess.getDTDSLAccess().getObjDescriptionAbstractParserRuleCall_4_0()); 
 	    }
-		lv_objDescription_8_0=ruleAbstract		{
+		lv_objDescription_4_0=ruleAbstract		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDTDSLRule());
 	        }
        		add(
        			$current, 
        			"objDescription",
-        		lv_objDescription_8_0, 
+        		lv_objDescription_4_0, 
         		"Abstract");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -170,16 +128,16 @@ ruleDTDSL returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDTDSLAccess().getStartStartPointParserRuleCall_9_0()); 
+	        newCompositeNode(grammarAccess.getDTDSLAccess().getStartStartPointParserRuleCall_5_0()); 
 	    }
-		lv_start_9_0=ruleStartPoint		{
+		lv_start_5_0=ruleStartPoint		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDTDSLRule());
 	        }
        		set(
        			$current, 
        			"start",
-        		lv_start_9_0, 
+        		lv_start_5_0, 
         		"StartPoint");
 	        afterParserOrEnumRuleCall();
 	    }

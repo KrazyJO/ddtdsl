@@ -1,5 +1,4 @@
 parserName = "SimpleArrayParser";
-parserType = javaObject;
 
 Node Start: 
 {

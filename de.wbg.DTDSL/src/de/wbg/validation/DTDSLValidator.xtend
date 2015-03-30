@@ -3,9 +3,12 @@
  */
 package de.wbg.validation
 
-import org.eclipse.xtext.validation.Check
-import de.wbg.dTDSL.ObjectDescription
+import de.wbg.dTDSL.DTDSL
 import de.wbg.dTDSL.DTDSLPackage
+import de.wbg.dTDSL.ObjectDescription
+import de.wbg.dTDSL.ObjectNext
+import org.eclipse.xtext.validation.Check
+import de.wbg.dTDSL.Abstract
 
 //import org.eclipse.xtext.validation.Check
 
@@ -16,31 +19,63 @@ import de.wbg.dTDSL.DTDSLPackage
  */
 class DTDSLValidator extends AbstractDTDSLValidator {
 
-//  public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					MyDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	//keine Leerzeichen im Parsernamen (error)
+	@Check
+	def noParserNameWithSpaces(DTDSL model)
+	{
+		if (model.parserName.contains(" "))
+		{
+			error("Spaces in parser name are not allowed", DTDSLPackage.Literals.DTDSL__PARSER_NAME)
+		}
+	}
+	
+	//String und Node Description müssen unterschiedliche Namen haben (error)
+	@Check
+	def checkAbstractNames(Abstract a)
+	{
+		for (model: a.eResource.allContents.toIterable.filter(DTDSL))
+		{
+			for (abstract : model.objDescription) 
+			{
+				if (!a.equals(abstract))
+				{
+					if (a.name == abstract.name)
+					{
+						error("Object name has to be unique", DTDSLPackage.Literals.ABSTRACT__NAME)
+					}
+				}
+				
+			}
+		}
+	}
 
-//	@Check
-//	def objectDescriptionStartsWithCapital(ObjectDescription o)
-//	{
-//		if (Character.isLowerCase(o.name.charAt(0)))
-//		{
-////			warning('Name should start with a capital', DTDSLPackage.Literals.OBJECT_DESCRIPTION__NAME)
-////			warning('Name should start with a capital', DTDSLPackage.Literals.ABSTRACT__NAME)
-//		}
-//		
-//	}
+	//nur ein next innerhalb eines Objectes (error)
+	@Check 
+	def onlyOneNextInObjects(ObjectDescription d)
+	{
+		var counter = 0;
+		for (i: d.description)
+		{
+			if (i instanceof ObjectNext)
+			{
+				counter++
+				if (counter > 1)
+				{
+					error("Only one hasNext is allowed in an ObjectDescription", DTDSLPackage.Literals.ABSTRACT__NAME)
+				}
+			}
+		}
+		
+	}
+	
+	//Objectname sollte mit Großbuchstaben anfangen (warning)
+	@Check
+	def objectNameShouldStartWithCapital(Abstract a)
+	{
+		if (Character.isLowerCase(a.name.charAt(0)))
+		{
+			warning("Object name should start with capital letter", DTDSLPackage.Literals.ABSTRACT__NAME)
+		}
+	}
 
-//keine Leerzeichen im Parsernamen
-
-//String und Node Description müssen unterschiedliche Namen haben
-
-//nur ein next innerhalb eines Objectes
 }

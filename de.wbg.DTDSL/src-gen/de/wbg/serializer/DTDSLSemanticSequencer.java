@@ -125,7 +125,7 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (parserName=STRING (type='javaObject' | type='string') objDescription+=Abstract* start=StartPoint)
+	 *     (parserName=STRING objDescription+=Abstract* start=StartPoint)
 	 */
 	protected void sequence_DTDSL(EObject context, DTDSL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

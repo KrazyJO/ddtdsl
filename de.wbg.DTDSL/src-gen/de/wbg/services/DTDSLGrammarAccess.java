@@ -26,25 +26,18 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cParserNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cParserNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cParserNameAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cParserTypeKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cEqualsSignKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cTypeAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final Alternatives cTypeAlternatives_6_0 = (Alternatives)cTypeAssignment_6.eContents().get(0);
-		private final Keyword cTypeJavaObjectKeyword_6_0_0 = (Keyword)cTypeAlternatives_6_0.eContents().get(0);
-		private final Keyword cTypeStringKeyword_6_0_1 = (Keyword)cTypeAlternatives_6_0.eContents().get(1);
-		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cObjDescriptionAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cObjDescriptionAbstractParserRuleCall_8_0 = (RuleCall)cObjDescriptionAssignment_8.eContents().get(0);
-		private final Assignment cStartAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cStartStartPointParserRuleCall_9_0 = (RuleCall)cStartAssignment_9.eContents().get(0);
+		private final Assignment cObjDescriptionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cObjDescriptionAbstractParserRuleCall_4_0 = (RuleCall)cObjDescriptionAssignment_4.eContents().get(0);
+		private final Assignment cStartAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cStartStartPointParserRuleCall_5_0 = (RuleCall)cStartAssignment_5.eContents().get(0);
 		
 		//DTDSL:
-		//	"parserName" "=" parserName=STRING ";" "parserType" "=" type=("javaObject" | "string") ";" objDescription+=Abstract*
-		//	start=StartPoint;
+		//	"parserName" "=" parserName=STRING ";" //	'parserType' '=' type=('javaObject' | 'string') ';'
+		//	objDescription+=Abstract* start=StartPoint;
 		public ParserRule getRule() { return rule; }
 
-		//"parserName" "=" parserName=STRING ";" "parserType" "=" type=("javaObject" | "string") ";" objDescription+=Abstract*
-		//start=StartPoint
+		//"parserName" "=" parserName=STRING ";" //	'parserType' '=' type=('javaObject' | 'string') ';'
+		//objDescription+=Abstract* start=StartPoint
 		public Group getGroup() { return cGroup; }
 
 		//"parserName"
@@ -62,38 +55,18 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//";"
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 
-		//"parserType"
-		public Keyword getParserTypeKeyword_4() { return cParserTypeKeyword_4; }
-
-		//"="
-		public Keyword getEqualsSignKeyword_5() { return cEqualsSignKeyword_5; }
-
-		//type=("javaObject" | "string")
-		public Assignment getTypeAssignment_6() { return cTypeAssignment_6; }
-
-		//"javaObject" | "string"
-		public Alternatives getTypeAlternatives_6_0() { return cTypeAlternatives_6_0; }
-
-		//"javaObject"
-		public Keyword getTypeJavaObjectKeyword_6_0_0() { return cTypeJavaObjectKeyword_6_0_0; }
-
-		//"string"
-		public Keyword getTypeStringKeyword_6_0_1() { return cTypeStringKeyword_6_0_1; }
-
-		//";"
-		public Keyword getSemicolonKeyword_7() { return cSemicolonKeyword_7; }
-
+		////	'parserType' '=' type=('javaObject' | 'string') ';'
 		//objDescription+=Abstract*
-		public Assignment getObjDescriptionAssignment_8() { return cObjDescriptionAssignment_8; }
+		public Assignment getObjDescriptionAssignment_4() { return cObjDescriptionAssignment_4; }
 
 		//Abstract
-		public RuleCall getObjDescriptionAbstractParserRuleCall_8_0() { return cObjDescriptionAbstractParserRuleCall_8_0; }
+		public RuleCall getObjDescriptionAbstractParserRuleCall_4_0() { return cObjDescriptionAbstractParserRuleCall_4_0; }
 
 		//start=StartPoint
-		public Assignment getStartAssignment_9() { return cStartAssignment_9; }
+		public Assignment getStartAssignment_5() { return cStartAssignment_5; }
 
 		//StartPoint
-		public RuleCall getStartStartPointParserRuleCall_9_0() { return cStartStartPointParserRuleCall_9_0; }
+		public RuleCall getStartStartPointParserRuleCall_5_0() { return cStartStartPointParserRuleCall_5_0; }
 	}
 
 	public class StartPointElements extends AbstractParserRuleElementFinder {
@@ -880,8 +853,8 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//DTDSL:
-	//	"parserName" "=" parserName=STRING ";" "parserType" "=" type=("javaObject" | "string") ";" objDescription+=Abstract*
-	//	start=StartPoint;
+	//	"parserName" "=" parserName=STRING ";" //	'parserType' '=' type=('javaObject' | 'string') ';'
+	//	objDescription+=Abstract* start=StartPoint;
 	public DTDSLElements getDTDSLAccess() {
 		return pDTDSL;
 	}

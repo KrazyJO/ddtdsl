@@ -1,5 +1,4 @@
 parserName = "SimpleNodeParser";
-parserType = javaObject;
 
 Node Skv:
 {

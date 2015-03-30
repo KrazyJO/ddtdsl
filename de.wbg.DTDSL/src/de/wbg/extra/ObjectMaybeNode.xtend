@@ -14,7 +14,6 @@ class ObjectMaybeNode extends ChainMaybe{
 			this.returnValue = 
 '''
 Element maybeHead = new Element("MAYBEHEAD");
-«««maybeHead.setNodeNumber(n.getNodeNumber());
 Object temp = o;
 try
 {

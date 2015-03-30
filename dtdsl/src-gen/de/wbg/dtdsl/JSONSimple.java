@@ -11,7 +11,6 @@ class JSONSimple {
 	
 	private Head headNode;
 	private Element actualNode;
-	private Element prev;
 	private ArrayList<Integer> visited;
 	
 	public JSONSimple()

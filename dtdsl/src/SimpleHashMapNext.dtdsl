@@ -1,5 +1,4 @@
 parserName = "SimpleHashMapNextParser";
-parserType = javaObject;
 
 Node Start : 
 {

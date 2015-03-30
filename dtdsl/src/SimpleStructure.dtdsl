@@ -1,5 +1,4 @@
 parserName = "SimpleParser";
-parserType = javaObject; 
 
 Node Skv: {
 	hasAttribute s;
