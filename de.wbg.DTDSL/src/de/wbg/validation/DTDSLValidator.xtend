@@ -37,4 +37,10 @@ class DTDSLValidator extends AbstractDTDSLValidator {
 //		}
 //		
 //	}
+
+//keine Leerzeichen im Parsernamen
+
+//String und Node Description müssen unterschiedliche Namen haben
+
+//nur ein next innerhalb eines Objectes
 }

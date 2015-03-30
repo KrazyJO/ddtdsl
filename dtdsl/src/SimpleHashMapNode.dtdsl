@@ -12,4 +12,4 @@ Node SimpleValue:
 	hasAttribute value;
 }
 
-beginWith = Start;
+beginWith = Start

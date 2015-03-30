@@ -31,13 +31,13 @@ class SimpleJavaCode {
 	
 	private void parseSkv(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeS(o, newNode);
+		parseSkvAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -58,7 +58,7 @@ class SimpleJavaCode {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeI(o, newNode);
+		parseSkvAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -79,7 +79,17 @@ class SimpleJavaCode {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvInner(o, n);
+		 	Node parent = new Node(n.getId());
+			parent.setNodeNumber(n.getNodeNumber());
+			parent.setAttributeNumber(n.getAttributeNumber());
+			parseSkvInner(o, parent);
+			
+			Node tempNode = (Node) parent.getChildren().get(0);
+			tempNode.setParent(n);
+			n.addChild(tempNode);
+			n.increaseNodeNumber();
+			newNode.setNext(tempNode);
+			
 		}
 		catch (ParserException e)
 		{
@@ -164,13 +174,13 @@ class SimpleJavaCode {
 			}
 	private void parseInner(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseInnerAttributeS(o, newNode);
+		parseInnerAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -191,7 +201,7 @@ class SimpleJavaCode {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseInnerAttributeI(o, newNode);
+		parseInnerAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{

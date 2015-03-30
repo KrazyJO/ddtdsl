@@ -1,0 +1,14 @@
+parserName = "SimpleStringKeyValue";
+parserType = javaObject;
+
+Node Begin: 
+{
+	hasAttribute s as SimpleKeyValue;
+}
+
+String SimpleKeyValue: 
+{
+	
+}
+
+beginWith = Begin

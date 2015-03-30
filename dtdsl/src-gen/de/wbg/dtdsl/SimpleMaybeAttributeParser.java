@@ -31,13 +31,13 @@ class SimpleMaybeAttributeParser {
 	
 	private void parseSkv(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeS(o, newNode);
+		parseSkvAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -58,22 +58,22 @@ class SimpleMaybeAttributeParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			Element maybeHead = new Element("MAYBEHEAD");
-			Object temp = o;
-			try
+		Element maybeHead = new Element("MAYBEHEAD");
+		Object temp = o;
+		try
+		{
+			parseMaybeSkvAttributeI(temp, maybeHead);
+			for (Element child: maybeHead.getChildren())
 			{
-				parseMaybeSkvAttributeI(temp, maybeHead);
-				for (Element child: maybeHead.getChildren())
-				{
-					newNode.addChild(child);
-					child.setParent(newNode);
-				}
-			} 
-			catch (ParserException e) 
-			{
-				//destroy reference
-				maybeHead = null;
+				newNode.addChild(child);
+				child.setParent(newNode);
 			}
+		} 
+		catch (ParserException e) 
+		{
+			//destroy reference
+			maybeHead = null;
+		}
 		}
 		catch (ParserException e)
 		{

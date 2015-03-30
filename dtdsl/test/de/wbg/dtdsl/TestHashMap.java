@@ -28,6 +28,7 @@ public class TestHashMap {
 		Node entry2 = node0.getNodeByName("node0.node2");
 		Node entry3 = node0.getNodeByName("node0.node3");
 		
+		
 		assertNotNull(entry0);
 		assertTrue("expected node is key", entry0.isKey());
 		assertEquals("expected other key", "null", entry0.getValue());
@@ -71,9 +72,17 @@ public class TestHashMap {
 //		assertNotNull(node0);
 		
 		Node entry0 = head.getNodeByName("HEAD.node0");
+		assertTrue("this node has no transition previous", entry0.getPrevious() == null);
 		Node entry1 = head.getNodeByName("HEAD.node1");
+		assertEquals("transition next should be set", entry1, entry0.getNext());
+		assertEquals("transition previous should be set", entry0, entry1.getPrevious());
 		Node entry2 = head.getNodeByName("HEAD.node2");
+		assertEquals("transition next should be set", entry2, entry1.getNext());
+		assertEquals("transition previous should be set", entry1, entry2.getPrevious());
 		Node entry3 = head.getNodeByName("HEAD.node3");
+		assertEquals("transition next should be set", entry3, entry2.getNext());
+		assertEquals("transition previous should be set", entry2, entry3.getPrevious());
+		assertTrue("this node shouldnt have a transition next", entry3.getNext() == null);
 		
 		assertNotNull(entry0);
 		assertTrue("expected node is key", entry0.isKey());

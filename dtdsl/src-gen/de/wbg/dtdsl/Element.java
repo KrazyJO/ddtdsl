@@ -10,6 +10,8 @@ class Element
 	private final String id;
 	private int nodeNumber;
 	private int attributeNumber;
+	private Element next;
+	private Element previous;
 	
 	public Element(String id)
 	{
@@ -173,6 +175,35 @@ class Element
 	public String getId()
 	{
 		return this.id;
+	}
+	
+	public void setNext(Element value)
+	{
+		this.next = value;
+		if (value.getPrevious() != this)
+		{
+			value.setPrevious(this);	
+		}
+		
+	}
+	
+	public Element getNext()
+	{
+		return this.next;
+	}
+	
+	public void setPrevious(Element value)
+	{
+		this.previous = value;
+		if (value.getNext() != this)
+		{
+			value.setNext(this);
+		}
+	}
+	
+	public Element getPrevious()
+	{
+		return this.previous;
 	}
 	
 	public int getTotalLength()

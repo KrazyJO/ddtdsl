@@ -6,6 +6,7 @@ class SimpleParser {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
 	
 	public SimpleParser()
 	{
@@ -31,13 +32,13 @@ class SimpleParser {
 	
 	private void parseSkv(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeS(o, newNode);
+		parseSkvAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -58,7 +59,7 @@ class SimpleParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeI(o, newNode);
+		parseSkvAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{

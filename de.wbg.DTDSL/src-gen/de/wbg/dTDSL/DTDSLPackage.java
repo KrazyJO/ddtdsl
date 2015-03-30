@@ -187,13 +187,22 @@ public interface DTDSLPackage extends EPackage
   int STRING_DESCRIPTION__NAME = ABSTRACT__NAME;
 
   /**
+   * The feature id for the '<em><b>Description</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_DESCRIPTION__DESCRIPTION = ABSTRACT_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>String Description</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRING_DESCRIPTION_FEATURE_COUNT = ABSTRACT_FEATURE_COUNT + 0;
+  int STRING_DESCRIPTION_FEATURE_COUNT = ABSTRACT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectDescriptionImpl <em>Object Description</em>}' class.
@@ -271,13 +280,22 @@ public interface DTDSLPackage extends EPackage
   int OBJECT_ATTRIBUTE__ATTRIBUTES = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>String Methode</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_ATTRIBUTE__STRING_METHODE = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Object Attribute</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBJECT_ATTRIBUTE_FEATURE_COUNT = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 1;
+  int OBJECT_ATTRIBUTE_FEATURE_COUNT = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectNodeImpl <em>Object Node</em>}' class.
@@ -638,6 +656,17 @@ public interface DTDSLPackage extends EPackage
   EClass getStringDescription();
 
   /**
+   * Returns the meta object for the attribute list '{@link de.wbg.dTDSL.StringDescription#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Description</em>'.
+   * @see de.wbg.dTDSL.StringDescription#getDescription()
+   * @see #getStringDescription()
+   * @generated
+   */
+  EAttribute getStringDescription_Description();
+
+  /**
    * Returns the meta object for class '{@link de.wbg.dTDSL.ObjectDescription <em>Object Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -688,6 +717,17 @@ public interface DTDSLPackage extends EPackage
    * @generated
    */
   EAttribute getObjectAttribute_Attributes();
+
+  /**
+   * Returns the meta object for the reference '{@link de.wbg.dTDSL.ObjectAttribute#getStringMethode <em>String Methode</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>String Methode</em>'.
+   * @see de.wbg.dTDSL.ObjectAttribute#getStringMethode()
+   * @see #getObjectAttribute()
+   * @generated
+   */
+  EReference getObjectAttribute_StringMethode();
 
   /**
    * Returns the meta object for class '{@link de.wbg.dTDSL.ObjectNode <em>Object Node</em>}'.
@@ -1002,6 +1042,14 @@ public interface DTDSLPackage extends EPackage
     EClass STRING_DESCRIPTION = eINSTANCE.getStringDescription();
 
     /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_DESCRIPTION__DESCRIPTION = eINSTANCE.getStringDescription_Description();
+
+    /**
      * The meta object literal for the '{@link de.wbg.dTDSL.impl.ObjectDescriptionImpl <em>Object Description</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1046,6 +1094,14 @@ public interface DTDSLPackage extends EPackage
      * @generated
      */
     EAttribute OBJECT_ATTRIBUTE__ATTRIBUTES = eINSTANCE.getObjectAttribute_Attributes();
+
+    /**
+     * The meta object literal for the '<em><b>String Methode</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OBJECT_ATTRIBUTE__STRING_METHODE = eINSTANCE.getObjectAttribute_StringMethode();
 
     /**
      * The meta object literal for the '{@link de.wbg.dTDSL.impl.ObjectNodeImpl <em>Object Node</em>}' class.

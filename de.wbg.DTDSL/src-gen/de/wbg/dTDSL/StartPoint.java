@@ -31,12 +31,12 @@ public interface StartPoint extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Begin</em>' reference.
-   * @see #setBegin(ObjectDescription)
+   * @see #setBegin(Abstract)
    * @see de.wbg.dTDSL.DTDSLPackage#getStartPoint_Begin()
    * @model
    * @generated
    */
-  ObjectDescription getBegin();
+  Abstract getBegin();
 
   /**
    * Sets the value of the '{@link de.wbg.dTDSL.StartPoint#getBegin <em>Begin</em>}' reference.
@@ -46,6 +46,6 @@ public interface StartPoint extends EObject
    * @see #getBegin()
    * @generated
    */
-  void setBegin(ObjectDescription value);
+  void setBegin(Abstract value);
 
 } // StartPoint

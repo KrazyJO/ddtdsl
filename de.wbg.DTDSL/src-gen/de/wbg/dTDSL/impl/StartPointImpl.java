@@ -2,8 +2,8 @@
  */
 package de.wbg.dTDSL.impl;
 
+import de.wbg.dTDSL.Abstract;
 import de.wbg.dTDSL.DTDSLPackage;
-import de.wbg.dTDSL.ObjectDescription;
 import de.wbg.dTDSL.StartPoint;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -37,7 +37,7 @@ public class StartPointImpl extends MinimalEObjectImpl.Container implements Star
    * @generated
    * @ordered
    */
-  protected ObjectDescription begin;
+  protected Abstract begin;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,12 +65,12 @@ public class StartPointImpl extends MinimalEObjectImpl.Container implements Star
    * <!-- end-user-doc -->
    * @generated
    */
-  public ObjectDescription getBegin()
+  public Abstract getBegin()
   {
     if (begin != null && begin.eIsProxy())
     {
       InternalEObject oldBegin = (InternalEObject)begin;
-      begin = (ObjectDescription)eResolveProxy(oldBegin);
+      begin = (Abstract)eResolveProxy(oldBegin);
       if (begin != oldBegin)
       {
         if (eNotificationRequired())
@@ -85,7 +85,7 @@ public class StartPointImpl extends MinimalEObjectImpl.Container implements Star
    * <!-- end-user-doc -->
    * @generated
    */
-  public ObjectDescription basicGetBegin()
+  public Abstract basicGetBegin()
   {
     return begin;
   }
@@ -95,9 +95,9 @@ public class StartPointImpl extends MinimalEObjectImpl.Container implements Star
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBegin(ObjectDescription newBegin)
+  public void setBegin(Abstract newBegin)
   {
-    ObjectDescription oldBegin = begin;
+    Abstract oldBegin = begin;
     begin = newBegin;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.START_POINT__BEGIN, oldBegin, begin));
@@ -131,7 +131,7 @@ public class StartPointImpl extends MinimalEObjectImpl.Container implements Star
     switch (featureID)
     {
       case DTDSLPackage.START_POINT__BEGIN:
-        setBegin((ObjectDescription)newValue);
+        setBegin((Abstract)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -148,7 +148,7 @@ public class StartPointImpl extends MinimalEObjectImpl.Container implements Star
     switch (featureID)
     {
       case DTDSLPackage.START_POINT__BEGIN:
-        setBegin((ObjectDescription)null);
+        setBegin((Abstract)null);
         return;
     }
     super.eUnset(featureID);

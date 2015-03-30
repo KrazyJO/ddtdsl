@@ -6,6 +6,7 @@ class SimpleMaybeNextParser {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
 	
 	public SimpleMaybeNextParser()
 	{
@@ -31,13 +32,13 @@ class SimpleMaybeNextParser {
 	
 	private void parseSkv(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeS(o, newNode);
+		parseSkvAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -58,7 +59,7 @@ class SimpleMaybeNextParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeI(o, newNode);
+		parseSkvAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -79,22 +80,28 @@ class SimpleMaybeNextParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			Element maybeHead = new Element("MAYBEHEAD");
-			Object temp = o;
-			try
+		Element maybeHead = new Element("MAYBEHEAD");
+		Object temp = o;
+		try
+		{
+			parseSkvNext(temp, maybeHead);
+			this.prev = newNode;
+			for (Element child: maybeHead.getChildren())
 			{
-				parseSkvNext(temp, maybeHead);
-				for (Element child: maybeHead.getChildren())
+				n.addChild(child);
+				child.setParent(n);
+				if (this.prev != null)
 				{
-					n.addChild(child);
-					child.setParent(n);
+					this.prev.setNext(child);
 				}
-			} 
-			catch (ParserException e) 
-			{
-				//destroy reference
-				maybeHead = null;
+				this.prev = child;
 			}
+		} 
+		catch (ParserException e) 
+		{
+			//destroy reference
+			maybeHead = null;
+		}
 		}
 		catch (ParserException e)
 		{
@@ -181,6 +188,7 @@ class SimpleMaybeNextParser {
 			f.setAccessible(true);
 			Object next = (Object) f.get(o); //IllegalAccessException
 		
+		
 			parseNext(next, n);
 			actualNode = n;
 		}
@@ -193,13 +201,13 @@ class SimpleMaybeNextParser {
 	}
 	private void parseNext(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseNextAttributeS(o, newNode);
+		parseNextAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -220,7 +228,7 @@ class SimpleMaybeNextParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseNextAttributeI(o, newNode);
+		parseNextAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{

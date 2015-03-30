@@ -13,4 +13,4 @@ Node Inner:
 	hasAttribute s;
 }
 
-beginWith = Skv;
+beginWith = Skv

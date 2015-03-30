@@ -206,13 +206,13 @@ ruleStartPoint returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='beginWith' 
+((	otherlv_0='beginWith' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getStartPointAccess().getBeginWithKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getStartPointAccess().getBeginWithKeyword_0_0());
     }
 	otherlv_1='=' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getStartPointAccess().getEqualsSignKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getStartPointAccess().getEqualsSignKeyword_0_1());
     }
 (
 (
@@ -223,15 +223,29 @@ ruleStartPoint returns [EObject current=null]
         }
 	otherlv_2=RULE_ID
 	{
-		newLeafNode(otherlv_2, grammarAccess.getStartPointAccess().getBeginObjectDescriptionCrossReference_2_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getStartPointAccess().getBeginObjectDescriptionCrossReference_0_2_0()); 
 	}
 
 )
-)	otherlv_3=';' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getStartPointAccess().getSemicolonKeyword_3());
-    }
+))
+    |((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getStartPointRule());
+	        }
+        }
+	otherlv_3=RULE_ID
+	{
+		newLeafNode(otherlv_3, grammarAccess.getStartPointAccess().getBeginStringDescriptionCrossReference_1_0_0()); 
+	}
+
 )
+)	otherlv_4=';' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getStartPointAccess().getSemicolonKeyword_1_1());
+    }
+))
 ;
 
 
@@ -322,14 +336,170 @@ ruleStringDescription returns [EObject current=null]
     {
     	newLeafNode(otherlv_3, grammarAccess.getStringDescriptionAccess().getLeftCurlyBracketKeyword_3());
     }
-	otherlv_4='}' 
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getStringDescriptionAccess().getDescriptionStringDescriptionInnerParserRuleCall_4_0()); 
+	    }
+		lv_description_4_0=ruleStringDescriptionInner		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getStringDescriptionRule());
+	        }
+       		add(
+       			$current, 
+       			"description",
+        		lv_description_4_0, 
+        		"StringDescriptionInner");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_5='}' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getStringDescriptionAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_5, grammarAccess.getStringDescriptionAccess().getRightCurlyBracketKeyword_5());
     }
 )
 ;
 
 
+
+
+
+// Entry rule entryRuleStringDescriptionInner
+entryRuleStringDescriptionInner returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getStringDescriptionInnerRule()); } 
+	 iv_ruleStringDescriptionInner=ruleStringDescriptionInner 
+	 { $current=$iv_ruleStringDescriptionInner.current.getText(); }  
+	 EOF 
+;
+
+// Rule StringDescriptionInner
+ruleStringDescriptionInner returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getStringDescriptionInnerAccess().getStringOverReadParserRuleCall_0()); 
+    }
+    this_StringOverRead_0=ruleStringOverRead    {
+		$current.merge(this_StringOverRead_0);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getStringDescriptionInnerAccess().getStringKeyParserRuleCall_1()); 
+    }
+    this_StringKey_1=ruleStringKey    {
+		$current.merge(this_StringKey_1);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getStringDescriptionInnerAccess().getStringValueParserRuleCall_2()); 
+    }
+    this_StringValue_2=ruleStringValue    {
+		$current.merge(this_StringValue_2);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)
+    ;
+
+
+
+
+
+
+
+// Entry rule entryRuleStringOverRead
+entryRuleStringOverRead returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getStringOverReadRule()); } 
+	 iv_ruleStringOverRead=ruleStringOverRead 
+	 { $current=$iv_ruleStringOverRead.current.getText(); }  
+	 EOF 
+;
+
+// Rule StringOverRead
+ruleStringOverRead returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+    this_STRING_0=RULE_STRING    {
+		$current.merge(this_STRING_0);
+    }
+
+    { 
+    newLeafNode(this_STRING_0, grammarAccess.getStringOverReadAccess().getSTRINGTerminalRuleCall()); 
+    }
+
+    ;
+
+
+
+
+
+// Entry rule entryRuleStringKey
+entryRuleStringKey returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getStringKeyRule()); } 
+	 iv_ruleStringKey=ruleStringKey 
+	 { $current=$iv_ruleStringKey.current.getText(); }  
+	 EOF 
+;
+
+// Rule StringKey
+ruleStringKey returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+	kw='Key' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getStringKeyAccess().getKeyKeyword()); 
+    }
+
+    ;
+
+
+
+
+
+// Entry rule entryRuleStringValue
+entryRuleStringValue returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getStringValueRule()); } 
+	 iv_ruleStringValue=ruleStringValue 
+	 { $current=$iv_ruleStringValue.current.getText(); }  
+	 EOF 
+;
+
+// Rule StringValue
+ruleStringValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+	kw='Value' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getStringValueAccess().getValueKeyword()); 
+    }
+
+    ;
 
 
 
@@ -530,7 +700,24 @@ ruleObjectAttribute returns [EObject current=null]
 	    }
 
 )
-))
+)(	otherlv_2='as' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getObjectAttributeAccess().getAsKeyword_2_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getObjectAttributeRule());
+	        }
+        }
+	otherlv_3=RULE_ID
+	{
+		newLeafNode(otherlv_3, grammarAccess.getObjectAttributeAccess().getStringMethodeStringDescriptionCrossReference_2_1_0()); 
+	}
+
+)
+))?)
 ;
 
 

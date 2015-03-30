@@ -69,6 +69,7 @@ public class ChainMethodsInnerObjectNext extends ChainMethodsInner {
             _builder_3.append("Object next = (Object) f.get(o); //IllegalAccessException");
             _builder_3.newLine();
             _builder_3.newLine();
+            _builder_3.newLine();
             _builder_3.append("\t");
             _builder_3.append("parse");
             ObjectDescription _objectDesription_1 = ((ObjectNext)i).getObjectDesription();

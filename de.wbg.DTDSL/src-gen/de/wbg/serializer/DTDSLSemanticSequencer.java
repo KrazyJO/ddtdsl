@@ -152,17 +152,10 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     attributes=ID
+	 *     (attributes=ID stringMethode=[StringDescription|ID]?)
 	 */
 	protected void sequence_ObjectAttribute(EObject context, ObjectAttribute semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__ATTRIBUTES) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__ATTRIBUTES));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getObjectAttributeAccess().getAttributesIDTerminalRuleCall_1_0(), semanticObject.getAttributes());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -249,32 +242,18 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     begin=[ObjectDescription|ID]
+	 *     (begin=[ObjectDescription|ID] | begin=[StringDescription|ID])
 	 */
 	protected void sequence_StartPoint(EObject context, StartPoint semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DTDSLPackage.Literals.START_POINT__BEGIN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DTDSLPackage.Literals.START_POINT__BEGIN));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getStartPointAccess().getBeginObjectDescriptionIDTerminalRuleCall_2_0_1(), semanticObject.getBegin());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID description+=StringDescriptionInner*)
 	 */
 	protected void sequence_StringDescription(EObject context, StringDescription semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DTDSLPackage.Literals.ABSTRACT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DTDSLPackage.Literals.ABSTRACT__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getStringDescriptionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 }

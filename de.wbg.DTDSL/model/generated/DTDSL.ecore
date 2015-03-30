@@ -10,12 +10,15 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StartPoint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="begin" eType="#//ObjectDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="begin" eType="#//Abstract"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Abstract">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StringDescription" eSuperTypes="#//Abstract"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringDescription" eSuperTypes="#//Abstract">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectDescription" eSuperTypes="#//Abstract">
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1"
         eType="#//ObjectDescriptionInner" containment="true"/>
@@ -23,6 +26,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ObjectDescriptionInner"/>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectAttribute" eSuperTypes="#//ObjectDescriptionInner #//ObjectMaybeInner">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stringMethode" eType="#//StringDescription"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectNode" eSuperTypes="#//ObjectDescriptionInner #//ObjectMaybeInner">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

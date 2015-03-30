@@ -6,4 +6,4 @@ Node JSONSimple: {
 }
 
 
-beginWith = JSONSimple;
+beginWith = JSONSimple

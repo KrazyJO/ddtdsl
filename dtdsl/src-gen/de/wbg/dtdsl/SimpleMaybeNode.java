@@ -6,6 +6,7 @@ class SimpleMaybeNode {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
 	
 	public SimpleMaybeNode()
 	{
@@ -31,13 +32,13 @@ class SimpleMaybeNode {
 	
 	private void parseSkv(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeI(o, newNode);
+		parseSkvAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -58,7 +59,7 @@ class SimpleMaybeNode {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeS(o, newNode);
+		parseSkvAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -79,22 +80,22 @@ class SimpleMaybeNode {
 		//{Element copy = n.copy();
 		try 
 		{
-			Element maybeHead = new Element("MAYBEHEAD");
-			Object temp = o;
-			try
+		Element maybeHead = new Element("MAYBEHEAD");
+		Object temp = o;
+		try
+		{
+			parseMaybeSkvNext(temp, maybeHead);
+			for (Element child: maybeHead.getChildren())
 			{
-				parseMaybeSkvNext(temp, maybeHead);
-				for (Element child: maybeHead.getChildren())
-				{
-					newNode.addChild(child);
-					child.setParent(newNode);
-				}
-			} 
-			catch (ParserException e) 
-			{
-				//destroy reference
-				maybeHead = null;
+				newNode.addChild(child);
+				child.setParent(newNode);
 			}
+		} 
+		catch (ParserException e) 
+		{
+			//destroy reference
+			maybeHead = null;
+		}
 		}
 		catch (ParserException e)
 		{
@@ -184,7 +185,7 @@ try
 }
 catch(NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 {
-	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@1d92df39 (attributes: next)");
+	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@264c3a0b (attributes: next)");
 }
 catch (ParserException e)
 {
@@ -194,13 +195,13 @@ catch (ParserException e)
 	}
 	private void parseNext(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseNextAttributeI(o, newNode);
+		parseNextAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -221,7 +222,7 @@ catch (ParserException e)
 		//{Element copy = n.copy();
 		try 
 		{
-			parseNextAttributeS(o, newNode);
+		parseNextAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{

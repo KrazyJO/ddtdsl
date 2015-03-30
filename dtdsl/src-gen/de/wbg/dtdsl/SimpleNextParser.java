@@ -6,6 +6,7 @@ class SimpleNextParser {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
 	
 	public SimpleNextParser()
 	{
@@ -31,13 +32,13 @@ class SimpleNextParser {
 	
 	private void parseSkv(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeS(o, newNode);
+		parseSkvAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -58,7 +59,7 @@ class SimpleNextParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeI(o, newNode);
+		parseSkvAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -79,7 +80,17 @@ class SimpleNextParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvNext(o, n);
+		 	Node parent = new Node(n.getId());
+			parent.setNodeNumber(n.getNodeNumber());
+			parent.setAttributeNumber(n.getAttributeNumber());
+			parseSkvNext(o, parent);
+			
+			Node tempNode = (Node) parent.getChildren().get(0);
+			tempNode.setParent(n);
+			n.addChild(tempNode);
+			n.increaseNodeNumber();
+			newNode.setNext(tempNode);
+			
 		}
 		catch (ParserException e)
 		{
@@ -166,6 +177,7 @@ class SimpleNextParser {
 			f.setAccessible(true);
 			Object next = (Object) f.get(o); //IllegalAccessException
 		
+		
 			parseNext(next, n);
 			actualNode = n;
 		}
@@ -178,13 +190,13 @@ class SimpleNextParser {
 		
 	private void parseNext(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseNextAttributeS(o, newNode);
+		parseNextAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -205,7 +217,7 @@ class SimpleNextParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseNextAttributeI(o, newNode);
+		parseNextAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{

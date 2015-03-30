@@ -1,12 +1,12 @@
 package de.wbg.dtdsl;
+import static org.junit.Assert.*;
+
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.junit.Test;
 
-import de.wbg.dtdsl.Node;
-import de.wbg.dtdsl.Head;
-import de.wbg.dtdsl.Attribute;
 import de.wbg.dtdsl.testhelper.SimpleHashMapWithSimpleValue;
 
 
@@ -34,13 +34,19 @@ public class HashMapReflectionTest {
 		Object o = hashMap;
 		Head head = new Head("HEAD"); 
 		
+		ArrayList<Integer> visited = new ArrayList<>();
+		
+		
 		try {
 			Field f;
 			f = o.getClass().getDeclaredField("children");
 			f.setAccessible(true);
 			HashMap iWantThis = (HashMap) f.get(o); //IllegalAccessException
-			System.out.println(iWantThis.keySet().toArray()[0].getClass());
-			
+//			System.out.println(iWantThis.keySet().toArray()[0].getClass());
+//			System.out.println(System.identityHashCode(iWantThis));
+			int v = System.identityHashCode(iWantThis);
+			visited.add(v);
+			assertTrue(visited.contains(v));
 			
 			
 			for (Object entry : iWantThis.keySet())
@@ -50,7 +56,7 @@ public class HashMapReflectionTest {
 				node.setValue(String.valueOf(entry));
 				//name muss type werden
 				node.setName(entry.getClass().toString().replace("class ", ""));
-				System.out.println(entry.getClass().toString().replace("class ", ""));
+//				System.out.println(entry.getClass().toString().replace("class ", ""));
 				
 				//Attribute
 				Object valueForEntry = iWantThis.get(entry);

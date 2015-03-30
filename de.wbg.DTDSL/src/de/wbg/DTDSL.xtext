@@ -6,19 +6,45 @@ generate dTDSL "http://www.wbg.de/DTDSL"
 
 DTDSL:
 	'parserName' '=' parserName=STRING ';'
-	'parserType' '=' type=('javaObject' | 'string') ';'
+//	'parserType' '=' type=('javaObject' | 'string') ';'
 	objDescription+=Abstract*
 	start=StartPoint
 ;
 
 StartPoint:
-	'beginWith' '=' begin=[ObjectDescription] ';'
+	'beginWith' '=' begin=[ObjectDescription] | begin=[StringDescription] ';'
 ;
 
 Abstract:
 	ObjectDescription | StringDescription //| ObjectHashMapDescription
 ;
+//---------------------------  String  ---------------------------
+StringDescription:
+	'String' name=ID ':'  '{' description+=StringDescriptionInner* '}'
+;
 
+StringDescriptionInner:
+//	rule+=StringRule+
+	StringOverRead | StringKey | StringValue 
+;
+
+StringRule:
+	StringOverRead | StringKey | StringValue
+;
+
+StringOverRead:
+	STRING
+;
+
+StringKey:
+	'Key'
+;
+
+StringValue:
+	'Value'
+;
+
+//---------------------------  Object  ---------------------------
 //ObjectHashMapDescription:
 //	name=ID 'as' 'HashMap' ':' '{' description=ObjectHashMapDescriptionInner '}'
 //;
@@ -27,13 +53,7 @@ Abstract:
 //	
 //;
 
-StringDescription:
-	'String' name=ID ':'  '{' /*description+=StringDescriptionInner* */ '}'
-;
 
-StringDescriptionInner:
-	'inner'
-;
 
 ObjectDescription:
 	'Node' name=ID ':' '{' description+=ObjectDescriptionInner* '}'
@@ -52,7 +72,7 @@ ObjectDescriptionInner:
 //;
 
 ObjectAttribute:
-	'hasAttribute' attributes=ID// 'ofType' types=[jvmTypes::JvmType | QualifiedName] 
+	'hasAttribute' attributes=ID ('as' stringMethode=[StringDescription] )? // 'ofType' types=[jvmTypes::JvmType | QualifiedName] 
 ;
 
 QualifiedName: ID ('.' ID)*;

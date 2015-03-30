@@ -26,6 +26,8 @@ class ChainMethodsInnerObjectNext extends ChainMethodsInner {
 				f.setAccessible(true);
 				Object next = (Object) f.get(o); //IllegalAccessException
 			
+«««				this.prev = newNode;
+			
 				parse«i.objectDesription.name»(next, n);
 				actualNode = n;
 			}

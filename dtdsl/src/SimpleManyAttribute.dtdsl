@@ -6,4 +6,4 @@ Node Start:
 	hasAttribute array *;
 }
 
-beginWith = Start;
+beginWith = Start

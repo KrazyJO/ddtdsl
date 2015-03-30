@@ -6,6 +6,7 @@ class SimpleNodeParser {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
 	
 	public SimpleNodeParser()
 	{
@@ -31,13 +32,13 @@ class SimpleNodeParser {
 	
 	private void parseSkv(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeS(o, newNode);
+		parseSkvAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -58,7 +59,7 @@ class SimpleNodeParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeI(o, newNode);
+		parseSkvAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -79,7 +80,7 @@ class SimpleNodeParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvNext(o, newNode);
+		parseSkvNext(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -169,7 +170,7 @@ try
 }
 catch(NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 {
-	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@25c9de7f (attributes: next)");
+	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@1a6e35c7 (attributes: next)");
 }
 catch (ParserException e)
 {
@@ -179,13 +180,13 @@ catch (ParserException e)
 	}
 	private void parseInner(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseInnerAttributeS(o, newNode);
+		parseInnerAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -206,7 +207,7 @@ catch (ParserException e)
 		//{Element copy = n.copy();
 		try 
 		{
-			parseInnerAttributeI(o, newNode);
+		parseInnerAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{

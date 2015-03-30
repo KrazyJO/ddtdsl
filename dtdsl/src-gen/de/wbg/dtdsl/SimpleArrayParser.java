@@ -1,9 +1,12 @@
 package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.lang.reflect.Array;
+				
 
 class SimpleArrayParser {
 	
@@ -34,64 +37,69 @@ class SimpleArrayParser {
 	
 	private void parseStart(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			//many Next
-			Field f = o.getClass().getDeclaredField("children");
-			f.setAccessible(true);
-			Object next = (Object) f.get(o);
-			Head manyHead = new Head("MANYHEAD");
+		//many Next
+		Field f = o.getClass().getDeclaredField("children");
+		f.setAccessible(true);
+		Object next = (Object) f.get(o);
+		Head manyHead = new Head("MANYHEAD");
+		
+		//String instance = this.getInstance(next);
+		if (next instanceof Object[])
+		{
+			for (int index = 0; index < ((Object[])next).length; index++)
+			{
+				parseSkv(((Object[])next)[index], manyHead);
+			}
+		}
+		else if (next instanceof ArrayList)
+		{
+			ArrayList al = (ArrayList)next;
+			for (Object obj: al)
+			{
+				parseSkv(obj, manyHead);
+			}
+		}
+		else if (next instanceof LinkedList)
+		{
+			LinkedList al = (LinkedList)next;
+			for (Object obj: al)
+			{
+				parseSkv(obj, manyHead);
+			}
+		}
+		else if (next instanceof HashMap)
+		{
+			HashMap hashMap = (HashMap) next;
 			
-			//String instance = this.getInstance(next);
-			if (next instanceof Object[])
+			for (Object entry : hashMap.keySet())
 			{
-				for (int index = 0; index < ((Object[])next).length; index++)
-				{
-					parseSkv(((Object[])next)[index], manyHead);
-				}
-			}
-			else if (next instanceof ArrayList)
-			{
-				ArrayList al = (ArrayList)next;
-				for (Object obj: al)
-				{
-					parseSkv(obj, manyHead);
-				}
-			}
-			else if (next instanceof LinkedList)
-			{
-				LinkedList al = (LinkedList)next;
-				for (Object obj: al)
-				{
-					parseSkv(obj, manyHead);
-				}
-			}
-			else if (next instanceof HashMap)
-			{
-				HashMap hashMap = (HashMap) next;
+				Object valueForEntry = hashMap.get(entry);
 				
-				for (Object entry : hashMap.keySet())
-				{
-					
-					Object valueForEntry = hashMap.get(entry);
-					
-					parseSkv(valueForEntry, manyHead);
-					Node act = manyHead.getNodeByName("MANYHEAD.node"+(manyHead.size()-1));
-					act.setKey(true);
-					act.setValue(String.valueOf(entry));
-					act.setName(entry.getClass().toString().replace("class ", ""));
-				}
+				parseSkv(valueForEntry, manyHead);
+				Node act = manyHead.getNodeByName("MANYHEAD.node"+(manyHead.size()-1));
+				act.setKey(true);
+				act.setValue(String.valueOf(entry));
+				act.setName(entry.getClass().toString().replace("class ", ""));
 			}
-			
-			for (Element el : manyHead.getChildren())
+		}
+		
+		Element setNext = null;
+		for (Element el : manyHead.getChildren())
+		{
+			n.addChild(el);
+			el.setParent(n);
+			if (setNext != null)
 			{
-				n.addChild(el);
-				el.setParent(n);
+				setNext.setNext(el);
 			}
+			setNext = el;
+		}
 		}
 		catch (ParserException e)
 		{
@@ -117,13 +125,13 @@ class SimpleArrayParser {
 	}
 	private void parseSkv(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeI(o, newNode);
+		parseSkvAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -144,7 +152,7 @@ class SimpleArrayParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeS(o, newNode);
+		parseSkvAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
