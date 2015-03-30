@@ -26,6 +26,17 @@ class ChainMethodsInnerObjectNode extends ChainMethodsInner
 			Field f = o.getClass().getDeclaredField("«i.attributes»");
 			f.setAccessible(true);
 			Object next = (Object) f.get(o);
+			
+			int nextVisit = System.identityHashCode(next);
+			if (this.visited.contains(nextVisit))
+			{
+				return;
+			}
+			else
+			{
+				this.visited.add(nextVisit);
+			}
+			
 			parse«i.inner.name.toFirstUpper»(next, n);
 		}
 		catch(NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)

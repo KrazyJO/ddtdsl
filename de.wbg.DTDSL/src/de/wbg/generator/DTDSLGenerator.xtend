@@ -92,13 +92,12 @@ class DTDSLGenerator implements IGenerator {
 		package de.wbg.dtdsl;
 		
 		import java.lang.reflect.Field;
+		import java.util.ArrayList;
 		«IF (needGetInstanceGenerated)»
-			
-			import java.util.ArrayList;
 			import java.util.HashMap;
 			import java.util.LinkedList;
 			import java.lang.reflect.Array;
-							
+			
 		«ENDIF»
 		
 		class «model.parserName.toFirstUpper» {
@@ -108,6 +107,7 @@ class DTDSLGenerator implements IGenerator {
 			«IF nextWillBeSet»
 			private Element prev;
 			«ENDIF»
+			private ArrayList<Integer> visited;
 			
 			public «model.parserName.toFirstUpper»()
 			{
@@ -118,8 +118,11 @@ class DTDSLGenerator implements IGenerator {
 			{
 				this.headNode = new Head("HEAD");
 				this.actualNode = this.headNode;
+				this.visited = new ArrayList<>();
 				//model.start
 				try {
+					int nextVisit = System.identityHashCode(o);
+					this.visited.add(nextVisit);
 					parse«model.start.begin.name»(o, actualNode);
 				}
 				catch (Exception e)
@@ -222,6 +225,16 @@ class DTDSLGenerator implements IGenerator {
 			ret+=
 			'''	private void parse«d.name»(Object o, Element n) throws Exception
 	{
+«««		int nextVisit = System.identityHashCode(o);
+«««		if (this.visited.contains(nextVisit))
+«««		{
+«««			return;
+«««		}
+«««		else
+«««		{
+«««			this.visited.add(nextVisit);
+«««		}
+	
 		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
 		n.addChild(newNode);
@@ -242,19 +255,12 @@ class DTDSLGenerator implements IGenerator {
 	parent.setNodeNumber(n.getNodeNumber());
 	parent.setAttributeNumber(n.getAttributeNumber());
 	parse«d.name.toFirstUpper»«i.objectDesription.name.toFirstUpper»(o, parent);
-«««	assert parent.size() == 2;
-«««	for (Element el: parent.getChildren())
-«««	{
-«««		n.addChild(el);
-«««		el.setParent(n);
-«««	}
 	
 	Node tempNode = (Node) parent.getChildren().get(0);
 	tempNode.setParent(n);
 	n.addChild(tempNode);
 	n.increaseNodeNumber();
 	newNode.setNext(tempNode);
-«««	System.out.println("parent.size(): " + parent.size());
 	
 	'''
 //			 parse«d.name.toFirstUpper»«i.objectDesription.name.toFirstUpper»(o, «i.argument»);
@@ -394,6 +400,15 @@ class DTDSLGenerator implements IGenerator {
 				Field f = o.getClass().getDeclaredField("«call»");
 				f.setAccessible(true);
 				Object next = (Object) f.get(o);
+				int nextVisit = System.identityHashCode(next);
+				if (this.visited.contains(nextVisit))
+				{
+					return;
+				}
+				else
+				{
+					this.visited.add(nextVisit);
+				}
 				Head manyHead = new Head("MANYHEAD");
 				
 				//String instance = this.getInstance(next);
@@ -458,6 +473,17 @@ class DTDSLGenerator implements IGenerator {
 				Field f = o.getClass().getDeclaredField("«i.attributes»");
 				f.setAccessible(true);
 				Object next = (Object) f.get(o);
+				
+				int nextVisit = System.identityHashCode(next);
+				if (this.visited.contains(nextVisit))
+				{
+					return;
+				}
+				else
+				{
+					this.visited.add(nextVisit);
+				}
+				
 				Head manyHead = new Head("MANYHEAD");
 				
 				if (next instanceof Object[])
@@ -555,6 +581,17 @@ class DTDSLGenerator implements IGenerator {
 			Field f = o.getClass().getDeclaredField("«n.attributes»");
 			f.setAccessible(true);
 			Object next = (Object) f.get(o);
+			
+			int nextVisit = System.identityHashCode(next);
+			if (this.visited.contains(nextVisit))
+			{
+				return;
+			}
+			else
+			{
+				this.visited.add(nextVisit);
+			}
+			
 			parse«n.inner.name.toFirstUpper»(next, n);
 		}
 		catch(NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
@@ -625,6 +662,15 @@ class DTDSLGenerator implements IGenerator {
 				f.setAccessible(true);
 				Object next = (Object) f.get(o); //IllegalAccessException
 			
+			int nextVisit = System.identityHashCode(next);
+			if (this.visited.contains(nextVisit))
+			{
+				return;
+			}
+			else
+			{
+				this.visited.add(nextVisit);
+			}
 «««				this.prev = newNode;
 			
 				parse«n.objectDesription.name»(next, n);

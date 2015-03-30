@@ -15,6 +15,8 @@ public class ObjectMaybeNext extends ChainMaybe {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Element maybeHead = new Element(\"MAYBEHEAD\");");
       _builder.newLine();
+      _builder.append("maybeHead.setNodeNumber(n.getNodeNumber());");
+      _builder.newLine();
       _builder.append("Object temp = o;");
       _builder.newLine();
       _builder.append("try");

@@ -25,6 +25,16 @@ class ChainMethodsInnerObjectNext extends ChainMethodsInner {
 				Field f = o.getClass().getDeclaredField("«i.attribute.id»"); //NoSuchFieldException
 				f.setAccessible(true);
 				Object next = (Object) f.get(o); //IllegalAccessException
+				
+				int nextVisit = System.identityHashCode(next);
+				if (this.visited.contains(nextVisit))
+				{
+					return;
+				}
+				else
+				{
+					this.visited.add(nextVisit);
+				}
 			
 «««				this.prev = newNode;
 			

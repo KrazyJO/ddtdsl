@@ -1,12 +1,14 @@
 package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 class SimpleStringKeyValue {
 	
 	private Head headNode;
 	private Element actualNode;
 	private Element prev;
+	private ArrayList<Integer> visited;
 	
 	public SimpleStringKeyValue()
 	{
@@ -17,8 +19,11 @@ class SimpleStringKeyValue {
 	{
 		this.headNode = new Head("HEAD");
 		this.actualNode = this.headNode;
+		this.visited = new ArrayList<>();
 		//model.start
 		try {
+			int nextVisit = System.identityHashCode(o);
+			this.visited.add(nextVisit);
 			parseBegin(o, actualNode);
 		}
 		catch (Exception e)
@@ -32,6 +37,7 @@ class SimpleStringKeyValue {
 	
 	private void parseBegin(Object o, Element n) throws Exception
 	{
+	
 		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
 		n.addChild(newNode);

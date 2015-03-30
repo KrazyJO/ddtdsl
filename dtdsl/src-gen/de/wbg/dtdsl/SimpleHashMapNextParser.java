@@ -1,17 +1,18 @@
 package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.lang.reflect.Array;
-				
+
 
 class SimpleHashMapNextParser {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
+	private ArrayList<Integer> visited;
 	
 	public SimpleHashMapNextParser()
 	{
@@ -22,8 +23,11 @@ class SimpleHashMapNextParser {
 	{
 		this.headNode = new Head("HEAD");
 		this.actualNode = this.headNode;
+		this.visited = new ArrayList<>();
 		//model.start
 		try {
+			int nextVisit = System.identityHashCode(o);
+			this.visited.add(nextVisit);
 			parseStart(o, actualNode);
 		}
 		catch (Exception e)
@@ -37,6 +41,7 @@ class SimpleHashMapNextParser {
 	
 	private void parseStart(Object o, Element n) throws Exception
 	{
+	
 		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
 		n.addChild(newNode);
@@ -47,6 +52,15 @@ class SimpleHashMapNextParser {
 		Field f = o.getClass().getDeclaredField("children");
 		f.setAccessible(true);
 		Object next = (Object) f.get(o);
+		int nextVisit = System.identityHashCode(next);
+		if (this.visited.contains(nextVisit))
+		{
+			return;
+		}
+		else
+		{
+			this.visited.add(nextVisit);
+		}
 		Head manyHead = new Head("MANYHEAD");
 		
 		//String instance = this.getInstance(next);
@@ -125,6 +139,7 @@ class SimpleHashMapNextParser {
 	}
 	private void parseSimpleValue(Object o, Element n) throws Exception
 	{
+	
 		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
 		n.addChild(newNode);

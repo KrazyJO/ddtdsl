@@ -1,12 +1,14 @@
 package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 class SimpleNodeParser {
 	
 	private Head headNode;
 	private Element actualNode;
 	private Element prev;
+	private ArrayList<Integer> visited;
 	
 	public SimpleNodeParser()
 	{
@@ -17,8 +19,11 @@ class SimpleNodeParser {
 	{
 		this.headNode = new Head("HEAD");
 		this.actualNode = this.headNode;
+		this.visited = new ArrayList<>();
 		//model.start
 		try {
+			int nextVisit = System.identityHashCode(o);
+			this.visited.add(nextVisit);
 			parseSkv(o, actualNode);
 		}
 		catch (Exception e)
@@ -32,6 +37,7 @@ class SimpleNodeParser {
 	
 	private void parseSkv(Object o, Element n) throws Exception
 	{
+	
 		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
 		n.addChild(newNode);
@@ -166,11 +172,22 @@ try
 	Field f = o.getClass().getDeclaredField("next");
 	f.setAccessible(true);
 	Object next = (Object) f.get(o);
+	
+	int nextVisit = System.identityHashCode(next);
+	if (this.visited.contains(nextVisit))
+	{
+		return;
+	}
+	else
+	{
+		this.visited.add(nextVisit);
+	}
+	
 	parseInner(next, n);
 }
 catch(NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 {
-	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@1a6e35c7 (attributes: next)");
+	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@59628c7c (attributes: next)");
 }
 catch (ParserException e)
 {
@@ -180,6 +197,7 @@ catch (ParserException e)
 	}
 	private void parseInner(Object o, Element n) throws Exception
 	{
+	
 		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
 		n.addChild(newNode);

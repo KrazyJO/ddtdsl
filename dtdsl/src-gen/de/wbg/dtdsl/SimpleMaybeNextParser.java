@@ -1,12 +1,14 @@
 package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 class SimpleMaybeNextParser {
 	
 	private Head headNode;
 	private Element actualNode;
 	private Element prev;
+	private ArrayList<Integer> visited;
 	
 	public SimpleMaybeNextParser()
 	{
@@ -17,8 +19,11 @@ class SimpleMaybeNextParser {
 	{
 		this.headNode = new Head("HEAD");
 		this.actualNode = this.headNode;
+		this.visited = new ArrayList<>();
 		//model.start
 		try {
+			int nextVisit = System.identityHashCode(o);
+			this.visited.add(nextVisit);
 			parseSkv(o, actualNode);
 		}
 		catch (Exception e)
@@ -32,6 +37,7 @@ class SimpleMaybeNextParser {
 	
 	private void parseSkv(Object o, Element n) throws Exception
 	{
+	
 		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
 		n.addChild(newNode);
@@ -81,6 +87,7 @@ class SimpleMaybeNextParser {
 		try 
 		{
 		Element maybeHead = new Element("MAYBEHEAD");
+		maybeHead.setNodeNumber(n.getNodeNumber());
 		Object temp = o;
 		try
 		{
@@ -188,6 +195,15 @@ class SimpleMaybeNextParser {
 			f.setAccessible(true);
 			Object next = (Object) f.get(o); //IllegalAccessException
 		
+		int nextVisit = System.identityHashCode(next);
+		if (this.visited.contains(nextVisit))
+		{
+			return;
+		}
+		else
+		{
+			this.visited.add(nextVisit);
+		}
 		
 			parseNext(next, n);
 			actualNode = n;
@@ -201,6 +217,7 @@ class SimpleMaybeNextParser {
 	}
 	private void parseNext(Object o, Element n) throws Exception
 	{
+	
 		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
 		n.addChild(newNode);

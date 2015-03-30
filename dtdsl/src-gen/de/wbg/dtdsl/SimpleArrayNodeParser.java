@@ -1,17 +1,18 @@
 package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.lang.reflect.Array;
-				
+
 
 class SimpleArrayNodeParser {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
+	private ArrayList<Integer> visited;
 	
 	public SimpleArrayNodeParser()
 	{
@@ -22,8 +23,11 @@ class SimpleArrayNodeParser {
 	{
 		this.headNode = new Head("HEAD");
 		this.actualNode = this.headNode;
+		this.visited = new ArrayList<>();
 		//model.start
 		try {
+			int nextVisit = System.identityHashCode(o);
+			this.visited.add(nextVisit);
 			parseStart(o, actualNode);
 		}
 		catch (Exception e)
@@ -37,6 +41,7 @@ class SimpleArrayNodeParser {
 	
 	private void parseStart(Object o, Element n) throws Exception
 	{
+	
 		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
 		n.addChild(newNode);
@@ -46,6 +51,17 @@ class SimpleArrayNodeParser {
 		Field f = o.getClass().getDeclaredField("children");
 		f.setAccessible(true);
 		Object next = (Object) f.get(o);
+		
+		int nextVisit = System.identityHashCode(next);
+		if (this.visited.contains(nextVisit))
+		{
+			return;
+		}
+		else
+		{
+			this.visited.add(nextVisit);
+		}
+		
 		Head manyHead = new Head("MANYHEAD");
 		
 		if (next instanceof Object[])
@@ -119,6 +135,7 @@ class SimpleArrayNodeParser {
 	}
 	private void parseSkv(Object o, Element n) throws Exception
 	{
+	
 		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
 		n.addChild(newNode);
