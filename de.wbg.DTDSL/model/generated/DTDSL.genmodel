@@ -19,7 +19,22 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//Abstract/name"/>
     </genClasses>
     <genClasses ecoreClass="DTDSL.ecore#//StringDescription">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//StringDescription/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//StringDescription/description"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//StringDescriptionInner">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DTDSL.ecore#//StringDescriptionInner/keyRef"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//StringOverRead">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//StringOverRead/overRead"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//StringKey">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//StringKey/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//StringKey/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//StringValue/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//StringValue/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DTDSL.ecore#//StringValue/toKey"/>
     </genClasses>
     <genClasses ecoreClass="DTDSL.ecore#//ObjectDescription">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//ObjectDescription/description"/>

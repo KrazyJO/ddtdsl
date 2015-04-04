@@ -25,23 +25,21 @@ StringDescription:
 
 StringDescriptionInner:
 //	rule+=StringRule+
-	StringOverRead | StringKey | StringValue 
-;
-
-StringRule:
-	StringOverRead | StringKey | StringValue
+	StringOverRead | StringKey | StringValue  | keyRef=[StringKey]
 ;
 
 StringOverRead:
-	STRING
+	overRead=STRING
 ;
 
 StringKey:
-	'Key'
+	{StringKey}
+	(name=ID '=')? 'Key' 'ofType' type=Type
 ;
 
 StringValue:
-	'Value'
+	{StringValue}
+	(name=ID '=')? 'Value' 'ofType' type=Type ('to' toKey=[StringKey])?
 ;
 
 //---------------------------  Object  ---------------------------
@@ -97,9 +95,9 @@ JavaCodeOrID:
 	('java' ':' code=STRING) | id=ID
 ;
 
-//Type:
-//  'boolean' | 'short' | 'int' | 'long' | 'float' | 'double' | 'char' | 'String'  | 'byte'
-//;
+Type:
+  'boolean' | 'short' | 'int' | 'long' | 'float' | 'double' | 'char' | 'String'  | 'byte'
+;
 
 ObjectMany:
 	option=ObjectMaybeInner '*'	

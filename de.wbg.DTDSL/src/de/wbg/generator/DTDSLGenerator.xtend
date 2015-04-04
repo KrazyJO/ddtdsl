@@ -31,6 +31,11 @@ import java.util.LinkedList
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
+import de.wbg.services.DTDSLGrammarAccess.StringOverReadElements
+import de.wbg.dTDSL.StringOverRead
+import de.wbg.dTDSL.StringKey
+import de.wbg.dTDSL.StringValue
+import de.wbg.ScannerGen
 
 /**
  * Generates code from your model files on save.
@@ -44,6 +49,9 @@ class DTDSLGenerator implements IGenerator {
 	var LinkedList<ChainMethodsInner> methodsInnerChain;
 	var nextWillBeSet = false;
 	var ArrayList<String> methodsNameForNextRule = new ArrayList<String>()
+	var generateStringFeatures = false;
+	var needStringKeyStore = false;
+	var needStringValueStore = false;
 	
 	def boolean getNeedGetInstanceGenerated()
 	{
@@ -69,12 +77,20 @@ class DTDSLGenerator implements IGenerator {
 		fsa.generateFile('de/wbg/dtdsl/Element.java', nodeGen.generateElement)
 
 		fsa.generateFile('de/wbg/dtdsl/ParserException.java', exceptionGen.exceptionGenerator)
+		
 
 		for (model: resource.allContents.toIterable.filter(DTDSL))
 		{
 			//extra Durchlauf für needGetInstanceGenerated (damit die imports generiert werden)
 			model.compile();
 		}
+
+		if (generateStringFeatures)
+		{
+			var scannerGeg = new ScannerGen();
+			fsa.generateFile('de/wbg/dtdsl/SimpleScanner.java', scannerGeg.generateScanner);
+		}
+		
 
 		for (model: resource.allContents.toIterable.filter(DTDSL))
 		{
@@ -94,10 +110,11 @@ class DTDSLGenerator implements IGenerator {
 		import java.lang.reflect.Field;
 		import java.util.ArrayList;
 		«IF (needGetInstanceGenerated)»
-			import java.util.HashMap;
-			import java.util.LinkedList;
-			import java.lang.reflect.Array;
-			
+		import java.util.LinkedList;
+		import java.lang.reflect.Array;
+		«ENDIF»
+		«IF needGetInstanceGenerated || generateStringFeatures»
+		import java.util.HashMap;		
 		«ENDIF»
 		
 		class «model.parserName.toFirstUpper» {
@@ -106,6 +123,15 @@ class DTDSLGenerator implements IGenerator {
 			private Element actualNode;
 			«IF nextWillBeSet»
 			private Element prev;
+			«ENDIF»
+			«IF generateStringFeatures»
+			private SimpleScanner scanner;
+			«IF needStringKeyStore»
+			private HashMap<String, String> stringKeyVariables;
+			«ENDIF»
+			«IF needStringValueStore»
+			private HashMap<String, String> stringValueVariables;
+			«ENDIF»
 			«ENDIF»
 			private ArrayList<Integer> visited;
 			
@@ -119,6 +145,15 @@ class DTDSLGenerator implements IGenerator {
 				this.headNode = new Head("HEAD");
 				this.actualNode = this.headNode;
 				this.visited = new ArrayList<>();
+				«IF generateStringFeatures»
+				this.scanner = new SimpleScanner();
+				«IF needStringKeyStore»
+				this.stringKeyVariables = new HashMap<>();
+				«ENDIF»
+				«IF needStringValueStore»
+				this.stringValueVariables = new HashMap<>();
+				«ENDIF»
+				«ENDIF»
 				//model.start
 				try {
 					int nextVisit = System.identityHashCode(o);
@@ -141,8 +176,8 @@ class DTDSLGenerator implements IGenerator {
 		{
 			ret += compileMethods(d)
 			//alle Fields innerhalb des Objektes
-			if (d instanceof ObjectDescription) {ret += d.compileMethodsInner}
-			if (d instanceof StringDescription) {ret += d.compileStringMethodsInner}
+			if (d instanceof ObjectDescription) {ret += d.compileMethodsInner; generateStringFeatures = true;}
+//			if (d instanceof StringDescription) {ret += d.compileStringMethodsInner}
 			
 		}
 		
@@ -163,27 +198,160 @@ class DTDSLGenerator implements IGenerator {
 	def CharSequence compileStringMethodsInner(StringDescription d)
 	{
 		println("compileStringMethodsInner")
-		var ret = ''''''
+		var ret = '''
+		Node nodeForValue = new Node("none");
+		'''
 		
-		for (i: d.description)
+//		for (i: d.description)
+		for (var int z = 0; z < d.description.size; z++)
 		{
-			
+			var i = d.description.get(z);
+			//StringDescriptionInner
+			if (i instanceof StringOverRead)
+			{
+				ret += '''
+				//overread «i.overRead»
+				if (scanner.hasNext("«i.overRead»"))
+				{
+					scanner.skip("«i.overRead»");
+				}
+				else
+				{
+					throw new ParserException("Error while parsing String in «d.name» while overreading \"«i.overRead»\"");
+				}
+				
+				'''
+			}
+			if (i instanceof StringKey)
+			{
+				ret += '''
+				//parseKey «if (i.name != null) {this.needStringKeyStore = true; i.name}»
+				{
+					Node stringNode = new Node(n.getNameForNode());
+					«if (z == d.description.size-1) 
+						{'''String key = scanner.scanUpToSpace();'''} 
+					else 
+					{
+						var temp = d.description.get(z+1);
+						if (temp instanceof StringOverRead)
+						{
+							'''String key = scanner.scanUpToString("«temp.overRead»");'''
+						}
+						else
+						{
+							'''//this case is not implemented yet -> scan key, no next'''	
+						}
+					}
+						»
+«««					String key = "";
+					stringNode.setValue(key);
+					stringNode.setKey(true);
+					«IF i.name != null»
+					this.stringKeyVariables.put("«i.name»", key);
+					«ENDIF»
+					
+					stringNode.setParent(n);
+					n.addChild(stringNode);
+					nodeForValue = stringNode;
+				}
+				
+				'''
+			}
+			if (i instanceof StringValue)
+			{
+				ret += '''
+				//parseValue «if (i.name != null) {this.needStringValueStore = true; i.name}»
+				{
+					Attribute valueAttrib = new Attribute(n.getNameForAttribute());
+					valueAttrib.setType(String.class);
+					//parse Value
+					«if (z == d.description.size-1) 
+						{'''String value = scanner.scanUpToSpace();'''} 
+					else 
+					{
+						var temp = d.description.get(z+1);
+						if (temp instanceof StringOverRead)
+						{
+							'''String value = scanner.scanUpToString("«temp.overRead»");'''
+						}
+						else
+						{
+							'''//this case is not implemented yet -> scan value, no next'''	
+						}
+					}
+					»
+					valueAttrib.setValue(value);
+					valueAttrib.setParent(nodeForValue);
+					nodeForValue.addChild(valueAttrib);
+				}
+				'''
+			}
+			if (i.keyRef != null)
+			{
+				ret += '''
+				{
+					//keyRef «i.keyRef»
+					String storedValue = this.stringKeyVariables.get("«i.keyRef.name»");	
+					if (storedValue == null)
+					{
+						throw new ParserException("Variable is not exsisting");
+					}
+					else
+					{
+						//Wert der gespeicherten Variable mit dem geparsten Wert überprüfen
+						«if (z == d.description.size-1) 
+						{
+							'''String value = scanner.scanUpToSpace();'''
+						} 
+						else 
+						{
+							var temp = d.description.get(z+1);
+							if (temp instanceof StringOverRead)
+							{
+								'''String value = scanner.scanUpToString("«temp.overRead»");'''
+							}
+							else
+							{
+								'''//this case is not implemented yet -> scan value, no next'''	
+							}
+						}
+					»
+						if (!value.equals(storedValue))
+						{
+							throw new ParserException("Different key values are not allowed at this context");
+						}
+					}
+				}
+				
+				'''
+			}
 		}
 		
 		ret
 	}
 	
-	def CharSequence compleMethods(StringDescription d)
-	{
-		println("compileMethods String")
-		'''	private void parseString«d.name»(String s, Element n)
-			{
-				
-				
-			}
-			
-			'''
-	}
+//	def CharSequence compleMethods(StringDescription d)
+//	{
+//		println("compileMethods String")
+//		'''	private void parseString«d.name»(String s, Element n)
+//			{
+//				
+//				«FOR i : d.description»
+//					«if (i instanceof StringOverRead)
+//					{
+//						'''//overread «i.overRead»'''
+//					}else if (i instanceof StringKey)
+//					{
+//						'''//parseKey «if (i.name != null) i.name»'''
+//					} else if (i instanceof StringValue)
+//					{
+//						'''//parseValue «if (i.name != null) i.name»'''
+//					}»
+//				«ENDFOR»
+//			}
+//			
+//			'''
+//	}
 	
 	
 //-----------------------------------------  Object  -----------------------------------------
@@ -212,9 +380,12 @@ class DTDSLGenerator implements IGenerator {
 		if (d instanceof StringDescription)
 		{
 			ret += 
-			'''	private void parse«d.name»(Object o, Element n)
+			'''	private void parse«d.name»(Object o, Element n) throws Exception
 	{
 		String s = (String) o;
+		scanner.setScanString(s);
+		
+		«compileStringMethodsInner(d)»
 	}
 	'''
 		}

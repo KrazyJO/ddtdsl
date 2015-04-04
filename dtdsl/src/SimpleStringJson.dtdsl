@@ -1,13 +1,9 @@
-parserName = "SimpleStringKeyValue";
-
-Node Begin: 
-{
-	hasAttribute s as SimpleKeyValue;
-}
+parserName = "SimpleStringJson";
 
 String SimpleKeyValue: 
 {
-	
+	//json
+	"{" key=Key ofType String ":"  value=Value ofType String "}"
 }
 
-beginWith = Begin
+beginWith = SimpleKeyValue

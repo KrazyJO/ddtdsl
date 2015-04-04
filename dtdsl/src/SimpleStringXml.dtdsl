@@ -1,0 +1,9 @@
+parserName = "SimpleStringXML";
+
+String SimpleKeyValue: 
+{
+	//xml
+	"<" key=Key ofType String ">" val=Value ofType String "</" key ">"
+}
+
+beginWith = SimpleKeyValue

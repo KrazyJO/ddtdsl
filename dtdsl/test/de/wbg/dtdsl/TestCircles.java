@@ -39,13 +39,13 @@ public class TestCircles {
 		Node node1 = head.getNodeByName("HEAD.node1");
 		Node node2 = head.getNodeByName("HEAD.node2");
 		
-		assertTrue("node0 shouldnt have transition previous", node0.getPrevious() == null);
+		assertTrue("node0 shouldnt have transition previous", node0.getPrevious() == node2);
 		assertEquals("node0 should have transition next to node1", node1, node0.getNext());
 		assertEquals("node1 should have transition previous to node0", node0, node1.getPrevious());
 		assertEquals("node1 should have transition next to node2", node2, node1.getNext());
 		assertEquals("node2 should have transition previous to node1", node1, node2.getPrevious());
 		assertEquals("node1 should have transition next to node2", node2, node1.getNext());
-		assertTrue("node2 shouldnt have transition next", node2.getNext() == null);
+		assertTrue("node2 shouldnt have transition next", node2.getNext() == node0);
 	}
 	
 }

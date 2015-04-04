@@ -12,6 +12,7 @@ class Element
 	private int attributeNumber;
 	private Element next;
 	private Element previous;
+	private int originalHashCode;
 	
 	public Element(String id)
 	{
@@ -19,6 +20,16 @@ class Element
 		this.id = id;
 		this.nodeNumber = 0;
 		this.attributeNumber = 0;
+	}
+	
+	public int getOriginalHashCode()
+	{
+		return this.originalHashCode;
+	}
+	
+	public void setOriginalHashCode(int value)
+	{
+		this.originalHashCode = value;
 	}
 	
 	public Node getNodeByName(String name)

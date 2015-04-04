@@ -68,6 +68,10 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
       case DTDSLPackage.START_POINT: return createStartPoint();
       case DTDSLPackage.ABSTRACT: return createAbstract();
       case DTDSLPackage.STRING_DESCRIPTION: return createStringDescription();
+      case DTDSLPackage.STRING_DESCRIPTION_INNER: return createStringDescriptionInner();
+      case DTDSLPackage.STRING_OVER_READ: return createStringOverRead();
+      case DTDSLPackage.STRING_KEY: return createStringKey();
+      case DTDSLPackage.STRING_VALUE: return createStringValue();
       case DTDSLPackage.OBJECT_DESCRIPTION: return createObjectDescription();
       case DTDSLPackage.OBJECT_DESCRIPTION_INNER: return createObjectDescriptionInner();
       case DTDSLPackage.OBJECT_ATTRIBUTE: return createObjectAttribute();
@@ -126,6 +130,50 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
   {
     StringDescriptionImpl stringDescription = new StringDescriptionImpl();
     return stringDescription;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringDescriptionInner createStringDescriptionInner()
+  {
+    StringDescriptionInnerImpl stringDescriptionInner = new StringDescriptionInnerImpl();
+    return stringDescriptionInner;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringOverRead createStringOverRead()
+  {
+    StringOverReadImpl stringOverRead = new StringOverReadImpl();
+    return stringOverRead;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringKey createStringKey()
+  {
+    StringKeyImpl stringKey = new StringKeyImpl();
+    return stringKey;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringValue createStringValue()
+  {
+    StringValueImpl stringValue = new StringValueImpl();
+    return stringValue;
   }
 
   /**

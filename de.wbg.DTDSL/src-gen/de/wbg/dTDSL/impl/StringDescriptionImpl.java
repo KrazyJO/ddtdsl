@@ -4,14 +4,19 @@ package de.wbg.dTDSL.impl;
 
 import de.wbg.dTDSL.DTDSLPackage;
 import de.wbg.dTDSL.StringDescription;
+import de.wbg.dTDSL.StringDescriptionInner;
 
 import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,14 +34,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class StringDescriptionImpl extends AbstractImpl implements StringDescription
 {
   /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute list.
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected EList<String> description;
+  protected EList<StringDescriptionInner> description;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,13 +69,29 @@ public class StringDescriptionImpl extends AbstractImpl implements StringDescrip
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getDescription()
+  public EList<StringDescriptionInner> getDescription()
   {
     if (description == null)
     {
-      description = new EDataTypeEList<String>(String.class, this, DTDSLPackage.STRING_DESCRIPTION__DESCRIPTION);
+      description = new EObjectContainmentEList<StringDescriptionInner>(StringDescriptionInner.class, this, DTDSLPackage.STRING_DESCRIPTION__DESCRIPTION);
     }
     return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DTDSLPackage.STRING_DESCRIPTION__DESCRIPTION:
+        return ((InternalEList<?>)getDescription()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -102,7 +123,7 @@ public class StringDescriptionImpl extends AbstractImpl implements StringDescrip
     {
       case DTDSLPackage.STRING_DESCRIPTION__DESCRIPTION:
         getDescription().clear();
-        getDescription().addAll((Collection<? extends String>)newValue);
+        getDescription().addAll((Collection<? extends StringDescriptionInner>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,23 +160,6 @@ public class StringDescriptionImpl extends AbstractImpl implements StringDescrip
         return description != null && !description.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (description: ");
-    result.append(description);
-    result.append(')');
-    return result.toString();
   }
 
 } //StringDescriptionImpl

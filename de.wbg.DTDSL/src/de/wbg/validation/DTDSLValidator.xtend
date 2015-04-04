@@ -19,13 +19,17 @@ import de.wbg.dTDSL.Abstract
  */
 class DTDSLValidator extends AbstractDTDSLValidator {
 
-	//keine Leerzeichen im Parsernamen (error)
+	//keine Leerzeichen im Parsernamen (error) und Parsername muss mit Großbuchstaben anfangen
 	@Check
 	def noParserNameWithSpaces(DTDSL model)
 	{
 		if (model.parserName.contains(" "))
 		{
 			error("Spaces in parser name are not allowed", DTDSLPackage.Literals.DTDSL__PARSER_NAME)
+		}
+		if (Character.isLowerCase(model.parserName.charAt(0)))
+		{
+			error("Parsername must begin with capital letter", DTDSLPackage.Literals.DTDSL__PARSER_NAME)
 		}
 	}
 	

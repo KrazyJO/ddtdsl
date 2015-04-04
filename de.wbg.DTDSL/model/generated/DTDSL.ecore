@@ -15,8 +15,23 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringDescription" eSuperTypes="#//Abstract">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1"
+        eType="#//StringDescriptionInner" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringDescriptionInner">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyRef" eType="#//StringKey"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringOverRead" eSuperTypes="#//StringDescriptionInner">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="overRead" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringKey" eSuperTypes="#//StringDescriptionInner">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringValue" eSuperTypes="#//StringDescriptionInner">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toKey" eType="#//StringKey"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectDescription" eSuperTypes="#//Abstract">
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1"

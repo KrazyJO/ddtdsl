@@ -7,7 +7,7 @@ class SimpleMaybeNode {
 	
 	private Head headNode;
 	private Element actualNode;
-	private Element prev;
+	private SimpleScanner scanner;
 	private ArrayList<Integer> visited;
 	
 	public SimpleMaybeNode()
@@ -20,6 +20,7 @@ class SimpleMaybeNode {
 		this.headNode = new Head("HEAD");
 		this.actualNode = this.headNode;
 		this.visited = new ArrayList<>();
+		this.scanner = new SimpleScanner();
 		//model.start
 		try {
 			int nextVisit = System.identityHashCode(o);
@@ -202,7 +203,7 @@ try
 }
 catch(NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 {
-	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@57ebae66 (attributes: next)");
+	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@61889040 (attributes: next)");
 }
 catch (ParserException e)
 {
