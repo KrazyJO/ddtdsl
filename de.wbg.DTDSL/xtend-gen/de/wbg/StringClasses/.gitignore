@@ -4,3 +4,9 @@
 /.ChainStringValue.java._trace
 /.ChainStringKeyRef.java._trace
 /.ChainStringOr.java._trace
+/ChainString.java
+/ChainStringKey.java
+/ChainStringKeyRef.java
+/ChainStringOr.java
+/ChainStringReadOver.java
+/ChainStringValue.java
