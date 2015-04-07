@@ -1,9 +1,8 @@
 parserName = "SimpleParser";
-parserType = javaObject; 
 
 Node Skv: {
 	hasAttribute s;
 	hasAttribute i;
 }
 
-beginWith = Skv;
+beginWith = Skv

@@ -59,6 +59,69 @@ public interface DTDSLFactory extends EFactory
   StringDescription createStringDescription();
 
   /**
+   * Returns a new object of class '<em>String Description Inner</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Description Inner</em>'.
+   * @generated
+   */
+  StringDescriptionInner createStringDescriptionInner();
+
+  /**
+   * Returns a new object of class '<em>String Over Read</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Over Read</em>'.
+   * @generated
+   */
+  StringOverRead createStringOverRead();
+
+  /**
+   * Returns a new object of class '<em>String Key</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Key</em>'.
+   * @generated
+   */
+  StringKey createStringKey();
+
+  /**
+   * Returns a new object of class '<em>String Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Value</em>'.
+   * @generated
+   */
+  StringValue createStringValue();
+
+  /**
+   * Returns a new object of class '<em>String Or</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Or</em>'.
+   * @generated
+   */
+  StringOr createStringOr();
+
+  /**
+   * Returns a new object of class '<em>String Description In Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Description In Variable</em>'.
+   * @generated
+   */
+  StringDescriptionInVariable createStringDescriptionInVariable();
+
+  /**
+   * Returns a new object of class '<em>String Complex</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Complex</em>'.
+   * @generated
+   */
+  StringComplex createStringComplex();
+
+  /**
    * Returns a new object of class '<em>Object Description</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -147,15 +210,6 @@ public interface DTDSLFactory extends EFactory
    * @generated
    */
   ObjectMaybeInner createObjectMaybeInner();
-
-  /**
-   * Returns a new object of class '<em>Keyword</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Keyword</em>'.
-   * @generated
-   */
-  Keyword createKeyword();
 
   /**
    * Returns the package supported by this factory.

@@ -31,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getParserName <em>Parser Name</em>}</li>
- *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getObjDescription <em>Obj Description</em>}</li>
  *   <li>{@link de.wbg.dTDSL.impl.DTDSLImpl#getStart <em>Start</em>}</li>
  * </ul>
@@ -60,26 +59,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
    * @ordered
    */
   protected String parserName = PARSER_NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected static final String TYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected String type = TYPE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getObjDescription() <em>Obj Description</em>}' containment reference list.
@@ -143,29 +122,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
     parserName = newParserName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.DTDSL__PARSER_NAME, oldParserName, parserName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getType()
-  {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(String newType)
-  {
-    String oldType = type;
-    type = newType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.DTDSL__TYPE, oldType, type));
   }
 
   /**
@@ -260,8 +216,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
     {
       case DTDSLPackage.DTDSL__PARSER_NAME:
         return getParserName();
-      case DTDSLPackage.DTDSL__TYPE:
-        return getType();
       case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
         return getObjDescription();
       case DTDSLPackage.DTDSL__START:
@@ -283,9 +237,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
     {
       case DTDSLPackage.DTDSL__PARSER_NAME:
         setParserName((String)newValue);
-        return;
-      case DTDSLPackage.DTDSL__TYPE:
-        setType((String)newValue);
         return;
       case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
         getObjDescription().clear();
@@ -311,9 +262,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
       case DTDSLPackage.DTDSL__PARSER_NAME:
         setParserName(PARSER_NAME_EDEFAULT);
         return;
-      case DTDSLPackage.DTDSL__TYPE:
-        setType(TYPE_EDEFAULT);
-        return;
       case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
         getObjDescription().clear();
         return;
@@ -336,8 +284,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
     {
       case DTDSLPackage.DTDSL__PARSER_NAME:
         return PARSER_NAME_EDEFAULT == null ? parserName != null : !PARSER_NAME_EDEFAULT.equals(parserName);
-      case DTDSLPackage.DTDSL__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case DTDSLPackage.DTDSL__OBJ_DESCRIPTION:
         return objDescription != null && !objDescription.isEmpty();
       case DTDSLPackage.DTDSL__START:
@@ -359,8 +305,6 @@ public class DTDSLImpl extends MinimalEObjectImpl.Container implements DTDSL
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (parserName: ");
     result.append(parserName);
-    result.append(", type: ");
-    result.append(type);
     result.append(')');
     return result.toString();
   }

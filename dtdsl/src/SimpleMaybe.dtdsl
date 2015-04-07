@@ -1,5 +1,4 @@
 parserName = "SimpleMaybeParser";
-parserType = javaObject;
 
 Node Skv:
 {
@@ -13,4 +12,4 @@ Node Inner:
 	hasAttribute s;
 }
 
-beginWith = Skv;
+beginWith = Skv

@@ -15,20 +15,30 @@ import de.wbg.dTDSL.ObjectMany
 import de.wbg.dTDSL.ObjectMaybe
 import de.wbg.dTDSL.ObjectNext
 import de.wbg.dTDSL.ObjectNode
+import de.wbg.dTDSL.StringDescription
 import de.wbg.extra.ChainMaybe
-import de.wbg.extra.ObjectMaybeAttribute
-import de.wbg.extra.ObjectMaybeNext
-import de.wbg.extra.ObjectMaybeNode
-import java.util.LinkedList
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IFileSystemAccess
-import org.eclipse.xtext.generator.IGenerator
 import de.wbg.extra.ChainMethodsInner
 import de.wbg.extra.ChainMethodsInnerObjectAttribute
 import de.wbg.extra.ChainMethodsInnerObjectMany
 import de.wbg.extra.ChainMethodsInnerObjectMaybe
 import de.wbg.extra.ChainMethodsInnerObjectNext
 import de.wbg.extra.ChainMethodsInnerObjectNode
+import de.wbg.extra.ObjectMaybeAttribute
+import de.wbg.extra.ObjectMaybeNext
+import de.wbg.extra.ObjectMaybeNode
+import java.util.ArrayList
+import java.util.LinkedList
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.xtext.generator.IGenerator
+import de.wbg.ScannerGen 
+import de.wbg.dTDSL.StringDescriptionInVariable
+import de.wbg.StringClasses.ChainString
+import de.wbg.StringClasses.ChainStringKey
+import de.wbg.StringClasses.ChainStringReadOver
+import de.wbg.StringClasses.ChainStringValue
+import de.wbg.StringClasses.ChainStringKeyRef
+import de.wbg.StringClasses.ChainStringOr
 
 /**
  * Generates code from your model files on save.
@@ -40,16 +50,13 @@ class DTDSLGenerator implements IGenerator {
 	var needGetInstanceGenerated = false;
 	var LinkedList<ChainMaybe> objectMaybeChain;
 	var LinkedList<ChainMethodsInner> methodsInnerChain;
-	
-	def boolean getNeedGetInstanceGenerated()
-	{
-		this.needGetInstanceGenerated
-	}
-	
-	def void setNeedGetInstanceGenerated(boolean value)
-	{
-		this.needGetInstanceGenerated = value
-	}
+	var nextWillBeSet = false;
+	var ArrayList<String> methodsNameForNextRule = new ArrayList<String>()
+	var generateStringFeatures = false;
+	var needStringKeyStore = false;
+	var needStringValueStore = false;
+	var generateObjectFeatures = false;
+	var LinkedList<ChainString> chainString;
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 
@@ -58,6 +65,7 @@ class DTDSLGenerator implements IGenerator {
 		var exceptionGen = new ExceptionGen()
 		this.initObjectMaybeChain();
 		this.initMethodsInnerChain();
+		this.initChainString();
 
 		fsa.generateFile('de/wbg/dtdsl/Node.java', nodeGen.generateNode)
 		fsa.generateFile('de/wbg/dtdsl/Head.java', nodeGen.generateHead)
@@ -65,6 +73,18 @@ class DTDSLGenerator implements IGenerator {
 		fsa.generateFile('de/wbg/dtdsl/Element.java', nodeGen.generateElement)
 
 		fsa.generateFile('de/wbg/dtdsl/ParserException.java', exceptionGen.exceptionGenerator)
+		
+		var sf = resource.allContents.toIterable.filter(StringDescription)
+		if (sf.length > 0)
+		{
+			generateStringFeatures = true;
+		}
+		
+		var of = resource.allContents.toIterable.filter(ObjectDescription)
+		if (of.length > 0)
+		{
+			generateObjectFeatures = true;
+		}
 
 		for (model: resource.allContents.toIterable.filter(DTDSL))
 		{
@@ -72,18 +92,17 @@ class DTDSLGenerator implements IGenerator {
 			model.compile();
 		}
 
+		if (generateStringFeatures)
+		{
+			var scannerGeg = new ScannerGen();
+			fsa.generateFile('de/wbg/dtdsl/SimpleScanner.java', scannerGeg.generateScanner);
+		}
+		
+
 		for (model: resource.allContents.toIterable.filter(DTDSL))
 		{
 			fsa.generateFile('de/wbg/dtdsl/' + model.parserName + '.java', 
-				if (model.type == "javaObject") 
-				{
-					
-					model.compile();
-				}
-				else if (model.type == "string")
-				{
-					//TODO compileString
-				}			
+				model.compile	
 			);	
 		}
 	}
@@ -95,21 +114,35 @@ class DTDSLGenerator implements IGenerator {
 		ret += '''
 		package de.wbg.dtdsl;
 		
+		«IF generateObjectFeatures»
 		import java.lang.reflect.Field;
-		«if (needGetInstanceGenerated)
-		{
-			'''
-			import java.util.ArrayList;
-			import java.util.HashMap;
-			import java.util.LinkedList;
-			import java.lang.reflect.Array;
-			'''				
-		}»
+		«ENDIF»
+		import java.util.ArrayList;
+		«IF (needGetInstanceGenerated)»
+		import java.util.LinkedList;
+		import java.lang.reflect.Array;
+		«ENDIF»
+		«IF needGetInstanceGenerated || needStringKeyStore || needStringValueStore»
+		import java.util.HashMap;
+		«ENDIF»
 		
 		class «model.parserName.toFirstUpper» {
 			
 			private Head headNode;
 			private Element actualNode;
+			«IF nextWillBeSet»
+			private Element prev;
+			«ENDIF»
+			«IF generateStringFeatures»
+			private SimpleScanner scanner;
+			«IF needStringKeyStore»
+			private HashMap<String, String> stringKeyVariables;
+			«ENDIF»
+			«IF needStringValueStore»
+			private HashMap<String, String> stringValueVariables;
+			«ENDIF»
+			«ENDIF»
+			private ArrayList<Integer> visited;
 			
 			public «model.parserName.toFirstUpper»()
 			{
@@ -120,8 +153,20 @@ class DTDSLGenerator implements IGenerator {
 			{
 				this.headNode = new Head("HEAD");
 				this.actualNode = this.headNode;
+				this.visited = new ArrayList<>();
+				«IF generateStringFeatures»
+				this.scanner = new SimpleScanner();
+				«IF needStringKeyStore»
+				this.stringKeyVariables = new HashMap<>();
+				«ENDIF»
+				«IF needStringValueStore»
+				this.stringValueVariables = new HashMap<>();
+				«ENDIF»
+				«ENDIF»
 				//model.start
 				try {
+					int nextVisit = System.identityHashCode(o);
+					this.visited.add(nextVisit);
 					parse«model.start.begin.name»(o, actualNode);
 				}
 				catch (Exception e)
@@ -135,13 +180,27 @@ class DTDSLGenerator implements IGenerator {
 			
 		'''
 		
-		
+		//ObjectObjects
 		for (d: model.objDescription)
 		{
 			ret += compileMethods(d)
 			//alle Fields innerhalb des Objektes
 			if (d instanceof ObjectDescription) {ret += d.compileMethodsInner}
-			
+		}
+		
+		//StringObjects
+		for (v: model.eResource.allContents.toIterable.filter(StringDescription))
+		{
+			ret += compileStringMethods(v)
+		}
+		
+		//String or-components
+		for (v: model.eResource.allContents.toIterable.filter(StringDescriptionInVariable))
+		{
+//			ret += '''	//generate methode for «(v.eContainer as StringDescription).name + "/" + v.name»
+//			
+//			'''
+			ret += compileStringOrOption(v)
 		}
 		
 		if (needGetInstanceGenerated)
@@ -150,13 +209,69 @@ class DTDSLGenerator implements IGenerator {
 			ret += generator.generateGetInstance 
 		}
 		
-		ret += '''}
+		ret += '''
+}'''
+		
+		ret
+	}
+
+//-----------------------------------------  String  -----------------------------------------
+	def CharSequence compileStringOrOption(StringDescriptionInVariable d)
+	{
+		var ret = '''	private void parse«(d.eContainer as StringDescription).name»Option«d.name»(Element n) throws Exception
+	{
+		Node nodeForValue = new Node("none");
+		'''
+
+		for (var int z = 0; z < d.description.size; z++)
+		{
+			var i = d.description.get(z)
+			for (handler: this.chainString)
+			{
+				if (handler.handle(z, i))
+				{
+					ret += handler.returnValue
+				}
+			}
+		}
+		ret += '''	}
+		'''
+	}
+	
+	def CharSequence compileStringMethods(StringDescription d)
+	{
+		println("compileStringMethodsInner")
+		var ret = 
+			'''	private void parse«d.name»(Object o, Element n) throws Exception
+	{
+		String s = (String) o;
+		scanner.setScanString(s);
+		
+		Node nodeForValue = new Node("none");
+		
+		'''
+
+		for (var int z = 0; z < d.description.size; z++)
+		{
+			var i = d.description.get(z)
+			for (handler: this.chainString)
+			{
+				if (handler.handle(z, i))
+				{
+					ret += handler.returnValue
+				}
+			}
+		}
+		
+		ret += '''	}
 		
 		'''
 		
 		ret
 	}
 	
+	
+//-----------------------------------------  Object  -----------------------------------------
 	def CharSequence compileMethodsInner(ObjectDescription d)
 	{
 		var ret = ''''''
@@ -185,9 +300,19 @@ class DTDSLGenerator implements IGenerator {
 			ret+=
 			'''	private void parse«d.name»(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+«««		int nextVisit = System.identityHashCode(o);
+«««		if (this.visited.contains(nextVisit))
+«««		{
+«««			return;
+«««		}
+«««		else
+«««		{
+«««			this.visited.add(nextVisit);
+«««		}
+	
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 	'''
 	for (i: d.description)
 		{
@@ -195,13 +320,25 @@ class DTDSLGenerator implements IGenerator {
 			'''		//{Element copy = n.copy();
 		try 
 		{
-			«if (i instanceof ObjectAttribute)
+		«if (i instanceof ObjectAttribute)
 		{
 			'''parse«d.name.toFirstUpper»Attribute«i.attributes.toFirstUpper »(o, «i.argument»);''' 
 		}
 		else if (i instanceof ObjectNext)
 		{
-			'''parse«d.name.toFirstUpper»«i.objectDesription.name.toFirstUpper»(o, «i.argument»);'''
+			''' 	Node parent = new Node(n.getId());
+	parent.setNodeNumber(n.getNodeNumber());
+	parent.setAttributeNumber(n.getAttributeNumber());
+	parse«d.name.toFirstUpper»«i.objectDesription.name.toFirstUpper»(o, parent);
+	
+	Node tempNode = (Node) parent.getChildren().get(0);
+	tempNode.setParent(n);
+	n.addChild(tempNode);
+	n.increaseNodeNumber();
+	newNode.setNext(tempNode);
+	
+	'''
+//			 parse«d.name.toFirstUpper»«i.objectDesription.name.toFirstUpper»(o, «i.argument»);
 		} 
 		else if (i instanceof ObjectNode)
 		{
@@ -263,28 +400,8 @@ class DTDSLGenerator implements IGenerator {
 			Object next = (Object) f.get(o);
 			Head manyHead = new Head("MANYHEAD");
 			
-«««			if (next instanceof «i.types»[])
-«««			{
-«««				«i.types»[] array = («i.types»[])next;
-«««				for (int index = 0; index < array.length; index++)
-«««				{
-«««					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(array[index], manyHead);
-«««				}
-«««			}
-			if (next instanceof Object[])
+			if (next.getClass().isArray())
 			{
-				//for not-primitive datatypes
-				
-				Object[] array = (Object[])next;
-				for (int index = 0; index < array.length; index++)
-				{
-					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(array[index], manyHead);
-				}
-			}
-			else if (next.getClass().isArray())
-			{
-				//for primitive datatypes
-				
 				for (int index = 0; index < Array.getLength(next); index++)
 				{
 					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(Array.get(next ,index), manyHead);
@@ -314,26 +431,17 @@ class DTDSLGenerator implements IGenerator {
 					
 					for (Object entry : hashMap.keySet())
 					{
-«««						Node entryNode = new Node("node" + newNode.increaseNodeNumber());
-«««						node.setKey(true);
-«««						node.setValue(String.valueOf(entry));
-«««						node.setName(entry.getClass().toString().replace("class ", ""));
-						
 «««						//Attribute
 						Object valueForEntry = hashMap.get(entry);
-«««						Attribute attribute = new Attribute("attribute" + node.increaseAttributeNumber());
-«««						attribute.setName("children");
 						
-«««						parse«i.objectDesription.name.toFirstUpper»(valueForEntry, manyHead);
 						//entry is primitiv
 						//=> Node with key -> Attribute with value
-						Node node = new Node("node"+manyHead.increaseNodeNumber());
+						Node node = new Node(manyHead.getNameForNode());
 						node.setKey(true);
 						node.setValue(String.valueOf(entry));
 						node.setName(entry.getClass().toString().replace("class ", ""));
-						Attribute attrib = new Attribute("attribute"+node.increaseAttributeNumber());
+						Attribute attrib = new Attribute(node.getNameForAttribute());
 						attrib.setName("«i.attributes»");
-«««						attrib.setValue(String.valueOf(hashMap.get(entry)));
 						attrib.setValue(hashMap.get(entry));
 						attrib.setType(hashMap.get(entry).getClass());
 						
@@ -367,6 +475,15 @@ class DTDSLGenerator implements IGenerator {
 				Field f = o.getClass().getDeclaredField("«call»");
 				f.setAccessible(true);
 				Object next = (Object) f.get(o);
+				int nextVisit = System.identityHashCode(next);
+				if (this.visited.contains(nextVisit))
+				{
+					return;
+				}
+				else
+				{
+					this.visited.add(nextVisit);
+				}
 				Head manyHead = new Head("MANYHEAD");
 				
 				//String instance = this.getInstance(next);
@@ -399,15 +516,8 @@ class DTDSLGenerator implements IGenerator {
 					
 					for (Object entry : hashMap.keySet())
 					{
-«««						Node entryNode = new Node("node" + newNode.increaseNodeNumber());
-«««						node.setKey(true);
-«««						node.setValue(String.valueOf(entry));
-«««						node.setName(entry.getClass().toString().replace("class ", ""));
-						
 «««						//Attribute
 						Object valueForEntry = hashMap.get(entry);
-«««						Attribute attribute = new Attribute("attribute" + node.increaseAttributeNumber());
-«««						attribute.setName("children");
 						
 						parse«i.objectDesription.name.toFirstUpper»(valueForEntry, manyHead);
 						Node act = manyHead.getNodeByName("MANYHEAD.node"+(manyHead.size()-1));
@@ -417,10 +527,16 @@ class DTDSLGenerator implements IGenerator {
 					}
 				}
 				
+				Element setNext = null;
 				for (Element el : manyHead.getChildren())
 				{
 					n.addChild(el);
 					el.setParent(n);
+					if (setNext != null)
+					{
+						setNext.setNext(el);
+					}
+					setNext = el;
 				}
 				'''
 				
@@ -432,6 +548,17 @@ class DTDSLGenerator implements IGenerator {
 				Field f = o.getClass().getDeclaredField("«i.attributes»");
 				f.setAccessible(true);
 				Object next = (Object) f.get(o);
+				
+				int nextVisit = System.identityHashCode(next);
+				if (this.visited.contains(nextVisit))
+				{
+					return;
+				}
+				else
+				{
+					this.visited.add(nextVisit);
+				}
+				
 				Head manyHead = new Head("MANYHEAD");
 				
 				if (next instanceof Object[])
@@ -464,15 +591,9 @@ class DTDSLGenerator implements IGenerator {
 					
 					for (Object entry : hashMap.keySet())
 					{
-«««						Node entryNode = new Node("node" + newNode.increaseNodeNumber());
-«««						node.setKey(true);
-«««						node.setValue(String.valueOf(entry));
-«««						node.setName(entry.getClass().toString().replace("class ", ""));
 						
 «««						//Attribute
 						Object valueForEntry = hashMap.get(entry);
-«««						Attribute attribute = new Attribute("attribute" + node.increaseAttributeNumber());
-«««						attribute.setName("children");
 						
 						parse«i.inner.name.toFirstUpper»(valueForEntry, manyHead);
 						Node act = manyHead.getNodeByName("MANYHEAD.node"+(manyHead.size()-1));
@@ -535,6 +656,17 @@ class DTDSLGenerator implements IGenerator {
 			Field f = o.getClass().getDeclaredField("«n.attributes»");
 			f.setAccessible(true);
 			Object next = (Object) f.get(o);
+			
+			int nextVisit = System.identityHashCode(next);
+			if (this.visited.contains(nextVisit))
+			{
+				return;
+			}
+			else
+			{
+				this.visited.add(nextVisit);
+			}
+			
 			parse«n.inner.name.toFirstUpper»(next, n);
 		}
 		catch(NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
@@ -593,6 +725,7 @@ class DTDSLGenerator implements IGenerator {
 	
 	def CharSequence compile(ObjectNext n)
 	{
+		this.nextWillBeSet = true;
 		'''		//Next: 
 		«if (n.attribute.code == null)
 		{
@@ -604,7 +737,19 @@ class DTDSLGenerator implements IGenerator {
 				f.setAccessible(true);
 				Object next = (Object) f.get(o); //IllegalAccessException
 			
+			int nextVisit = System.identityHashCode(next);
+			if (this.visited.contains(nextVisit))
+			{
+				return;
+			}
+			else
+			{
+				this.visited.add(nextVisit);
+			}
+«««				this.prev = newNode;   
+			
 				parse«n.objectDesription.name»(next, n);
+«««				actualNode = (Element)next;
 				actualNode = n;
 			}
 			catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
@@ -639,7 +784,7 @@ class DTDSLGenerator implements IGenerator {
 		}
 	}
 	
-	//not for compiling
+	//------------------------------ init MessageHandler ------------------------------
 	def void initObjectMaybeChain()
 	{
 		this.objectMaybeChain = new LinkedList<ChainMaybe>();
@@ -648,12 +793,65 @@ class DTDSLGenerator implements IGenerator {
 		this.objectMaybeChain.add(new ObjectMaybeNext);
 	}
 	
-	def initMethodsInnerChain() {
+	def initMethodsInnerChain() 
+	{
 		this.methodsInnerChain = new LinkedList<ChainMethodsInner>()
 		this.methodsInnerChain.add(new ChainMethodsInnerObjectAttribute)
 		this.methodsInnerChain.add(new ChainMethodsInnerObjectMany(this))
 		this.methodsInnerChain.add(new ChainMethodsInnerObjectMaybe(this))
 		this.methodsInnerChain.add(new ChainMethodsInnerObjectNext)
 		this.methodsInnerChain.add(new ChainMethodsInnerObjectNode)
+	}
+	
+	def initChainString()
+	{
+		this.chainString = new LinkedList<ChainString>()
+		this.chainString.add(new ChainStringKey(this))
+		this.chainString.add(new ChainStringKeyRef(this))
+		this.chainString.add(new ChainStringReadOver(this))
+		this.chainString.add(new ChainStringValue(this))
+		this.chainString.add(new ChainStringOr(this))
+	}
+	
+	
+	//------------------------------ Getters / Setters ------------------------------
+	def void setGenerateStringFeatures(boolean value)
+	{
+		this.generateStringFeatures = value
+	}
+	
+	def boolean getGenerateStringFeatures()
+	{
+		return this.generateStringFeatures
+	}
+	
+	def void setNeedStringKeyStore(boolean value)
+	{
+		this.needStringKeyStore = value
+	}
+	
+	def boolean getNeedStringKeyStore()
+	{
+		return this.needStringKeyStore
+	}
+	
+	def void setNeedStringValueStore(boolean value)
+	{
+		this.needStringValueStore = value;
+	}
+	
+	def boolean getNeedStringValueStore(boolean value)
+	{
+		return this.needStringValueStore;
+	}
+	
+	def boolean getNeedGetInstanceGenerated()
+	{
+		this.needGetInstanceGenerated
+	}
+	
+	def void setNeedGetInstanceGenerated(boolean value)
+	{
+		this.needGetInstanceGenerated = value
 	}
 }

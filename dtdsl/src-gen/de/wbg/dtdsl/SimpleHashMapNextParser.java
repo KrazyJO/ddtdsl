@@ -2,14 +2,22 @@ package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.lang.reflect.Array;
+<<<<<<< HEAD
+=======
+import java.util.HashMap;
+>>>>>>> 8656d901e5178d7c0a7085c15713baddf5fb122a
 
 class SimpleHashMapNextParser {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
+	private SimpleScanner scanner;
+	private HashMap<String, String> stringKeyVariables;
+	private HashMap<String, String> stringValueVariables;
+	private ArrayList<Integer> visited;
 	
 	public SimpleHashMapNextParser()
 	{
@@ -20,8 +28,14 @@ class SimpleHashMapNextParser {
 	{
 		this.headNode = new Head("HEAD");
 		this.actualNode = this.headNode;
+		this.visited = new ArrayList<>();
+		this.scanner = new SimpleScanner();
+		this.stringKeyVariables = new HashMap<>();
+		this.stringValueVariables = new HashMap<>();
 		//model.start
 		try {
+			int nextVisit = System.identityHashCode(o);
+			this.visited.add(nextVisit);
 			parseStart(o, actualNode);
 		}
 		catch (Exception e)
@@ -35,64 +49,79 @@ class SimpleHashMapNextParser {
 	
 	private void parseStart(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+	
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			//many Next
-			Field f = o.getClass().getDeclaredField("children");
-			f.setAccessible(true);
-			Object next = (Object) f.get(o);
-			Head manyHead = new Head("MANYHEAD");
+		//many Next
+		Field f = o.getClass().getDeclaredField("children");
+		f.setAccessible(true);
+		Object next = (Object) f.get(o);
+		int nextVisit = System.identityHashCode(next);
+		if (this.visited.contains(nextVisit))
+		{
+			return;
+		}
+		else
+		{
+			this.visited.add(nextVisit);
+		}
+		Head manyHead = new Head("MANYHEAD");
+		
+		//String instance = this.getInstance(next);
+		if (next instanceof Object[])
+		{
+			for (int index = 0; index < ((Object[])next).length; index++)
+			{
+				parseSimpleValue(((Object[])next)[index], manyHead);
+			}
+		}
+		else if (next instanceof ArrayList)
+		{
+			ArrayList al = (ArrayList)next;
+			for (Object obj: al)
+			{
+				parseSimpleValue(obj, manyHead);
+			}
+		}
+		else if (next instanceof LinkedList)
+		{
+			LinkedList al = (LinkedList)next;
+			for (Object obj: al)
+			{
+				parseSimpleValue(obj, manyHead);
+			}
+		}
+		else if (next instanceof HashMap)
+		{
+			HashMap hashMap = (HashMap) next;
 			
-			//String instance = this.getInstance(next);
-			if (next instanceof Object[])
+			for (Object entry : hashMap.keySet())
 			{
-				for (int index = 0; index < ((Object[])next).length; index++)
-				{
-					parseSimpleValue(((Object[])next)[index], manyHead);
-				}
-			}
-			else if (next instanceof ArrayList)
-			{
-				ArrayList al = (ArrayList)next;
-				for (Object obj: al)
-				{
-					parseSimpleValue(obj, manyHead);
-				}
-			}
-			else if (next instanceof LinkedList)
-			{
-				LinkedList al = (LinkedList)next;
-				for (Object obj: al)
-				{
-					parseSimpleValue(obj, manyHead);
-				}
-			}
-			else if (next instanceof HashMap)
-			{
-				HashMap hashMap = (HashMap) next;
+				Object valueForEntry = hashMap.get(entry);
 				
-				for (Object entry : hashMap.keySet())
-				{
-					
-					Object valueForEntry = hashMap.get(entry);
-					
-					parseSimpleValue(valueForEntry, manyHead);
-					Node act = manyHead.getNodeByName("MANYHEAD.node"+(manyHead.size()-1));
-					act.setKey(true);
-					act.setValue(String.valueOf(entry));
-					act.setName(entry.getClass().toString().replace("class ", ""));
-				}
+				parseSimpleValue(valueForEntry, manyHead);
+				Node act = manyHead.getNodeByName("MANYHEAD.node"+(manyHead.size()-1));
+				act.setKey(true);
+				act.setValue(String.valueOf(entry));
+				act.setName(entry.getClass().toString().replace("class ", ""));
 			}
-			
-			for (Element el : manyHead.getChildren())
+		}
+		
+		Element setNext = null;
+		for (Element el : manyHead.getChildren())
+		{
+			n.addChild(el);
+			el.setParent(n);
+			if (setNext != null)
 			{
-				n.addChild(el);
-				el.setParent(n);
+				setNext.setNext(el);
 			}
+			setNext = el;
+		}
 		}
 		catch (ParserException e)
 		{
@@ -118,13 +147,14 @@ class SimpleHashMapNextParser {
 	}
 	private void parseSimpleValue(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+	
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSimpleValueAttributeValue(o, newNode);
+		parseSimpleValueAttributeValue(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -198,4 +228,3 @@ class SimpleHashMapNextParser {
 	}
 		
 }
-		

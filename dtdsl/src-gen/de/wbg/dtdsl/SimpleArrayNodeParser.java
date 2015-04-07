@@ -2,14 +2,19 @@ package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.lang.reflect.Array;
+import java.util.HashMap;
 
 class SimpleArrayNodeParser {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
+	private SimpleScanner scanner;
+	private HashMap<String, String> stringKeyVariables;
+	private HashMap<String, String> stringValueVariables;
+	private ArrayList<Integer> visited;
 	
 	public SimpleArrayNodeParser()
 	{
@@ -20,8 +25,14 @@ class SimpleArrayNodeParser {
 	{
 		this.headNode = new Head("HEAD");
 		this.actualNode = this.headNode;
+		this.visited = new ArrayList<>();
+		this.scanner = new SimpleScanner();
+		this.stringKeyVariables = new HashMap<>();
+		this.stringValueVariables = new HashMap<>();
 		//model.start
 		try {
+			int nextVisit = System.identityHashCode(o);
+			this.visited.add(nextVisit);
 			parseStart(o, actualNode);
 		}
 		catch (Exception e)
@@ -35,63 +46,75 @@ class SimpleArrayNodeParser {
 	
 	private void parseStart(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+	
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			Field f = o.getClass().getDeclaredField("children");
-			f.setAccessible(true);
-			Object next = (Object) f.get(o);
-			Head manyHead = new Head("MANYHEAD");
+		Field f = o.getClass().getDeclaredField("children");
+		f.setAccessible(true);
+		Object next = (Object) f.get(o);
+		
+		int nextVisit = System.identityHashCode(next);
+		if (this.visited.contains(nextVisit))
+		{
+			return;
+		}
+		else
+		{
+			this.visited.add(nextVisit);
+		}
+		
+		Head manyHead = new Head("MANYHEAD");
+		
+		if (next instanceof Object[])
+		{
+			Object[] array = (Object[]) next;
+			for (int index = 0; index < array.length; index++)
+			{
+				parseSkv(array[index], manyHead);
+			}
+		}
+		else if (next instanceof ArrayList)
+		{
+			ArrayList al = (ArrayList)next;
+			for (Object obj: al)
+			{
+				parseSkv(obj, manyHead);
+			}
+		}
+		else if (next instanceof LinkedList)
+		{
+			LinkedList al = (LinkedList)next;
+			for (Object obj: al)
+			{
+				parseSkv(obj, manyHead);
+			}
+		}
+		else if (next instanceof HashMap)
+		{
+			HashMap hashMap = (HashMap) next;
 			
-			if (next instanceof Object[])
+			for (Object entry : hashMap.keySet())
 			{
-				Object[] array = (Object[]) next;
-				for (int index = 0; index < array.length; index++)
-				{
-					parseSkv(array[index], manyHead);
-				}
-			}
-			else if (next instanceof ArrayList)
-			{
-				ArrayList al = (ArrayList)next;
-				for (Object obj: al)
-				{
-					parseSkv(obj, manyHead);
-				}
-			}
-			else if (next instanceof LinkedList)
-			{
-				LinkedList al = (LinkedList)next;
-				for (Object obj: al)
-				{
-					parseSkv(obj, manyHead);
-				}
-			}
-			else if (next instanceof HashMap)
-			{
-				HashMap hashMap = (HashMap) next;
 				
-				for (Object entry : hashMap.keySet())
-				{
-					
-					Object valueForEntry = hashMap.get(entry);
-					
-					parseSkv(valueForEntry, manyHead);
-					Node act = manyHead.getNodeByName("MANYHEAD.node"+(manyHead.size()-1));
-					act.setKey(true);
-					act.setValue(String.valueOf(entry));
-					act.setName(entry.getClass().toString().replace("class ", ""));
-				}
+				Object valueForEntry = hashMap.get(entry);
+				
+				parseSkv(valueForEntry, manyHead);
+				Node act = manyHead.getNodeByName("MANYHEAD.node"+(manyHead.size()-1));
+				act.setKey(true);
+				act.setValue(String.valueOf(entry));
+				act.setName(entry.getClass().toString().replace("class ", ""));
 			}
-			
-			for (Element el : manyHead.getChildren())
-			{
-				newNode.addChild(el);
-				el.setParent(newNode);
-			}
+		}
+		
+		for (Element el : manyHead.getChildren())
+		{
+			newNode.addChild(el);
+			el.setParent(newNode);
+		}
 		}
 		catch (ParserException e)
 		{
@@ -117,13 +140,14 @@ class SimpleArrayNodeParser {
 	}
 	private void parseSkv(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+	
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeI(o, newNode);
+		parseSkvAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -144,7 +168,7 @@ class SimpleArrayNodeParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeS(o, newNode);
+		parseSkvAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -247,4 +271,3 @@ class SimpleArrayNodeParser {
 	}
 		
 }
-		

@@ -35,13 +35,11 @@ public class TestMaybe {
 		
 		assertTrue("childOfChildOfO: wrong parent", attrib1.getParent() == childOfO);
 		assertTrue("childOfChildOfO: attribute name should be \"i\", but is " + attrib1.getName(), attrib1.getName() == "i");
-//		assertTrue("childOfChildOfO: should be \"value\", but is " + attrib1.getType(), attrib1.getType().equals("value"));
 		assertEquals(attrib1.getType(), new Integer(1).getClass());
 		assertTrue("childOfChildOfO: value should be \"1\", but is " + attrib1.getValue(), attrib1.getValue().equals( 1));
 		
 		assertTrue("childOfChildOfO: wrong parent", attrib0.getParent() == childOfO);
 		assertTrue("childOfChildOfO: attribute name should be \"i\", but is " + attrib0.getName(), attrib0.getName() == "s");
-//		assertTrue("childOfChildOfO: should be \"value\", but is ", attrib0.getType().equals("value"));
 		assertEquals(attrib0.getType(), new String("").getClass());
 		assertTrue("childOfChildOfO: value should be \"1\", but is " + attrib0.getValue(), attrib0.getValue().equals( "eins"));
 	}
@@ -61,23 +59,29 @@ public class TestMaybe {
 		SimpleMaybeNextParser p = new SimpleMaybeNextParser();
 		Head o = p.parse(skv);
 		
-		Node next = (Node)o.getChildren().get(0);
-		Attribute attribute1 = (Attribute)next.getChildren().get(0);
-		Attribute attribute2 = (Attribute)next.getChildren().get(1);
+		Node node = (Node)o.getChildren().get(0);
+		Attribute attribute1 = (Attribute)node.getChildren().get(0);
+		Attribute attribute2 = (Attribute)node.getChildren().get(1);
 		
 		assertEquals("head has wrong number of children: ", 2, o.getChildren().size());
-		assertEquals("next should have 2 attributes", 2, next.size());
-		assertEquals("next: wrong parent", next.getParent(), o);
+		assertEquals("next should have 2 attributes", 2, node.size());
+		assertEquals("next: wrong parent", node.getParent(), o);
 		
-		assertEquals("attribute1: wrong parent", attribute1.getParent(), next);
+		assertEquals("attribute1: wrong parent", attribute1.getParent(), node);
 		assertEquals("attribute1: attribute name should be \"s\"", attribute1.getName(), "s");
 		assertEquals("attribute1: value should be \"eins\", but is " + attribute1.getValue(), attribute1.getValue(), "eins");
 		
-		assertEquals("attribute2: wrong parent", attribute2.getParent(), next);
+		assertEquals("attribute2: wrong parent", attribute2.getParent(), node);
 		assertEquals("attribute2: attribute name should be \"i\"", attribute2.getName(), "i");
 		assertEquals("attribute2: value should be \"2\", but is " + attribute2.getValue(), attribute2.getValue(), 1);
 		
-		next = (Node)o.getChildren().get(1);
+		Node next = (Node)o.getChildren().get(1);
+		
+		assertTrue("next shouldnt have transition next", next.getNext() == null);
+		assertEquals("node should have transition next to next", next, node.getNext());
+		assertEquals("next should have transition previous to node", node, next.getPrevious());
+		assertTrue("next shouldnt have transition next", next.getNext() == null);
+		
 		attribute1 = (Attribute)next.getChildren().get(0);
 		attribute2 = (Attribute)next.getChildren().get(1);
 		

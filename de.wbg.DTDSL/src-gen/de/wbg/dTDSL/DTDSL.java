@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.wbg.dTDSL.DTDSL#getParserName <em>Parser Name</em>}</li>
- *   <li>{@link de.wbg.dTDSL.DTDSL#getType <em>Type</em>}</li>
  *   <li>{@link de.wbg.dTDSL.DTDSL#getObjDescription <em>Obj Description</em>}</li>
  *   <li>{@link de.wbg.dTDSL.DTDSL#getStart <em>Start</em>}</li>
  * </ul>
@@ -52,32 +51,6 @@ public interface DTDSL extends EObject
    * @generated
    */
   void setParserName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Type</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' attribute.
-   * @see #setType(String)
-   * @see de.wbg.dTDSL.DTDSLPackage#getDTDSL_Type()
-   * @model
-   * @generated
-   */
-  String getType();
-
-  /**
-   * Sets the value of the '{@link de.wbg.dTDSL.DTDSL#getType <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' attribute.
-   * @see #getType()
-   * @generated
-   */
-  void setType(String value);
 
   /**
    * Returns the value of the '<em><b>Obj Description</b></em>' containment reference list.

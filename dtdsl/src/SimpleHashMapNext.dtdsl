@@ -1,5 +1,4 @@
 parserName = "SimpleHashMapNextParser";
-parserType = javaObject;
 
 Node Start : 
 {
@@ -11,4 +10,4 @@ Node SimpleValue :
 	hasAttribute value;
 }
 
-beginWith = Start;
+beginWith = Start 

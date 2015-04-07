@@ -1,5 +1,4 @@
 parserName = "SimpleJavaCode";
-parserType = javaObject;
 
 Node Skv : {
 	hasAttribute s;
@@ -13,4 +12,4 @@ Node Inner:
 	hasAttribute i;
 }
 
-beginWith = Skv;
+beginWith = Skv

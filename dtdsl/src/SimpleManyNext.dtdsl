@@ -1,5 +1,4 @@
 parserName = "SimpleArrayParser";
-parserType = javaObject;
 
 Node Start: 
 {
@@ -12,4 +11,4 @@ Node Skv:
 	hasAttribute s;
 }
 
-beginWith = Start;
+beginWith = Start

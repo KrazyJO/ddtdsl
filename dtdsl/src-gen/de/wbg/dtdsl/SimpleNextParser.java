@@ -1,11 +1,18 @@
 package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 class SimpleNextParser {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
+	private SimpleScanner scanner;
+	private HashMap<String, String> stringKeyVariables;
+	private HashMap<String, String> stringValueVariables;
+	private ArrayList<Integer> visited;
 	
 	public SimpleNextParser()
 	{
@@ -16,8 +23,14 @@ class SimpleNextParser {
 	{
 		this.headNode = new Head("HEAD");
 		this.actualNode = this.headNode;
+		this.visited = new ArrayList<>();
+		this.scanner = new SimpleScanner();
+		this.stringKeyVariables = new HashMap<>();
+		this.stringValueVariables = new HashMap<>();
 		//model.start
 		try {
+			int nextVisit = System.identityHashCode(o);
+			this.visited.add(nextVisit);
 			parseSkv(o, actualNode);
 		}
 		catch (Exception e)
@@ -31,13 +44,14 @@ class SimpleNextParser {
 	
 	private void parseSkv(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+	
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeS(o, newNode);
+		parseSkvAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -58,7 +72,7 @@ class SimpleNextParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeI(o, newNode);
+		parseSkvAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -79,7 +93,17 @@ class SimpleNextParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvNext(o, n);
+		 	Node parent = new Node(n.getId());
+			parent.setNodeNumber(n.getNodeNumber());
+			parent.setAttributeNumber(n.getAttributeNumber());
+			parseSkvNext(o, parent);
+			
+			Node tempNode = (Node) parent.getChildren().get(0);
+			tempNode.setParent(n);
+			n.addChild(tempNode);
+			n.increaseNodeNumber();
+			newNode.setNext(tempNode);
+			
 		}
 		catch (ParserException e)
 		{
@@ -165,6 +189,17 @@ class SimpleNextParser {
 			Field f = o.getClass().getDeclaredField("next"); //NoSuchFieldException
 			f.setAccessible(true);
 			Object next = (Object) f.get(o); //IllegalAccessException
+			
+			int nextVisit = System.identityHashCode(next);
+			if (this.visited.contains(nextVisit))
+			{
+				return;
+			}
+			else
+			{
+				this.visited.add(nextVisit);
+			}
+		
 		
 			parseNext(next, n);
 			actualNode = n;
@@ -178,13 +213,14 @@ class SimpleNextParser {
 		
 	private void parseNext(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+	
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseNextAttributeS(o, newNode);
+		parseNextAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -205,7 +241,7 @@ class SimpleNextParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseNextAttributeI(o, newNode);
+		parseNextAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -284,4 +320,3 @@ class SimpleNextParser {
 	}
 	
 }
-		

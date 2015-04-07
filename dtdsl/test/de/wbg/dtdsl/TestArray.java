@@ -2,6 +2,7 @@ package de.wbg.dtdsl;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -24,9 +25,17 @@ public class TestArray {
 		Node node3 = head.getNodeByName("HEAD.node3");
 		
 		assertNotNull(node0);
+		assertTrue("node0 shouldnt have transition previous", node0.getPrevious() == null);
 		assertNotNull(node1);
+		assertEquals("node0 should have transition next to node1", node1, node0.getNext());
+		assertEquals("node1 should have transition previous to node0", node0, node1.getPrevious());
 		assertNotNull(node2);
+		assertEquals("node1 should have transition next to node2", node2, node1.getNext());
+		assertEquals("node2 should have transition previous to node1", node1, node2.getPrevious());
 		assertNotNull(node3);
+		assertEquals("node2 should have transition next to node3", node3, node2.getNext());
+		assertEquals("node3 should have transition previous to node2", node2, node3.getPrevious());
+		assertTrue("node3 shouldnt have transition next", node3.getNext() == null);
 		
 		Attribute attribute0 = node0.getAttributeByName("node0.attribute0");
 		Attribute attribute1 = node0.getAttributeByName("node0.attribute1");

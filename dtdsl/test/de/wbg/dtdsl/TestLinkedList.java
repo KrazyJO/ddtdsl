@@ -2,6 +2,7 @@ package de.wbg.dtdsl;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -24,9 +25,16 @@ public class TestLinkedList {
 		Node node3 = head.getNodeByName("HEAD.node3");
 		
 		assertNotNull(node0);
+		assertEquals("transition next was set wrong", node1, node0.getNext());
 		assertNotNull(node1);
+		assertEquals("transition previous was set wrong", node0, node1.getPrevious());
+		assertEquals("transition next was set wrong", node2, node1.getNext());
 		assertNotNull(node2);
+		assertEquals("transition next was set wrong", node3, node2.getNext());
+		assertEquals("transition previous was set wrong", node1, node2.getPrevious());
 		assertNotNull(node3);
+		assertEquals("transition previous was set wrong", node2, node3.getPrevious());
+//		assertEquals("transition next was set wrong", node4, node0.getNext());
 		
 		Attribute attribute0 = node0.getAttributeByName("node0.attribute0");
 		Attribute attribute1 = node0.getAttributeByName("node0.attribute1");
@@ -78,9 +86,17 @@ public class TestLinkedList {
 		Node node3 = head.getNodeByName("HEAD.node0.node3");
 		
 		assertNotNull(node0);
+		assertTrue("transition next souldnt be set", node0.getNext() == null);
+		assertTrue("transition previous shouldnt be set", node0.getPrevious() == null);
 		assertNotNull(node1);
+		assertTrue("transition next souldnt be set", node1.getNext() == null);
+		assertTrue("transition previous shouldnt be set", node1.getPrevious() == null);
 		assertNotNull(node2);
+		assertTrue("transition next souldnt be set", node2.getNext() == null);
+		assertTrue("transition previous shouldnt be set", node2.getPrevious() == null);
 		assertNotNull(node3);
+		assertTrue("transition next souldnt be set", node3.getNext() == null);
+		assertTrue("transition previous shouldnt be set", node3.getPrevious() == null);
 		
 		Attribute attribute0 = node0.getAttributeByName("node0.attribute0");
 		Attribute attribute1 = node0.getAttributeByName("node0.attribute1");

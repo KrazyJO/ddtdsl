@@ -2,14 +2,19 @@ package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.lang.reflect.Array;
+import java.util.HashMap;
 
 class JSONSimple {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
+	private SimpleScanner scanner;
+	private HashMap<String, String> stringKeyVariables;
+	private HashMap<String, String> stringValueVariables;
+	private ArrayList<Integer> visited;
 	
 	public JSONSimple()
 	{
@@ -20,8 +25,14 @@ class JSONSimple {
 	{
 		this.headNode = new Head("HEAD");
 		this.actualNode = this.headNode;
+		this.visited = new ArrayList<>();
+		this.scanner = new SimpleScanner();
+		this.stringKeyVariables = new HashMap<>();
+		this.stringValueVariables = new HashMap<>();
 		//model.start
 		try {
+			int nextVisit = System.identityHashCode(o);
+			this.visited.add(nextVisit);
 			parseJSONSimple(o, actualNode);
 		}
 		catch (Exception e)
@@ -35,87 +46,75 @@ class JSONSimple {
 	
 	private void parseJSONSimple(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+	
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			Field f = o.getClass().getDeclaredField("children");
-			f.setAccessible(true);
-			Object next = (Object) f.get(o);
-			Head manyHead = new Head("MANYHEAD");
-			
-			if (next instanceof Object[])
+		Field f = o.getClass().getDeclaredField("children");
+		f.setAccessible(true);
+		Object next = (Object) f.get(o);
+		Head manyHead = new Head("MANYHEAD");
+		
+		if (next.getClass().isArray())
+		{
+			for (int index = 0; index < Array.getLength(next); index++)
 			{
-				//for not-primitive datatypes
+				parseManyJSONSimpleAttributeChildren(Array.get(next ,index), manyHead);
+			}
+		}
+		else if (next instanceof ArrayList)
+		{
+			ArrayList al = (ArrayList)next;
+			for (int index = 0; index < al.size(); index++)
+			{
+				Object obj = al.get(index);
+				parseManyJSONSimpleAttributeChildren(obj, manyHead);
+			}
+		}
+		else if (next instanceof LinkedList)
+		{
+			LinkedList al = (LinkedList)next;
+			for (int index = 0; index < al.size(); index++)
+			{
+				Object obj = al.get(index);
+				parseManyJSONSimpleAttributeChildren(obj, manyHead);
+			}
+		}
+		else if (next instanceof HashMap)
+			{
+				HashMap hashMap = (HashMap) next;
 				
-				Object[] array = (Object[])next;
-				for (int index = 0; index < array.length; index++)
+				for (Object entry : hashMap.keySet())
 				{
-					parseManyJSONSimpleAttributeChildren(array[index], manyHead);
-				}
-			}
-			else if (next.getClass().isArray())
-			{
-				//for primitive datatypes
-				
-				for (int index = 0; index < Array.getLength(next); index++)
-				{
-					parseManyJSONSimpleAttributeChildren(Array.get(next ,index), manyHead);
-				}
-			}
-			else if (next instanceof ArrayList)
-			{
-				ArrayList al = (ArrayList)next;
-				for (int index = 0; index < al.size(); index++)
-				{
-					Object obj = al.get(index);
-					parseManyJSONSimpleAttributeChildren(obj, manyHead);
-				}
-			}
-			else if (next instanceof LinkedList)
-			{
-				LinkedList al = (LinkedList)next;
-				for (int index = 0; index < al.size(); index++)
-				{
-					Object obj = al.get(index);
-					parseManyJSONSimpleAttributeChildren(obj, manyHead);
-				}
-			}
-			else if (next instanceof HashMap)
-				{
-					HashMap hashMap = (HashMap) next;
+					Object valueForEntry = hashMap.get(entry);
 					
-					for (Object entry : hashMap.keySet())
-					{
-						
-						Object valueForEntry = hashMap.get(entry);
-						
-						//entry is primitiv
-						//=> Node with key -> Attribute with value
-						Node node = new Node("node"+manyHead.increaseNodeNumber());
-						node.setKey(true);
-						node.setValue(String.valueOf(entry));
-						node.setName(entry.getClass().toString().replace("class ", ""));
-						Attribute attrib = new Attribute("attribute"+node.increaseAttributeNumber());
-						attrib.setName("children");
-						attrib.setValue(hashMap.get(entry));
-						attrib.setType(hashMap.get(entry).getClass());
-						
-						node.addChild(attrib);
-						attrib.setParent(node);
-						
-						manyHead.addChild(node);
-						node.setParent(manyHead);
-					}
+					//entry is primitiv
+					//=> Node with key -> Attribute with value
+					Node node = new Node(manyHead.getNameForNode());
+					node.setKey(true);
+					node.setValue(String.valueOf(entry));
+					node.setName(entry.getClass().toString().replace("class ", ""));
+					Attribute attrib = new Attribute(node.getNameForAttribute());
+					attrib.setName("children");
+					attrib.setValue(hashMap.get(entry));
+					attrib.setType(hashMap.get(entry).getClass());
+					
+					node.addChild(attrib);
+					attrib.setParent(node);
+					
+					manyHead.addChild(node);
+					node.setParent(manyHead);
 				}
-			
-			for (Element el: manyHead.getChildren())
-			{
-				newNode.addChild(el);
-				el.setParent(newNode);
 			}
+		
+		for (Element el: manyHead.getChildren())
+		{
+			newNode.addChild(el);
+			el.setParent(newNode);
+		}
 		}
 		catch (ParserException e)
 		{
@@ -172,4 +171,3 @@ class JSONSimple {
 	}
 		
 }
-		

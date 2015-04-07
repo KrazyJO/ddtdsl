@@ -1,0 +1,9 @@
+parserName = "SimpleCircleParser";
+
+Node Skv: 
+{
+	hasAttribute i;
+	hasAttribute s;
+	hasNext next as Skv?;
+}
+beginWith = Skv

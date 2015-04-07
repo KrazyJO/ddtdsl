@@ -194,6 +194,9 @@ public class Node extends Element{
 			private final String id;
 			private int nodeNumber;
 			private int attributeNumber;
+			private Element next;
+			private Element previous;
+			private int originalHashCode;
 			
 			public Element(String id)
 			{
@@ -201,6 +204,16 @@ public class Node extends Element{
 				this.id = id;
 				this.nodeNumber = 0;
 				this.attributeNumber = 0;
+			}
+			
+			public int getOriginalHashCode()
+			{
+				return this.originalHashCode;
+			}
+			
+			public void setOriginalHashCode(int value)
+			{
+				this.originalHashCode = value;
 			}
 			
 			public Node getNodeByName(String name)
@@ -357,6 +370,35 @@ public class Node extends Element{
 			public String getId()
 			{
 				return this.id;
+			}
+			
+			public void setNext(Element value)
+			{
+				this.next = value;
+				if (value.getPrevious() != this)
+				{
+					value.setPrevious(this);	
+				}
+				
+			}
+			
+			public Element getNext()
+			{
+				return this.next;
+			}
+			
+			public void setPrevious(Element value)
+			{
+				this.previous = value;
+				if (value.getNext() != this)
+				{
+					value.setNext(this);
+				}
+			}
+			
+			public Element getPrevious()
+			{
+				return this.previous;
 			}
 			
 			public int getTotalLength()

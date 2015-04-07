@@ -101,6 +101,61 @@ public class DTDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DTDSLPackage.STRING_DESCRIPTION_INNER:
+      {
+        StringDescriptionInner stringDescriptionInner = (StringDescriptionInner)theEObject;
+        T result = caseStringDescriptionInner(stringDescriptionInner);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DTDSLPackage.STRING_OVER_READ:
+      {
+        StringOverRead stringOverRead = (StringOverRead)theEObject;
+        T result = caseStringOverRead(stringOverRead);
+        if (result == null) result = caseStringDescriptionInner(stringOverRead);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DTDSLPackage.STRING_KEY:
+      {
+        StringKey stringKey = (StringKey)theEObject;
+        T result = caseStringKey(stringKey);
+        if (result == null) result = caseStringDescriptionInner(stringKey);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DTDSLPackage.STRING_VALUE:
+      {
+        StringValue stringValue = (StringValue)theEObject;
+        T result = caseStringValue(stringValue);
+        if (result == null) result = caseStringDescriptionInner(stringValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DTDSLPackage.STRING_OR:
+      {
+        StringOr stringOr = (StringOr)theEObject;
+        T result = caseStringOr(stringOr);
+        if (result == null) result = caseStringDescriptionInner(stringOr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DTDSLPackage.STRING_DESCRIPTION_IN_VARIABLE:
+      {
+        StringDescriptionInVariable stringDescriptionInVariable = (StringDescriptionInVariable)theEObject;
+        T result = caseStringDescriptionInVariable(stringDescriptionInVariable);
+        if (result == null) result = caseStringDescriptionInner(stringDescriptionInVariable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DTDSLPackage.STRING_COMPLEX:
+      {
+        StringComplex stringComplex = (StringComplex)theEObject;
+        T result = caseStringComplex(stringComplex);
+        if (result == null) result = caseStringDescriptionInner(stringComplex);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DTDSLPackage.OBJECT_DESCRIPTION:
       {
         ObjectDescription objectDescription = (ObjectDescription)theEObject;
@@ -181,13 +236,6 @@ public class DTDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DTDSLPackage.KEYWORD:
-      {
-        Keyword keyword = (Keyword)theEObject;
-        T result = caseKeyword(keyword);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       default: return defaultCase(theEObject);
     }
   }
@@ -252,6 +300,118 @@ public class DTDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStringDescription(StringDescription object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Description Inner</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Description Inner</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringDescriptionInner(StringDescriptionInner object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Over Read</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Over Read</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringOverRead(StringOverRead object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Key</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Key</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringKey(StringKey object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringValue(StringValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Or</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Or</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringOr(StringOr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Description In Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Description In Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringDescriptionInVariable(StringDescriptionInVariable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Complex</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Complex</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringComplex(StringComplex object)
   {
     return null;
   }
@@ -412,22 +572,6 @@ public class DTDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseObjectMaybeInner(ObjectMaybeInner object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Keyword</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Keyword</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseKeyword(Keyword object)
   {
     return null;
   }
