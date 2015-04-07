@@ -5,7 +5,6 @@ import com.google.inject.Provider;
 import de.wbg.dTDSL.DTDSL;
 import de.wbg.dTDSL.DTDSLPackage;
 import de.wbg.dTDSL.JavaCodeOrID;
-import de.wbg.dTDSL.Keyword;
 import de.wbg.dTDSL.ObjectAttribute;
 import de.wbg.dTDSL.ObjectChoice;
 import de.wbg.dTDSL.ObjectDescription;
@@ -14,9 +13,12 @@ import de.wbg.dTDSL.ObjectMaybe;
 import de.wbg.dTDSL.ObjectNext;
 import de.wbg.dTDSL.ObjectNode;
 import de.wbg.dTDSL.StartPoint;
+import de.wbg.dTDSL.StringComplex;
 import de.wbg.dTDSL.StringDescription;
+import de.wbg.dTDSL.StringDescriptionInVariable;
 import de.wbg.dTDSL.StringDescriptionInner;
 import de.wbg.dTDSL.StringKey;
+import de.wbg.dTDSL.StringOr;
 import de.wbg.dTDSL.StringOverRead;
 import de.wbg.dTDSL.StringValue;
 import de.wbg.services.DTDSLGrammarAccess;
@@ -49,12 +51,6 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case DTDSLPackage.JAVA_CODE_OR_ID:
 				if(context == grammarAccess.getJavaCodeOrIDRule()) {
 					sequence_JavaCodeOrID(context, (JavaCodeOrID) semanticObject); 
-					return; 
-				}
-				else break;
-			case DTDSLPackage.KEYWORD:
-				if(context == grammarAccess.getKeywordRule()) {
-					sequence_Keyword(context, (Keyword) semanticObject); 
 					return; 
 				}
 				else break;
@@ -116,10 +112,24 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case DTDSLPackage.STRING_COMPLEX:
+				if(context == grammarAccess.getStringComplexRule() ||
+				   context == grammarAccess.getStringDescriptionInnerRule()) {
+					sequence_StringComplex(context, (StringComplex) semanticObject); 
+					return; 
+				}
+				else break;
 			case DTDSLPackage.STRING_DESCRIPTION:
 				if(context == grammarAccess.getAbstractRule() ||
 				   context == grammarAccess.getStringDescriptionRule()) {
 					sequence_StringDescription(context, (StringDescription) semanticObject); 
+					return; 
+				}
+				else break;
+			case DTDSLPackage.STRING_DESCRIPTION_IN_VARIABLE:
+				if(context == grammarAccess.getStringDescriptionInVariableRule() ||
+				   context == grammarAccess.getStringDescriptionInnerRule()) {
+					sequence_StringDescriptionInVariable(context, (StringDescriptionInVariable) semanticObject); 
 					return; 
 				}
 				else break;
@@ -133,6 +143,13 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				if(context == grammarAccess.getStringDescriptionInnerRule() ||
 				   context == grammarAccess.getStringKeyRule()) {
 					sequence_StringKey(context, (StringKey) semanticObject); 
+					return; 
+				}
+				else break;
+			case DTDSLPackage.STRING_OR:
+				if(context == grammarAccess.getStringDescriptionInnerRule() ||
+				   context == grammarAccess.getStringOrRule()) {
+					sequence_StringOr(context, (StringOr) semanticObject); 
 					return; 
 				}
 				else break;
@@ -168,15 +185,6 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (code=STRING | id=ID)
 	 */
 	protected void sequence_JavaCodeOrID(EObject context, JavaCodeOrID semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name='Key' | name='Value' | name=ID)
-	 */
-	protected void sequence_Keyword(EObject context, Keyword semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -282,6 +290,24 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     (description+=StringDescriptionInner* (many='*' | maybe='?'))
+	 */
+	protected void sequence_StringComplex(EObject context, StringComplex semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID description+=StringDescriptionInner*)
+	 */
+	protected void sequence_StringDescriptionInVariable(EObject context, StringDescriptionInVariable semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     keyRef=[StringKey|ID]
 	 */
 	protected void sequence_StringDescriptionInner(EObject context, StringDescriptionInner semanticObject) {
@@ -310,6 +336,15 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (name=ID? type=Type)
 	 */
 	protected void sequence_StringKey(EObject context, StringKey semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (option+=[StringDescriptionInVariable|ID] option+=[StringDescriptionInVariable|ID]*)
+	 */
+	protected void sequence_StringOr(EObject context, StringOr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

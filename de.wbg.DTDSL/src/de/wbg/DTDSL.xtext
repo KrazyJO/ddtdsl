@@ -6,7 +6,6 @@ generate dTDSL "http://www.wbg.de/DTDSL"
 
 DTDSL:
 	'parserName' '=' parserName=STRING ';'
-//	'parserType' '=' type=('javaObject' | 'string') ';'
 	objDescription+=Abstract*
 	start=StartPoint
 ;
@@ -24,8 +23,7 @@ StringDescription:
 ;
 
 StringDescriptionInner:
-//	rule+=StringRule+
-	StringOverRead | StringKey | StringValue  | keyRef=[StringKey]
+	StringOverRead | StringKey | StringValue  | keyRef=[StringKey] | StringComplex | StringOr | StringDescriptionInVariable
 ;
 
 StringOverRead:
@@ -42,46 +40,37 @@ StringValue:
 	(name=ID '=')? 'Value' 'ofType' type=Type ('to' toKey=[StringKey])?
 ;
 
+StringOr:
+	{StringOr}
+	'or' '(' (option+=[StringDescriptionInVariable]) ('|' option+=[StringDescriptionInVariable])* ')'
+;
+
+//StringDescriptionStore:
+//	{StringDescriptionStore}
+//	store+=StringDescriptionInner*
+//;
+
+StringDescriptionInVariable:
+	name=ID ':' '=' description+=StringDescriptionInner* ';'
+;
+
+StringComplex:
+	'(' description+=StringDescriptionInner* ')' (many='*' | maybe='?')
+;
+
 //---------------------------  Object  ---------------------------
-//ObjectHashMapDescription:
-//	name=ID 'as' 'HashMap' ':' '{' description=ObjectHashMapDescriptionInner '}'
-//;
-//
-//ObjectHashMapDescriptionInner:
-//	
-//;
-
-
 
 ObjectDescription:
 	'Node' name=ID ':' '{' description+=ObjectDescriptionInner* '}'
-;
-
-ObjectNodeType:
-	'Node' | 'Attribute'
 ;
 
 ObjectDescriptionInner:
 	(ObjectNode | ObjectAttribute | ObjectNext | ObjectMaybe | ObjectMany | ObjectChoice) ';'
 ;
 
-//ObjectAttribute:
-//	'hasAttribute' attributes=ID 'ofType' types=Type 
-//;
-
 ObjectAttribute:
 	'hasAttribute' attributes=ID ('as' stringMethode=[StringDescription] )? // 'ofType' types=[jvmTypes::JvmType | QualifiedName] 
 ;
-
-QualifiedName: ID ('.' ID)*;
-
-//ObjectAttribute:
-//	'hasAttribute' attributes=ID 'ofType' (types=Type | inner=[ObjectDescription])
-//;
-
-//ObjectNode:
-//	'hasNode' attributes=ID 'ofType' (types=Type 'as' keyword=Keyword | inner=[ObjectDescription]) ';'	
-//;
 
 ObjectNode:
 	'hasNode' attributes=ID 'as' inner=[ObjectDescription]
@@ -113,8 +102,4 @@ ObjectMaybe:
 
 ObjectMaybeInner:
 	ObjectNext | ObjectNode | ObjectAttribute
-;
-
-Keyword:
-	name='Key' | name='Value' | name=ID
 ;

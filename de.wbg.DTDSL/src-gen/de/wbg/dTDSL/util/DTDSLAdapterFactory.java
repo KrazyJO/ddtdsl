@@ -115,6 +115,21 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
         return createStringValueAdapter();
       }
       @Override
+      public Adapter caseStringOr(StringOr object)
+      {
+        return createStringOrAdapter();
+      }
+      @Override
+      public Adapter caseStringDescriptionInVariable(StringDescriptionInVariable object)
+      {
+        return createStringDescriptionInVariableAdapter();
+      }
+      @Override
+      public Adapter caseStringComplex(StringComplex object)
+      {
+        return createStringComplexAdapter();
+      }
+      @Override
       public Adapter caseObjectDescription(ObjectDescription object)
       {
         return createObjectDescriptionAdapter();
@@ -163,11 +178,6 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseObjectMaybeInner(ObjectMaybeInner object)
       {
         return createObjectMaybeInnerAdapter();
-      }
-      @Override
-      public Adapter caseKeyword(Keyword object)
-      {
-        return createKeywordAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -307,6 +317,51 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStringValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.StringOr <em>String Or</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.wbg.dTDSL.StringOr
+   * @generated
+   */
+  public Adapter createStringOrAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.StringDescriptionInVariable <em>String Description In Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.wbg.dTDSL.StringDescriptionInVariable
+   * @generated
+   */
+  public Adapter createStringDescriptionInVariableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.StringComplex <em>String Complex</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.wbg.dTDSL.StringComplex
+   * @generated
+   */
+  public Adapter createStringComplexAdapter()
   {
     return null;
   }
@@ -457,21 +512,6 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createObjectMaybeInnerAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.Keyword <em>Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.wbg.dTDSL.Keyword
-   * @generated
-   */
-  public Adapter createKeywordAdapter()
   {
     return null;
   }

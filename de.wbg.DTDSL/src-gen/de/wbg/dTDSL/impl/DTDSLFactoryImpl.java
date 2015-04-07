@@ -72,6 +72,9 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
       case DTDSLPackage.STRING_OVER_READ: return createStringOverRead();
       case DTDSLPackage.STRING_KEY: return createStringKey();
       case DTDSLPackage.STRING_VALUE: return createStringValue();
+      case DTDSLPackage.STRING_OR: return createStringOr();
+      case DTDSLPackage.STRING_DESCRIPTION_IN_VARIABLE: return createStringDescriptionInVariable();
+      case DTDSLPackage.STRING_COMPLEX: return createStringComplex();
       case DTDSLPackage.OBJECT_DESCRIPTION: return createObjectDescription();
       case DTDSLPackage.OBJECT_DESCRIPTION_INNER: return createObjectDescriptionInner();
       case DTDSLPackage.OBJECT_ATTRIBUTE: return createObjectAttribute();
@@ -82,7 +85,6 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
       case DTDSLPackage.OBJECT_CHOICE: return createObjectChoice();
       case DTDSLPackage.OBJECT_MAYBE: return createObjectMaybe();
       case DTDSLPackage.OBJECT_MAYBE_INNER: return createObjectMaybeInner();
-      case DTDSLPackage.KEYWORD: return createKeyword();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -174,6 +176,39 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
   {
     StringValueImpl stringValue = new StringValueImpl();
     return stringValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringOr createStringOr()
+  {
+    StringOrImpl stringOr = new StringOrImpl();
+    return stringOr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringDescriptionInVariable createStringDescriptionInVariable()
+  {
+    StringDescriptionInVariableImpl stringDescriptionInVariable = new StringDescriptionInVariableImpl();
+    return stringDescriptionInVariable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringComplex createStringComplex()
+  {
+    StringComplexImpl stringComplex = new StringComplexImpl();
+    return stringComplex;
   }
 
   /**
@@ -284,17 +319,6 @@ public class DTDSLFactoryImpl extends EFactoryImpl implements DTDSLFactory
   {
     ObjectMaybeInnerImpl objectMaybeInner = new ObjectMaybeInnerImpl();
     return objectMaybeInner;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Keyword createKeyword()
-  {
-    KeywordImpl keyword = new KeywordImpl();
-    return keyword;
   }
 
   /**

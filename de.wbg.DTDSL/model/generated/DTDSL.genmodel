@@ -36,6 +36,18 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//StringValue/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DTDSL.ecore#//StringValue/toKey"/>
     </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//StringOr">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DTDSL.ecore#//StringOr/option"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//StringDescriptionInVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//StringDescriptionInVariable/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//StringDescriptionInVariable/description"/>
+    </genClasses>
+    <genClasses ecoreClass="DTDSL.ecore#//StringComplex">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//StringComplex/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//StringComplex/many"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//StringComplex/maybe"/>
+    </genClasses>
     <genClasses ecoreClass="DTDSL.ecore#//ObjectDescription">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//ObjectDescription/description"/>
     </genClasses>
@@ -67,8 +79,5 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DTDSL.ecore#//ObjectMaybe/description"/>
     </genClasses>
     <genClasses ecoreClass="DTDSL.ecore#//ObjectMaybeInner"/>
-    <genClasses ecoreClass="DTDSL.ecore#//Keyword">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DTDSL.ecore#//Keyword/name"/>
-    </genClasses>
   </genPackages>
 </genmodel:GenModel>

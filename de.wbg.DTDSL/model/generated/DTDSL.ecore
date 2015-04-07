@@ -33,6 +33,21 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toKey" eType="#//StringKey"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringOr" eSuperTypes="#//StringDescriptionInner">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" unique="false"
+        upperBound="-1" eType="#//StringDescriptionInVariable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringDescriptionInVariable" eSuperTypes="#//StringDescriptionInner">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1"
+        eType="#//StringDescriptionInner" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringComplex" eSuperTypes="#//StringDescriptionInner">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1"
+        eType="#//StringDescriptionInner" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="many" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maybe" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectDescription" eSuperTypes="#//Abstract">
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1"
         eType="#//ObjectDescriptionInner" containment="true"/>
@@ -69,7 +84,4 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectMaybeInner"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Keyword">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
 </ecore:EPackage>

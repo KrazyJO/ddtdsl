@@ -31,11 +31,14 @@ import java.util.LinkedList
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
-import de.wbg.services.DTDSLGrammarAccess.StringOverReadElements
-import de.wbg.dTDSL.StringOverRead
-import de.wbg.dTDSL.StringKey
-import de.wbg.dTDSL.StringValue
-import de.wbg.ScannerGen
+import de.wbg.ScannerGen 
+import de.wbg.dTDSL.StringDescriptionInVariable
+import de.wbg.StringClasses.ChainString
+import de.wbg.StringClasses.ChainStringKey
+import de.wbg.StringClasses.ChainStringReadOver
+import de.wbg.StringClasses.ChainStringValue
+import de.wbg.StringClasses.ChainStringKeyRef
+import de.wbg.StringClasses.ChainStringOr
 
 /**
  * Generates code from your model files on save.
@@ -52,16 +55,8 @@ class DTDSLGenerator implements IGenerator {
 	var generateStringFeatures = false;
 	var needStringKeyStore = false;
 	var needStringValueStore = false;
-	
-	def boolean getNeedGetInstanceGenerated()
-	{
-		this.needGetInstanceGenerated
-	}
-	
-	def void setNeedGetInstanceGenerated(boolean value)
-	{
-		this.needGetInstanceGenerated = value
-	}
+	var generateObjectFeatures = false;
+	var LinkedList<ChainString> chainString;
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 
@@ -70,6 +65,7 @@ class DTDSLGenerator implements IGenerator {
 		var exceptionGen = new ExceptionGen()
 		this.initObjectMaybeChain();
 		this.initMethodsInnerChain();
+		this.initChainString();
 
 		fsa.generateFile('de/wbg/dtdsl/Node.java', nodeGen.generateNode)
 		fsa.generateFile('de/wbg/dtdsl/Head.java', nodeGen.generateHead)
@@ -78,6 +74,17 @@ class DTDSLGenerator implements IGenerator {
 
 		fsa.generateFile('de/wbg/dtdsl/ParserException.java', exceptionGen.exceptionGenerator)
 		
+		var sf = resource.allContents.toIterable.filter(StringDescription)
+		if (sf.length > 0)
+		{
+			generateStringFeatures = true;
+		}
+		
+		var of = resource.allContents.toIterable.filter(ObjectDescription)
+		if (of.length > 0)
+		{
+			generateObjectFeatures = true;
+		}
 
 		for (model: resource.allContents.toIterable.filter(DTDSL))
 		{
@@ -107,14 +114,16 @@ class DTDSLGenerator implements IGenerator {
 		ret += '''
 		package de.wbg.dtdsl;
 		
+		«IF generateObjectFeatures»
 		import java.lang.reflect.Field;
+		«ENDIF»
 		import java.util.ArrayList;
 		«IF (needGetInstanceGenerated)»
 		import java.util.LinkedList;
 		import java.lang.reflect.Array;
 		«ENDIF»
-		«IF needGetInstanceGenerated || generateStringFeatures»
-		import java.util.HashMap;		
+		«IF needGetInstanceGenerated || needStringKeyStore || needStringValueStore»
+		import java.util.HashMap;
 		«ENDIF»
 		
 		class «model.parserName.toFirstUpper» {
@@ -171,14 +180,27 @@ class DTDSLGenerator implements IGenerator {
 			
 		'''
 		
-		
+		//ObjectObjects
 		for (d: model.objDescription)
 		{
 			ret += compileMethods(d)
 			//alle Fields innerhalb des Objektes
-			if (d instanceof ObjectDescription) {ret += d.compileMethodsInner; generateStringFeatures = true;}
-//			if (d instanceof StringDescription) {ret += d.compileStringMethodsInner}
-			
+			if (d instanceof ObjectDescription) {ret += d.compileMethodsInner}
+		}
+		
+		//StringObjects
+		for (v: model.eResource.allContents.toIterable.filter(StringDescription))
+		{
+			ret += compileStringMethods(v)
+		}
+		
+		//String or-components
+		for (v: model.eResource.allContents.toIterable.filter(StringDescriptionInVariable))
+		{
+//			ret += '''	//generate methode for «(v.eContainer as StringDescription).name + "/" + v.name»
+//			
+//			'''
+			ret += compileStringOrOption(v)
 		}
 		
 		if (needGetInstanceGenerated)
@@ -187,171 +209,66 @@ class DTDSLGenerator implements IGenerator {
 			ret += generator.generateGetInstance 
 		}
 		
-		ret += '''}
-		
-		'''
+		ret += '''
+}'''
 		
 		ret
 	}
 
 //-----------------------------------------  String  -----------------------------------------
-	def CharSequence compileStringMethodsInner(StringDescription d)
+	def CharSequence compileStringOrOption(StringDescriptionInVariable d)
 	{
-		println("compileStringMethodsInner")
-		var ret = '''
+		var ret = '''	private void parse«(d.eContainer as StringDescription).name»Option«d.name»(Element n) throws Exception
+	{
 		Node nodeForValue = new Node("none");
 		'''
-		
-//		for (i: d.description)
+
 		for (var int z = 0; z < d.description.size; z++)
 		{
-			var i = d.description.get(z);
-			//StringDescriptionInner
-			if (i instanceof StringOverRead)
+			var i = d.description.get(z)
+			for (handler: this.chainString)
 			{
-				ret += '''
-				//overread «i.overRead»
-				if (scanner.hasNext("«i.overRead»"))
+				if (handler.handle(z, i))
 				{
-					scanner.skip("«i.overRead»");
+					ret += handler.returnValue
 				}
-				else
-				{
-					throw new ParserException("Error while parsing String in «d.name» while overreading \"«i.overRead»\"");
-				}
-				
-				'''
 			}
-			if (i instanceof StringKey)
+		}
+		ret += '''	}
+		'''
+	}
+	
+	def CharSequence compileStringMethods(StringDescription d)
+	{
+		println("compileStringMethodsInner")
+		var ret = 
+			'''	private void parse«d.name»(Object o, Element n) throws Exception
+	{
+		String s = (String) o;
+		scanner.setScanString(s);
+		
+		Node nodeForValue = new Node("none");
+		
+		'''
+
+		for (var int z = 0; z < d.description.size; z++)
+		{
+			var i = d.description.get(z)
+			for (handler: this.chainString)
 			{
-				ret += '''
-				//parseKey «if (i.name != null) {this.needStringKeyStore = true; i.name}»
+				if (handler.handle(z, i))
 				{
-					Node stringNode = new Node(n.getNameForNode());
-					«if (z == d.description.size-1) 
-						{'''String key = scanner.scanUpToSpace();'''} 
-					else 
-					{
-						var temp = d.description.get(z+1);
-						if (temp instanceof StringOverRead)
-						{
-							'''String key = scanner.scanUpToString("«temp.overRead»");'''
-						}
-						else
-						{
-							'''//this case is not implemented yet -> scan key, no next'''	
-						}
-					}
-						»
-«««					String key = "";
-					stringNode.setValue(key);
-					stringNode.setKey(true);
-					«IF i.name != null»
-					this.stringKeyVariables.put("«i.name»", key);
-					«ENDIF»
-					
-					stringNode.setParent(n);
-					n.addChild(stringNode);
-					nodeForValue = stringNode;
+					ret += handler.returnValue
 				}
-				
-				'''
-			}
-			if (i instanceof StringValue)
-			{
-				ret += '''
-				//parseValue «if (i.name != null) {this.needStringValueStore = true; i.name}»
-				{
-					Attribute valueAttrib = new Attribute(n.getNameForAttribute());
-					valueAttrib.setType(String.class);
-					//parse Value
-					«if (z == d.description.size-1) 
-						{'''String value = scanner.scanUpToSpace();'''} 
-					else 
-					{
-						var temp = d.description.get(z+1);
-						if (temp instanceof StringOverRead)
-						{
-							'''String value = scanner.scanUpToString("«temp.overRead»");'''
-						}
-						else
-						{
-							'''//this case is not implemented yet -> scan value, no next'''	
-						}
-					}
-					»
-					valueAttrib.setValue(value);
-					valueAttrib.setParent(nodeForValue);
-					nodeForValue.addChild(valueAttrib);
-				}
-				'''
-			}
-			if (i.keyRef != null)
-			{
-				ret += '''
-				{
-					//keyRef «i.keyRef»
-					String storedValue = this.stringKeyVariables.get("«i.keyRef.name»");	
-					if (storedValue == null)
-					{
-						throw new ParserException("Variable is not exsisting");
-					}
-					else
-					{
-						//Wert der gespeicherten Variable mit dem geparsten Wert überprüfen
-						«if (z == d.description.size-1) 
-						{
-							'''String value = scanner.scanUpToSpace();'''
-						} 
-						else 
-						{
-							var temp = d.description.get(z+1);
-							if (temp instanceof StringOverRead)
-							{
-								'''String value = scanner.scanUpToString("«temp.overRead»");'''
-							}
-							else
-							{
-								'''//this case is not implemented yet -> scan value, no next'''	
-							}
-						}
-					»
-						if (!value.equals(storedValue))
-						{
-							throw new ParserException("Different key values are not allowed at this context");
-						}
-					}
-				}
-				
-				'''
 			}
 		}
 		
+		ret += '''	}
+		
+		'''
+		
 		ret
 	}
-	
-//	def CharSequence compleMethods(StringDescription d)
-//	{
-//		println("compileMethods String")
-//		'''	private void parseString«d.name»(String s, Element n)
-//			{
-//				
-//				«FOR i : d.description»
-//					«if (i instanceof StringOverRead)
-//					{
-//						'''//overread «i.overRead»'''
-//					}else if (i instanceof StringKey)
-//					{
-//						'''//parseKey «if (i.name != null) i.name»'''
-//					} else if (i instanceof StringValue)
-//					{
-//						'''//parseValue «if (i.name != null) i.name»'''
-//					}»
-//				«ENDFOR»
-//			}
-//			
-//			'''
-//	}
 	
 	
 //-----------------------------------------  Object  -----------------------------------------
@@ -376,19 +293,6 @@ class DTDSLGenerator implements IGenerator {
 	def CharSequence compileMethods(Abstract d)
 	{
 		var ret = ''''''
-		
-		if (d instanceof StringDescription)
-		{
-			ret += 
-			'''	private void parse«d.name»(Object o, Element n) throws Exception
-	{
-		String s = (String) o;
-		scanner.setScanString(s);
-		
-		«compileStringMethodsInner(d)»
-	}
-	'''
-		}
 		
 		if (d instanceof ObjectDescription) 
 		{
@@ -842,7 +746,7 @@ class DTDSLGenerator implements IGenerator {
 			{
 				this.visited.add(nextVisit);
 			}
-«««				this.prev = newNode;
+«««				this.prev = newNode;   
 			
 				parse«n.objectDesription.name»(next, n);
 «««				actualNode = (Element)next;
@@ -880,7 +784,7 @@ class DTDSLGenerator implements IGenerator {
 		}
 	}
 	
-	//not for compiling
+	//------------------------------ init MessageHandler ------------------------------
 	def void initObjectMaybeChain()
 	{
 		this.objectMaybeChain = new LinkedList<ChainMaybe>();
@@ -889,12 +793,65 @@ class DTDSLGenerator implements IGenerator {
 		this.objectMaybeChain.add(new ObjectMaybeNext);
 	}
 	
-	def initMethodsInnerChain() {
+	def initMethodsInnerChain() 
+	{
 		this.methodsInnerChain = new LinkedList<ChainMethodsInner>()
 		this.methodsInnerChain.add(new ChainMethodsInnerObjectAttribute)
 		this.methodsInnerChain.add(new ChainMethodsInnerObjectMany(this))
 		this.methodsInnerChain.add(new ChainMethodsInnerObjectMaybe(this))
 		this.methodsInnerChain.add(new ChainMethodsInnerObjectNext)
 		this.methodsInnerChain.add(new ChainMethodsInnerObjectNode)
+	}
+	
+	def initChainString()
+	{
+		this.chainString = new LinkedList<ChainString>()
+		this.chainString.add(new ChainStringKey(this))
+		this.chainString.add(new ChainStringKeyRef(this))
+		this.chainString.add(new ChainStringReadOver(this))
+		this.chainString.add(new ChainStringValue(this))
+		this.chainString.add(new ChainStringOr(this))
+	}
+	
+	
+	//------------------------------ Getters / Setters ------------------------------
+	def void setGenerateStringFeatures(boolean value)
+	{
+		this.generateStringFeatures = value
+	}
+	
+	def boolean getGenerateStringFeatures()
+	{
+		return this.generateStringFeatures
+	}
+	
+	def void setNeedStringKeyStore(boolean value)
+	{
+		this.needStringKeyStore = value
+	}
+	
+	def boolean getNeedStringKeyStore()
+	{
+		return this.needStringKeyStore
+	}
+	
+	def void setNeedStringValueStore(boolean value)
+	{
+		this.needStringValueStore = value;
+	}
+	
+	def boolean getNeedStringValueStore(boolean value)
+	{
+		return this.needStringValueStore;
+	}
+	
+	def boolean getNeedGetInstanceGenerated()
+	{
+		this.needGetInstanceGenerated
+	}
+	
+	def void setNeedGetInstanceGenerated(boolean value)
+	{
+		this.needGetInstanceGenerated = value
 	}
 }

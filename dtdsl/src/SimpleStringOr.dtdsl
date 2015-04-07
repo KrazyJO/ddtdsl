@@ -1,0 +1,11 @@
+parserName = "SimpleStringOrParser";
+
+String Or:
+{
+	or( json | xml)
+	
+	json := "{" key=Key ofType String ":"  value=Value ofType String "}";
+	xml := "<" key=Key ofType String ">" value=Value ofType String "</"key">";
+}
+
+beginWith = Or

@@ -6,7 +6,6 @@ import de.wbg.dTDSL.Abstract;
 import de.wbg.dTDSL.DTDSLFactory;
 import de.wbg.dTDSL.DTDSLPackage;
 import de.wbg.dTDSL.JavaCodeOrID;
-import de.wbg.dTDSL.Keyword;
 import de.wbg.dTDSL.ObjectAttribute;
 import de.wbg.dTDSL.ObjectChoice;
 import de.wbg.dTDSL.ObjectDescription;
@@ -17,9 +16,12 @@ import de.wbg.dTDSL.ObjectMaybeInner;
 import de.wbg.dTDSL.ObjectNext;
 import de.wbg.dTDSL.ObjectNode;
 import de.wbg.dTDSL.StartPoint;
+import de.wbg.dTDSL.StringComplex;
 import de.wbg.dTDSL.StringDescription;
+import de.wbg.dTDSL.StringDescriptionInVariable;
 import de.wbg.dTDSL.StringDescriptionInner;
 import de.wbg.dTDSL.StringKey;
+import de.wbg.dTDSL.StringOr;
 import de.wbg.dTDSL.StringOverRead;
 import de.wbg.dTDSL.StringValue;
 
@@ -99,6 +101,27 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass stringOrEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringDescriptionInVariableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringComplexEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass objectDescriptionEClass = null;
 
   /**
@@ -163,13 +186,6 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * @generated
    */
   private EClass objectMaybeInnerEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass keywordEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -449,6 +465,96 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getStringOr()
+  {
+    return stringOrEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStringOr_Option()
+  {
+    return (EReference)stringOrEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringDescriptionInVariable()
+  {
+    return stringDescriptionInVariableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStringDescriptionInVariable_Name()
+  {
+    return (EAttribute)stringDescriptionInVariableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStringDescriptionInVariable_Description()
+  {
+    return (EReference)stringDescriptionInVariableEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringComplex()
+  {
+    return stringComplexEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStringComplex_Description()
+  {
+    return (EReference)stringComplexEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStringComplex_Many()
+  {
+    return (EAttribute)stringComplexEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStringComplex_Maybe()
+  {
+    return (EAttribute)stringComplexEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getObjectDescription()
   {
     return objectDescriptionEClass;
@@ -679,26 +785,6 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getKeyword()
-  {
-    return keywordEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getKeyword_Name()
-  {
-    return (EAttribute)keywordEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public DTDSLFactory getDTDSLFactory()
   {
     return (DTDSLFactory)getEFactoryInstance();
@@ -753,6 +839,18 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     createEAttribute(stringValueEClass, STRING_VALUE__TYPE);
     createEReference(stringValueEClass, STRING_VALUE__TO_KEY);
 
+    stringOrEClass = createEClass(STRING_OR);
+    createEReference(stringOrEClass, STRING_OR__OPTION);
+
+    stringDescriptionInVariableEClass = createEClass(STRING_DESCRIPTION_IN_VARIABLE);
+    createEAttribute(stringDescriptionInVariableEClass, STRING_DESCRIPTION_IN_VARIABLE__NAME);
+    createEReference(stringDescriptionInVariableEClass, STRING_DESCRIPTION_IN_VARIABLE__DESCRIPTION);
+
+    stringComplexEClass = createEClass(STRING_COMPLEX);
+    createEReference(stringComplexEClass, STRING_COMPLEX__DESCRIPTION);
+    createEAttribute(stringComplexEClass, STRING_COMPLEX__MANY);
+    createEAttribute(stringComplexEClass, STRING_COMPLEX__MAYBE);
+
     objectDescriptionEClass = createEClass(OBJECT_DESCRIPTION);
     createEReference(objectDescriptionEClass, OBJECT_DESCRIPTION__DESCRIPTION);
 
@@ -785,9 +883,6 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     createEReference(objectMaybeEClass, OBJECT_MAYBE__DESCRIPTION);
 
     objectMaybeInnerEClass = createEClass(OBJECT_MAYBE_INNER);
-
-    keywordEClass = createEClass(KEYWORD);
-    createEAttribute(keywordEClass, KEYWORD__NAME);
   }
 
   /**
@@ -823,6 +918,9 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     stringOverReadEClass.getESuperTypes().add(this.getStringDescriptionInner());
     stringKeyEClass.getESuperTypes().add(this.getStringDescriptionInner());
     stringValueEClass.getESuperTypes().add(this.getStringDescriptionInner());
+    stringOrEClass.getESuperTypes().add(this.getStringDescriptionInner());
+    stringDescriptionInVariableEClass.getESuperTypes().add(this.getStringDescriptionInner());
+    stringComplexEClass.getESuperTypes().add(this.getStringDescriptionInner());
     objectDescriptionEClass.getESuperTypes().add(this.getAbstract());
     objectAttributeEClass.getESuperTypes().add(this.getObjectDescriptionInner());
     objectAttributeEClass.getESuperTypes().add(this.getObjectMaybeInner());
@@ -864,6 +962,18 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     initEAttribute(getStringValue_Type(), ecorePackage.getEString(), "type", null, 0, 1, StringValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStringValue_ToKey(), this.getStringKey(), null, "toKey", null, 0, 1, StringValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(stringOrEClass, StringOr.class, "StringOr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStringOr_Option(), this.getStringDescriptionInVariable(), null, "option", null, 0, -1, StringOr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringDescriptionInVariableEClass, StringDescriptionInVariable.class, "StringDescriptionInVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStringDescriptionInVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, StringDescriptionInVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStringDescriptionInVariable_Description(), this.getStringDescriptionInner(), null, "description", null, 0, -1, StringDescriptionInVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringComplexEClass, StringComplex.class, "StringComplex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStringComplex_Description(), this.getStringDescriptionInner(), null, "description", null, 0, -1, StringComplex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStringComplex_Many(), ecorePackage.getEString(), "many", null, 0, 1, StringComplex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStringComplex_Maybe(), ecorePackage.getEString(), "maybe", null, 0, 1, StringComplex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(objectDescriptionEClass, ObjectDescription.class, "ObjectDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getObjectDescription_Description(), this.getObjectDescriptionInner(), null, "description", null, 0, -1, ObjectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -896,9 +1006,6 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     initEReference(getObjectMaybe_Description(), this.getObjectMaybeInner(), null, "description", null, 0, 1, ObjectMaybe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectMaybeInnerEClass, ObjectMaybeInner.class, "ObjectMaybeInner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(keywordEClass, Keyword.class, "Keyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getKeyword_Name(), ecorePackage.getEString(), "name", null, 0, 1, Keyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

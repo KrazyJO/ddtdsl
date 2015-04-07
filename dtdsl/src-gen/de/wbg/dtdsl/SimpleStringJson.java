@@ -2,12 +2,13 @@ package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.HashMap;		
+import java.util.HashMap;
 
 class SimpleStringJson {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
 	private SimpleScanner scanner;
 	private HashMap<String, String> stringKeyVariables;
 	private HashMap<String, String> stringValueVariables;
@@ -47,6 +48,7 @@ class SimpleStringJson {
 		scanner.setScanString(s);
 		
 		Node nodeForValue = new Node("none");
+		
 		//overread {
 		if (scanner.hasNext("{"))
 		{
@@ -54,7 +56,7 @@ class SimpleStringJson {
 		}
 		else
 		{
-			throw new ParserException("Error while parsing String in SimpleKeyValue while overreading \"{\"");
+			throw new ParserException("Error while parsing String in  while overreading \"{\"");
 		}
 		
 		//parseKey key
@@ -77,7 +79,7 @@ class SimpleStringJson {
 		}
 		else
 		{
-			throw new ParserException("Error while parsing String in SimpleKeyValue while overreading \":\"");
+			throw new ParserException("Error while parsing String in  while overreading \":\"");
 		}
 		
 		//parseValue value
@@ -97,9 +99,9 @@ class SimpleStringJson {
 		}
 		else
 		{
-			throw new ParserException("Error while parsing String in SimpleKeyValue while overreading \"}\"");
+			throw new ParserException("Error while parsing String in  while overreading \"}\"");
 		}
 		
 	}
-}
 		
+}

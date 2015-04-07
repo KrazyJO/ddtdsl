@@ -132,6 +132,30 @@ public class DTDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DTDSLPackage.STRING_OR:
+      {
+        StringOr stringOr = (StringOr)theEObject;
+        T result = caseStringOr(stringOr);
+        if (result == null) result = caseStringDescriptionInner(stringOr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DTDSLPackage.STRING_DESCRIPTION_IN_VARIABLE:
+      {
+        StringDescriptionInVariable stringDescriptionInVariable = (StringDescriptionInVariable)theEObject;
+        T result = caseStringDescriptionInVariable(stringDescriptionInVariable);
+        if (result == null) result = caseStringDescriptionInner(stringDescriptionInVariable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DTDSLPackage.STRING_COMPLEX:
+      {
+        StringComplex stringComplex = (StringComplex)theEObject;
+        T result = caseStringComplex(stringComplex);
+        if (result == null) result = caseStringDescriptionInner(stringComplex);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DTDSLPackage.OBJECT_DESCRIPTION:
       {
         ObjectDescription objectDescription = (ObjectDescription)theEObject;
@@ -209,13 +233,6 @@ public class DTDSLSwitch<T> extends Switch<T>
       {
         ObjectMaybeInner objectMaybeInner = (ObjectMaybeInner)theEObject;
         T result = caseObjectMaybeInner(objectMaybeInner);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DTDSLPackage.KEYWORD:
-      {
-        Keyword keyword = (Keyword)theEObject;
-        T result = caseKeyword(keyword);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -347,6 +364,54 @@ public class DTDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStringValue(StringValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Or</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Or</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringOr(StringOr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Description In Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Description In Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringDescriptionInVariable(StringDescriptionInVariable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Complex</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Complex</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringComplex(StringComplex object)
   {
     return null;
   }
@@ -507,22 +572,6 @@ public class DTDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseObjectMaybeInner(ObjectMaybeInner object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Keyword</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Keyword</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseKeyword(Keyword object)
   {
     return null;
   }

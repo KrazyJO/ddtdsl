@@ -36,4 +36,13 @@ public class TestSimpleStingKeyValue {
 		assertEquals("wrong attribute", "val", value.getValue());
 	}
 	
+	@Test
+	public void testSimpleXMLStringArray()
+	{
+		String xmlString = 
+				  "<el>val0</el>"
+				+ "<el>val1</el>"
+				+ "<el>val2</el>"
+				+ "<el>val3</el>";
+	}
 }

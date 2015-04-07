@@ -362,6 +362,144 @@ public interface DTDSLPackage extends EPackage
   int STRING_VALUE_FEATURE_COUNT = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link de.wbg.dTDSL.impl.StringOrImpl <em>String Or</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.wbg.dTDSL.impl.StringOrImpl
+   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringOr()
+   * @generated
+   */
+  int STRING_OR = 8;
+
+  /**
+   * The feature id for the '<em><b>Key Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_OR__KEY_REF = STRING_DESCRIPTION_INNER__KEY_REF;
+
+  /**
+   * The feature id for the '<em><b>Option</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_OR__OPTION = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>String Or</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_OR_FEATURE_COUNT = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link de.wbg.dTDSL.impl.StringDescriptionInVariableImpl <em>String Description In Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.wbg.dTDSL.impl.StringDescriptionInVariableImpl
+   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringDescriptionInVariable()
+   * @generated
+   */
+  int STRING_DESCRIPTION_IN_VARIABLE = 9;
+
+  /**
+   * The feature id for the '<em><b>Key Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_DESCRIPTION_IN_VARIABLE__KEY_REF = STRING_DESCRIPTION_INNER__KEY_REF;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_DESCRIPTION_IN_VARIABLE__NAME = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_DESCRIPTION_IN_VARIABLE__DESCRIPTION = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>String Description In Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_DESCRIPTION_IN_VARIABLE_FEATURE_COUNT = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link de.wbg.dTDSL.impl.StringComplexImpl <em>String Complex</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.wbg.dTDSL.impl.StringComplexImpl
+   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringComplex()
+   * @generated
+   */
+  int STRING_COMPLEX = 10;
+
+  /**
+   * The feature id for the '<em><b>Key Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_COMPLEX__KEY_REF = STRING_DESCRIPTION_INNER__KEY_REF;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_COMPLEX__DESCRIPTION = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Many</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_COMPLEX__MANY = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Maybe</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_COMPLEX__MAYBE = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>String Complex</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_COMPLEX_FEATURE_COUNT = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 3;
+
+  /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectDescriptionImpl <em>Object Description</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -369,7 +507,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectDescription()
    * @generated
    */
-  int OBJECT_DESCRIPTION = 8;
+  int OBJECT_DESCRIPTION = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -406,7 +544,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectDescriptionInner()
    * @generated
    */
-  int OBJECT_DESCRIPTION_INNER = 9;
+  int OBJECT_DESCRIPTION_INNER = 12;
 
   /**
    * The number of structural features of the '<em>Object Description Inner</em>' class.
@@ -425,7 +563,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectAttribute()
    * @generated
    */
-  int OBJECT_ATTRIBUTE = 10;
+  int OBJECT_ATTRIBUTE = 13;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' attribute.
@@ -462,7 +600,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectNode()
    * @generated
    */
-  int OBJECT_NODE = 11;
+  int OBJECT_NODE = 14;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' attribute.
@@ -499,7 +637,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectNext()
    * @generated
    */
-  int OBJECT_NEXT = 12;
+  int OBJECT_NEXT = 15;
 
   /**
    * The feature id for the '<em><b>Attribute</b></em>' containment reference.
@@ -536,7 +674,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getJavaCodeOrID()
    * @generated
    */
-  int JAVA_CODE_OR_ID = 13;
+  int JAVA_CODE_OR_ID = 16;
 
   /**
    * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -573,7 +711,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectMany()
    * @generated
    */
-  int OBJECT_MANY = 14;
+  int OBJECT_MANY = 17;
 
   /**
    * The feature id for the '<em><b>Option</b></em>' containment reference.
@@ -601,7 +739,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectChoice()
    * @generated
    */
-  int OBJECT_CHOICE = 15;
+  int OBJECT_CHOICE = 18;
 
   /**
    * The feature id for the '<em><b>Options</b></em>' containment reference list.
@@ -629,7 +767,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectMaybe()
    * @generated
    */
-  int OBJECT_MAYBE = 16;
+  int OBJECT_MAYBE = 19;
 
   /**
    * The feature id for the '<em><b>Option</b></em>' reference.
@@ -666,7 +804,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectMaybeInner()
    * @generated
    */
-  int OBJECT_MAYBE_INNER = 17;
+  int OBJECT_MAYBE_INNER = 20;
 
   /**
    * The number of structural features of the '<em>Object Maybe Inner</em>' class.
@@ -676,34 +814,6 @@ public interface DTDSLPackage extends EPackage
    * @ordered
    */
   int OBJECT_MAYBE_INNER_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link de.wbg.dTDSL.impl.KeywordImpl <em>Keyword</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.wbg.dTDSL.impl.KeywordImpl
-   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getKeyword()
-   * @generated
-   */
-  int KEYWORD = 18;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int KEYWORD__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Keyword</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int KEYWORD_FEATURE_COUNT = 1;
 
 
   /**
@@ -928,6 +1038,102 @@ public interface DTDSLPackage extends EPackage
    * @generated
    */
   EReference getStringValue_ToKey();
+
+  /**
+   * Returns the meta object for class '{@link de.wbg.dTDSL.StringOr <em>String Or</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Or</em>'.
+   * @see de.wbg.dTDSL.StringOr
+   * @generated
+   */
+  EClass getStringOr();
+
+  /**
+   * Returns the meta object for the reference list '{@link de.wbg.dTDSL.StringOr#getOption <em>Option</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Option</em>'.
+   * @see de.wbg.dTDSL.StringOr#getOption()
+   * @see #getStringOr()
+   * @generated
+   */
+  EReference getStringOr_Option();
+
+  /**
+   * Returns the meta object for class '{@link de.wbg.dTDSL.StringDescriptionInVariable <em>String Description In Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Description In Variable</em>'.
+   * @see de.wbg.dTDSL.StringDescriptionInVariable
+   * @generated
+   */
+  EClass getStringDescriptionInVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.StringDescriptionInVariable#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.wbg.dTDSL.StringDescriptionInVariable#getName()
+   * @see #getStringDescriptionInVariable()
+   * @generated
+   */
+  EAttribute getStringDescriptionInVariable_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.StringDescriptionInVariable#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Description</em>'.
+   * @see de.wbg.dTDSL.StringDescriptionInVariable#getDescription()
+   * @see #getStringDescriptionInVariable()
+   * @generated
+   */
+  EReference getStringDescriptionInVariable_Description();
+
+  /**
+   * Returns the meta object for class '{@link de.wbg.dTDSL.StringComplex <em>String Complex</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Complex</em>'.
+   * @see de.wbg.dTDSL.StringComplex
+   * @generated
+   */
+  EClass getStringComplex();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.StringComplex#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Description</em>'.
+   * @see de.wbg.dTDSL.StringComplex#getDescription()
+   * @see #getStringComplex()
+   * @generated
+   */
+  EReference getStringComplex_Description();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.StringComplex#getMany <em>Many</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Many</em>'.
+   * @see de.wbg.dTDSL.StringComplex#getMany()
+   * @see #getStringComplex()
+   * @generated
+   */
+  EAttribute getStringComplex_Many();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.StringComplex#getMaybe <em>Maybe</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Maybe</em>'.
+   * @see de.wbg.dTDSL.StringComplex#getMaybe()
+   * @see #getStringComplex()
+   * @generated
+   */
+  EAttribute getStringComplex_Maybe();
 
   /**
    * Returns the meta object for class '{@link de.wbg.dTDSL.ObjectDescription <em>Object Description</em>}'.
@@ -1173,27 +1379,6 @@ public interface DTDSLPackage extends EPackage
   EClass getObjectMaybeInner();
 
   /**
-   * Returns the meta object for class '{@link de.wbg.dTDSL.Keyword <em>Keyword</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Keyword</em>'.
-   * @see de.wbg.dTDSL.Keyword
-   * @generated
-   */
-  EClass getKeyword();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.Keyword#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.wbg.dTDSL.Keyword#getName()
-   * @see #getKeyword()
-   * @generated
-   */
-  EAttribute getKeyword_Name();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1401,6 +1586,84 @@ public interface DTDSLPackage extends EPackage
     EReference STRING_VALUE__TO_KEY = eINSTANCE.getStringValue_ToKey();
 
     /**
+     * The meta object literal for the '{@link de.wbg.dTDSL.impl.StringOrImpl <em>String Or</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.wbg.dTDSL.impl.StringOrImpl
+     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringOr()
+     * @generated
+     */
+    EClass STRING_OR = eINSTANCE.getStringOr();
+
+    /**
+     * The meta object literal for the '<em><b>Option</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STRING_OR__OPTION = eINSTANCE.getStringOr_Option();
+
+    /**
+     * The meta object literal for the '{@link de.wbg.dTDSL.impl.StringDescriptionInVariableImpl <em>String Description In Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.wbg.dTDSL.impl.StringDescriptionInVariableImpl
+     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringDescriptionInVariable()
+     * @generated
+     */
+    EClass STRING_DESCRIPTION_IN_VARIABLE = eINSTANCE.getStringDescriptionInVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_DESCRIPTION_IN_VARIABLE__NAME = eINSTANCE.getStringDescriptionInVariable_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STRING_DESCRIPTION_IN_VARIABLE__DESCRIPTION = eINSTANCE.getStringDescriptionInVariable_Description();
+
+    /**
+     * The meta object literal for the '{@link de.wbg.dTDSL.impl.StringComplexImpl <em>String Complex</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.wbg.dTDSL.impl.StringComplexImpl
+     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringComplex()
+     * @generated
+     */
+    EClass STRING_COMPLEX = eINSTANCE.getStringComplex();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STRING_COMPLEX__DESCRIPTION = eINSTANCE.getStringComplex_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Many</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_COMPLEX__MANY = eINSTANCE.getStringComplex_Many();
+
+    /**
+     * The meta object literal for the '<em><b>Maybe</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_COMPLEX__MAYBE = eINSTANCE.getStringComplex_Maybe();
+
+    /**
      * The meta object literal for the '{@link de.wbg.dTDSL.impl.ObjectDescriptionImpl <em>Object Description</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1603,24 +1866,6 @@ public interface DTDSLPackage extends EPackage
      * @generated
      */
     EClass OBJECT_MAYBE_INNER = eINSTANCE.getObjectMaybeInner();
-
-    /**
-     * The meta object literal for the '{@link de.wbg.dTDSL.impl.KeywordImpl <em>Keyword</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.wbg.dTDSL.impl.KeywordImpl
-     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getKeyword()
-     * @generated
-     */
-    EClass KEYWORD = eINSTANCE.getKeyword();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute KEYWORD__NAME = eINSTANCE.getKeyword_Name();
 
   }
 
