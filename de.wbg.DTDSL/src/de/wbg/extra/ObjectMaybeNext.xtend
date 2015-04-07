@@ -14,14 +14,21 @@ class ObjectMaybeNext extends ChainMaybe {
 			this. returnValue = 
 			
 		'''Element maybeHead = new Element("MAYBEHEAD");
+maybeHead.setNodeNumber(n.getNodeNumber());
 Object temp = o;
 try
 {
 	parse«d.name.toFirstUpper»«inner.objectDesription.name.toFirstUpper»(temp, maybeHead);
+	this.prev = newNode;
 	for (Element child: maybeHead.getChildren())
 	{
 		n.addChild(child);
 		child.setParent(n);
+		if (this.prev != null)
+		{
+			this.prev.setNext(child);
+		}
+		this.prev = child;
 	}
 } 
 catch (ParserException e) 

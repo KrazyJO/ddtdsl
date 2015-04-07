@@ -1,16 +1,15 @@
 parserName = "SimpleMaybeNextParser";
-parserType = javaObject;
 
-Skv: {
-	hasAttribute s ofType String;
-	hasAttribute i ofType int;
+Node Skv: {
+	hasAttribute s;
+	hasAttribute i;
 	hasNext next as Next?;
 }
 
-Next:
+Node Next:
 {
-	hasAttribute s ofType String;
-	hasAttribute i ofType int;
+	hasAttribute s;
+	hasAttribute i;
 }
 
-beginWith = Skv; 
+beginWith = Skv

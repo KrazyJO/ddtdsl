@@ -14,6 +14,11 @@ import de.wbg.dTDSL.ObjectMaybe;
 import de.wbg.dTDSL.ObjectNext;
 import de.wbg.dTDSL.ObjectNode;
 import de.wbg.dTDSL.StartPoint;
+import de.wbg.dTDSL.StringDescription;
+import de.wbg.dTDSL.StringDescriptionInner;
+import de.wbg.dTDSL.StringKey;
+import de.wbg.dTDSL.StringOverRead;
+import de.wbg.dTDSL.StringValue;
 import de.wbg.services.DTDSLGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
@@ -111,13 +116,47 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case DTDSLPackage.STRING_DESCRIPTION:
+				if(context == grammarAccess.getAbstractRule() ||
+				   context == grammarAccess.getStringDescriptionRule()) {
+					sequence_StringDescription(context, (StringDescription) semanticObject); 
+					return; 
+				}
+				else break;
+			case DTDSLPackage.STRING_DESCRIPTION_INNER:
+				if(context == grammarAccess.getStringDescriptionInnerRule()) {
+					sequence_StringDescriptionInner(context, (StringDescriptionInner) semanticObject); 
+					return; 
+				}
+				else break;
+			case DTDSLPackage.STRING_KEY:
+				if(context == grammarAccess.getStringDescriptionInnerRule() ||
+				   context == grammarAccess.getStringKeyRule()) {
+					sequence_StringKey(context, (StringKey) semanticObject); 
+					return; 
+				}
+				else break;
+			case DTDSLPackage.STRING_OVER_READ:
+				if(context == grammarAccess.getStringDescriptionInnerRule() ||
+				   context == grammarAccess.getStringOverReadRule()) {
+					sequence_StringOverRead(context, (StringOverRead) semanticObject); 
+					return; 
+				}
+				else break;
+			case DTDSLPackage.STRING_VALUE:
+				if(context == grammarAccess.getStringDescriptionInnerRule() ||
+				   context == grammarAccess.getStringValueRule()) {
+					sequence_StringValue(context, (StringValue) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
 	
 	/**
 	 * Constraint:
-	 *     (parserName=STRING (type='javaObject' | type='string') objDescription+=Abstract* start=StartPoint)
+	 *     (parserName=STRING objDescription+=Abstract* start=StartPoint)
 	 */
 	protected void sequence_DTDSL(EObject context, DTDSL semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -144,20 +183,10 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (attributes=ID types=Type)
+	 *     (attributes=ID stringMethode=[StringDescription|ID]?)
 	 */
 	protected void sequence_ObjectAttribute(EObject context, ObjectAttribute semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__ATTRIBUTES) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__ATTRIBUTES));
-			if(transientValues.isValueTransient(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__TYPES) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DTDSLPackage.Literals.OBJECT_ATTRIBUTE__TYPES));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getObjectAttributeAccess().getAttributesIDTerminalRuleCall_1_0(), semanticObject.getAttributes());
-		feeder.accept(grammarAccess.getObjectAttributeAccess().getTypesTypeParserRuleCall_3_0(), semanticObject.getTypes());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -244,16 +273,61 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     begin=[ObjectDescription|ID]
+	 *     (begin=[ObjectDescription|ID] | begin=[StringDescription|ID])
 	 */
 	protected void sequence_StartPoint(EObject context, StartPoint semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     keyRef=[StringKey|ID]
+	 */
+	protected void sequence_StringDescriptionInner(EObject context, StringDescriptionInner semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DTDSLPackage.Literals.START_POINT__BEGIN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DTDSLPackage.Literals.START_POINT__BEGIN));
+			if(transientValues.isValueTransient(semanticObject, DTDSLPackage.Literals.STRING_DESCRIPTION_INNER__KEY_REF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DTDSLPackage.Literals.STRING_DESCRIPTION_INNER__KEY_REF));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getStartPointAccess().getBeginObjectDescriptionIDTerminalRuleCall_2_0_1(), semanticObject.getBegin());
+		feeder.accept(grammarAccess.getStringDescriptionInnerAccess().getKeyRefStringKeyIDTerminalRuleCall_3_0_1(), semanticObject.getKeyRef());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID description+=StringDescriptionInner*)
+	 */
+	protected void sequence_StringDescription(EObject context, StringDescription semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID? type=Type)
+	 */
+	protected void sequence_StringKey(EObject context, StringKey semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     overRead=STRING
+	 */
+	protected void sequence_StringOverRead(EObject context, StringOverRead semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID? type=Type toKey=[StringKey|ID]?)
+	 */
+	protected void sequence_StringValue(EObject context, StringValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 }

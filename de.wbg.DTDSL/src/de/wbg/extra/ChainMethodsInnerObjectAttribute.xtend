@@ -20,7 +20,7 @@ class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
 		
 //			if (i.inner == null) {
 				this.returnValue  = this.returnValue + '''		//inner == null
-		//«i.types» «i.attributes» as ;
+«««		//«i.types.qualifiedName» «i.attributes» as ;
 				'''
 				
 			
@@ -48,7 +48,7 @@ class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : «i.types» «i.attributes»");
+			throw new ParserException("Error while parsing : «i.attributes»");
 		}
 	}
 	

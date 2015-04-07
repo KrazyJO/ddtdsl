@@ -1,11 +1,14 @@
 package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 class SimpleMaybeAttributeParser {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
+	private ArrayList<Integer> visited;
 	
 	public SimpleMaybeAttributeParser()
 	{
@@ -16,8 +19,11 @@ class SimpleMaybeAttributeParser {
 	{
 		this.headNode = new Head("HEAD");
 		this.actualNode = this.headNode;
+		this.visited = new ArrayList<>();
 		//model.start
 		try {
+			int nextVisit = System.identityHashCode(o);
+			this.visited.add(nextVisit);
 			parseSkv(o, actualNode);
 		}
 		catch (Exception e)
@@ -31,13 +37,14 @@ class SimpleMaybeAttributeParser {
 	
 	private void parseSkv(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+	
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeS(o, newNode);
+		parseSkvAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -58,22 +65,22 @@ class SimpleMaybeAttributeParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			Element maybeHead = new Element("MAYBEHEAD");
-			Object temp = o;
-			try
+		Element maybeHead = new Element("MAYBEHEAD");
+		Object temp = o;
+		try
+		{
+			parseMaybeSkvAttributeI(temp, maybeHead);
+			for (Element child: maybeHead.getChildren())
 			{
-				parseMaybeSkvAttributeI(temp, maybeHead);
-				for (Element child: maybeHead.getChildren())
-				{
-					newNode.addChild(child);
-					child.setParent(newNode);
-				}
-			} 
-			catch (ParserException e) 
-			{
-				//destroy reference
-				maybeHead = null;
+				newNode.addChild(child);
+				child.setParent(newNode);
 			}
+		} 
+		catch (ParserException e) 
+		{
+			//destroy reference
+			maybeHead = null;
+		}
 		}
 		catch (ParserException e)
 		{
@@ -97,7 +104,6 @@ class SimpleMaybeAttributeParser {
 	{
 		//Attribute
 		//inner == null
-		//String s as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -119,7 +125,7 @@ class SimpleMaybeAttributeParser {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : String s");
+			throw new ParserException("Error while parsing : s");
 		}
 	}
 	
@@ -127,7 +133,6 @@ class SimpleMaybeAttributeParser {
 	{
 		//Attribute
 		//inner == null
-//int i as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 	try {
 
@@ -148,7 +153,7 @@ class SimpleMaybeAttributeParser {
 	{
 		//e.printStackTrace();
 		n.setAttributeNumber(oldAttributeNumber);
-		throw new ParserException("Error while parsing : int i");
+		throw new ParserException("Error while parsing : i");
 	}
 		///maybe
 	}

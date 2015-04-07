@@ -90,6 +90,31 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
         return createAbstractAdapter();
       }
       @Override
+      public Adapter caseStringDescription(StringDescription object)
+      {
+        return createStringDescriptionAdapter();
+      }
+      @Override
+      public Adapter caseStringDescriptionInner(StringDescriptionInner object)
+      {
+        return createStringDescriptionInnerAdapter();
+      }
+      @Override
+      public Adapter caseStringOverRead(StringOverRead object)
+      {
+        return createStringOverReadAdapter();
+      }
+      @Override
+      public Adapter caseStringKey(StringKey object)
+      {
+        return createStringKeyAdapter();
+      }
+      @Override
+      public Adapter caseStringValue(StringValue object)
+      {
+        return createStringValueAdapter();
+      }
+      @Override
       public Adapter caseObjectDescription(ObjectDescription object)
       {
         return createObjectDescriptionAdapter();
@@ -207,6 +232,81 @@ public class DTDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAbstractAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.StringDescription <em>String Description</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.wbg.dTDSL.StringDescription
+   * @generated
+   */
+  public Adapter createStringDescriptionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.StringDescriptionInner <em>String Description Inner</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.wbg.dTDSL.StringDescriptionInner
+   * @generated
+   */
+  public Adapter createStringDescriptionInnerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.StringOverRead <em>String Over Read</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.wbg.dTDSL.StringOverRead
+   * @generated
+   */
+  public Adapter createStringOverReadAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.StringKey <em>String Key</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.wbg.dTDSL.StringKey
+   * @generated
+   */
+  public Adapter createStringKeyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.wbg.dTDSL.StringValue <em>String Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.wbg.dTDSL.StringValue
+   * @generated
+   */
+  public Adapter createStringValueAdapter()
   {
     return null;
   }

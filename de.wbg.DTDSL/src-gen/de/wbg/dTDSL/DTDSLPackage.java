@@ -76,22 +76,13 @@ public interface DTDSLPackage extends EPackage
   int DTDSL__PARSER_NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DTDSL__TYPE = 1;
-
-  /**
    * The feature id for the '<em><b>Obj Description</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DTDSL__OBJ_DESCRIPTION = 2;
+  int DTDSL__OBJ_DESCRIPTION = 1;
 
   /**
    * The feature id for the '<em><b>Start</b></em>' containment reference.
@@ -100,7 +91,7 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DTDSL__START = 3;
+  int DTDSL__START = 2;
 
   /**
    * The number of structural features of the '<em>DTDSL</em>' class.
@@ -109,7 +100,7 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DTDSL_FEATURE_COUNT = 4;
+  int DTDSL_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.StartPointImpl <em>Start Point</em>}' class.
@@ -150,13 +141,225 @@ public interface DTDSLPackage extends EPackage
   int ABSTRACT = 2;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT__NAME = 0;
+
+  /**
    * The number of structural features of the '<em>Abstract</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_FEATURE_COUNT = 0;
+  int ABSTRACT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.wbg.dTDSL.impl.StringDescriptionImpl <em>String Description</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.wbg.dTDSL.impl.StringDescriptionImpl
+   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringDescription()
+   * @generated
+   */
+  int STRING_DESCRIPTION = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_DESCRIPTION__NAME = ABSTRACT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_DESCRIPTION__DESCRIPTION = ABSTRACT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>String Description</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_DESCRIPTION_FEATURE_COUNT = ABSTRACT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link de.wbg.dTDSL.impl.StringDescriptionInnerImpl <em>String Description Inner</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.wbg.dTDSL.impl.StringDescriptionInnerImpl
+   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringDescriptionInner()
+   * @generated
+   */
+  int STRING_DESCRIPTION_INNER = 4;
+
+  /**
+   * The feature id for the '<em><b>Key Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_DESCRIPTION_INNER__KEY_REF = 0;
+
+  /**
+   * The number of structural features of the '<em>String Description Inner</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_DESCRIPTION_INNER_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.wbg.dTDSL.impl.StringOverReadImpl <em>String Over Read</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.wbg.dTDSL.impl.StringOverReadImpl
+   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringOverRead()
+   * @generated
+   */
+  int STRING_OVER_READ = 5;
+
+  /**
+   * The feature id for the '<em><b>Key Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_OVER_READ__KEY_REF = STRING_DESCRIPTION_INNER__KEY_REF;
+
+  /**
+   * The feature id for the '<em><b>Over Read</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_OVER_READ__OVER_READ = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>String Over Read</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_OVER_READ_FEATURE_COUNT = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link de.wbg.dTDSL.impl.StringKeyImpl <em>String Key</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.wbg.dTDSL.impl.StringKeyImpl
+   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringKey()
+   * @generated
+   */
+  int STRING_KEY = 6;
+
+  /**
+   * The feature id for the '<em><b>Key Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_KEY__KEY_REF = STRING_DESCRIPTION_INNER__KEY_REF;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_KEY__NAME = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_KEY__TYPE = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>String Key</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_KEY_FEATURE_COUNT = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link de.wbg.dTDSL.impl.StringValueImpl <em>String Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.wbg.dTDSL.impl.StringValueImpl
+   * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringValue()
+   * @generated
+   */
+  int STRING_VALUE = 7;
+
+  /**
+   * The feature id for the '<em><b>Key Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_VALUE__KEY_REF = STRING_DESCRIPTION_INNER__KEY_REF;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_VALUE__NAME = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_VALUE__TYPE = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>To Key</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_VALUE__TO_KEY = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>String Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_VALUE_FEATURE_COUNT = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectDescriptionImpl <em>Object Description</em>}' class.
@@ -166,7 +369,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectDescription()
    * @generated
    */
-  int OBJECT_DESCRIPTION = 3;
+  int OBJECT_DESCRIPTION = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -175,7 +378,7 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_DESCRIPTION__NAME = ABSTRACT_FEATURE_COUNT + 0;
+  int OBJECT_DESCRIPTION__NAME = ABSTRACT__NAME;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' containment reference list.
@@ -184,7 +387,7 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_DESCRIPTION__DESCRIPTION = ABSTRACT_FEATURE_COUNT + 1;
+  int OBJECT_DESCRIPTION__DESCRIPTION = ABSTRACT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Object Description</em>' class.
@@ -193,7 +396,7 @@ public interface DTDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_DESCRIPTION_FEATURE_COUNT = ABSTRACT_FEATURE_COUNT + 2;
+  int OBJECT_DESCRIPTION_FEATURE_COUNT = ABSTRACT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link de.wbg.dTDSL.impl.ObjectDescriptionInnerImpl <em>Object Description Inner</em>}' class.
@@ -203,7 +406,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectDescriptionInner()
    * @generated
    */
-  int OBJECT_DESCRIPTION_INNER = 4;
+  int OBJECT_DESCRIPTION_INNER = 9;
 
   /**
    * The number of structural features of the '<em>Object Description Inner</em>' class.
@@ -222,7 +425,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectAttribute()
    * @generated
    */
-  int OBJECT_ATTRIBUTE = 5;
+  int OBJECT_ATTRIBUTE = 10;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' attribute.
@@ -234,13 +437,13 @@ public interface DTDSLPackage extends EPackage
   int OBJECT_ATTRIBUTE__ATTRIBUTES = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Types</b></em>' attribute.
+   * The feature id for the '<em><b>String Methode</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBJECT_ATTRIBUTE__TYPES = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 1;
+  int OBJECT_ATTRIBUTE__STRING_METHODE = OBJECT_DESCRIPTION_INNER_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Object Attribute</em>' class.
@@ -259,7 +462,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectNode()
    * @generated
    */
-  int OBJECT_NODE = 6;
+  int OBJECT_NODE = 11;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' attribute.
@@ -296,7 +499,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectNext()
    * @generated
    */
-  int OBJECT_NEXT = 7;
+  int OBJECT_NEXT = 12;
 
   /**
    * The feature id for the '<em><b>Attribute</b></em>' containment reference.
@@ -333,7 +536,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getJavaCodeOrID()
    * @generated
    */
-  int JAVA_CODE_OR_ID = 8;
+  int JAVA_CODE_OR_ID = 13;
 
   /**
    * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -370,7 +573,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectMany()
    * @generated
    */
-  int OBJECT_MANY = 9;
+  int OBJECT_MANY = 14;
 
   /**
    * The feature id for the '<em><b>Option</b></em>' containment reference.
@@ -398,7 +601,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectChoice()
    * @generated
    */
-  int OBJECT_CHOICE = 10;
+  int OBJECT_CHOICE = 15;
 
   /**
    * The feature id for the '<em><b>Options</b></em>' containment reference list.
@@ -426,7 +629,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectMaybe()
    * @generated
    */
-  int OBJECT_MAYBE = 11;
+  int OBJECT_MAYBE = 16;
 
   /**
    * The feature id for the '<em><b>Option</b></em>' reference.
@@ -463,7 +666,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getObjectMaybeInner()
    * @generated
    */
-  int OBJECT_MAYBE_INNER = 12;
+  int OBJECT_MAYBE_INNER = 17;
 
   /**
    * The number of structural features of the '<em>Object Maybe Inner</em>' class.
@@ -482,7 +685,7 @@ public interface DTDSLPackage extends EPackage
    * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getKeyword()
    * @generated
    */
-  int KEYWORD = 13;
+  int KEYWORD = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -523,17 +726,6 @@ public interface DTDSLPackage extends EPackage
    * @generated
    */
   EAttribute getDTDSL_ParserName();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.DTDSL#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see de.wbg.dTDSL.DTDSL#getType()
-   * @see #getDTDSL()
-   * @generated
-   */
-  EAttribute getDTDSL_Type();
 
   /**
    * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.DTDSL#getObjDescription <em>Obj Description</em>}'.
@@ -589,6 +781,155 @@ public interface DTDSLPackage extends EPackage
   EClass getAbstract();
 
   /**
+   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.Abstract#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.wbg.dTDSL.Abstract#getName()
+   * @see #getAbstract()
+   * @generated
+   */
+  EAttribute getAbstract_Name();
+
+  /**
+   * Returns the meta object for class '{@link de.wbg.dTDSL.StringDescription <em>String Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Description</em>'.
+   * @see de.wbg.dTDSL.StringDescription
+   * @generated
+   */
+  EClass getStringDescription();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.StringDescription#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Description</em>'.
+   * @see de.wbg.dTDSL.StringDescription#getDescription()
+   * @see #getStringDescription()
+   * @generated
+   */
+  EReference getStringDescription_Description();
+
+  /**
+   * Returns the meta object for class '{@link de.wbg.dTDSL.StringDescriptionInner <em>String Description Inner</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Description Inner</em>'.
+   * @see de.wbg.dTDSL.StringDescriptionInner
+   * @generated
+   */
+  EClass getStringDescriptionInner();
+
+  /**
+   * Returns the meta object for the reference '{@link de.wbg.dTDSL.StringDescriptionInner#getKeyRef <em>Key Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Key Ref</em>'.
+   * @see de.wbg.dTDSL.StringDescriptionInner#getKeyRef()
+   * @see #getStringDescriptionInner()
+   * @generated
+   */
+  EReference getStringDescriptionInner_KeyRef();
+
+  /**
+   * Returns the meta object for class '{@link de.wbg.dTDSL.StringOverRead <em>String Over Read</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Over Read</em>'.
+   * @see de.wbg.dTDSL.StringOverRead
+   * @generated
+   */
+  EClass getStringOverRead();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.StringOverRead#getOverRead <em>Over Read</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Over Read</em>'.
+   * @see de.wbg.dTDSL.StringOverRead#getOverRead()
+   * @see #getStringOverRead()
+   * @generated
+   */
+  EAttribute getStringOverRead_OverRead();
+
+  /**
+   * Returns the meta object for class '{@link de.wbg.dTDSL.StringKey <em>String Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Key</em>'.
+   * @see de.wbg.dTDSL.StringKey
+   * @generated
+   */
+  EClass getStringKey();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.StringKey#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.wbg.dTDSL.StringKey#getName()
+   * @see #getStringKey()
+   * @generated
+   */
+  EAttribute getStringKey_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.StringKey#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see de.wbg.dTDSL.StringKey#getType()
+   * @see #getStringKey()
+   * @generated
+   */
+  EAttribute getStringKey_Type();
+
+  /**
+   * Returns the meta object for class '{@link de.wbg.dTDSL.StringValue <em>String Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Value</em>'.
+   * @see de.wbg.dTDSL.StringValue
+   * @generated
+   */
+  EClass getStringValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.StringValue#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.wbg.dTDSL.StringValue#getName()
+   * @see #getStringValue()
+   * @generated
+   */
+  EAttribute getStringValue_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.StringValue#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see de.wbg.dTDSL.StringValue#getType()
+   * @see #getStringValue()
+   * @generated
+   */
+  EAttribute getStringValue_Type();
+
+  /**
+   * Returns the meta object for the reference '{@link de.wbg.dTDSL.StringValue#getToKey <em>To Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>To Key</em>'.
+   * @see de.wbg.dTDSL.StringValue#getToKey()
+   * @see #getStringValue()
+   * @generated
+   */
+  EReference getStringValue_ToKey();
+
+  /**
    * Returns the meta object for class '{@link de.wbg.dTDSL.ObjectDescription <em>Object Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -597,17 +938,6 @@ public interface DTDSLPackage extends EPackage
    * @generated
    */
   EClass getObjectDescription();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.ObjectDescription#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.wbg.dTDSL.ObjectDescription#getName()
-   * @see #getObjectDescription()
-   * @generated
-   */
-  EAttribute getObjectDescription_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.ObjectDescription#getDescription <em>Description</em>}'.
@@ -652,15 +982,15 @@ public interface DTDSLPackage extends EPackage
   EAttribute getObjectAttribute_Attributes();
 
   /**
-   * Returns the meta object for the attribute '{@link de.wbg.dTDSL.ObjectAttribute#getTypes <em>Types</em>}'.
+   * Returns the meta object for the reference '{@link de.wbg.dTDSL.ObjectAttribute#getStringMethode <em>String Methode</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Types</em>'.
-   * @see de.wbg.dTDSL.ObjectAttribute#getTypes()
+   * @return the meta object for the reference '<em>String Methode</em>'.
+   * @see de.wbg.dTDSL.ObjectAttribute#getStringMethode()
    * @see #getObjectAttribute()
    * @generated
    */
-  EAttribute getObjectAttribute_Types();
+  EReference getObjectAttribute_StringMethode();
 
   /**
    * Returns the meta object for class '{@link de.wbg.dTDSL.ObjectNode <em>Object Node</em>}'.
@@ -905,14 +1235,6 @@ public interface DTDSLPackage extends EPackage
     EAttribute DTDSL__PARSER_NAME = eINSTANCE.getDTDSL_ParserName();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DTDSL__TYPE = eINSTANCE.getDTDSL_Type();
-
-    /**
      * The meta object literal for the '<em><b>Obj Description</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -957,6 +1279,128 @@ public interface DTDSLPackage extends EPackage
     EClass ABSTRACT = eINSTANCE.getAbstract();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ABSTRACT__NAME = eINSTANCE.getAbstract_Name();
+
+    /**
+     * The meta object literal for the '{@link de.wbg.dTDSL.impl.StringDescriptionImpl <em>String Description</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.wbg.dTDSL.impl.StringDescriptionImpl
+     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringDescription()
+     * @generated
+     */
+    EClass STRING_DESCRIPTION = eINSTANCE.getStringDescription();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STRING_DESCRIPTION__DESCRIPTION = eINSTANCE.getStringDescription_Description();
+
+    /**
+     * The meta object literal for the '{@link de.wbg.dTDSL.impl.StringDescriptionInnerImpl <em>String Description Inner</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.wbg.dTDSL.impl.StringDescriptionInnerImpl
+     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringDescriptionInner()
+     * @generated
+     */
+    EClass STRING_DESCRIPTION_INNER = eINSTANCE.getStringDescriptionInner();
+
+    /**
+     * The meta object literal for the '<em><b>Key Ref</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STRING_DESCRIPTION_INNER__KEY_REF = eINSTANCE.getStringDescriptionInner_KeyRef();
+
+    /**
+     * The meta object literal for the '{@link de.wbg.dTDSL.impl.StringOverReadImpl <em>String Over Read</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.wbg.dTDSL.impl.StringOverReadImpl
+     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringOverRead()
+     * @generated
+     */
+    EClass STRING_OVER_READ = eINSTANCE.getStringOverRead();
+
+    /**
+     * The meta object literal for the '<em><b>Over Read</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_OVER_READ__OVER_READ = eINSTANCE.getStringOverRead_OverRead();
+
+    /**
+     * The meta object literal for the '{@link de.wbg.dTDSL.impl.StringKeyImpl <em>String Key</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.wbg.dTDSL.impl.StringKeyImpl
+     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringKey()
+     * @generated
+     */
+    EClass STRING_KEY = eINSTANCE.getStringKey();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_KEY__NAME = eINSTANCE.getStringKey_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_KEY__TYPE = eINSTANCE.getStringKey_Type();
+
+    /**
+     * The meta object literal for the '{@link de.wbg.dTDSL.impl.StringValueImpl <em>String Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.wbg.dTDSL.impl.StringValueImpl
+     * @see de.wbg.dTDSL.impl.DTDSLPackageImpl#getStringValue()
+     * @generated
+     */
+    EClass STRING_VALUE = eINSTANCE.getStringValue();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_VALUE__NAME = eINSTANCE.getStringValue_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_VALUE__TYPE = eINSTANCE.getStringValue_Type();
+
+    /**
+     * The meta object literal for the '<em><b>To Key</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STRING_VALUE__TO_KEY = eINSTANCE.getStringValue_ToKey();
+
+    /**
      * The meta object literal for the '{@link de.wbg.dTDSL.impl.ObjectDescriptionImpl <em>Object Description</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -965,14 +1409,6 @@ public interface DTDSLPackage extends EPackage
      * @generated
      */
     EClass OBJECT_DESCRIPTION = eINSTANCE.getObjectDescription();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OBJECT_DESCRIPTION__NAME = eINSTANCE.getObjectDescription_Name();
 
     /**
      * The meta object literal for the '<em><b>Description</b></em>' containment reference list feature.
@@ -1011,12 +1447,12 @@ public interface DTDSLPackage extends EPackage
     EAttribute OBJECT_ATTRIBUTE__ATTRIBUTES = eINSTANCE.getObjectAttribute_Attributes();
 
     /**
-     * The meta object literal for the '<em><b>Types</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>String Methode</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OBJECT_ATTRIBUTE__TYPES = eINSTANCE.getObjectAttribute_Types();
+    EReference OBJECT_ATTRIBUTE__STRING_METHODE = eINSTANCE.getObjectAttribute_StringMethode();
 
     /**
      * The meta object literal for the '{@link de.wbg.dTDSL.impl.ObjectNodeImpl <em>Object Node</em>}' class.

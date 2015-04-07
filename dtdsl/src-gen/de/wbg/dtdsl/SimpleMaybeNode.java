@@ -1,11 +1,14 @@
 package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 class SimpleMaybeNode {
 	
 	private Head headNode;
 	private Element actualNode;
+	private SimpleScanner scanner;
+	private ArrayList<Integer> visited;
 	
 	public SimpleMaybeNode()
 	{
@@ -16,8 +19,12 @@ class SimpleMaybeNode {
 	{
 		this.headNode = new Head("HEAD");
 		this.actualNode = this.headNode;
+		this.visited = new ArrayList<>();
+		this.scanner = new SimpleScanner();
 		//model.start
 		try {
+			int nextVisit = System.identityHashCode(o);
+			this.visited.add(nextVisit);
 			parseSkv(o, actualNode);
 		}
 		catch (Exception e)
@@ -31,13 +38,14 @@ class SimpleMaybeNode {
 	
 	private void parseSkv(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+	
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeI(o, newNode);
+		parseSkvAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -58,7 +66,7 @@ class SimpleMaybeNode {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeS(o, newNode);
+		parseSkvAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -79,22 +87,22 @@ class SimpleMaybeNode {
 		//{Element copy = n.copy();
 		try 
 		{
-			Element maybeHead = new Element("MAYBEHEAD");
-			Object temp = o;
-			try
+		Element maybeHead = new Element("MAYBEHEAD");
+		Object temp = o;
+		try
+		{
+			parseMaybeSkvNext(temp, maybeHead);
+			for (Element child: maybeHead.getChildren())
 			{
-				parseMaybeSkvNext(temp, maybeHead);
-				for (Element child: maybeHead.getChildren())
-				{
-					newNode.addChild(child);
-					child.setParent(newNode);
-				}
-			} 
-			catch (ParserException e) 
-			{
-				//destroy reference
-				maybeHead = null;
+				newNode.addChild(child);
+				child.setParent(newNode);
 			}
+		} 
+		catch (ParserException e) 
+		{
+			//destroy reference
+			maybeHead = null;
+		}
 		}
 		catch (ParserException e)
 		{
@@ -118,7 +126,6 @@ class SimpleMaybeNode {
 	{
 		//Attribute
 		//inner == null
-		//int i as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -140,7 +147,7 @@ class SimpleMaybeNode {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : int i");
+			throw new ParserException("Error while parsing : i");
 		}
 	}
 	
@@ -148,7 +155,6 @@ class SimpleMaybeNode {
 	{
 		//Attribute
 		//inner == null
-		//String s as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -170,7 +176,7 @@ class SimpleMaybeNode {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : String s");
+			throw new ParserException("Error while parsing : s");
 		}
 	}
 	
@@ -182,11 +188,26 @@ try
 	Field f = o.getClass().getDeclaredField("next");
 	f.setAccessible(true);
 	Object next = (Object) f.get(o);
+	
+	int nextVisit = System.identityHashCode(next);
+	if (this.visited.contains(nextVisit))
+	{
+		return;
+	}
+	else
+	{
+		this.visited.add(nextVisit);
+	}
+	
 	parseNext(next, n);
 }
 catch(NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 {
+<<<<<<< HEAD
 	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@17454b61 (attributes: next)");
+=======
+	throw new ParserException("Error while parsing next in de.wbg.dTDSL.impl.ObjectNodeImpl@61889040 (attributes: next)");
+>>>>>>> origin/master
 }
 catch (ParserException e)
 {
@@ -196,13 +217,14 @@ catch (ParserException e)
 	}
 	private void parseNext(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+	
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseNextAttributeI(o, newNode);
+		parseNextAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -223,7 +245,7 @@ catch (ParserException e)
 		//{Element copy = n.copy();
 		try 
 		{
-			parseNextAttributeS(o, newNode);
+		parseNextAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -247,7 +269,6 @@ catch (ParserException e)
 	{
 		//Attribute
 		//inner == null
-		//int i as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -269,7 +290,7 @@ catch (ParserException e)
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : int i");
+			throw new ParserException("Error while parsing : i");
 		}
 	}
 	
@@ -277,7 +298,6 @@ catch (ParserException e)
 	{
 		//Attribute
 		//inner == null
-		//String s as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -299,7 +319,7 @@ catch (ParserException e)
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : String s");
+			throw new ParserException("Error while parsing : s");
 		}
 	}
 	

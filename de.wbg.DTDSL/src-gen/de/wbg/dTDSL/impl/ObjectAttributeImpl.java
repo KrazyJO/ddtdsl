@@ -4,10 +4,12 @@ package de.wbg.dTDSL.impl;
 
 import de.wbg.dTDSL.DTDSLPackage;
 import de.wbg.dTDSL.ObjectAttribute;
+import de.wbg.dTDSL.StringDescription;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -19,7 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.wbg.dTDSL.impl.ObjectAttributeImpl#getAttributes <em>Attributes</em>}</li>
- *   <li>{@link de.wbg.dTDSL.impl.ObjectAttributeImpl#getTypes <em>Types</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.impl.ObjectAttributeImpl#getStringMethode <em>String Methode</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,24 +50,14 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
   protected String attributes = ATTRIBUTES_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getTypes() <em>Types</em>}' attribute.
+   * The cached value of the '{@link #getStringMethode() <em>String Methode</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTypes()
+   * @see #getStringMethode()
    * @generated
    * @ordered
    */
-  protected static final String TYPES_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTypes() <em>Types</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTypes()
-   * @generated
-   * @ordered
-   */
-  protected String types = TYPES_EDEFAULT;
+  protected StringDescription stringMethode;
 
   /**
    * <!-- begin-user-doc -->
@@ -116,9 +108,19 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTypes()
+  public StringDescription getStringMethode()
   {
-    return types;
+    if (stringMethode != null && stringMethode.eIsProxy())
+    {
+      InternalEObject oldStringMethode = (InternalEObject)stringMethode;
+      stringMethode = (StringDescription)eResolveProxy(oldStringMethode);
+      if (stringMethode != oldStringMethode)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DTDSLPackage.OBJECT_ATTRIBUTE__STRING_METHODE, oldStringMethode, stringMethode));
+      }
+    }
+    return stringMethode;
   }
 
   /**
@@ -126,12 +128,22 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTypes(String newTypes)
+  public StringDescription basicGetStringMethode()
   {
-    String oldTypes = types;
-    types = newTypes;
+    return stringMethode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStringMethode(StringDescription newStringMethode)
+  {
+    StringDescription oldStringMethode = stringMethode;
+    stringMethode = newStringMethode;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_ATTRIBUTE__TYPES, oldTypes, types));
+      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.OBJECT_ATTRIBUTE__STRING_METHODE, oldStringMethode, stringMethode));
   }
 
   /**
@@ -146,8 +158,9 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
     {
       case DTDSLPackage.OBJECT_ATTRIBUTE__ATTRIBUTES:
         return getAttributes();
-      case DTDSLPackage.OBJECT_ATTRIBUTE__TYPES:
-        return getTypes();
+      case DTDSLPackage.OBJECT_ATTRIBUTE__STRING_METHODE:
+        if (resolve) return getStringMethode();
+        return basicGetStringMethode();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -165,8 +178,8 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
       case DTDSLPackage.OBJECT_ATTRIBUTE__ATTRIBUTES:
         setAttributes((String)newValue);
         return;
-      case DTDSLPackage.OBJECT_ATTRIBUTE__TYPES:
-        setTypes((String)newValue);
+      case DTDSLPackage.OBJECT_ATTRIBUTE__STRING_METHODE:
+        setStringMethode((StringDescription)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -185,8 +198,8 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
       case DTDSLPackage.OBJECT_ATTRIBUTE__ATTRIBUTES:
         setAttributes(ATTRIBUTES_EDEFAULT);
         return;
-      case DTDSLPackage.OBJECT_ATTRIBUTE__TYPES:
-        setTypes(TYPES_EDEFAULT);
+      case DTDSLPackage.OBJECT_ATTRIBUTE__STRING_METHODE:
+        setStringMethode((StringDescription)null);
         return;
     }
     super.eUnset(featureID);
@@ -204,8 +217,8 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
     {
       case DTDSLPackage.OBJECT_ATTRIBUTE__ATTRIBUTES:
         return ATTRIBUTES_EDEFAULT == null ? attributes != null : !ATTRIBUTES_EDEFAULT.equals(attributes);
-      case DTDSLPackage.OBJECT_ATTRIBUTE__TYPES:
-        return TYPES_EDEFAULT == null ? types != null : !TYPES_EDEFAULT.equals(types);
+      case DTDSLPackage.OBJECT_ATTRIBUTE__STRING_METHODE:
+        return stringMethode != null;
     }
     return super.eIsSet(featureID);
   }
@@ -223,8 +236,6 @@ public class ObjectAttributeImpl extends ObjectDescriptionInnerImpl implements O
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (attributes: ");
     result.append(attributes);
-    result.append(", types: ");
-    result.append(types);
     result.append(')');
     return result.toString();
   }

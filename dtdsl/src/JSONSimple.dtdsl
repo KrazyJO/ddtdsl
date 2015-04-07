@@ -1,9 +1,8 @@
 parserName = "JSONSimple";
-parserType = javaObject;
 
-JSONSimple: {
-	hasAttribute children ofType int*;
+Node JSONSimple: {
+	hasAttribute children*;
 }
 
 
-beginWith = JSONSimple;
+beginWith = JSONSimple

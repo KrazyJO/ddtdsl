@@ -12,7 +12,7 @@ package de.wbg.dTDSL;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.wbg.dTDSL.ObjectAttribute#getAttributes <em>Attributes</em>}</li>
- *   <li>{@link de.wbg.dTDSL.ObjectAttribute#getTypes <em>Types</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.ObjectAttribute#getStringMethode <em>String Methode</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,29 +49,29 @@ public interface ObjectAttribute extends ObjectDescriptionInner, ObjectMaybeInne
   void setAttributes(String value);
 
   /**
-   * Returns the value of the '<em><b>Types</b></em>' attribute.
+   * Returns the value of the '<em><b>String Methode</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Types</em>' attribute isn't clear,
+   * If the meaning of the '<em>String Methode</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Types</em>' attribute.
-   * @see #setTypes(String)
-   * @see de.wbg.dTDSL.DTDSLPackage#getObjectAttribute_Types()
+   * @return the value of the '<em>String Methode</em>' reference.
+   * @see #setStringMethode(StringDescription)
+   * @see de.wbg.dTDSL.DTDSLPackage#getObjectAttribute_StringMethode()
    * @model
    * @generated
    */
-  String getTypes();
+  StringDescription getStringMethode();
 
   /**
-   * Sets the value of the '{@link de.wbg.dTDSL.ObjectAttribute#getTypes <em>Types</em>}' attribute.
+   * Sets the value of the '{@link de.wbg.dTDSL.ObjectAttribute#getStringMethode <em>String Methode</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Types</em>' attribute.
-   * @see #getTypes()
+   * @param value the new value of the '<em>String Methode</em>' reference.
+   * @see #getStringMethode()
    * @generated
    */
-  void setTypes(String value);
+  void setStringMethode(StringDescription value);
 
 } // ObjectAttribute

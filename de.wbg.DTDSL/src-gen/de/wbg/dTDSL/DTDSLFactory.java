@@ -50,6 +50,51 @@ public interface DTDSLFactory extends EFactory
   Abstract createAbstract();
 
   /**
+   * Returns a new object of class '<em>String Description</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Description</em>'.
+   * @generated
+   */
+  StringDescription createStringDescription();
+
+  /**
+   * Returns a new object of class '<em>String Description Inner</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Description Inner</em>'.
+   * @generated
+   */
+  StringDescriptionInner createStringDescriptionInner();
+
+  /**
+   * Returns a new object of class '<em>String Over Read</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Over Read</em>'.
+   * @generated
+   */
+  StringOverRead createStringOverRead();
+
+  /**
+   * Returns a new object of class '<em>String Key</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Key</em>'.
+   * @generated
+   */
+  StringKey createStringKey();
+
+  /**
+   * Returns a new object of class '<em>String Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Value</em>'.
+   * @generated
+   */
+  StringValue createStringValue();
+
+  /**
    * Returns a new object of class '<em>Object Description</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

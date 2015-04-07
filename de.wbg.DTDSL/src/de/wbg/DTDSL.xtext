@@ -1,22 +1,48 @@
 grammar de.wbg.DTDSL with org.eclipse.xtext.common.Terminals
 
+import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
+
 generate dTDSL "http://www.wbg.de/DTDSL"
 
 DTDSL:
 	'parserName' '=' parserName=STRING ';'
-	'parserType' '=' type=('javaObject' | 'string') ';'
+//	'parserType' '=' type=('javaObject' | 'string') ';'
 	objDescription+=Abstract*
 	start=StartPoint
 ;
 
 StartPoint:
-	'beginWith' '=' begin=[ObjectDescription] ';'
+	'beginWith' '=' begin=[ObjectDescription] | begin=[StringDescription] ';'
 ;
 
 Abstract:
-	ObjectDescription //| ObjectHashMapDescription
+	ObjectDescription | StringDescription //| ObjectHashMapDescription
+;
+//---------------------------  String  ---------------------------
+StringDescription:
+	'String' name=ID ':'  '{' description+=StringDescriptionInner* '}'
 ;
 
+StringDescriptionInner:
+//	rule+=StringRule+
+	StringOverRead | StringKey | StringValue  | keyRef=[StringKey]
+;
+
+StringOverRead:
+	overRead=STRING
+;
+
+StringKey:
+	{StringKey}
+	(name=ID '=')? 'Key' 'ofType' type=Type
+;
+
+StringValue:
+	{StringValue}
+	(name=ID '=')? 'Value' 'ofType' type=Type ('to' toKey=[StringKey])?
+;
+
+//---------------------------  Object  ---------------------------
 //ObjectHashMapDescription:
 //	name=ID 'as' 'HashMap' ':' '{' description=ObjectHashMapDescriptionInner '}'
 //;
@@ -25,8 +51,10 @@ Abstract:
 //	
 //;
 
+
+
 ObjectDescription:
-	name=ID ':' '{' description+=ObjectDescriptionInner* '}'
+	'Node' name=ID ':' '{' description+=ObjectDescriptionInner* '}'
 ;
 
 ObjectNodeType:
@@ -37,9 +65,15 @@ ObjectDescriptionInner:
 	(ObjectNode | ObjectAttribute | ObjectNext | ObjectMaybe | ObjectMany | ObjectChoice) ';'
 ;
 
+//ObjectAttribute:
+//	'hasAttribute' attributes=ID 'ofType' types=Type 
+//;
+
 ObjectAttribute:
-	'hasAttribute' attributes=ID 'ofType' types=Type 
+	'hasAttribute' attributes=ID ('as' stringMethode=[StringDescription] )? // 'ofType' types=[jvmTypes::JvmType | QualifiedName] 
 ;
+
+QualifiedName: ID ('.' ID)*;
 
 //ObjectAttribute:
 //	'hasAttribute' attributes=ID 'ofType' (types=Type | inner=[ObjectDescription])

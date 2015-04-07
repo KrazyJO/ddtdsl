@@ -1,16 +1,15 @@
 parserName = "SimpleMaybeParser";
-parserType = javaObject;
 
-Skv:
+Node Skv:
 {
-	hasAttribute s ofType String;
-	hasAttribute i ofType int;
-	hasAttribute i ofType String? ;
+	hasAttribute s;
+	hasAttribute i;
+	hasAttribute i? ;
 }
 
-Inner:
+Node Inner:
 {
-	hasAttribute s ofType String;
+	hasAttribute s;
 }
 
-beginWith = Skv;
+beginWith = Skv

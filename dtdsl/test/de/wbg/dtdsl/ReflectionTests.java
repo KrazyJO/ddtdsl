@@ -28,7 +28,7 @@ public class ReflectionTests {
 			e.printStackTrace();
 		} //NoSuchFieldException
 		
-		System.out.println("attrib.type: " + attrib.getType() + ", attrib.value: " + attrib.getValue());
+//		System.out.println("attrib.type: " + attrib.getType() + ", attrib.value: " + attrib.getValue());
 		
 	}
 	

@@ -1,11 +1,14 @@
 package de.wbg.dtdsl;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 class SimpleNextParser {
 	
 	private Head headNode;
 	private Element actualNode;
+	private Element prev;
+	private ArrayList<Integer> visited;
 	
 	public SimpleNextParser()
 	{
@@ -16,8 +19,11 @@ class SimpleNextParser {
 	{
 		this.headNode = new Head("HEAD");
 		this.actualNode = this.headNode;
+		this.visited = new ArrayList<>();
 		//model.start
 		try {
+			int nextVisit = System.identityHashCode(o);
+			this.visited.add(nextVisit);
 			parseSkv(o, actualNode);
 		}
 		catch (Exception e)
@@ -31,13 +37,14 @@ class SimpleNextParser {
 	
 	private void parseSkv(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+	
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeS(o, newNode);
+		parseSkvAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -58,7 +65,7 @@ class SimpleNextParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvAttributeI(o, newNode);
+		parseSkvAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -79,7 +86,17 @@ class SimpleNextParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseSkvNext(o, n);
+		 	Node parent = new Node(n.getId());
+			parent.setNodeNumber(n.getNodeNumber());
+			parent.setAttributeNumber(n.getAttributeNumber());
+			parseSkvNext(o, parent);
+			
+			Node tempNode = (Node) parent.getChildren().get(0);
+			tempNode.setParent(n);
+			n.addChild(tempNode);
+			n.increaseNodeNumber();
+			newNode.setNext(tempNode);
+			
 		}
 		catch (ParserException e)
 		{
@@ -103,7 +120,6 @@ class SimpleNextParser {
 	{
 		//Attribute
 		//inner == null
-		//String s as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -125,7 +141,7 @@ class SimpleNextParser {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : String s");
+			throw new ParserException("Error while parsing : s");
 		}
 	}
 	
@@ -133,7 +149,6 @@ class SimpleNextParser {
 	{
 		//Attribute
 		//inner == null
-		//int i as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -155,7 +170,7 @@ class SimpleNextParser {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : int i");
+			throw new ParserException("Error while parsing : i");
 		}
 	}
 	
@@ -167,6 +182,17 @@ class SimpleNextParser {
 			Field f = o.getClass().getDeclaredField("next"); //NoSuchFieldException
 			f.setAccessible(true);
 			Object next = (Object) f.get(o); //IllegalAccessException
+			
+			int nextVisit = System.identityHashCode(next);
+			if (this.visited.contains(nextVisit))
+			{
+				return;
+			}
+			else
+			{
+				this.visited.add(nextVisit);
+			}
+		
 		
 			parseNext(next, n);
 			actualNode = n;
@@ -180,13 +206,14 @@ class SimpleNextParser {
 		
 	private void parseNext(Object o, Element n) throws Exception
 	{
-		Node newNode = new Node("node"+n.increaseNodeNumber());
+	
+		Node newNode = new Node(n.getNameForNode());
 		newNode.setParent(n);
-		n.addChild(newNode);	
+		n.addChild(newNode);
 		//{Element copy = n.copy();
 		try 
 		{
-			parseNextAttributeS(o, newNode);
+		parseNextAttributeS(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -207,7 +234,7 @@ class SimpleNextParser {
 		//{Element copy = n.copy();
 		try 
 		{
-			parseNextAttributeI(o, newNode);
+		parseNextAttributeI(o, newNode);
 		}
 		catch (ParserException e)
 		{
@@ -231,7 +258,6 @@ class SimpleNextParser {
 	{
 		//Attribute
 		//inner == null
-		//String s as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -253,7 +279,7 @@ class SimpleNextParser {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : String s");
+			throw new ParserException("Error while parsing : s");
 		}
 	}
 	
@@ -261,7 +287,6 @@ class SimpleNextParser {
 	{
 		//Attribute
 		//inner == null
-		//int i as ;
 		int oldAttributeNumber = n.getAttributeNumber();
 		try {
 			
@@ -283,7 +308,7 @@ class SimpleNextParser {
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : int i");
+			throw new ParserException("Error while parsing : i");
 		}
 	}
 	
