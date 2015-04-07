@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.lang.reflect.Array;
 
 class JSONSimple {
 	
@@ -47,10 +48,21 @@ class JSONSimple {
 			
 			if (next instanceof Object[])
 			{
+				//for not-primitive datatypes
+				
 				Object[] array = (Object[])next;
 				for (int index = 0; index < array.length; index++)
 				{
 					parseManyJSONSimpleAttributeChildren(array[index], manyHead);
+				}
+			}
+			else if (next.getClass().isArray())
+			{
+				//for primitive datatypes
+				
+				for (int index = 0; index < Array.getLength(next); index++)
+				{
+					parseManyJSONSimpleAttributeChildren(Array.get(next ,index), manyHead);
 				}
 			}
 			else if (next instanceof ArrayList)
