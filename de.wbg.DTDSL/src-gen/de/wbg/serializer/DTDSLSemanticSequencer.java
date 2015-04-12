@@ -290,7 +290,7 @@ public class DTDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (description+=StringDescriptionInner* (many='*' | maybe='?'))
+	 *     (name=[StringDescriptionInVariable|ID] (many='*' | maybe='?'))
 	 */
 	protected void sequence_StringComplex(EObject context, StringComplex semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

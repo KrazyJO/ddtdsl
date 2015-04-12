@@ -464,13 +464,13 @@ public interface DTDSLPackage extends EPackage
   int STRING_COMPLEX__KEY_REF = STRING_DESCRIPTION_INNER__KEY_REF;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' containment reference list.
+   * The feature id for the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRING_COMPLEX__DESCRIPTION = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 0;
+  int STRING_COMPLEX__NAME = STRING_DESCRIPTION_INNER_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Many</b></em>' attribute.
@@ -1103,15 +1103,15 @@ public interface DTDSLPackage extends EPackage
   EClass getStringComplex();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.wbg.dTDSL.StringComplex#getDescription <em>Description</em>}'.
+   * Returns the meta object for the reference '{@link de.wbg.dTDSL.StringComplex#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Description</em>'.
-   * @see de.wbg.dTDSL.StringComplex#getDescription()
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see de.wbg.dTDSL.StringComplex#getName()
    * @see #getStringComplex()
    * @generated
    */
-  EReference getStringComplex_Description();
+  EReference getStringComplex_Name();
 
   /**
    * Returns the meta object for the attribute '{@link de.wbg.dTDSL.StringComplex#getMany <em>Many</em>}'.
@@ -1640,12 +1640,12 @@ public interface DTDSLPackage extends EPackage
     EClass STRING_COMPLEX = eINSTANCE.getStringComplex();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STRING_COMPLEX__DESCRIPTION = eINSTANCE.getStringComplex_Description();
+    EReference STRING_COMPLEX__NAME = eINSTANCE.getStringComplex_Name();
 
     /**
      * The meta object literal for the '<em><b>Many</b></em>' attribute feature.

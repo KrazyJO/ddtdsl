@@ -775,60 +775,47 @@ ruleStringComplex returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='(' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getStringComplexAccess().getLeftParenthesisKeyword_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getStringComplexAccess().getDescriptionStringDescriptionInnerParserRuleCall_1_0()); 
-	    }
-		lv_description_1_0=ruleStringDescriptionInner		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getStringComplexRule());
-	        }
-       		add(
-       			$current, 
-       			"description",
-        		lv_description_1_0, 
-        		"StringDescriptionInner");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)*	otherlv_2=')' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getStringComplexAccess().getRightParenthesisKeyword_2());
-    }
 ((
 (
-		lv_many_3_0=	'*' 
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getStringComplexRule());
+	        }
+        }
+	otherlv_0=RULE_ID
+	{
+		newLeafNode(otherlv_0, grammarAccess.getStringComplexAccess().getNameStringDescriptionInVariableCrossReference_0_0()); 
+	}
+
+)
+)((
+(
+		lv_many_1_0=	'*' 
     {
-        newLeafNode(lv_many_3_0, grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_3_0_0());
+        newLeafNode(lv_many_1_0, grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_1_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getStringComplexRule());
 	        }
-       		setWithLastConsumed($current, "many", lv_many_3_0, "*");
+       		setWithLastConsumed($current, "many", lv_many_1_0, "*");
 	    }
 
 )
 )
     |(
 (
-		lv_maybe_4_0=	'?' 
+		lv_maybe_2_0=	'?' 
     {
-        newLeafNode(lv_maybe_4_0, grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_3_1_0());
+        newLeafNode(lv_maybe_2_0, grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_1_1_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getStringComplexRule());
 	        }
-       		setWithLastConsumed($current, "maybe", lv_maybe_4_0, "?");
+       		setWithLastConsumed($current, "maybe", lv_maybe_2_0, "?");
 	    }
 
 )

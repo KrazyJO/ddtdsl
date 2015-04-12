@@ -2,7 +2,6 @@
  */
 package de.wbg.dTDSL;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +11,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.wbg.dTDSL.StringComplex#getDescription <em>Description</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.StringComplex#getName <em>Name</em>}</li>
  *   <li>{@link de.wbg.dTDSL.StringComplex#getMany <em>Many</em>}</li>
  *   <li>{@link de.wbg.dTDSL.StringComplex#getMaybe <em>Maybe</em>}</li>
  * </ul>
@@ -25,20 +24,30 @@ import org.eclipse.emf.common.util.EList;
 public interface StringComplex extends StringDescriptionInner
 {
   /**
-   * Returns the value of the '<em><b>Description</b></em>' containment reference list.
-   * The list contents are of type {@link de.wbg.dTDSL.StringDescriptionInner}.
+   * Returns the value of the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Description</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Name</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' containment reference list.
-   * @see de.wbg.dTDSL.DTDSLPackage#getStringComplex_Description()
-   * @model containment="true"
+   * @return the value of the '<em>Name</em>' reference.
+   * @see #setName(StringDescriptionInVariable)
+   * @see de.wbg.dTDSL.DTDSLPackage#getStringComplex_Name()
+   * @model
    * @generated
    */
-  EList<StringDescriptionInner> getDescription();
+  StringDescriptionInVariable getName();
+
+  /**
+   * Sets the value of the '{@link de.wbg.dTDSL.StringComplex#getName <em>Name</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' reference.
+   * @see #getName()
+   * @generated
+   */
+  void setName(StringDescriptionInVariable value);
 
   /**
    * Returns the value of the '<em><b>Many</b></em>' attribute.

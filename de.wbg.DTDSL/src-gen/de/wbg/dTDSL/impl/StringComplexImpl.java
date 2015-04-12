@@ -4,22 +4,14 @@ package de.wbg.dTDSL.impl;
 
 import de.wbg.dTDSL.DTDSLPackage;
 import de.wbg.dTDSL.StringComplex;
-import de.wbg.dTDSL.StringDescriptionInner;
-
-import java.util.Collection;
+import de.wbg.dTDSL.StringDescriptionInVariable;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.wbg.dTDSL.impl.StringComplexImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link de.wbg.dTDSL.impl.StringComplexImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.wbg.dTDSL.impl.StringComplexImpl#getMany <em>Many</em>}</li>
  *   <li>{@link de.wbg.dTDSL.impl.StringComplexImpl#getMaybe <em>Maybe</em>}</li>
  * </ul>
@@ -39,14 +31,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class StringComplexImpl extends StringDescriptionInnerImpl implements StringComplex
 {
   /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference list.
+   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDescription()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<StringDescriptionInner> description;
+  protected StringDescriptionInVariable name;
 
   /**
    * The default value of the '{@link #getMany() <em>Many</em>}' attribute.
@@ -114,13 +106,42 @@ public class StringComplexImpl extends StringDescriptionInnerImpl implements Str
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StringDescriptionInner> getDescription()
+  public StringDescriptionInVariable getName()
   {
-    if (description == null)
+    if (name != null && name.eIsProxy())
     {
-      description = new EObjectContainmentEList<StringDescriptionInner>(StringDescriptionInner.class, this, DTDSLPackage.STRING_COMPLEX__DESCRIPTION);
+      InternalEObject oldName = (InternalEObject)name;
+      name = (StringDescriptionInVariable)eResolveProxy(oldName);
+      if (name != oldName)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DTDSLPackage.STRING_COMPLEX__NAME, oldName, name));
+      }
     }
-    return description;
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringDescriptionInVariable basicGetName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(StringDescriptionInVariable newName)
+  {
+    StringDescriptionInVariable oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DTDSLPackage.STRING_COMPLEX__NAME, oldName, name));
   }
 
   /**
@@ -175,28 +196,13 @@ public class StringComplexImpl extends StringDescriptionInnerImpl implements Str
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case DTDSLPackage.STRING_COMPLEX__DESCRIPTION:
-        return ((InternalEList<?>)getDescription()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case DTDSLPackage.STRING_COMPLEX__DESCRIPTION:
-        return getDescription();
+      case DTDSLPackage.STRING_COMPLEX__NAME:
+        if (resolve) return getName();
+        return basicGetName();
       case DTDSLPackage.STRING_COMPLEX__MANY:
         return getMany();
       case DTDSLPackage.STRING_COMPLEX__MAYBE:
@@ -210,15 +216,13 @@ public class StringComplexImpl extends StringDescriptionInnerImpl implements Str
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case DTDSLPackage.STRING_COMPLEX__DESCRIPTION:
-        getDescription().clear();
-        getDescription().addAll((Collection<? extends StringDescriptionInner>)newValue);
+      case DTDSLPackage.STRING_COMPLEX__NAME:
+        setName((StringDescriptionInVariable)newValue);
         return;
       case DTDSLPackage.STRING_COMPLEX__MANY:
         setMany((String)newValue);
@@ -240,8 +244,8 @@ public class StringComplexImpl extends StringDescriptionInnerImpl implements Str
   {
     switch (featureID)
     {
-      case DTDSLPackage.STRING_COMPLEX__DESCRIPTION:
-        getDescription().clear();
+      case DTDSLPackage.STRING_COMPLEX__NAME:
+        setName((StringDescriptionInVariable)null);
         return;
       case DTDSLPackage.STRING_COMPLEX__MANY:
         setMany(MANY_EDEFAULT);
@@ -263,8 +267,8 @@ public class StringComplexImpl extends StringDescriptionInnerImpl implements Str
   {
     switch (featureID)
     {
-      case DTDSLPackage.STRING_COMPLEX__DESCRIPTION:
-        return description != null && !description.isEmpty();
+      case DTDSLPackage.STRING_COMPLEX__NAME:
+        return name != null;
       case DTDSLPackage.STRING_COMPLEX__MANY:
         return MANY_EDEFAULT == null ? many != null : !MANY_EDEFAULT.equals(many);
       case DTDSLPackage.STRING_COMPLEX__MAYBE:

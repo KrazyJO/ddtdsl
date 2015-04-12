@@ -769,21 +769,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__StringComplex__Alternatives_3
+rule__StringComplex__Alternatives_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getStringComplexAccess().getManyAssignment_3_0()); }
-(rule__StringComplex__ManyAssignment_3_0)
-{ after(grammarAccess.getStringComplexAccess().getManyAssignment_3_0()); }
+{ before(grammarAccess.getStringComplexAccess().getManyAssignment_1_0()); }
+(rule__StringComplex__ManyAssignment_1_0)
+{ after(grammarAccess.getStringComplexAccess().getManyAssignment_1_0()); }
 )
 
     |(
-{ before(grammarAccess.getStringComplexAccess().getMaybeAssignment_3_1()); }
-(rule__StringComplex__MaybeAssignment_3_1)
-{ after(grammarAccess.getStringComplexAccess().getMaybeAssignment_3_1()); }
+{ before(grammarAccess.getStringComplexAccess().getMaybeAssignment_1_1()); }
+(rule__StringComplex__MaybeAssignment_1_1)
+{ after(grammarAccess.getStringComplexAccess().getMaybeAssignment_1_1()); }
 )
 
 ;
@@ -2510,11 +2510,9 @@ rule__StringComplex__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getStringComplexAccess().getLeftParenthesisKeyword_0()); }
-
-	'(' 
-
-{ after(grammarAccess.getStringComplexAccess().getLeftParenthesisKeyword_0()); }
+{ before(grammarAccess.getStringComplexAccess().getNameAssignment_0()); }
+(rule__StringComplex__NameAssignment_0)
+{ after(grammarAccess.getStringComplexAccess().getNameAssignment_0()); }
 )
 
 ;
@@ -2529,7 +2527,6 @@ rule__StringComplex__Group__1
     }
 :
 	rule__StringComplex__Group__1__Impl
-	rule__StringComplex__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2541,78 +2538,15 @@ rule__StringComplex__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getStringComplexAccess().getDescriptionAssignment_1()); }
-(rule__StringComplex__DescriptionAssignment_1)*
-{ after(grammarAccess.getStringComplexAccess().getDescriptionAssignment_1()); }
+{ before(grammarAccess.getStringComplexAccess().getAlternatives_1()); }
+(rule__StringComplex__Alternatives_1)
+{ after(grammarAccess.getStringComplexAccess().getAlternatives_1()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-rule__StringComplex__Group__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__StringComplex__Group__2__Impl
-	rule__StringComplex__Group__3
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__StringComplex__Group__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getStringComplexAccess().getRightParenthesisKeyword_2()); }
-
-	')' 
-
-{ after(grammarAccess.getStringComplexAccess().getRightParenthesisKeyword_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__StringComplex__Group__3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__StringComplex__Group__3__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__StringComplex__Group__3__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getStringComplexAccess().getAlternatives_3()); }
-(rule__StringComplex__Alternatives_3)
-{ after(grammarAccess.getStringComplexAccess().getAlternatives_3()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
 
 
 
@@ -3993,14 +3927,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__StringComplex__DescriptionAssignment_1
+rule__StringComplex__NameAssignment_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getStringComplexAccess().getDescriptionStringDescriptionInnerParserRuleCall_1_0()); }
-	ruleStringDescriptionInner{ after(grammarAccess.getStringComplexAccess().getDescriptionStringDescriptionInnerParserRuleCall_1_0()); }
+{ before(grammarAccess.getStringComplexAccess().getNameStringDescriptionInVariableCrossReference_0_0()); }
+(
+{ before(grammarAccess.getStringComplexAccess().getNameStringDescriptionInVariableIDTerminalRuleCall_0_0_1()); }
+	RULE_ID{ after(grammarAccess.getStringComplexAccess().getNameStringDescriptionInVariableIDTerminalRuleCall_0_0_1()); }
+)
+{ after(grammarAccess.getStringComplexAccess().getNameStringDescriptionInVariableCrossReference_0_0()); }
 )
 
 ;
@@ -4008,22 +3946,22 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__StringComplex__ManyAssignment_3_0
+rule__StringComplex__ManyAssignment_1_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_3_0_0()); }
+{ before(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_1_0_0()); }
 (
-{ before(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_3_0_0()); }
+{ before(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_1_0_0()); }
 
 	'*' 
 
-{ after(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_3_0_0()); }
+{ after(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_1_0_0()); }
 )
 
-{ after(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_3_0_0()); }
+{ after(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_1_0_0()); }
 )
 
 ;
@@ -4031,22 +3969,22 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__StringComplex__MaybeAssignment_3_1
+rule__StringComplex__MaybeAssignment_1_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_3_1_0()); }
+{ before(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_1_1_0()); }
 (
-{ before(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_3_1_0()); }
+{ before(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_1_1_0()); }
 
 	'?' 
 
-{ after(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_3_1_0()); }
+{ after(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_1_1_0()); }
 )
 
-{ after(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_3_1_0()); }
+{ after(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_1_1_0()); }
 )
 
 ;

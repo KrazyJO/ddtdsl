@@ -525,7 +525,7 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStringComplex_Description()
+  public EReference getStringComplex_Name()
   {
     return (EReference)stringComplexEClass.getEStructuralFeatures().get(0);
   }
@@ -847,7 +847,7 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     createEReference(stringDescriptionInVariableEClass, STRING_DESCRIPTION_IN_VARIABLE__DESCRIPTION);
 
     stringComplexEClass = createEClass(STRING_COMPLEX);
-    createEReference(stringComplexEClass, STRING_COMPLEX__DESCRIPTION);
+    createEReference(stringComplexEClass, STRING_COMPLEX__NAME);
     createEAttribute(stringComplexEClass, STRING_COMPLEX__MANY);
     createEAttribute(stringComplexEClass, STRING_COMPLEX__MAYBE);
 
@@ -970,7 +970,7 @@ public class DTDSLPackageImpl extends EPackageImpl implements DTDSLPackage
     initEReference(getStringDescriptionInVariable_Description(), this.getStringDescriptionInner(), null, "description", null, 0, -1, StringDescriptionInVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stringComplexEClass, StringComplex.class, "StringComplex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStringComplex_Description(), this.getStringDescriptionInner(), null, "description", null, 0, -1, StringComplex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStringComplex_Name(), this.getStringDescriptionInVariable(), null, "name", null, 0, 1, StringComplex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStringComplex_Many(), ecorePackage.getEString(), "many", null, 0, 1, StringComplex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStringComplex_Maybe(), ecorePackage.getEString(), "maybe", null, 0, 1, StringComplex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

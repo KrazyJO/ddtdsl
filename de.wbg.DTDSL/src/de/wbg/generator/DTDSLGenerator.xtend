@@ -6,6 +6,14 @@ package de.wbg.generator
 import de.wbg.ExceptionGen
 import de.wbg.ExtraMethodsGen
 import de.wbg.NodeGen
+import de.wbg.ScannerGen
+import de.wbg.StringClasses.ChainString
+import de.wbg.StringClasses.ChainStringKey
+import de.wbg.StringClasses.ChainStringKeyRef
+import de.wbg.StringClasses.ChainStringMaybe
+import de.wbg.StringClasses.ChainStringOr
+import de.wbg.StringClasses.ChainStringReadOver
+import de.wbg.StringClasses.ChainStringValue
 import de.wbg.dTDSL.Abstract
 import de.wbg.dTDSL.DTDSL
 import de.wbg.dTDSL.ObjectAttribute
@@ -16,6 +24,7 @@ import de.wbg.dTDSL.ObjectMaybe
 import de.wbg.dTDSL.ObjectNext
 import de.wbg.dTDSL.ObjectNode
 import de.wbg.dTDSL.StringDescription
+import de.wbg.dTDSL.StringDescriptionInVariable
 import de.wbg.extra.ChainMaybe
 import de.wbg.extra.ChainMethodsInner
 import de.wbg.extra.ChainMethodsInnerObjectAttribute
@@ -31,14 +40,7 @@ import java.util.LinkedList
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
-import de.wbg.ScannerGen 
-import de.wbg.dTDSL.StringDescriptionInVariable
-import de.wbg.StringClasses.ChainString
-import de.wbg.StringClasses.ChainStringKey
-import de.wbg.StringClasses.ChainStringReadOver
-import de.wbg.StringClasses.ChainStringValue
-import de.wbg.StringClasses.ChainStringKeyRef
-import de.wbg.StringClasses.ChainStringOr
+import de.wbg.dTDSL.StringComplex
 
 /**
  * Generates code from your model files on save.
@@ -203,6 +205,15 @@ class DTDSLGenerator implements IGenerator {
 			ret += compileStringOrOption(v)
 		}
 		
+		//String maybe-methods
+		for (v: model.eResource.allContents.toIterable.filter(StringComplex))
+		{
+			if (v.maybe != null)
+			{
+				ret += compileStringManyMethode(v)
+			}
+		}
+		
 		if (needGetInstanceGenerated)
 		{
 			var generator = new ExtraMethodsGen
@@ -216,13 +227,27 @@ class DTDSLGenerator implements IGenerator {
 	}
 
 //-----------------------------------------  String  -----------------------------------------
+	def CharSequence compileStringManyMethode(StringComplex v)
+	{
+		var ret = '''	private void parseString«(v.eContainer as StringDescription).name»Maybe(Element n) throws Exception
+	{
+		
+	}
+	'''
+		
+		
+		
+		return ret
+	}
+	
 	def CharSequence compileStringOrOption(StringDescriptionInVariable d)
 	{
-		var ret = '''	private void parse«(d.eContainer as StringDescription).name»Option«d.name»(Element n) throws Exception
+		var ret = '''	private void parse«(d.eContainer as StringDescription).name»Option«d.name.toFirstUpper»(Element n) throws Exception
 	{
 		Node nodeForValue = new Node("none");
 		'''
 
+		//parse option and store it to parsedOptions
 		for (var int z = 0; z < d.description.size; z++)
 		{
 			var i = d.description.get(z)
@@ -234,8 +259,10 @@ class DTDSLGenerator implements IGenerator {
 				}
 			}
 		}
+		
 		ret += '''	}
-		'''
+			'''
+		
 	}
 	
 	def CharSequence compileStringMethods(StringDescription d)
@@ -811,6 +838,7 @@ class DTDSLGenerator implements IGenerator {
 		this.chainString.add(new ChainStringReadOver(this))
 		this.chainString.add(new ChainStringValue(this))
 		this.chainString.add(new ChainStringOr(this))
+		this.chainString.add(new ChainStringMaybe(this));
 	}
 	
 	

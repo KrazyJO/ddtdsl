@@ -2,7 +2,7 @@ package de.wbg
 
 class NodeGen {
 	
-	def generateNode() 
+	def CharSequence generateNode() 
 	{
 				'''
 package de.wbg.dtdsl;

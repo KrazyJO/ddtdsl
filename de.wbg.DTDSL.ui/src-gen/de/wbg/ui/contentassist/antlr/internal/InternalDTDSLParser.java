@@ -2133,14 +2133,14 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__StringDescriptionInner__Alternatives"
 
 
-    // $ANTLR start "rule__StringComplex__Alternatives_3"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:772:1: rule__StringComplex__Alternatives_3 : ( ( ( rule__StringComplex__ManyAssignment_3_0 ) ) | ( ( rule__StringComplex__MaybeAssignment_3_1 ) ) );
-    public final void rule__StringComplex__Alternatives_3() throws RecognitionException {
+    // $ANTLR start "rule__StringComplex__Alternatives_1"
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:772:1: rule__StringComplex__Alternatives_1 : ( ( ( rule__StringComplex__ManyAssignment_1_0 ) ) | ( ( rule__StringComplex__MaybeAssignment_1_1 ) ) );
+    public final void rule__StringComplex__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:776:1: ( ( ( rule__StringComplex__ManyAssignment_3_0 ) ) | ( ( rule__StringComplex__MaybeAssignment_3_1 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:776:1: ( ( ( rule__StringComplex__ManyAssignment_1_0 ) ) | ( ( rule__StringComplex__MaybeAssignment_1_1 ) ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -2158,24 +2158,24 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:777:1: ( ( rule__StringComplex__ManyAssignment_3_0 ) )
+                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:777:1: ( ( rule__StringComplex__ManyAssignment_1_0 ) )
                     {
-                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:777:1: ( ( rule__StringComplex__ManyAssignment_3_0 ) )
-                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:778:1: ( rule__StringComplex__ManyAssignment_3_0 )
+                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:777:1: ( ( rule__StringComplex__ManyAssignment_1_0 ) )
+                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:778:1: ( rule__StringComplex__ManyAssignment_1_0 )
                     {
-                     before(grammarAccess.getStringComplexAccess().getManyAssignment_3_0()); 
-                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:779:1: ( rule__StringComplex__ManyAssignment_3_0 )
-                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:779:2: rule__StringComplex__ManyAssignment_3_0
+                     before(grammarAccess.getStringComplexAccess().getManyAssignment_1_0()); 
+                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:779:1: ( rule__StringComplex__ManyAssignment_1_0 )
+                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:779:2: rule__StringComplex__ManyAssignment_1_0
                     {
-                    pushFollow(FOLLOW_rule__StringComplex__ManyAssignment_3_0_in_rule__StringComplex__Alternatives_31625);
-                    rule__StringComplex__ManyAssignment_3_0();
+                    pushFollow(FOLLOW_rule__StringComplex__ManyAssignment_1_0_in_rule__StringComplex__Alternatives_11625);
+                    rule__StringComplex__ManyAssignment_1_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getStringComplexAccess().getManyAssignment_3_0()); 
+                     after(grammarAccess.getStringComplexAccess().getManyAssignment_1_0()); 
 
                     }
 
@@ -2183,24 +2183,24 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:783:6: ( ( rule__StringComplex__MaybeAssignment_3_1 ) )
+                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:783:6: ( ( rule__StringComplex__MaybeAssignment_1_1 ) )
                     {
-                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:783:6: ( ( rule__StringComplex__MaybeAssignment_3_1 ) )
-                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:784:1: ( rule__StringComplex__MaybeAssignment_3_1 )
+                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:783:6: ( ( rule__StringComplex__MaybeAssignment_1_1 ) )
+                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:784:1: ( rule__StringComplex__MaybeAssignment_1_1 )
                     {
-                     before(grammarAccess.getStringComplexAccess().getMaybeAssignment_3_1()); 
-                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:785:1: ( rule__StringComplex__MaybeAssignment_3_1 )
-                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:785:2: rule__StringComplex__MaybeAssignment_3_1
+                     before(grammarAccess.getStringComplexAccess().getMaybeAssignment_1_1()); 
+                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:785:1: ( rule__StringComplex__MaybeAssignment_1_1 )
+                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:785:2: rule__StringComplex__MaybeAssignment_1_1
                     {
-                    pushFollow(FOLLOW_rule__StringComplex__MaybeAssignment_3_1_in_rule__StringComplex__Alternatives_31643);
-                    rule__StringComplex__MaybeAssignment_3_1();
+                    pushFollow(FOLLOW_rule__StringComplex__MaybeAssignment_1_1_in_rule__StringComplex__Alternatives_11643);
+                    rule__StringComplex__MaybeAssignment_1_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getStringComplexAccess().getMaybeAssignment_3_1()); 
+                     after(grammarAccess.getStringComplexAccess().getMaybeAssignment_1_1()); 
 
                     }
 
@@ -2221,7 +2221,7 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StringComplex__Alternatives_3"
+    // $ANTLR end "rule__StringComplex__Alternatives_1"
 
 
     // $ANTLR start "rule__ObjectDescriptionInner__Alternatives_0"
@@ -4116,7 +4116,7 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( ((LA11_0>=RULE_STRING && LA11_0<=RULE_ID)||LA11_0==27||LA11_0==29||(LA11_0>=31 && LA11_0<=32)) ) {
+                if ( ((LA11_0>=RULE_STRING && LA11_0<=RULE_ID)||LA11_0==27||LA11_0==29||LA11_0==31) ) {
                     alt11=1;
                 }
 
@@ -6525,7 +6525,7 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
                 int alt16=2;
                 int LA16_0 = input.LA(1);
 
-                if ( ((LA16_0>=RULE_STRING && LA16_0<=RULE_ID)||LA16_0==27||LA16_0==29||(LA16_0>=31 && LA16_0<=32)) ) {
+                if ( ((LA16_0>=RULE_STRING && LA16_0<=RULE_ID)||LA16_0==27||LA16_0==29||LA16_0==31) ) {
                     alt16=1;
                 }
 
@@ -6679,21 +6679,31 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringComplex__Group__0__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2507:1: rule__StringComplex__Group__0__Impl : ( '(' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2507:1: rule__StringComplex__Group__0__Impl : ( ( rule__StringComplex__NameAssignment_0 ) ) ;
     public final void rule__StringComplex__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2511:1: ( ( '(' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2512:1: ( '(' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2511:1: ( ( ( rule__StringComplex__NameAssignment_0 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2512:1: ( ( rule__StringComplex__NameAssignment_0 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2512:1: ( '(' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2513:1: '('
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2512:1: ( ( rule__StringComplex__NameAssignment_0 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2513:1: ( rule__StringComplex__NameAssignment_0 )
             {
-             before(grammarAccess.getStringComplexAccess().getLeftParenthesisKeyword_0()); 
-            match(input,32,FOLLOW_32_in_rule__StringComplex__Group__0__Impl5121); 
-             after(grammarAccess.getStringComplexAccess().getLeftParenthesisKeyword_0()); 
+             before(grammarAccess.getStringComplexAccess().getNameAssignment_0()); 
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2514:1: ( rule__StringComplex__NameAssignment_0 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2514:2: rule__StringComplex__NameAssignment_0
+            {
+            pushFollow(FOLLOW_rule__StringComplex__NameAssignment_0_in_rule__StringComplex__Group__0__Impl5120);
+            rule__StringComplex__NameAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getStringComplexAccess().getNameAssignment_0()); 
 
             }
 
@@ -6716,22 +6726,17 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringComplex__Group__1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2526:1: rule__StringComplex__Group__1 : rule__StringComplex__Group__1__Impl rule__StringComplex__Group__2 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2524:1: rule__StringComplex__Group__1 : rule__StringComplex__Group__1__Impl ;
     public final void rule__StringComplex__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2530:1: ( rule__StringComplex__Group__1__Impl rule__StringComplex__Group__2 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2531:2: rule__StringComplex__Group__1__Impl rule__StringComplex__Group__2
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2528:1: ( rule__StringComplex__Group__1__Impl )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2529:2: rule__StringComplex__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__StringComplex__Group__1__Impl_in_rule__StringComplex__Group__15152);
+            pushFollow(FOLLOW_rule__StringComplex__Group__1__Impl_in_rule__StringComplex__Group__15150);
             rule__StringComplex__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__StringComplex__Group__2_in_rule__StringComplex__Group__15155);
-            rule__StringComplex__Group__2();
 
             state._fsp--;
 
@@ -6754,49 +6759,31 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringComplex__Group__1__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2538:1: rule__StringComplex__Group__1__Impl : ( ( rule__StringComplex__DescriptionAssignment_1 )* ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2535:1: rule__StringComplex__Group__1__Impl : ( ( rule__StringComplex__Alternatives_1 ) ) ;
     public final void rule__StringComplex__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2542:1: ( ( ( rule__StringComplex__DescriptionAssignment_1 )* ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2543:1: ( ( rule__StringComplex__DescriptionAssignment_1 )* )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2539:1: ( ( ( rule__StringComplex__Alternatives_1 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2540:1: ( ( rule__StringComplex__Alternatives_1 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2543:1: ( ( rule__StringComplex__DescriptionAssignment_1 )* )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2544:1: ( rule__StringComplex__DescriptionAssignment_1 )*
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2540:1: ( ( rule__StringComplex__Alternatives_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2541:1: ( rule__StringComplex__Alternatives_1 )
             {
-             before(grammarAccess.getStringComplexAccess().getDescriptionAssignment_1()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2545:1: ( rule__StringComplex__DescriptionAssignment_1 )*
-            loop17:
-            do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+             before(grammarAccess.getStringComplexAccess().getAlternatives_1()); 
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2542:1: ( rule__StringComplex__Alternatives_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2542:2: rule__StringComplex__Alternatives_1
+            {
+            pushFollow(FOLLOW_rule__StringComplex__Alternatives_1_in_rule__StringComplex__Group__1__Impl5177);
+            rule__StringComplex__Alternatives_1();
 
-                if ( ((LA17_0>=RULE_STRING && LA17_0<=RULE_ID)||LA17_0==27||LA17_0==29||(LA17_0>=31 && LA17_0<=32)) ) {
-                    alt17=1;
-                }
+            state._fsp--;
 
 
-                switch (alt17) {
-            	case 1 :
-            	    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2545:2: rule__StringComplex__DescriptionAssignment_1
-            	    {
-            	    pushFollow(FOLLOW_rule__StringComplex__DescriptionAssignment_1_in_rule__StringComplex__Group__1__Impl5182);
-            	    rule__StringComplex__DescriptionAssignment_1();
+            }
 
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop17;
-                }
-            } while (true);
-
-             after(grammarAccess.getStringComplexAccess().getDescriptionAssignment_1()); 
+             after(grammarAccess.getStringComplexAccess().getAlternatives_1()); 
 
             }
 
@@ -6818,177 +6805,22 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__StringComplex__Group__1__Impl"
 
 
-    // $ANTLR start "rule__StringComplex__Group__2"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2555:1: rule__StringComplex__Group__2 : rule__StringComplex__Group__2__Impl rule__StringComplex__Group__3 ;
-    public final void rule__StringComplex__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2559:1: ( rule__StringComplex__Group__2__Impl rule__StringComplex__Group__3 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2560:2: rule__StringComplex__Group__2__Impl rule__StringComplex__Group__3
-            {
-            pushFollow(FOLLOW_rule__StringComplex__Group__2__Impl_in_rule__StringComplex__Group__25213);
-            rule__StringComplex__Group__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__StringComplex__Group__3_in_rule__StringComplex__Group__25216);
-            rule__StringComplex__Group__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__StringComplex__Group__2"
-
-
-    // $ANTLR start "rule__StringComplex__Group__2__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2567:1: rule__StringComplex__Group__2__Impl : ( ')' ) ;
-    public final void rule__StringComplex__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2571:1: ( ( ')' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2572:1: ( ')' )
-            {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2572:1: ( ')' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2573:1: ')'
-            {
-             before(grammarAccess.getStringComplexAccess().getRightParenthesisKeyword_2()); 
-            match(input,33,FOLLOW_33_in_rule__StringComplex__Group__2__Impl5244); 
-             after(grammarAccess.getStringComplexAccess().getRightParenthesisKeyword_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__StringComplex__Group__2__Impl"
-
-
-    // $ANTLR start "rule__StringComplex__Group__3"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2586:1: rule__StringComplex__Group__3 : rule__StringComplex__Group__3__Impl ;
-    public final void rule__StringComplex__Group__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2590:1: ( rule__StringComplex__Group__3__Impl )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2591:2: rule__StringComplex__Group__3__Impl
-            {
-            pushFollow(FOLLOW_rule__StringComplex__Group__3__Impl_in_rule__StringComplex__Group__35275);
-            rule__StringComplex__Group__3__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__StringComplex__Group__3"
-
-
-    // $ANTLR start "rule__StringComplex__Group__3__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2597:1: rule__StringComplex__Group__3__Impl : ( ( rule__StringComplex__Alternatives_3 ) ) ;
-    public final void rule__StringComplex__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2601:1: ( ( ( rule__StringComplex__Alternatives_3 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2602:1: ( ( rule__StringComplex__Alternatives_3 ) )
-            {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2602:1: ( ( rule__StringComplex__Alternatives_3 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2603:1: ( rule__StringComplex__Alternatives_3 )
-            {
-             before(grammarAccess.getStringComplexAccess().getAlternatives_3()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2604:1: ( rule__StringComplex__Alternatives_3 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2604:2: rule__StringComplex__Alternatives_3
-            {
-            pushFollow(FOLLOW_rule__StringComplex__Alternatives_3_in_rule__StringComplex__Group__3__Impl5302);
-            rule__StringComplex__Alternatives_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getStringComplexAccess().getAlternatives_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__StringComplex__Group__3__Impl"
-
-
     // $ANTLR start "rule__ObjectDescription__Group__0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2622:1: rule__ObjectDescription__Group__0 : rule__ObjectDescription__Group__0__Impl rule__ObjectDescription__Group__1 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2556:1: rule__ObjectDescription__Group__0 : rule__ObjectDescription__Group__0__Impl rule__ObjectDescription__Group__1 ;
     public final void rule__ObjectDescription__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2626:1: ( rule__ObjectDescription__Group__0__Impl rule__ObjectDescription__Group__1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2627:2: rule__ObjectDescription__Group__0__Impl rule__ObjectDescription__Group__1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2560:1: ( rule__ObjectDescription__Group__0__Impl rule__ObjectDescription__Group__1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2561:2: rule__ObjectDescription__Group__0__Impl rule__ObjectDescription__Group__1
             {
-            pushFollow(FOLLOW_rule__ObjectDescription__Group__0__Impl_in_rule__ObjectDescription__Group__05340);
+            pushFollow(FOLLOW_rule__ObjectDescription__Group__0__Impl_in_rule__ObjectDescription__Group__05211);
             rule__ObjectDescription__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectDescription__Group__1_in_rule__ObjectDescription__Group__05343);
+            pushFollow(FOLLOW_rule__ObjectDescription__Group__1_in_rule__ObjectDescription__Group__05214);
             rule__ObjectDescription__Group__1();
 
             state._fsp--;
@@ -7012,20 +6844,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescription__Group__0__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2634:1: rule__ObjectDescription__Group__0__Impl : ( 'Node' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2568:1: rule__ObjectDescription__Group__0__Impl : ( 'Node' ) ;
     public final void rule__ObjectDescription__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2638:1: ( ( 'Node' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2639:1: ( 'Node' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2572:1: ( ( 'Node' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2573:1: ( 'Node' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2639:1: ( 'Node' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2640:1: 'Node'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2573:1: ( 'Node' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2574:1: 'Node'
             {
              before(grammarAccess.getObjectDescriptionAccess().getNodeKeyword_0()); 
-            match(input,35,FOLLOW_35_in_rule__ObjectDescription__Group__0__Impl5371); 
+            match(input,35,FOLLOW_35_in_rule__ObjectDescription__Group__0__Impl5242); 
              after(grammarAccess.getObjectDescriptionAccess().getNodeKeyword_0()); 
 
             }
@@ -7049,21 +6881,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescription__Group__1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2653:1: rule__ObjectDescription__Group__1 : rule__ObjectDescription__Group__1__Impl rule__ObjectDescription__Group__2 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2587:1: rule__ObjectDescription__Group__1 : rule__ObjectDescription__Group__1__Impl rule__ObjectDescription__Group__2 ;
     public final void rule__ObjectDescription__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2657:1: ( rule__ObjectDescription__Group__1__Impl rule__ObjectDescription__Group__2 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2658:2: rule__ObjectDescription__Group__1__Impl rule__ObjectDescription__Group__2
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2591:1: ( rule__ObjectDescription__Group__1__Impl rule__ObjectDescription__Group__2 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2592:2: rule__ObjectDescription__Group__1__Impl rule__ObjectDescription__Group__2
             {
-            pushFollow(FOLLOW_rule__ObjectDescription__Group__1__Impl_in_rule__ObjectDescription__Group__15402);
+            pushFollow(FOLLOW_rule__ObjectDescription__Group__1__Impl_in_rule__ObjectDescription__Group__15273);
             rule__ObjectDescription__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectDescription__Group__2_in_rule__ObjectDescription__Group__15405);
+            pushFollow(FOLLOW_rule__ObjectDescription__Group__2_in_rule__ObjectDescription__Group__15276);
             rule__ObjectDescription__Group__2();
 
             state._fsp--;
@@ -7087,23 +6919,23 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescription__Group__1__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2665:1: rule__ObjectDescription__Group__1__Impl : ( ( rule__ObjectDescription__NameAssignment_1 ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2599:1: rule__ObjectDescription__Group__1__Impl : ( ( rule__ObjectDescription__NameAssignment_1 ) ) ;
     public final void rule__ObjectDescription__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2669:1: ( ( ( rule__ObjectDescription__NameAssignment_1 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2670:1: ( ( rule__ObjectDescription__NameAssignment_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2603:1: ( ( ( rule__ObjectDescription__NameAssignment_1 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2604:1: ( ( rule__ObjectDescription__NameAssignment_1 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2670:1: ( ( rule__ObjectDescription__NameAssignment_1 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2671:1: ( rule__ObjectDescription__NameAssignment_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2604:1: ( ( rule__ObjectDescription__NameAssignment_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2605:1: ( rule__ObjectDescription__NameAssignment_1 )
             {
              before(grammarAccess.getObjectDescriptionAccess().getNameAssignment_1()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2672:1: ( rule__ObjectDescription__NameAssignment_1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2672:2: rule__ObjectDescription__NameAssignment_1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2606:1: ( rule__ObjectDescription__NameAssignment_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2606:2: rule__ObjectDescription__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__ObjectDescription__NameAssignment_1_in_rule__ObjectDescription__Group__1__Impl5432);
+            pushFollow(FOLLOW_rule__ObjectDescription__NameAssignment_1_in_rule__ObjectDescription__Group__1__Impl5303);
             rule__ObjectDescription__NameAssignment_1();
 
             state._fsp--;
@@ -7134,21 +6966,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescription__Group__2"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2682:1: rule__ObjectDescription__Group__2 : rule__ObjectDescription__Group__2__Impl rule__ObjectDescription__Group__3 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2616:1: rule__ObjectDescription__Group__2 : rule__ObjectDescription__Group__2__Impl rule__ObjectDescription__Group__3 ;
     public final void rule__ObjectDescription__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2686:1: ( rule__ObjectDescription__Group__2__Impl rule__ObjectDescription__Group__3 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2687:2: rule__ObjectDescription__Group__2__Impl rule__ObjectDescription__Group__3
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2620:1: ( rule__ObjectDescription__Group__2__Impl rule__ObjectDescription__Group__3 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2621:2: rule__ObjectDescription__Group__2__Impl rule__ObjectDescription__Group__3
             {
-            pushFollow(FOLLOW_rule__ObjectDescription__Group__2__Impl_in_rule__ObjectDescription__Group__25462);
+            pushFollow(FOLLOW_rule__ObjectDescription__Group__2__Impl_in_rule__ObjectDescription__Group__25333);
             rule__ObjectDescription__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectDescription__Group__3_in_rule__ObjectDescription__Group__25465);
+            pushFollow(FOLLOW_rule__ObjectDescription__Group__3_in_rule__ObjectDescription__Group__25336);
             rule__ObjectDescription__Group__3();
 
             state._fsp--;
@@ -7172,20 +7004,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescription__Group__2__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2694:1: rule__ObjectDescription__Group__2__Impl : ( ':' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2628:1: rule__ObjectDescription__Group__2__Impl : ( ':' ) ;
     public final void rule__ObjectDescription__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2698:1: ( ( ':' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2699:1: ( ':' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2632:1: ( ( ':' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2633:1: ( ':' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2699:1: ( ':' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2700:1: ':'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2633:1: ( ':' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2634:1: ':'
             {
              before(grammarAccess.getObjectDescriptionAccess().getColonKeyword_2()); 
-            match(input,24,FOLLOW_24_in_rule__ObjectDescription__Group__2__Impl5493); 
+            match(input,24,FOLLOW_24_in_rule__ObjectDescription__Group__2__Impl5364); 
              after(grammarAccess.getObjectDescriptionAccess().getColonKeyword_2()); 
 
             }
@@ -7209,21 +7041,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescription__Group__3"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2713:1: rule__ObjectDescription__Group__3 : rule__ObjectDescription__Group__3__Impl rule__ObjectDescription__Group__4 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2647:1: rule__ObjectDescription__Group__3 : rule__ObjectDescription__Group__3__Impl rule__ObjectDescription__Group__4 ;
     public final void rule__ObjectDescription__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2717:1: ( rule__ObjectDescription__Group__3__Impl rule__ObjectDescription__Group__4 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2718:2: rule__ObjectDescription__Group__3__Impl rule__ObjectDescription__Group__4
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2651:1: ( rule__ObjectDescription__Group__3__Impl rule__ObjectDescription__Group__4 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2652:2: rule__ObjectDescription__Group__3__Impl rule__ObjectDescription__Group__4
             {
-            pushFollow(FOLLOW_rule__ObjectDescription__Group__3__Impl_in_rule__ObjectDescription__Group__35524);
+            pushFollow(FOLLOW_rule__ObjectDescription__Group__3__Impl_in_rule__ObjectDescription__Group__35395);
             rule__ObjectDescription__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectDescription__Group__4_in_rule__ObjectDescription__Group__35527);
+            pushFollow(FOLLOW_rule__ObjectDescription__Group__4_in_rule__ObjectDescription__Group__35398);
             rule__ObjectDescription__Group__4();
 
             state._fsp--;
@@ -7247,20 +7079,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescription__Group__3__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2725:1: rule__ObjectDescription__Group__3__Impl : ( '{' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2659:1: rule__ObjectDescription__Group__3__Impl : ( '{' ) ;
     public final void rule__ObjectDescription__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2729:1: ( ( '{' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2730:1: ( '{' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2663:1: ( ( '{' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2664:1: ( '{' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2730:1: ( '{' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2731:1: '{'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2664:1: ( '{' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2665:1: '{'
             {
              before(grammarAccess.getObjectDescriptionAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,25,FOLLOW_25_in_rule__ObjectDescription__Group__3__Impl5555); 
+            match(input,25,FOLLOW_25_in_rule__ObjectDescription__Group__3__Impl5426); 
              after(grammarAccess.getObjectDescriptionAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -7284,21 +7116,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescription__Group__4"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2744:1: rule__ObjectDescription__Group__4 : rule__ObjectDescription__Group__4__Impl rule__ObjectDescription__Group__5 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2678:1: rule__ObjectDescription__Group__4 : rule__ObjectDescription__Group__4__Impl rule__ObjectDescription__Group__5 ;
     public final void rule__ObjectDescription__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2748:1: ( rule__ObjectDescription__Group__4__Impl rule__ObjectDescription__Group__5 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2749:2: rule__ObjectDescription__Group__4__Impl rule__ObjectDescription__Group__5
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2682:1: ( rule__ObjectDescription__Group__4__Impl rule__ObjectDescription__Group__5 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2683:2: rule__ObjectDescription__Group__4__Impl rule__ObjectDescription__Group__5
             {
-            pushFollow(FOLLOW_rule__ObjectDescription__Group__4__Impl_in_rule__ObjectDescription__Group__45586);
+            pushFollow(FOLLOW_rule__ObjectDescription__Group__4__Impl_in_rule__ObjectDescription__Group__45457);
             rule__ObjectDescription__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectDescription__Group__5_in_rule__ObjectDescription__Group__45589);
+            pushFollow(FOLLOW_rule__ObjectDescription__Group__5_in_rule__ObjectDescription__Group__45460);
             rule__ObjectDescription__Group__5();
 
             state._fsp--;
@@ -7322,35 +7154,35 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescription__Group__4__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2756:1: rule__ObjectDescription__Group__4__Impl : ( ( rule__ObjectDescription__DescriptionAssignment_4 )* ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2690:1: rule__ObjectDescription__Group__4__Impl : ( ( rule__ObjectDescription__DescriptionAssignment_4 )* ) ;
     public final void rule__ObjectDescription__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2760:1: ( ( ( rule__ObjectDescription__DescriptionAssignment_4 )* ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2761:1: ( ( rule__ObjectDescription__DescriptionAssignment_4 )* )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2694:1: ( ( ( rule__ObjectDescription__DescriptionAssignment_4 )* ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2695:1: ( ( rule__ObjectDescription__DescriptionAssignment_4 )* )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2761:1: ( ( rule__ObjectDescription__DescriptionAssignment_4 )* )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2762:1: ( rule__ObjectDescription__DescriptionAssignment_4 )*
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2695:1: ( ( rule__ObjectDescription__DescriptionAssignment_4 )* )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2696:1: ( rule__ObjectDescription__DescriptionAssignment_4 )*
             {
              before(grammarAccess.getObjectDescriptionAccess().getDescriptionAssignment_4()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2763:1: ( rule__ObjectDescription__DescriptionAssignment_4 )*
-            loop18:
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2697:1: ( rule__ObjectDescription__DescriptionAssignment_4 )*
+            loop17:
             do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA18_0==RULE_ID||LA18_0==32||LA18_0==36||(LA18_0>=38 && LA18_0<=39)) ) {
-                    alt18=1;
+                if ( (LA17_0==RULE_ID||LA17_0==32||LA17_0==36||(LA17_0>=38 && LA17_0<=39)) ) {
+                    alt17=1;
                 }
 
 
-                switch (alt18) {
+                switch (alt17) {
             	case 1 :
-            	    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2763:2: rule__ObjectDescription__DescriptionAssignment_4
+            	    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2697:2: rule__ObjectDescription__DescriptionAssignment_4
             	    {
-            	    pushFollow(FOLLOW_rule__ObjectDescription__DescriptionAssignment_4_in_rule__ObjectDescription__Group__4__Impl5616);
+            	    pushFollow(FOLLOW_rule__ObjectDescription__DescriptionAssignment_4_in_rule__ObjectDescription__Group__4__Impl5487);
             	    rule__ObjectDescription__DescriptionAssignment_4();
 
             	    state._fsp--;
@@ -7360,7 +7192,7 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop18;
+            	    break loop17;
                 }
             } while (true);
 
@@ -7387,16 +7219,16 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescription__Group__5"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2773:1: rule__ObjectDescription__Group__5 : rule__ObjectDescription__Group__5__Impl ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2707:1: rule__ObjectDescription__Group__5 : rule__ObjectDescription__Group__5__Impl ;
     public final void rule__ObjectDescription__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2777:1: ( rule__ObjectDescription__Group__5__Impl )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2778:2: rule__ObjectDescription__Group__5__Impl
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2711:1: ( rule__ObjectDescription__Group__5__Impl )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2712:2: rule__ObjectDescription__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__ObjectDescription__Group__5__Impl_in_rule__ObjectDescription__Group__55647);
+            pushFollow(FOLLOW_rule__ObjectDescription__Group__5__Impl_in_rule__ObjectDescription__Group__55518);
             rule__ObjectDescription__Group__5__Impl();
 
             state._fsp--;
@@ -7420,20 +7252,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescription__Group__5__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2784:1: rule__ObjectDescription__Group__5__Impl : ( '}' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2718:1: rule__ObjectDescription__Group__5__Impl : ( '}' ) ;
     public final void rule__ObjectDescription__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2788:1: ( ( '}' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2789:1: ( '}' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2722:1: ( ( '}' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2723:1: ( '}' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2789:1: ( '}' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2790:1: '}'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2723:1: ( '}' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2724:1: '}'
             {
              before(grammarAccess.getObjectDescriptionAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,26,FOLLOW_26_in_rule__ObjectDescription__Group__5__Impl5675); 
+            match(input,26,FOLLOW_26_in_rule__ObjectDescription__Group__5__Impl5546); 
              after(grammarAccess.getObjectDescriptionAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -7457,21 +7289,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescriptionInner__Group__0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2815:1: rule__ObjectDescriptionInner__Group__0 : rule__ObjectDescriptionInner__Group__0__Impl rule__ObjectDescriptionInner__Group__1 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2749:1: rule__ObjectDescriptionInner__Group__0 : rule__ObjectDescriptionInner__Group__0__Impl rule__ObjectDescriptionInner__Group__1 ;
     public final void rule__ObjectDescriptionInner__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2819:1: ( rule__ObjectDescriptionInner__Group__0__Impl rule__ObjectDescriptionInner__Group__1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2820:2: rule__ObjectDescriptionInner__Group__0__Impl rule__ObjectDescriptionInner__Group__1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2753:1: ( rule__ObjectDescriptionInner__Group__0__Impl rule__ObjectDescriptionInner__Group__1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2754:2: rule__ObjectDescriptionInner__Group__0__Impl rule__ObjectDescriptionInner__Group__1
             {
-            pushFollow(FOLLOW_rule__ObjectDescriptionInner__Group__0__Impl_in_rule__ObjectDescriptionInner__Group__05718);
+            pushFollow(FOLLOW_rule__ObjectDescriptionInner__Group__0__Impl_in_rule__ObjectDescriptionInner__Group__05589);
             rule__ObjectDescriptionInner__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectDescriptionInner__Group__1_in_rule__ObjectDescriptionInner__Group__05721);
+            pushFollow(FOLLOW_rule__ObjectDescriptionInner__Group__1_in_rule__ObjectDescriptionInner__Group__05592);
             rule__ObjectDescriptionInner__Group__1();
 
             state._fsp--;
@@ -7495,23 +7327,23 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescriptionInner__Group__0__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2827:1: rule__ObjectDescriptionInner__Group__0__Impl : ( ( rule__ObjectDescriptionInner__Alternatives_0 ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2761:1: rule__ObjectDescriptionInner__Group__0__Impl : ( ( rule__ObjectDescriptionInner__Alternatives_0 ) ) ;
     public final void rule__ObjectDescriptionInner__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2831:1: ( ( ( rule__ObjectDescriptionInner__Alternatives_0 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2832:1: ( ( rule__ObjectDescriptionInner__Alternatives_0 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2765:1: ( ( ( rule__ObjectDescriptionInner__Alternatives_0 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2766:1: ( ( rule__ObjectDescriptionInner__Alternatives_0 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2832:1: ( ( rule__ObjectDescriptionInner__Alternatives_0 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2833:1: ( rule__ObjectDescriptionInner__Alternatives_0 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2766:1: ( ( rule__ObjectDescriptionInner__Alternatives_0 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2767:1: ( rule__ObjectDescriptionInner__Alternatives_0 )
             {
              before(grammarAccess.getObjectDescriptionInnerAccess().getAlternatives_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2834:1: ( rule__ObjectDescriptionInner__Alternatives_0 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2834:2: rule__ObjectDescriptionInner__Alternatives_0
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2768:1: ( rule__ObjectDescriptionInner__Alternatives_0 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2768:2: rule__ObjectDescriptionInner__Alternatives_0
             {
-            pushFollow(FOLLOW_rule__ObjectDescriptionInner__Alternatives_0_in_rule__ObjectDescriptionInner__Group__0__Impl5748);
+            pushFollow(FOLLOW_rule__ObjectDescriptionInner__Alternatives_0_in_rule__ObjectDescriptionInner__Group__0__Impl5619);
             rule__ObjectDescriptionInner__Alternatives_0();
 
             state._fsp--;
@@ -7542,16 +7374,16 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescriptionInner__Group__1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2844:1: rule__ObjectDescriptionInner__Group__1 : rule__ObjectDescriptionInner__Group__1__Impl ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2778:1: rule__ObjectDescriptionInner__Group__1 : rule__ObjectDescriptionInner__Group__1__Impl ;
     public final void rule__ObjectDescriptionInner__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2848:1: ( rule__ObjectDescriptionInner__Group__1__Impl )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2849:2: rule__ObjectDescriptionInner__Group__1__Impl
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2782:1: ( rule__ObjectDescriptionInner__Group__1__Impl )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2783:2: rule__ObjectDescriptionInner__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__ObjectDescriptionInner__Group__1__Impl_in_rule__ObjectDescriptionInner__Group__15778);
+            pushFollow(FOLLOW_rule__ObjectDescriptionInner__Group__1__Impl_in_rule__ObjectDescriptionInner__Group__15649);
             rule__ObjectDescriptionInner__Group__1__Impl();
 
             state._fsp--;
@@ -7575,20 +7407,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescriptionInner__Group__1__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2855:1: rule__ObjectDescriptionInner__Group__1__Impl : ( ';' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2789:1: rule__ObjectDescriptionInner__Group__1__Impl : ( ';' ) ;
     public final void rule__ObjectDescriptionInner__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2859:1: ( ( ';' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2860:1: ( ';' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2793:1: ( ( ';' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2794:1: ( ';' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2860:1: ( ';' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2861:1: ';'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2794:1: ( ';' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2795:1: ';'
             {
              before(grammarAccess.getObjectDescriptionInnerAccess().getSemicolonKeyword_1()); 
-            match(input,22,FOLLOW_22_in_rule__ObjectDescriptionInner__Group__1__Impl5806); 
+            match(input,22,FOLLOW_22_in_rule__ObjectDescriptionInner__Group__1__Impl5677); 
              after(grammarAccess.getObjectDescriptionInnerAccess().getSemicolonKeyword_1()); 
 
             }
@@ -7612,21 +7444,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectAttribute__Group__0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2878:1: rule__ObjectAttribute__Group__0 : rule__ObjectAttribute__Group__0__Impl rule__ObjectAttribute__Group__1 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2812:1: rule__ObjectAttribute__Group__0 : rule__ObjectAttribute__Group__0__Impl rule__ObjectAttribute__Group__1 ;
     public final void rule__ObjectAttribute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2882:1: ( rule__ObjectAttribute__Group__0__Impl rule__ObjectAttribute__Group__1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2883:2: rule__ObjectAttribute__Group__0__Impl rule__ObjectAttribute__Group__1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2816:1: ( rule__ObjectAttribute__Group__0__Impl rule__ObjectAttribute__Group__1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2817:2: rule__ObjectAttribute__Group__0__Impl rule__ObjectAttribute__Group__1
             {
-            pushFollow(FOLLOW_rule__ObjectAttribute__Group__0__Impl_in_rule__ObjectAttribute__Group__05841);
+            pushFollow(FOLLOW_rule__ObjectAttribute__Group__0__Impl_in_rule__ObjectAttribute__Group__05712);
             rule__ObjectAttribute__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectAttribute__Group__1_in_rule__ObjectAttribute__Group__05844);
+            pushFollow(FOLLOW_rule__ObjectAttribute__Group__1_in_rule__ObjectAttribute__Group__05715);
             rule__ObjectAttribute__Group__1();
 
             state._fsp--;
@@ -7650,20 +7482,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectAttribute__Group__0__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2890:1: rule__ObjectAttribute__Group__0__Impl : ( 'hasAttribute' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2824:1: rule__ObjectAttribute__Group__0__Impl : ( 'hasAttribute' ) ;
     public final void rule__ObjectAttribute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2894:1: ( ( 'hasAttribute' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2895:1: ( 'hasAttribute' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2828:1: ( ( 'hasAttribute' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2829:1: ( 'hasAttribute' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2895:1: ( 'hasAttribute' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2896:1: 'hasAttribute'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2829:1: ( 'hasAttribute' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2830:1: 'hasAttribute'
             {
              before(grammarAccess.getObjectAttributeAccess().getHasAttributeKeyword_0()); 
-            match(input,36,FOLLOW_36_in_rule__ObjectAttribute__Group__0__Impl5872); 
+            match(input,36,FOLLOW_36_in_rule__ObjectAttribute__Group__0__Impl5743); 
              after(grammarAccess.getObjectAttributeAccess().getHasAttributeKeyword_0()); 
 
             }
@@ -7687,21 +7519,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectAttribute__Group__1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2909:1: rule__ObjectAttribute__Group__1 : rule__ObjectAttribute__Group__1__Impl rule__ObjectAttribute__Group__2 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2843:1: rule__ObjectAttribute__Group__1 : rule__ObjectAttribute__Group__1__Impl rule__ObjectAttribute__Group__2 ;
     public final void rule__ObjectAttribute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2913:1: ( rule__ObjectAttribute__Group__1__Impl rule__ObjectAttribute__Group__2 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2914:2: rule__ObjectAttribute__Group__1__Impl rule__ObjectAttribute__Group__2
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2847:1: ( rule__ObjectAttribute__Group__1__Impl rule__ObjectAttribute__Group__2 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2848:2: rule__ObjectAttribute__Group__1__Impl rule__ObjectAttribute__Group__2
             {
-            pushFollow(FOLLOW_rule__ObjectAttribute__Group__1__Impl_in_rule__ObjectAttribute__Group__15903);
+            pushFollow(FOLLOW_rule__ObjectAttribute__Group__1__Impl_in_rule__ObjectAttribute__Group__15774);
             rule__ObjectAttribute__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectAttribute__Group__2_in_rule__ObjectAttribute__Group__15906);
+            pushFollow(FOLLOW_rule__ObjectAttribute__Group__2_in_rule__ObjectAttribute__Group__15777);
             rule__ObjectAttribute__Group__2();
 
             state._fsp--;
@@ -7725,23 +7557,23 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectAttribute__Group__1__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2921:1: rule__ObjectAttribute__Group__1__Impl : ( ( rule__ObjectAttribute__AttributesAssignment_1 ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2855:1: rule__ObjectAttribute__Group__1__Impl : ( ( rule__ObjectAttribute__AttributesAssignment_1 ) ) ;
     public final void rule__ObjectAttribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2925:1: ( ( ( rule__ObjectAttribute__AttributesAssignment_1 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2926:1: ( ( rule__ObjectAttribute__AttributesAssignment_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2859:1: ( ( ( rule__ObjectAttribute__AttributesAssignment_1 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2860:1: ( ( rule__ObjectAttribute__AttributesAssignment_1 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2926:1: ( ( rule__ObjectAttribute__AttributesAssignment_1 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2927:1: ( rule__ObjectAttribute__AttributesAssignment_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2860:1: ( ( rule__ObjectAttribute__AttributesAssignment_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2861:1: ( rule__ObjectAttribute__AttributesAssignment_1 )
             {
              before(grammarAccess.getObjectAttributeAccess().getAttributesAssignment_1()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2928:1: ( rule__ObjectAttribute__AttributesAssignment_1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2928:2: rule__ObjectAttribute__AttributesAssignment_1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2862:1: ( rule__ObjectAttribute__AttributesAssignment_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2862:2: rule__ObjectAttribute__AttributesAssignment_1
             {
-            pushFollow(FOLLOW_rule__ObjectAttribute__AttributesAssignment_1_in_rule__ObjectAttribute__Group__1__Impl5933);
+            pushFollow(FOLLOW_rule__ObjectAttribute__AttributesAssignment_1_in_rule__ObjectAttribute__Group__1__Impl5804);
             rule__ObjectAttribute__AttributesAssignment_1();
 
             state._fsp--;
@@ -7772,16 +7604,16 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectAttribute__Group__2"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2938:1: rule__ObjectAttribute__Group__2 : rule__ObjectAttribute__Group__2__Impl ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2872:1: rule__ObjectAttribute__Group__2 : rule__ObjectAttribute__Group__2__Impl ;
     public final void rule__ObjectAttribute__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2942:1: ( rule__ObjectAttribute__Group__2__Impl )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2943:2: rule__ObjectAttribute__Group__2__Impl
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2876:1: ( rule__ObjectAttribute__Group__2__Impl )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2877:2: rule__ObjectAttribute__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__ObjectAttribute__Group__2__Impl_in_rule__ObjectAttribute__Group__25963);
+            pushFollow(FOLLOW_rule__ObjectAttribute__Group__2__Impl_in_rule__ObjectAttribute__Group__25834);
             rule__ObjectAttribute__Group__2__Impl();
 
             state._fsp--;
@@ -7805,31 +7637,31 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectAttribute__Group__2__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2949:1: rule__ObjectAttribute__Group__2__Impl : ( ( rule__ObjectAttribute__Group_2__0 )? ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2883:1: rule__ObjectAttribute__Group__2__Impl : ( ( rule__ObjectAttribute__Group_2__0 )? ) ;
     public final void rule__ObjectAttribute__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2953:1: ( ( ( rule__ObjectAttribute__Group_2__0 )? ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2954:1: ( ( rule__ObjectAttribute__Group_2__0 )? )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2887:1: ( ( ( rule__ObjectAttribute__Group_2__0 )? ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2888:1: ( ( rule__ObjectAttribute__Group_2__0 )? )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2954:1: ( ( rule__ObjectAttribute__Group_2__0 )? )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2955:1: ( rule__ObjectAttribute__Group_2__0 )?
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2888:1: ( ( rule__ObjectAttribute__Group_2__0 )? )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2889:1: ( rule__ObjectAttribute__Group_2__0 )?
             {
              before(grammarAccess.getObjectAttributeAccess().getGroup_2()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2956:1: ( rule__ObjectAttribute__Group_2__0 )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2890:1: ( rule__ObjectAttribute__Group_2__0 )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA19_0==37) ) {
-                alt19=1;
+            if ( (LA18_0==37) ) {
+                alt18=1;
             }
-            switch (alt19) {
+            switch (alt18) {
                 case 1 :
-                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2956:2: rule__ObjectAttribute__Group_2__0
+                    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2890:2: rule__ObjectAttribute__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__ObjectAttribute__Group_2__0_in_rule__ObjectAttribute__Group__2__Impl5990);
+                    pushFollow(FOLLOW_rule__ObjectAttribute__Group_2__0_in_rule__ObjectAttribute__Group__2__Impl5861);
                     rule__ObjectAttribute__Group_2__0();
 
                     state._fsp--;
@@ -7863,21 +7695,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectAttribute__Group_2__0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2972:1: rule__ObjectAttribute__Group_2__0 : rule__ObjectAttribute__Group_2__0__Impl rule__ObjectAttribute__Group_2__1 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2906:1: rule__ObjectAttribute__Group_2__0 : rule__ObjectAttribute__Group_2__0__Impl rule__ObjectAttribute__Group_2__1 ;
     public final void rule__ObjectAttribute__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2976:1: ( rule__ObjectAttribute__Group_2__0__Impl rule__ObjectAttribute__Group_2__1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2977:2: rule__ObjectAttribute__Group_2__0__Impl rule__ObjectAttribute__Group_2__1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2910:1: ( rule__ObjectAttribute__Group_2__0__Impl rule__ObjectAttribute__Group_2__1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2911:2: rule__ObjectAttribute__Group_2__0__Impl rule__ObjectAttribute__Group_2__1
             {
-            pushFollow(FOLLOW_rule__ObjectAttribute__Group_2__0__Impl_in_rule__ObjectAttribute__Group_2__06027);
+            pushFollow(FOLLOW_rule__ObjectAttribute__Group_2__0__Impl_in_rule__ObjectAttribute__Group_2__05898);
             rule__ObjectAttribute__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectAttribute__Group_2__1_in_rule__ObjectAttribute__Group_2__06030);
+            pushFollow(FOLLOW_rule__ObjectAttribute__Group_2__1_in_rule__ObjectAttribute__Group_2__05901);
             rule__ObjectAttribute__Group_2__1();
 
             state._fsp--;
@@ -7901,20 +7733,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectAttribute__Group_2__0__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2984:1: rule__ObjectAttribute__Group_2__0__Impl : ( 'as' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2918:1: rule__ObjectAttribute__Group_2__0__Impl : ( 'as' ) ;
     public final void rule__ObjectAttribute__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2988:1: ( ( 'as' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2989:1: ( 'as' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2922:1: ( ( 'as' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2923:1: ( 'as' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2989:1: ( 'as' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2990:1: 'as'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2923:1: ( 'as' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2924:1: 'as'
             {
              before(grammarAccess.getObjectAttributeAccess().getAsKeyword_2_0()); 
-            match(input,37,FOLLOW_37_in_rule__ObjectAttribute__Group_2__0__Impl6058); 
+            match(input,37,FOLLOW_37_in_rule__ObjectAttribute__Group_2__0__Impl5929); 
              after(grammarAccess.getObjectAttributeAccess().getAsKeyword_2_0()); 
 
             }
@@ -7938,16 +7770,16 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectAttribute__Group_2__1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3003:1: rule__ObjectAttribute__Group_2__1 : rule__ObjectAttribute__Group_2__1__Impl ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2937:1: rule__ObjectAttribute__Group_2__1 : rule__ObjectAttribute__Group_2__1__Impl ;
     public final void rule__ObjectAttribute__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3007:1: ( rule__ObjectAttribute__Group_2__1__Impl )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3008:2: rule__ObjectAttribute__Group_2__1__Impl
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2941:1: ( rule__ObjectAttribute__Group_2__1__Impl )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2942:2: rule__ObjectAttribute__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__ObjectAttribute__Group_2__1__Impl_in_rule__ObjectAttribute__Group_2__16089);
+            pushFollow(FOLLOW_rule__ObjectAttribute__Group_2__1__Impl_in_rule__ObjectAttribute__Group_2__15960);
             rule__ObjectAttribute__Group_2__1__Impl();
 
             state._fsp--;
@@ -7971,23 +7803,23 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectAttribute__Group_2__1__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3014:1: rule__ObjectAttribute__Group_2__1__Impl : ( ( rule__ObjectAttribute__StringMethodeAssignment_2_1 ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2948:1: rule__ObjectAttribute__Group_2__1__Impl : ( ( rule__ObjectAttribute__StringMethodeAssignment_2_1 ) ) ;
     public final void rule__ObjectAttribute__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3018:1: ( ( ( rule__ObjectAttribute__StringMethodeAssignment_2_1 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3019:1: ( ( rule__ObjectAttribute__StringMethodeAssignment_2_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2952:1: ( ( ( rule__ObjectAttribute__StringMethodeAssignment_2_1 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2953:1: ( ( rule__ObjectAttribute__StringMethodeAssignment_2_1 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3019:1: ( ( rule__ObjectAttribute__StringMethodeAssignment_2_1 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3020:1: ( rule__ObjectAttribute__StringMethodeAssignment_2_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2953:1: ( ( rule__ObjectAttribute__StringMethodeAssignment_2_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2954:1: ( rule__ObjectAttribute__StringMethodeAssignment_2_1 )
             {
              before(grammarAccess.getObjectAttributeAccess().getStringMethodeAssignment_2_1()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3021:1: ( rule__ObjectAttribute__StringMethodeAssignment_2_1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3021:2: rule__ObjectAttribute__StringMethodeAssignment_2_1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2955:1: ( rule__ObjectAttribute__StringMethodeAssignment_2_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2955:2: rule__ObjectAttribute__StringMethodeAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__ObjectAttribute__StringMethodeAssignment_2_1_in_rule__ObjectAttribute__Group_2__1__Impl6116);
+            pushFollow(FOLLOW_rule__ObjectAttribute__StringMethodeAssignment_2_1_in_rule__ObjectAttribute__Group_2__1__Impl5987);
             rule__ObjectAttribute__StringMethodeAssignment_2_1();
 
             state._fsp--;
@@ -8018,21 +7850,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNode__Group__0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3035:1: rule__ObjectNode__Group__0 : rule__ObjectNode__Group__0__Impl rule__ObjectNode__Group__1 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2969:1: rule__ObjectNode__Group__0 : rule__ObjectNode__Group__0__Impl rule__ObjectNode__Group__1 ;
     public final void rule__ObjectNode__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3039:1: ( rule__ObjectNode__Group__0__Impl rule__ObjectNode__Group__1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3040:2: rule__ObjectNode__Group__0__Impl rule__ObjectNode__Group__1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2973:1: ( rule__ObjectNode__Group__0__Impl rule__ObjectNode__Group__1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2974:2: rule__ObjectNode__Group__0__Impl rule__ObjectNode__Group__1
             {
-            pushFollow(FOLLOW_rule__ObjectNode__Group__0__Impl_in_rule__ObjectNode__Group__06150);
+            pushFollow(FOLLOW_rule__ObjectNode__Group__0__Impl_in_rule__ObjectNode__Group__06021);
             rule__ObjectNode__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectNode__Group__1_in_rule__ObjectNode__Group__06153);
+            pushFollow(FOLLOW_rule__ObjectNode__Group__1_in_rule__ObjectNode__Group__06024);
             rule__ObjectNode__Group__1();
 
             state._fsp--;
@@ -8056,20 +7888,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNode__Group__0__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3047:1: rule__ObjectNode__Group__0__Impl : ( 'hasNode' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2981:1: rule__ObjectNode__Group__0__Impl : ( 'hasNode' ) ;
     public final void rule__ObjectNode__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3051:1: ( ( 'hasNode' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3052:1: ( 'hasNode' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2985:1: ( ( 'hasNode' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2986:1: ( 'hasNode' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3052:1: ( 'hasNode' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3053:1: 'hasNode'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2986:1: ( 'hasNode' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:2987:1: 'hasNode'
             {
              before(grammarAccess.getObjectNodeAccess().getHasNodeKeyword_0()); 
-            match(input,38,FOLLOW_38_in_rule__ObjectNode__Group__0__Impl6181); 
+            match(input,38,FOLLOW_38_in_rule__ObjectNode__Group__0__Impl6052); 
              after(grammarAccess.getObjectNodeAccess().getHasNodeKeyword_0()); 
 
             }
@@ -8093,21 +7925,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNode__Group__1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3066:1: rule__ObjectNode__Group__1 : rule__ObjectNode__Group__1__Impl rule__ObjectNode__Group__2 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3000:1: rule__ObjectNode__Group__1 : rule__ObjectNode__Group__1__Impl rule__ObjectNode__Group__2 ;
     public final void rule__ObjectNode__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3070:1: ( rule__ObjectNode__Group__1__Impl rule__ObjectNode__Group__2 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3071:2: rule__ObjectNode__Group__1__Impl rule__ObjectNode__Group__2
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3004:1: ( rule__ObjectNode__Group__1__Impl rule__ObjectNode__Group__2 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3005:2: rule__ObjectNode__Group__1__Impl rule__ObjectNode__Group__2
             {
-            pushFollow(FOLLOW_rule__ObjectNode__Group__1__Impl_in_rule__ObjectNode__Group__16212);
+            pushFollow(FOLLOW_rule__ObjectNode__Group__1__Impl_in_rule__ObjectNode__Group__16083);
             rule__ObjectNode__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectNode__Group__2_in_rule__ObjectNode__Group__16215);
+            pushFollow(FOLLOW_rule__ObjectNode__Group__2_in_rule__ObjectNode__Group__16086);
             rule__ObjectNode__Group__2();
 
             state._fsp--;
@@ -8131,23 +7963,23 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNode__Group__1__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3078:1: rule__ObjectNode__Group__1__Impl : ( ( rule__ObjectNode__AttributesAssignment_1 ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3012:1: rule__ObjectNode__Group__1__Impl : ( ( rule__ObjectNode__AttributesAssignment_1 ) ) ;
     public final void rule__ObjectNode__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3082:1: ( ( ( rule__ObjectNode__AttributesAssignment_1 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3083:1: ( ( rule__ObjectNode__AttributesAssignment_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3016:1: ( ( ( rule__ObjectNode__AttributesAssignment_1 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3017:1: ( ( rule__ObjectNode__AttributesAssignment_1 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3083:1: ( ( rule__ObjectNode__AttributesAssignment_1 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3084:1: ( rule__ObjectNode__AttributesAssignment_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3017:1: ( ( rule__ObjectNode__AttributesAssignment_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3018:1: ( rule__ObjectNode__AttributesAssignment_1 )
             {
              before(grammarAccess.getObjectNodeAccess().getAttributesAssignment_1()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3085:1: ( rule__ObjectNode__AttributesAssignment_1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3085:2: rule__ObjectNode__AttributesAssignment_1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3019:1: ( rule__ObjectNode__AttributesAssignment_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3019:2: rule__ObjectNode__AttributesAssignment_1
             {
-            pushFollow(FOLLOW_rule__ObjectNode__AttributesAssignment_1_in_rule__ObjectNode__Group__1__Impl6242);
+            pushFollow(FOLLOW_rule__ObjectNode__AttributesAssignment_1_in_rule__ObjectNode__Group__1__Impl6113);
             rule__ObjectNode__AttributesAssignment_1();
 
             state._fsp--;
@@ -8178,21 +8010,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNode__Group__2"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3095:1: rule__ObjectNode__Group__2 : rule__ObjectNode__Group__2__Impl rule__ObjectNode__Group__3 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3029:1: rule__ObjectNode__Group__2 : rule__ObjectNode__Group__2__Impl rule__ObjectNode__Group__3 ;
     public final void rule__ObjectNode__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3099:1: ( rule__ObjectNode__Group__2__Impl rule__ObjectNode__Group__3 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3100:2: rule__ObjectNode__Group__2__Impl rule__ObjectNode__Group__3
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3033:1: ( rule__ObjectNode__Group__2__Impl rule__ObjectNode__Group__3 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3034:2: rule__ObjectNode__Group__2__Impl rule__ObjectNode__Group__3
             {
-            pushFollow(FOLLOW_rule__ObjectNode__Group__2__Impl_in_rule__ObjectNode__Group__26272);
+            pushFollow(FOLLOW_rule__ObjectNode__Group__2__Impl_in_rule__ObjectNode__Group__26143);
             rule__ObjectNode__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectNode__Group__3_in_rule__ObjectNode__Group__26275);
+            pushFollow(FOLLOW_rule__ObjectNode__Group__3_in_rule__ObjectNode__Group__26146);
             rule__ObjectNode__Group__3();
 
             state._fsp--;
@@ -8216,20 +8048,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNode__Group__2__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3107:1: rule__ObjectNode__Group__2__Impl : ( 'as' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3041:1: rule__ObjectNode__Group__2__Impl : ( 'as' ) ;
     public final void rule__ObjectNode__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3111:1: ( ( 'as' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3112:1: ( 'as' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3045:1: ( ( 'as' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3046:1: ( 'as' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3112:1: ( 'as' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3113:1: 'as'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3046:1: ( 'as' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3047:1: 'as'
             {
              before(grammarAccess.getObjectNodeAccess().getAsKeyword_2()); 
-            match(input,37,FOLLOW_37_in_rule__ObjectNode__Group__2__Impl6303); 
+            match(input,37,FOLLOW_37_in_rule__ObjectNode__Group__2__Impl6174); 
              after(grammarAccess.getObjectNodeAccess().getAsKeyword_2()); 
 
             }
@@ -8253,16 +8085,16 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNode__Group__3"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3126:1: rule__ObjectNode__Group__3 : rule__ObjectNode__Group__3__Impl ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3060:1: rule__ObjectNode__Group__3 : rule__ObjectNode__Group__3__Impl ;
     public final void rule__ObjectNode__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3130:1: ( rule__ObjectNode__Group__3__Impl )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3131:2: rule__ObjectNode__Group__3__Impl
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3064:1: ( rule__ObjectNode__Group__3__Impl )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3065:2: rule__ObjectNode__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__ObjectNode__Group__3__Impl_in_rule__ObjectNode__Group__36334);
+            pushFollow(FOLLOW_rule__ObjectNode__Group__3__Impl_in_rule__ObjectNode__Group__36205);
             rule__ObjectNode__Group__3__Impl();
 
             state._fsp--;
@@ -8286,23 +8118,23 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNode__Group__3__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3137:1: rule__ObjectNode__Group__3__Impl : ( ( rule__ObjectNode__InnerAssignment_3 ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3071:1: rule__ObjectNode__Group__3__Impl : ( ( rule__ObjectNode__InnerAssignment_3 ) ) ;
     public final void rule__ObjectNode__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3141:1: ( ( ( rule__ObjectNode__InnerAssignment_3 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3142:1: ( ( rule__ObjectNode__InnerAssignment_3 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3075:1: ( ( ( rule__ObjectNode__InnerAssignment_3 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3076:1: ( ( rule__ObjectNode__InnerAssignment_3 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3142:1: ( ( rule__ObjectNode__InnerAssignment_3 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3143:1: ( rule__ObjectNode__InnerAssignment_3 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3076:1: ( ( rule__ObjectNode__InnerAssignment_3 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3077:1: ( rule__ObjectNode__InnerAssignment_3 )
             {
              before(grammarAccess.getObjectNodeAccess().getInnerAssignment_3()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3144:1: ( rule__ObjectNode__InnerAssignment_3 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3144:2: rule__ObjectNode__InnerAssignment_3
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3078:1: ( rule__ObjectNode__InnerAssignment_3 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3078:2: rule__ObjectNode__InnerAssignment_3
             {
-            pushFollow(FOLLOW_rule__ObjectNode__InnerAssignment_3_in_rule__ObjectNode__Group__3__Impl6361);
+            pushFollow(FOLLOW_rule__ObjectNode__InnerAssignment_3_in_rule__ObjectNode__Group__3__Impl6232);
             rule__ObjectNode__InnerAssignment_3();
 
             state._fsp--;
@@ -8333,21 +8165,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNext__Group__0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3162:1: rule__ObjectNext__Group__0 : rule__ObjectNext__Group__0__Impl rule__ObjectNext__Group__1 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3096:1: rule__ObjectNext__Group__0 : rule__ObjectNext__Group__0__Impl rule__ObjectNext__Group__1 ;
     public final void rule__ObjectNext__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3166:1: ( rule__ObjectNext__Group__0__Impl rule__ObjectNext__Group__1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3167:2: rule__ObjectNext__Group__0__Impl rule__ObjectNext__Group__1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3100:1: ( rule__ObjectNext__Group__0__Impl rule__ObjectNext__Group__1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3101:2: rule__ObjectNext__Group__0__Impl rule__ObjectNext__Group__1
             {
-            pushFollow(FOLLOW_rule__ObjectNext__Group__0__Impl_in_rule__ObjectNext__Group__06399);
+            pushFollow(FOLLOW_rule__ObjectNext__Group__0__Impl_in_rule__ObjectNext__Group__06270);
             rule__ObjectNext__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectNext__Group__1_in_rule__ObjectNext__Group__06402);
+            pushFollow(FOLLOW_rule__ObjectNext__Group__1_in_rule__ObjectNext__Group__06273);
             rule__ObjectNext__Group__1();
 
             state._fsp--;
@@ -8371,20 +8203,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNext__Group__0__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3174:1: rule__ObjectNext__Group__0__Impl : ( 'hasNext' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3108:1: rule__ObjectNext__Group__0__Impl : ( 'hasNext' ) ;
     public final void rule__ObjectNext__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3178:1: ( ( 'hasNext' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3179:1: ( 'hasNext' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3112:1: ( ( 'hasNext' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3113:1: ( 'hasNext' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3179:1: ( 'hasNext' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3180:1: 'hasNext'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3113:1: ( 'hasNext' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3114:1: 'hasNext'
             {
              before(grammarAccess.getObjectNextAccess().getHasNextKeyword_0()); 
-            match(input,39,FOLLOW_39_in_rule__ObjectNext__Group__0__Impl6430); 
+            match(input,39,FOLLOW_39_in_rule__ObjectNext__Group__0__Impl6301); 
              after(grammarAccess.getObjectNextAccess().getHasNextKeyword_0()); 
 
             }
@@ -8408,21 +8240,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNext__Group__1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3193:1: rule__ObjectNext__Group__1 : rule__ObjectNext__Group__1__Impl rule__ObjectNext__Group__2 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3127:1: rule__ObjectNext__Group__1 : rule__ObjectNext__Group__1__Impl rule__ObjectNext__Group__2 ;
     public final void rule__ObjectNext__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3197:1: ( rule__ObjectNext__Group__1__Impl rule__ObjectNext__Group__2 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3198:2: rule__ObjectNext__Group__1__Impl rule__ObjectNext__Group__2
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3131:1: ( rule__ObjectNext__Group__1__Impl rule__ObjectNext__Group__2 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3132:2: rule__ObjectNext__Group__1__Impl rule__ObjectNext__Group__2
             {
-            pushFollow(FOLLOW_rule__ObjectNext__Group__1__Impl_in_rule__ObjectNext__Group__16461);
+            pushFollow(FOLLOW_rule__ObjectNext__Group__1__Impl_in_rule__ObjectNext__Group__16332);
             rule__ObjectNext__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectNext__Group__2_in_rule__ObjectNext__Group__16464);
+            pushFollow(FOLLOW_rule__ObjectNext__Group__2_in_rule__ObjectNext__Group__16335);
             rule__ObjectNext__Group__2();
 
             state._fsp--;
@@ -8446,23 +8278,23 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNext__Group__1__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3205:1: rule__ObjectNext__Group__1__Impl : ( ( rule__ObjectNext__AttributeAssignment_1 ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3139:1: rule__ObjectNext__Group__1__Impl : ( ( rule__ObjectNext__AttributeAssignment_1 ) ) ;
     public final void rule__ObjectNext__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3209:1: ( ( ( rule__ObjectNext__AttributeAssignment_1 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3210:1: ( ( rule__ObjectNext__AttributeAssignment_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3143:1: ( ( ( rule__ObjectNext__AttributeAssignment_1 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3144:1: ( ( rule__ObjectNext__AttributeAssignment_1 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3210:1: ( ( rule__ObjectNext__AttributeAssignment_1 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3211:1: ( rule__ObjectNext__AttributeAssignment_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3144:1: ( ( rule__ObjectNext__AttributeAssignment_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3145:1: ( rule__ObjectNext__AttributeAssignment_1 )
             {
              before(grammarAccess.getObjectNextAccess().getAttributeAssignment_1()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3212:1: ( rule__ObjectNext__AttributeAssignment_1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3212:2: rule__ObjectNext__AttributeAssignment_1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3146:1: ( rule__ObjectNext__AttributeAssignment_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3146:2: rule__ObjectNext__AttributeAssignment_1
             {
-            pushFollow(FOLLOW_rule__ObjectNext__AttributeAssignment_1_in_rule__ObjectNext__Group__1__Impl6491);
+            pushFollow(FOLLOW_rule__ObjectNext__AttributeAssignment_1_in_rule__ObjectNext__Group__1__Impl6362);
             rule__ObjectNext__AttributeAssignment_1();
 
             state._fsp--;
@@ -8493,21 +8325,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNext__Group__2"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3222:1: rule__ObjectNext__Group__2 : rule__ObjectNext__Group__2__Impl rule__ObjectNext__Group__3 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3156:1: rule__ObjectNext__Group__2 : rule__ObjectNext__Group__2__Impl rule__ObjectNext__Group__3 ;
     public final void rule__ObjectNext__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3226:1: ( rule__ObjectNext__Group__2__Impl rule__ObjectNext__Group__3 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3227:2: rule__ObjectNext__Group__2__Impl rule__ObjectNext__Group__3
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3160:1: ( rule__ObjectNext__Group__2__Impl rule__ObjectNext__Group__3 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3161:2: rule__ObjectNext__Group__2__Impl rule__ObjectNext__Group__3
             {
-            pushFollow(FOLLOW_rule__ObjectNext__Group__2__Impl_in_rule__ObjectNext__Group__26521);
+            pushFollow(FOLLOW_rule__ObjectNext__Group__2__Impl_in_rule__ObjectNext__Group__26392);
             rule__ObjectNext__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectNext__Group__3_in_rule__ObjectNext__Group__26524);
+            pushFollow(FOLLOW_rule__ObjectNext__Group__3_in_rule__ObjectNext__Group__26395);
             rule__ObjectNext__Group__3();
 
             state._fsp--;
@@ -8531,20 +8363,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNext__Group__2__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3234:1: rule__ObjectNext__Group__2__Impl : ( 'as' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3168:1: rule__ObjectNext__Group__2__Impl : ( 'as' ) ;
     public final void rule__ObjectNext__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3238:1: ( ( 'as' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3239:1: ( 'as' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3172:1: ( ( 'as' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3173:1: ( 'as' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3239:1: ( 'as' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3240:1: 'as'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3173:1: ( 'as' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3174:1: 'as'
             {
              before(grammarAccess.getObjectNextAccess().getAsKeyword_2()); 
-            match(input,37,FOLLOW_37_in_rule__ObjectNext__Group__2__Impl6552); 
+            match(input,37,FOLLOW_37_in_rule__ObjectNext__Group__2__Impl6423); 
              after(grammarAccess.getObjectNextAccess().getAsKeyword_2()); 
 
             }
@@ -8568,16 +8400,16 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNext__Group__3"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3253:1: rule__ObjectNext__Group__3 : rule__ObjectNext__Group__3__Impl ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3187:1: rule__ObjectNext__Group__3 : rule__ObjectNext__Group__3__Impl ;
     public final void rule__ObjectNext__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3257:1: ( rule__ObjectNext__Group__3__Impl )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3258:2: rule__ObjectNext__Group__3__Impl
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3191:1: ( rule__ObjectNext__Group__3__Impl )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3192:2: rule__ObjectNext__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__ObjectNext__Group__3__Impl_in_rule__ObjectNext__Group__36583);
+            pushFollow(FOLLOW_rule__ObjectNext__Group__3__Impl_in_rule__ObjectNext__Group__36454);
             rule__ObjectNext__Group__3__Impl();
 
             state._fsp--;
@@ -8601,23 +8433,23 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNext__Group__3__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3264:1: rule__ObjectNext__Group__3__Impl : ( ( rule__ObjectNext__ObjectDesriptionAssignment_3 ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3198:1: rule__ObjectNext__Group__3__Impl : ( ( rule__ObjectNext__ObjectDesriptionAssignment_3 ) ) ;
     public final void rule__ObjectNext__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3268:1: ( ( ( rule__ObjectNext__ObjectDesriptionAssignment_3 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3269:1: ( ( rule__ObjectNext__ObjectDesriptionAssignment_3 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3202:1: ( ( ( rule__ObjectNext__ObjectDesriptionAssignment_3 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3203:1: ( ( rule__ObjectNext__ObjectDesriptionAssignment_3 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3269:1: ( ( rule__ObjectNext__ObjectDesriptionAssignment_3 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3270:1: ( rule__ObjectNext__ObjectDesriptionAssignment_3 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3203:1: ( ( rule__ObjectNext__ObjectDesriptionAssignment_3 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3204:1: ( rule__ObjectNext__ObjectDesriptionAssignment_3 )
             {
              before(grammarAccess.getObjectNextAccess().getObjectDesriptionAssignment_3()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3271:1: ( rule__ObjectNext__ObjectDesriptionAssignment_3 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3271:2: rule__ObjectNext__ObjectDesriptionAssignment_3
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3205:1: ( rule__ObjectNext__ObjectDesriptionAssignment_3 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3205:2: rule__ObjectNext__ObjectDesriptionAssignment_3
             {
-            pushFollow(FOLLOW_rule__ObjectNext__ObjectDesriptionAssignment_3_in_rule__ObjectNext__Group__3__Impl6610);
+            pushFollow(FOLLOW_rule__ObjectNext__ObjectDesriptionAssignment_3_in_rule__ObjectNext__Group__3__Impl6481);
             rule__ObjectNext__ObjectDesriptionAssignment_3();
 
             state._fsp--;
@@ -8648,21 +8480,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JavaCodeOrID__Group_0__0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3289:1: rule__JavaCodeOrID__Group_0__0 : rule__JavaCodeOrID__Group_0__0__Impl rule__JavaCodeOrID__Group_0__1 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3223:1: rule__JavaCodeOrID__Group_0__0 : rule__JavaCodeOrID__Group_0__0__Impl rule__JavaCodeOrID__Group_0__1 ;
     public final void rule__JavaCodeOrID__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3293:1: ( rule__JavaCodeOrID__Group_0__0__Impl rule__JavaCodeOrID__Group_0__1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3294:2: rule__JavaCodeOrID__Group_0__0__Impl rule__JavaCodeOrID__Group_0__1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3227:1: ( rule__JavaCodeOrID__Group_0__0__Impl rule__JavaCodeOrID__Group_0__1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3228:2: rule__JavaCodeOrID__Group_0__0__Impl rule__JavaCodeOrID__Group_0__1
             {
-            pushFollow(FOLLOW_rule__JavaCodeOrID__Group_0__0__Impl_in_rule__JavaCodeOrID__Group_0__06648);
+            pushFollow(FOLLOW_rule__JavaCodeOrID__Group_0__0__Impl_in_rule__JavaCodeOrID__Group_0__06519);
             rule__JavaCodeOrID__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JavaCodeOrID__Group_0__1_in_rule__JavaCodeOrID__Group_0__06651);
+            pushFollow(FOLLOW_rule__JavaCodeOrID__Group_0__1_in_rule__JavaCodeOrID__Group_0__06522);
             rule__JavaCodeOrID__Group_0__1();
 
             state._fsp--;
@@ -8686,20 +8518,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JavaCodeOrID__Group_0__0__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3301:1: rule__JavaCodeOrID__Group_0__0__Impl : ( 'java' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3235:1: rule__JavaCodeOrID__Group_0__0__Impl : ( 'java' ) ;
     public final void rule__JavaCodeOrID__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3305:1: ( ( 'java' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3306:1: ( 'java' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3239:1: ( ( 'java' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3240:1: ( 'java' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3306:1: ( 'java' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3307:1: 'java'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3240:1: ( 'java' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3241:1: 'java'
             {
              before(grammarAccess.getJavaCodeOrIDAccess().getJavaKeyword_0_0()); 
-            match(input,40,FOLLOW_40_in_rule__JavaCodeOrID__Group_0__0__Impl6679); 
+            match(input,40,FOLLOW_40_in_rule__JavaCodeOrID__Group_0__0__Impl6550); 
              after(grammarAccess.getJavaCodeOrIDAccess().getJavaKeyword_0_0()); 
 
             }
@@ -8723,21 +8555,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JavaCodeOrID__Group_0__1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3320:1: rule__JavaCodeOrID__Group_0__1 : rule__JavaCodeOrID__Group_0__1__Impl rule__JavaCodeOrID__Group_0__2 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3254:1: rule__JavaCodeOrID__Group_0__1 : rule__JavaCodeOrID__Group_0__1__Impl rule__JavaCodeOrID__Group_0__2 ;
     public final void rule__JavaCodeOrID__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3324:1: ( rule__JavaCodeOrID__Group_0__1__Impl rule__JavaCodeOrID__Group_0__2 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3325:2: rule__JavaCodeOrID__Group_0__1__Impl rule__JavaCodeOrID__Group_0__2
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3258:1: ( rule__JavaCodeOrID__Group_0__1__Impl rule__JavaCodeOrID__Group_0__2 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3259:2: rule__JavaCodeOrID__Group_0__1__Impl rule__JavaCodeOrID__Group_0__2
             {
-            pushFollow(FOLLOW_rule__JavaCodeOrID__Group_0__1__Impl_in_rule__JavaCodeOrID__Group_0__16710);
+            pushFollow(FOLLOW_rule__JavaCodeOrID__Group_0__1__Impl_in_rule__JavaCodeOrID__Group_0__16581);
             rule__JavaCodeOrID__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__JavaCodeOrID__Group_0__2_in_rule__JavaCodeOrID__Group_0__16713);
+            pushFollow(FOLLOW_rule__JavaCodeOrID__Group_0__2_in_rule__JavaCodeOrID__Group_0__16584);
             rule__JavaCodeOrID__Group_0__2();
 
             state._fsp--;
@@ -8761,20 +8593,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JavaCodeOrID__Group_0__1__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3332:1: rule__JavaCodeOrID__Group_0__1__Impl : ( ':' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3266:1: rule__JavaCodeOrID__Group_0__1__Impl : ( ':' ) ;
     public final void rule__JavaCodeOrID__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3336:1: ( ( ':' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3337:1: ( ':' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3270:1: ( ( ':' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3271:1: ( ':' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3337:1: ( ':' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3338:1: ':'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3271:1: ( ':' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3272:1: ':'
             {
              before(grammarAccess.getJavaCodeOrIDAccess().getColonKeyword_0_1()); 
-            match(input,24,FOLLOW_24_in_rule__JavaCodeOrID__Group_0__1__Impl6741); 
+            match(input,24,FOLLOW_24_in_rule__JavaCodeOrID__Group_0__1__Impl6612); 
              after(grammarAccess.getJavaCodeOrIDAccess().getColonKeyword_0_1()); 
 
             }
@@ -8798,16 +8630,16 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JavaCodeOrID__Group_0__2"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3351:1: rule__JavaCodeOrID__Group_0__2 : rule__JavaCodeOrID__Group_0__2__Impl ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3285:1: rule__JavaCodeOrID__Group_0__2 : rule__JavaCodeOrID__Group_0__2__Impl ;
     public final void rule__JavaCodeOrID__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3355:1: ( rule__JavaCodeOrID__Group_0__2__Impl )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3356:2: rule__JavaCodeOrID__Group_0__2__Impl
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3289:1: ( rule__JavaCodeOrID__Group_0__2__Impl )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3290:2: rule__JavaCodeOrID__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__JavaCodeOrID__Group_0__2__Impl_in_rule__JavaCodeOrID__Group_0__26772);
+            pushFollow(FOLLOW_rule__JavaCodeOrID__Group_0__2__Impl_in_rule__JavaCodeOrID__Group_0__26643);
             rule__JavaCodeOrID__Group_0__2__Impl();
 
             state._fsp--;
@@ -8831,23 +8663,23 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JavaCodeOrID__Group_0__2__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3362:1: rule__JavaCodeOrID__Group_0__2__Impl : ( ( rule__JavaCodeOrID__CodeAssignment_0_2 ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3296:1: rule__JavaCodeOrID__Group_0__2__Impl : ( ( rule__JavaCodeOrID__CodeAssignment_0_2 ) ) ;
     public final void rule__JavaCodeOrID__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3366:1: ( ( ( rule__JavaCodeOrID__CodeAssignment_0_2 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3367:1: ( ( rule__JavaCodeOrID__CodeAssignment_0_2 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3300:1: ( ( ( rule__JavaCodeOrID__CodeAssignment_0_2 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3301:1: ( ( rule__JavaCodeOrID__CodeAssignment_0_2 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3367:1: ( ( rule__JavaCodeOrID__CodeAssignment_0_2 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3368:1: ( rule__JavaCodeOrID__CodeAssignment_0_2 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3301:1: ( ( rule__JavaCodeOrID__CodeAssignment_0_2 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3302:1: ( rule__JavaCodeOrID__CodeAssignment_0_2 )
             {
              before(grammarAccess.getJavaCodeOrIDAccess().getCodeAssignment_0_2()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3369:1: ( rule__JavaCodeOrID__CodeAssignment_0_2 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3369:2: rule__JavaCodeOrID__CodeAssignment_0_2
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3303:1: ( rule__JavaCodeOrID__CodeAssignment_0_2 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3303:2: rule__JavaCodeOrID__CodeAssignment_0_2
             {
-            pushFollow(FOLLOW_rule__JavaCodeOrID__CodeAssignment_0_2_in_rule__JavaCodeOrID__Group_0__2__Impl6799);
+            pushFollow(FOLLOW_rule__JavaCodeOrID__CodeAssignment_0_2_in_rule__JavaCodeOrID__Group_0__2__Impl6670);
             rule__JavaCodeOrID__CodeAssignment_0_2();
 
             state._fsp--;
@@ -8878,21 +8710,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectMany__Group__0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3385:1: rule__ObjectMany__Group__0 : rule__ObjectMany__Group__0__Impl rule__ObjectMany__Group__1 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3319:1: rule__ObjectMany__Group__0 : rule__ObjectMany__Group__0__Impl rule__ObjectMany__Group__1 ;
     public final void rule__ObjectMany__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3389:1: ( rule__ObjectMany__Group__0__Impl rule__ObjectMany__Group__1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3390:2: rule__ObjectMany__Group__0__Impl rule__ObjectMany__Group__1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3323:1: ( rule__ObjectMany__Group__0__Impl rule__ObjectMany__Group__1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3324:2: rule__ObjectMany__Group__0__Impl rule__ObjectMany__Group__1
             {
-            pushFollow(FOLLOW_rule__ObjectMany__Group__0__Impl_in_rule__ObjectMany__Group__06835);
+            pushFollow(FOLLOW_rule__ObjectMany__Group__0__Impl_in_rule__ObjectMany__Group__06706);
             rule__ObjectMany__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectMany__Group__1_in_rule__ObjectMany__Group__06838);
+            pushFollow(FOLLOW_rule__ObjectMany__Group__1_in_rule__ObjectMany__Group__06709);
             rule__ObjectMany__Group__1();
 
             state._fsp--;
@@ -8916,23 +8748,23 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectMany__Group__0__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3397:1: rule__ObjectMany__Group__0__Impl : ( ( rule__ObjectMany__OptionAssignment_0 ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3331:1: rule__ObjectMany__Group__0__Impl : ( ( rule__ObjectMany__OptionAssignment_0 ) ) ;
     public final void rule__ObjectMany__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3401:1: ( ( ( rule__ObjectMany__OptionAssignment_0 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3402:1: ( ( rule__ObjectMany__OptionAssignment_0 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3335:1: ( ( ( rule__ObjectMany__OptionAssignment_0 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3336:1: ( ( rule__ObjectMany__OptionAssignment_0 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3402:1: ( ( rule__ObjectMany__OptionAssignment_0 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3403:1: ( rule__ObjectMany__OptionAssignment_0 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3336:1: ( ( rule__ObjectMany__OptionAssignment_0 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3337:1: ( rule__ObjectMany__OptionAssignment_0 )
             {
              before(grammarAccess.getObjectManyAccess().getOptionAssignment_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3404:1: ( rule__ObjectMany__OptionAssignment_0 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3404:2: rule__ObjectMany__OptionAssignment_0
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3338:1: ( rule__ObjectMany__OptionAssignment_0 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3338:2: rule__ObjectMany__OptionAssignment_0
             {
-            pushFollow(FOLLOW_rule__ObjectMany__OptionAssignment_0_in_rule__ObjectMany__Group__0__Impl6865);
+            pushFollow(FOLLOW_rule__ObjectMany__OptionAssignment_0_in_rule__ObjectMany__Group__0__Impl6736);
             rule__ObjectMany__OptionAssignment_0();
 
             state._fsp--;
@@ -8963,16 +8795,16 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectMany__Group__1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3414:1: rule__ObjectMany__Group__1 : rule__ObjectMany__Group__1__Impl ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3348:1: rule__ObjectMany__Group__1 : rule__ObjectMany__Group__1__Impl ;
     public final void rule__ObjectMany__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3418:1: ( rule__ObjectMany__Group__1__Impl )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3419:2: rule__ObjectMany__Group__1__Impl
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3352:1: ( rule__ObjectMany__Group__1__Impl )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3353:2: rule__ObjectMany__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__ObjectMany__Group__1__Impl_in_rule__ObjectMany__Group__16895);
+            pushFollow(FOLLOW_rule__ObjectMany__Group__1__Impl_in_rule__ObjectMany__Group__16766);
             rule__ObjectMany__Group__1__Impl();
 
             state._fsp--;
@@ -8996,20 +8828,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectMany__Group__1__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3425:1: rule__ObjectMany__Group__1__Impl : ( '*' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3359:1: rule__ObjectMany__Group__1__Impl : ( '*' ) ;
     public final void rule__ObjectMany__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3429:1: ( ( '*' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3430:1: ( '*' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3363:1: ( ( '*' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3364:1: ( '*' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3430:1: ( '*' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3431:1: '*'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3364:1: ( '*' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3365:1: '*'
             {
              before(grammarAccess.getObjectManyAccess().getAsteriskKeyword_1()); 
-            match(input,41,FOLLOW_41_in_rule__ObjectMany__Group__1__Impl6923); 
+            match(input,41,FOLLOW_41_in_rule__ObjectMany__Group__1__Impl6794); 
              after(grammarAccess.getObjectManyAccess().getAsteriskKeyword_1()); 
 
             }
@@ -9033,21 +8865,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__Group__0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3448:1: rule__ObjectChoice__Group__0 : rule__ObjectChoice__Group__0__Impl rule__ObjectChoice__Group__1 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3382:1: rule__ObjectChoice__Group__0 : rule__ObjectChoice__Group__0__Impl rule__ObjectChoice__Group__1 ;
     public final void rule__ObjectChoice__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3452:1: ( rule__ObjectChoice__Group__0__Impl rule__ObjectChoice__Group__1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3453:2: rule__ObjectChoice__Group__0__Impl rule__ObjectChoice__Group__1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3386:1: ( rule__ObjectChoice__Group__0__Impl rule__ObjectChoice__Group__1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3387:2: rule__ObjectChoice__Group__0__Impl rule__ObjectChoice__Group__1
             {
-            pushFollow(FOLLOW_rule__ObjectChoice__Group__0__Impl_in_rule__ObjectChoice__Group__06958);
+            pushFollow(FOLLOW_rule__ObjectChoice__Group__0__Impl_in_rule__ObjectChoice__Group__06829);
             rule__ObjectChoice__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectChoice__Group__1_in_rule__ObjectChoice__Group__06961);
+            pushFollow(FOLLOW_rule__ObjectChoice__Group__1_in_rule__ObjectChoice__Group__06832);
             rule__ObjectChoice__Group__1();
 
             state._fsp--;
@@ -9071,20 +8903,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__Group__0__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3460:1: rule__ObjectChoice__Group__0__Impl : ( '(' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3394:1: rule__ObjectChoice__Group__0__Impl : ( '(' ) ;
     public final void rule__ObjectChoice__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3464:1: ( ( '(' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3465:1: ( '(' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3398:1: ( ( '(' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3399:1: ( '(' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3465:1: ( '(' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3466:1: '('
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3399:1: ( '(' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3400:1: '('
             {
              before(grammarAccess.getObjectChoiceAccess().getLeftParenthesisKeyword_0()); 
-            match(input,32,FOLLOW_32_in_rule__ObjectChoice__Group__0__Impl6989); 
+            match(input,32,FOLLOW_32_in_rule__ObjectChoice__Group__0__Impl6860); 
              after(grammarAccess.getObjectChoiceAccess().getLeftParenthesisKeyword_0()); 
 
             }
@@ -9108,21 +8940,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__Group__1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3479:1: rule__ObjectChoice__Group__1 : rule__ObjectChoice__Group__1__Impl rule__ObjectChoice__Group__2 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3413:1: rule__ObjectChoice__Group__1 : rule__ObjectChoice__Group__1__Impl rule__ObjectChoice__Group__2 ;
     public final void rule__ObjectChoice__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3483:1: ( rule__ObjectChoice__Group__1__Impl rule__ObjectChoice__Group__2 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3484:2: rule__ObjectChoice__Group__1__Impl rule__ObjectChoice__Group__2
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3417:1: ( rule__ObjectChoice__Group__1__Impl rule__ObjectChoice__Group__2 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3418:2: rule__ObjectChoice__Group__1__Impl rule__ObjectChoice__Group__2
             {
-            pushFollow(FOLLOW_rule__ObjectChoice__Group__1__Impl_in_rule__ObjectChoice__Group__17020);
+            pushFollow(FOLLOW_rule__ObjectChoice__Group__1__Impl_in_rule__ObjectChoice__Group__16891);
             rule__ObjectChoice__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectChoice__Group__2_in_rule__ObjectChoice__Group__17023);
+            pushFollow(FOLLOW_rule__ObjectChoice__Group__2_in_rule__ObjectChoice__Group__16894);
             rule__ObjectChoice__Group__2();
 
             state._fsp--;
@@ -9146,23 +8978,23 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__Group__1__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3491:1: rule__ObjectChoice__Group__1__Impl : ( ( rule__ObjectChoice__OptionsAssignment_1 ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3425:1: rule__ObjectChoice__Group__1__Impl : ( ( rule__ObjectChoice__OptionsAssignment_1 ) ) ;
     public final void rule__ObjectChoice__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3495:1: ( ( ( rule__ObjectChoice__OptionsAssignment_1 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3496:1: ( ( rule__ObjectChoice__OptionsAssignment_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3429:1: ( ( ( rule__ObjectChoice__OptionsAssignment_1 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3430:1: ( ( rule__ObjectChoice__OptionsAssignment_1 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3496:1: ( ( rule__ObjectChoice__OptionsAssignment_1 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3497:1: ( rule__ObjectChoice__OptionsAssignment_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3430:1: ( ( rule__ObjectChoice__OptionsAssignment_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3431:1: ( rule__ObjectChoice__OptionsAssignment_1 )
             {
              before(grammarAccess.getObjectChoiceAccess().getOptionsAssignment_1()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3498:1: ( rule__ObjectChoice__OptionsAssignment_1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3498:2: rule__ObjectChoice__OptionsAssignment_1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3432:1: ( rule__ObjectChoice__OptionsAssignment_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3432:2: rule__ObjectChoice__OptionsAssignment_1
             {
-            pushFollow(FOLLOW_rule__ObjectChoice__OptionsAssignment_1_in_rule__ObjectChoice__Group__1__Impl7050);
+            pushFollow(FOLLOW_rule__ObjectChoice__OptionsAssignment_1_in_rule__ObjectChoice__Group__1__Impl6921);
             rule__ObjectChoice__OptionsAssignment_1();
 
             state._fsp--;
@@ -9193,21 +9025,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__Group__2"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3508:1: rule__ObjectChoice__Group__2 : rule__ObjectChoice__Group__2__Impl rule__ObjectChoice__Group__3 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3442:1: rule__ObjectChoice__Group__2 : rule__ObjectChoice__Group__2__Impl rule__ObjectChoice__Group__3 ;
     public final void rule__ObjectChoice__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3512:1: ( rule__ObjectChoice__Group__2__Impl rule__ObjectChoice__Group__3 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3513:2: rule__ObjectChoice__Group__2__Impl rule__ObjectChoice__Group__3
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3446:1: ( rule__ObjectChoice__Group__2__Impl rule__ObjectChoice__Group__3 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3447:2: rule__ObjectChoice__Group__2__Impl rule__ObjectChoice__Group__3
             {
-            pushFollow(FOLLOW_rule__ObjectChoice__Group__2__Impl_in_rule__ObjectChoice__Group__27080);
+            pushFollow(FOLLOW_rule__ObjectChoice__Group__2__Impl_in_rule__ObjectChoice__Group__26951);
             rule__ObjectChoice__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectChoice__Group__3_in_rule__ObjectChoice__Group__27083);
+            pushFollow(FOLLOW_rule__ObjectChoice__Group__3_in_rule__ObjectChoice__Group__26954);
             rule__ObjectChoice__Group__3();
 
             state._fsp--;
@@ -9231,35 +9063,35 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__Group__2__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3520:1: rule__ObjectChoice__Group__2__Impl : ( ( rule__ObjectChoice__Group_2__0 )* ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3454:1: rule__ObjectChoice__Group__2__Impl : ( ( rule__ObjectChoice__Group_2__0 )* ) ;
     public final void rule__ObjectChoice__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3524:1: ( ( ( rule__ObjectChoice__Group_2__0 )* ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3525:1: ( ( rule__ObjectChoice__Group_2__0 )* )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3458:1: ( ( ( rule__ObjectChoice__Group_2__0 )* ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3459:1: ( ( rule__ObjectChoice__Group_2__0 )* )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3525:1: ( ( rule__ObjectChoice__Group_2__0 )* )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3526:1: ( rule__ObjectChoice__Group_2__0 )*
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3459:1: ( ( rule__ObjectChoice__Group_2__0 )* )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3460:1: ( rule__ObjectChoice__Group_2__0 )*
             {
              before(grammarAccess.getObjectChoiceAccess().getGroup_2()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3527:1: ( rule__ObjectChoice__Group_2__0 )*
-            loop20:
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3461:1: ( rule__ObjectChoice__Group_2__0 )*
+            loop19:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA20_0==34) ) {
-                    alt20=1;
+                if ( (LA19_0==34) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt19) {
             	case 1 :
-            	    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3527:2: rule__ObjectChoice__Group_2__0
+            	    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3461:2: rule__ObjectChoice__Group_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__ObjectChoice__Group_2__0_in_rule__ObjectChoice__Group__2__Impl7110);
+            	    pushFollow(FOLLOW_rule__ObjectChoice__Group_2__0_in_rule__ObjectChoice__Group__2__Impl6981);
             	    rule__ObjectChoice__Group_2__0();
 
             	    state._fsp--;
@@ -9269,7 +9101,7 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop20;
+            	    break loop19;
                 }
             } while (true);
 
@@ -9296,16 +9128,16 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__Group__3"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3537:1: rule__ObjectChoice__Group__3 : rule__ObjectChoice__Group__3__Impl ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3471:1: rule__ObjectChoice__Group__3 : rule__ObjectChoice__Group__3__Impl ;
     public final void rule__ObjectChoice__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3541:1: ( rule__ObjectChoice__Group__3__Impl )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3542:2: rule__ObjectChoice__Group__3__Impl
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3475:1: ( rule__ObjectChoice__Group__3__Impl )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3476:2: rule__ObjectChoice__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__ObjectChoice__Group__3__Impl_in_rule__ObjectChoice__Group__37141);
+            pushFollow(FOLLOW_rule__ObjectChoice__Group__3__Impl_in_rule__ObjectChoice__Group__37012);
             rule__ObjectChoice__Group__3__Impl();
 
             state._fsp--;
@@ -9329,20 +9161,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__Group__3__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3548:1: rule__ObjectChoice__Group__3__Impl : ( ')' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3482:1: rule__ObjectChoice__Group__3__Impl : ( ')' ) ;
     public final void rule__ObjectChoice__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3552:1: ( ( ')' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3553:1: ( ')' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3486:1: ( ( ')' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3487:1: ( ')' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3553:1: ( ')' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3554:1: ')'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3487:1: ( ')' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3488:1: ')'
             {
              before(grammarAccess.getObjectChoiceAccess().getRightParenthesisKeyword_3()); 
-            match(input,33,FOLLOW_33_in_rule__ObjectChoice__Group__3__Impl7169); 
+            match(input,33,FOLLOW_33_in_rule__ObjectChoice__Group__3__Impl7040); 
              after(grammarAccess.getObjectChoiceAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -9366,21 +9198,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__Group_2__0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3575:1: rule__ObjectChoice__Group_2__0 : rule__ObjectChoice__Group_2__0__Impl rule__ObjectChoice__Group_2__1 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3509:1: rule__ObjectChoice__Group_2__0 : rule__ObjectChoice__Group_2__0__Impl rule__ObjectChoice__Group_2__1 ;
     public final void rule__ObjectChoice__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3579:1: ( rule__ObjectChoice__Group_2__0__Impl rule__ObjectChoice__Group_2__1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3580:2: rule__ObjectChoice__Group_2__0__Impl rule__ObjectChoice__Group_2__1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3513:1: ( rule__ObjectChoice__Group_2__0__Impl rule__ObjectChoice__Group_2__1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3514:2: rule__ObjectChoice__Group_2__0__Impl rule__ObjectChoice__Group_2__1
             {
-            pushFollow(FOLLOW_rule__ObjectChoice__Group_2__0__Impl_in_rule__ObjectChoice__Group_2__07208);
+            pushFollow(FOLLOW_rule__ObjectChoice__Group_2__0__Impl_in_rule__ObjectChoice__Group_2__07079);
             rule__ObjectChoice__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectChoice__Group_2__1_in_rule__ObjectChoice__Group_2__07211);
+            pushFollow(FOLLOW_rule__ObjectChoice__Group_2__1_in_rule__ObjectChoice__Group_2__07082);
             rule__ObjectChoice__Group_2__1();
 
             state._fsp--;
@@ -9404,20 +9236,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__Group_2__0__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3587:1: rule__ObjectChoice__Group_2__0__Impl : ( '|' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3521:1: rule__ObjectChoice__Group_2__0__Impl : ( '|' ) ;
     public final void rule__ObjectChoice__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3591:1: ( ( '|' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3592:1: ( '|' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3525:1: ( ( '|' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3526:1: ( '|' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3592:1: ( '|' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3593:1: '|'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3526:1: ( '|' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3527:1: '|'
             {
              before(grammarAccess.getObjectChoiceAccess().getVerticalLineKeyword_2_0()); 
-            match(input,34,FOLLOW_34_in_rule__ObjectChoice__Group_2__0__Impl7239); 
+            match(input,34,FOLLOW_34_in_rule__ObjectChoice__Group_2__0__Impl7110); 
              after(grammarAccess.getObjectChoiceAccess().getVerticalLineKeyword_2_0()); 
 
             }
@@ -9441,16 +9273,16 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__Group_2__1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3606:1: rule__ObjectChoice__Group_2__1 : rule__ObjectChoice__Group_2__1__Impl ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3540:1: rule__ObjectChoice__Group_2__1 : rule__ObjectChoice__Group_2__1__Impl ;
     public final void rule__ObjectChoice__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3610:1: ( rule__ObjectChoice__Group_2__1__Impl )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3611:2: rule__ObjectChoice__Group_2__1__Impl
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3544:1: ( rule__ObjectChoice__Group_2__1__Impl )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3545:2: rule__ObjectChoice__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__ObjectChoice__Group_2__1__Impl_in_rule__ObjectChoice__Group_2__17270);
+            pushFollow(FOLLOW_rule__ObjectChoice__Group_2__1__Impl_in_rule__ObjectChoice__Group_2__17141);
             rule__ObjectChoice__Group_2__1__Impl();
 
             state._fsp--;
@@ -9474,23 +9306,23 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__Group_2__1__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3617:1: rule__ObjectChoice__Group_2__1__Impl : ( ( rule__ObjectChoice__OptionsAssignment_2_1 ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3551:1: rule__ObjectChoice__Group_2__1__Impl : ( ( rule__ObjectChoice__OptionsAssignment_2_1 ) ) ;
     public final void rule__ObjectChoice__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3621:1: ( ( ( rule__ObjectChoice__OptionsAssignment_2_1 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3622:1: ( ( rule__ObjectChoice__OptionsAssignment_2_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3555:1: ( ( ( rule__ObjectChoice__OptionsAssignment_2_1 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3556:1: ( ( rule__ObjectChoice__OptionsAssignment_2_1 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3622:1: ( ( rule__ObjectChoice__OptionsAssignment_2_1 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3623:1: ( rule__ObjectChoice__OptionsAssignment_2_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3556:1: ( ( rule__ObjectChoice__OptionsAssignment_2_1 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3557:1: ( rule__ObjectChoice__OptionsAssignment_2_1 )
             {
              before(grammarAccess.getObjectChoiceAccess().getOptionsAssignment_2_1()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3624:1: ( rule__ObjectChoice__OptionsAssignment_2_1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3624:2: rule__ObjectChoice__OptionsAssignment_2_1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3558:1: ( rule__ObjectChoice__OptionsAssignment_2_1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3558:2: rule__ObjectChoice__OptionsAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__ObjectChoice__OptionsAssignment_2_1_in_rule__ObjectChoice__Group_2__1__Impl7297);
+            pushFollow(FOLLOW_rule__ObjectChoice__OptionsAssignment_2_1_in_rule__ObjectChoice__Group_2__1__Impl7168);
             rule__ObjectChoice__OptionsAssignment_2_1();
 
             state._fsp--;
@@ -9521,21 +9353,21 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectMaybe__Group_1__0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3638:1: rule__ObjectMaybe__Group_1__0 : rule__ObjectMaybe__Group_1__0__Impl rule__ObjectMaybe__Group_1__1 ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3572:1: rule__ObjectMaybe__Group_1__0 : rule__ObjectMaybe__Group_1__0__Impl rule__ObjectMaybe__Group_1__1 ;
     public final void rule__ObjectMaybe__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3642:1: ( rule__ObjectMaybe__Group_1__0__Impl rule__ObjectMaybe__Group_1__1 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3643:2: rule__ObjectMaybe__Group_1__0__Impl rule__ObjectMaybe__Group_1__1
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3576:1: ( rule__ObjectMaybe__Group_1__0__Impl rule__ObjectMaybe__Group_1__1 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3577:2: rule__ObjectMaybe__Group_1__0__Impl rule__ObjectMaybe__Group_1__1
             {
-            pushFollow(FOLLOW_rule__ObjectMaybe__Group_1__0__Impl_in_rule__ObjectMaybe__Group_1__07331);
+            pushFollow(FOLLOW_rule__ObjectMaybe__Group_1__0__Impl_in_rule__ObjectMaybe__Group_1__07202);
             rule__ObjectMaybe__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ObjectMaybe__Group_1__1_in_rule__ObjectMaybe__Group_1__07334);
+            pushFollow(FOLLOW_rule__ObjectMaybe__Group_1__1_in_rule__ObjectMaybe__Group_1__07205);
             rule__ObjectMaybe__Group_1__1();
 
             state._fsp--;
@@ -9559,23 +9391,23 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectMaybe__Group_1__0__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3650:1: rule__ObjectMaybe__Group_1__0__Impl : ( ( rule__ObjectMaybe__DescriptionAssignment_1_0 ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3584:1: rule__ObjectMaybe__Group_1__0__Impl : ( ( rule__ObjectMaybe__DescriptionAssignment_1_0 ) ) ;
     public final void rule__ObjectMaybe__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3654:1: ( ( ( rule__ObjectMaybe__DescriptionAssignment_1_0 ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3655:1: ( ( rule__ObjectMaybe__DescriptionAssignment_1_0 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3588:1: ( ( ( rule__ObjectMaybe__DescriptionAssignment_1_0 ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3589:1: ( ( rule__ObjectMaybe__DescriptionAssignment_1_0 ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3655:1: ( ( rule__ObjectMaybe__DescriptionAssignment_1_0 ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3656:1: ( rule__ObjectMaybe__DescriptionAssignment_1_0 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3589:1: ( ( rule__ObjectMaybe__DescriptionAssignment_1_0 ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3590:1: ( rule__ObjectMaybe__DescriptionAssignment_1_0 )
             {
              before(grammarAccess.getObjectMaybeAccess().getDescriptionAssignment_1_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3657:1: ( rule__ObjectMaybe__DescriptionAssignment_1_0 )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3657:2: rule__ObjectMaybe__DescriptionAssignment_1_0
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3591:1: ( rule__ObjectMaybe__DescriptionAssignment_1_0 )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3591:2: rule__ObjectMaybe__DescriptionAssignment_1_0
             {
-            pushFollow(FOLLOW_rule__ObjectMaybe__DescriptionAssignment_1_0_in_rule__ObjectMaybe__Group_1__0__Impl7361);
+            pushFollow(FOLLOW_rule__ObjectMaybe__DescriptionAssignment_1_0_in_rule__ObjectMaybe__Group_1__0__Impl7232);
             rule__ObjectMaybe__DescriptionAssignment_1_0();
 
             state._fsp--;
@@ -9606,16 +9438,16 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectMaybe__Group_1__1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3667:1: rule__ObjectMaybe__Group_1__1 : rule__ObjectMaybe__Group_1__1__Impl ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3601:1: rule__ObjectMaybe__Group_1__1 : rule__ObjectMaybe__Group_1__1__Impl ;
     public final void rule__ObjectMaybe__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3671:1: ( rule__ObjectMaybe__Group_1__1__Impl )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3672:2: rule__ObjectMaybe__Group_1__1__Impl
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3605:1: ( rule__ObjectMaybe__Group_1__1__Impl )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3606:2: rule__ObjectMaybe__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__ObjectMaybe__Group_1__1__Impl_in_rule__ObjectMaybe__Group_1__17391);
+            pushFollow(FOLLOW_rule__ObjectMaybe__Group_1__1__Impl_in_rule__ObjectMaybe__Group_1__17262);
             rule__ObjectMaybe__Group_1__1__Impl();
 
             state._fsp--;
@@ -9639,20 +9471,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectMaybe__Group_1__1__Impl"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3678:1: rule__ObjectMaybe__Group_1__1__Impl : ( '?' ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3612:1: rule__ObjectMaybe__Group_1__1__Impl : ( '?' ) ;
     public final void rule__ObjectMaybe__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3682:1: ( ( '?' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3683:1: ( '?' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3616:1: ( ( '?' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3617:1: ( '?' )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3683:1: ( '?' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3684:1: '?'
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3617:1: ( '?' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3618:1: '?'
             {
              before(grammarAccess.getObjectMaybeAccess().getQuestionMarkKeyword_1_1()); 
-            match(input,42,FOLLOW_42_in_rule__ObjectMaybe__Group_1__1__Impl7419); 
+            match(input,42,FOLLOW_42_in_rule__ObjectMaybe__Group_1__1__Impl7290); 
              after(grammarAccess.getObjectMaybeAccess().getQuestionMarkKeyword_1_1()); 
 
             }
@@ -9676,20 +9508,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DTDSL__ParserNameAssignment_2"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3702:1: rule__DTDSL__ParserNameAssignment_2 : ( RULE_STRING ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3636:1: rule__DTDSL__ParserNameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__DTDSL__ParserNameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3706:1: ( ( RULE_STRING ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3707:1: ( RULE_STRING )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3640:1: ( ( RULE_STRING ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3641:1: ( RULE_STRING )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3707:1: ( RULE_STRING )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3708:1: RULE_STRING
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3641:1: ( RULE_STRING )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3642:1: RULE_STRING
             {
              before(grammarAccess.getDTDSLAccess().getParserNameSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__DTDSL__ParserNameAssignment_27459); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__DTDSL__ParserNameAssignment_27330); 
              after(grammarAccess.getDTDSLAccess().getParserNameSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -9713,20 +9545,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DTDSL__ObjDescriptionAssignment_4"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3717:1: rule__DTDSL__ObjDescriptionAssignment_4 : ( ruleAbstract ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3651:1: rule__DTDSL__ObjDescriptionAssignment_4 : ( ruleAbstract ) ;
     public final void rule__DTDSL__ObjDescriptionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3721:1: ( ( ruleAbstract ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3722:1: ( ruleAbstract )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3655:1: ( ( ruleAbstract ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3656:1: ( ruleAbstract )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3722:1: ( ruleAbstract )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3723:1: ruleAbstract
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3656:1: ( ruleAbstract )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3657:1: ruleAbstract
             {
              before(grammarAccess.getDTDSLAccess().getObjDescriptionAbstractParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleAbstract_in_rule__DTDSL__ObjDescriptionAssignment_47490);
+            pushFollow(FOLLOW_ruleAbstract_in_rule__DTDSL__ObjDescriptionAssignment_47361);
             ruleAbstract();
 
             state._fsp--;
@@ -9754,20 +9586,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DTDSL__StartAssignment_5"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3732:1: rule__DTDSL__StartAssignment_5 : ( ruleStartPoint ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3666:1: rule__DTDSL__StartAssignment_5 : ( ruleStartPoint ) ;
     public final void rule__DTDSL__StartAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3736:1: ( ( ruleStartPoint ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3737:1: ( ruleStartPoint )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3670:1: ( ( ruleStartPoint ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3671:1: ( ruleStartPoint )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3737:1: ( ruleStartPoint )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3738:1: ruleStartPoint
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3671:1: ( ruleStartPoint )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3672:1: ruleStartPoint
             {
              before(grammarAccess.getDTDSLAccess().getStartStartPointParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleStartPoint_in_rule__DTDSL__StartAssignment_57521);
+            pushFollow(FOLLOW_ruleStartPoint_in_rule__DTDSL__StartAssignment_57392);
             ruleStartPoint();
 
             state._fsp--;
@@ -9795,24 +9627,24 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartPoint__BeginAssignment_0_2"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3747:1: rule__StartPoint__BeginAssignment_0_2 : ( ( RULE_ID ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3681:1: rule__StartPoint__BeginAssignment_0_2 : ( ( RULE_ID ) ) ;
     public final void rule__StartPoint__BeginAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3751:1: ( ( ( RULE_ID ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3752:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3685:1: ( ( ( RULE_ID ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3686:1: ( ( RULE_ID ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3752:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3753:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3686:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3687:1: ( RULE_ID )
             {
              before(grammarAccess.getStartPointAccess().getBeginObjectDescriptionCrossReference_0_2_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3754:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3755:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3688:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3689:1: RULE_ID
             {
              before(grammarAccess.getStartPointAccess().getBeginObjectDescriptionIDTerminalRuleCall_0_2_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StartPoint__BeginAssignment_0_27556); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StartPoint__BeginAssignment_0_27427); 
              after(grammarAccess.getStartPointAccess().getBeginObjectDescriptionIDTerminalRuleCall_0_2_0_1()); 
 
             }
@@ -9840,24 +9672,24 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartPoint__BeginAssignment_1_0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3766:1: rule__StartPoint__BeginAssignment_1_0 : ( ( RULE_ID ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3700:1: rule__StartPoint__BeginAssignment_1_0 : ( ( RULE_ID ) ) ;
     public final void rule__StartPoint__BeginAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3770:1: ( ( ( RULE_ID ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3771:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3704:1: ( ( ( RULE_ID ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3705:1: ( ( RULE_ID ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3771:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3772:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3705:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3706:1: ( RULE_ID )
             {
              before(grammarAccess.getStartPointAccess().getBeginStringDescriptionCrossReference_1_0_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3773:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3774:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3707:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3708:1: RULE_ID
             {
              before(grammarAccess.getStartPointAccess().getBeginStringDescriptionIDTerminalRuleCall_1_0_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StartPoint__BeginAssignment_1_07595); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StartPoint__BeginAssignment_1_07466); 
              after(grammarAccess.getStartPointAccess().getBeginStringDescriptionIDTerminalRuleCall_1_0_0_1()); 
 
             }
@@ -9885,20 +9717,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringDescription__NameAssignment_1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3785:1: rule__StringDescription__NameAssignment_1 : ( RULE_ID ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3719:1: rule__StringDescription__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__StringDescription__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3789:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3790:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3723:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3724:1: ( RULE_ID )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3790:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3791:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3724:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3725:1: RULE_ID
             {
              before(grammarAccess.getStringDescriptionAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringDescription__NameAssignment_17630); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringDescription__NameAssignment_17501); 
              after(grammarAccess.getStringDescriptionAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -9922,20 +9754,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringDescription__DescriptionAssignment_4"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3800:1: rule__StringDescription__DescriptionAssignment_4 : ( ruleStringDescriptionInner ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3734:1: rule__StringDescription__DescriptionAssignment_4 : ( ruleStringDescriptionInner ) ;
     public final void rule__StringDescription__DescriptionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3804:1: ( ( ruleStringDescriptionInner ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3805:1: ( ruleStringDescriptionInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3738:1: ( ( ruleStringDescriptionInner ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3739:1: ( ruleStringDescriptionInner )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3805:1: ( ruleStringDescriptionInner )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3806:1: ruleStringDescriptionInner
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3739:1: ( ruleStringDescriptionInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3740:1: ruleStringDescriptionInner
             {
              before(grammarAccess.getStringDescriptionAccess().getDescriptionStringDescriptionInnerParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleStringDescriptionInner_in_rule__StringDescription__DescriptionAssignment_47661);
+            pushFollow(FOLLOW_ruleStringDescriptionInner_in_rule__StringDescription__DescriptionAssignment_47532);
             ruleStringDescriptionInner();
 
             state._fsp--;
@@ -9963,24 +9795,24 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringDescriptionInner__KeyRefAssignment_3"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3815:1: rule__StringDescriptionInner__KeyRefAssignment_3 : ( ( RULE_ID ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3749:1: rule__StringDescriptionInner__KeyRefAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__StringDescriptionInner__KeyRefAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3819:1: ( ( ( RULE_ID ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3820:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3753:1: ( ( ( RULE_ID ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3754:1: ( ( RULE_ID ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3820:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3821:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3754:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3755:1: ( RULE_ID )
             {
              before(grammarAccess.getStringDescriptionInnerAccess().getKeyRefStringKeyCrossReference_3_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3822:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3823:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3756:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3757:1: RULE_ID
             {
              before(grammarAccess.getStringDescriptionInnerAccess().getKeyRefStringKeyIDTerminalRuleCall_3_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringDescriptionInner__KeyRefAssignment_37696); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringDescriptionInner__KeyRefAssignment_37567); 
              after(grammarAccess.getStringDescriptionInnerAccess().getKeyRefStringKeyIDTerminalRuleCall_3_0_1()); 
 
             }
@@ -10008,20 +9840,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringOverRead__OverReadAssignment"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3834:1: rule__StringOverRead__OverReadAssignment : ( RULE_STRING ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3768:1: rule__StringOverRead__OverReadAssignment : ( RULE_STRING ) ;
     public final void rule__StringOverRead__OverReadAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3838:1: ( ( RULE_STRING ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3839:1: ( RULE_STRING )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3772:1: ( ( RULE_STRING ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3773:1: ( RULE_STRING )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3839:1: ( RULE_STRING )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3840:1: RULE_STRING
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3773:1: ( RULE_STRING )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3774:1: RULE_STRING
             {
              before(grammarAccess.getStringOverReadAccess().getOverReadSTRINGTerminalRuleCall_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__StringOverRead__OverReadAssignment7731); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__StringOverRead__OverReadAssignment7602); 
              after(grammarAccess.getStringOverReadAccess().getOverReadSTRINGTerminalRuleCall_0()); 
 
             }
@@ -10045,20 +9877,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringKey__NameAssignment_1_0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3849:1: rule__StringKey__NameAssignment_1_0 : ( RULE_ID ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3783:1: rule__StringKey__NameAssignment_1_0 : ( RULE_ID ) ;
     public final void rule__StringKey__NameAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3853:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3854:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3787:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3788:1: ( RULE_ID )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3854:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3855:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3788:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3789:1: RULE_ID
             {
              before(grammarAccess.getStringKeyAccess().getNameIDTerminalRuleCall_1_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringKey__NameAssignment_1_07762); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringKey__NameAssignment_1_07633); 
              after(grammarAccess.getStringKeyAccess().getNameIDTerminalRuleCall_1_0_0()); 
 
             }
@@ -10082,20 +9914,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringKey__TypeAssignment_4"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3864:1: rule__StringKey__TypeAssignment_4 : ( ruleType ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3798:1: rule__StringKey__TypeAssignment_4 : ( ruleType ) ;
     public final void rule__StringKey__TypeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3868:1: ( ( ruleType ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3869:1: ( ruleType )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3802:1: ( ( ruleType ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3803:1: ( ruleType )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3869:1: ( ruleType )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3870:1: ruleType
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3803:1: ( ruleType )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3804:1: ruleType
             {
              before(grammarAccess.getStringKeyAccess().getTypeTypeParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleType_in_rule__StringKey__TypeAssignment_47793);
+            pushFollow(FOLLOW_ruleType_in_rule__StringKey__TypeAssignment_47664);
             ruleType();
 
             state._fsp--;
@@ -10123,20 +9955,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValue__NameAssignment_1_0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3879:1: rule__StringValue__NameAssignment_1_0 : ( RULE_ID ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3813:1: rule__StringValue__NameAssignment_1_0 : ( RULE_ID ) ;
     public final void rule__StringValue__NameAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3883:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3884:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3817:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3818:1: ( RULE_ID )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3884:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3885:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3818:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3819:1: RULE_ID
             {
              before(grammarAccess.getStringValueAccess().getNameIDTerminalRuleCall_1_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringValue__NameAssignment_1_07824); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringValue__NameAssignment_1_07695); 
              after(grammarAccess.getStringValueAccess().getNameIDTerminalRuleCall_1_0_0()); 
 
             }
@@ -10160,20 +9992,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValue__TypeAssignment_4"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3894:1: rule__StringValue__TypeAssignment_4 : ( ruleType ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3828:1: rule__StringValue__TypeAssignment_4 : ( ruleType ) ;
     public final void rule__StringValue__TypeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3898:1: ( ( ruleType ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3899:1: ( ruleType )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3832:1: ( ( ruleType ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3833:1: ( ruleType )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3899:1: ( ruleType )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3900:1: ruleType
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3833:1: ( ruleType )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3834:1: ruleType
             {
              before(grammarAccess.getStringValueAccess().getTypeTypeParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleType_in_rule__StringValue__TypeAssignment_47855);
+            pushFollow(FOLLOW_ruleType_in_rule__StringValue__TypeAssignment_47726);
             ruleType();
 
             state._fsp--;
@@ -10201,24 +10033,24 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValue__ToKeyAssignment_5_1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3909:1: rule__StringValue__ToKeyAssignment_5_1 : ( ( RULE_ID ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3843:1: rule__StringValue__ToKeyAssignment_5_1 : ( ( RULE_ID ) ) ;
     public final void rule__StringValue__ToKeyAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3913:1: ( ( ( RULE_ID ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3914:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3847:1: ( ( ( RULE_ID ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3848:1: ( ( RULE_ID ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3914:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3915:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3848:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3849:1: ( RULE_ID )
             {
              before(grammarAccess.getStringValueAccess().getToKeyStringKeyCrossReference_5_1_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3916:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3917:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3850:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3851:1: RULE_ID
             {
              before(grammarAccess.getStringValueAccess().getToKeyStringKeyIDTerminalRuleCall_5_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringValue__ToKeyAssignment_5_17890); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringValue__ToKeyAssignment_5_17761); 
              after(grammarAccess.getStringValueAccess().getToKeyStringKeyIDTerminalRuleCall_5_1_0_1()); 
 
             }
@@ -10246,24 +10078,24 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringOr__OptionAssignment_3"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3928:1: rule__StringOr__OptionAssignment_3 : ( ( RULE_ID ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3862:1: rule__StringOr__OptionAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__StringOr__OptionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3932:1: ( ( ( RULE_ID ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3933:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3866:1: ( ( ( RULE_ID ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3867:1: ( ( RULE_ID ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3933:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3934:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3867:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3868:1: ( RULE_ID )
             {
              before(grammarAccess.getStringOrAccess().getOptionStringDescriptionInVariableCrossReference_3_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3935:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3936:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3869:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3870:1: RULE_ID
             {
              before(grammarAccess.getStringOrAccess().getOptionStringDescriptionInVariableIDTerminalRuleCall_3_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringOr__OptionAssignment_37929); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringOr__OptionAssignment_37800); 
              after(grammarAccess.getStringOrAccess().getOptionStringDescriptionInVariableIDTerminalRuleCall_3_0_1()); 
 
             }
@@ -10291,24 +10123,24 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringOr__OptionAssignment_4_1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3947:1: rule__StringOr__OptionAssignment_4_1 : ( ( RULE_ID ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3881:1: rule__StringOr__OptionAssignment_4_1 : ( ( RULE_ID ) ) ;
     public final void rule__StringOr__OptionAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3951:1: ( ( ( RULE_ID ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3952:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3885:1: ( ( ( RULE_ID ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3886:1: ( ( RULE_ID ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3952:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3953:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3886:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3887:1: ( RULE_ID )
             {
              before(grammarAccess.getStringOrAccess().getOptionStringDescriptionInVariableCrossReference_4_1_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3954:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3955:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3888:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3889:1: RULE_ID
             {
              before(grammarAccess.getStringOrAccess().getOptionStringDescriptionInVariableIDTerminalRuleCall_4_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringOr__OptionAssignment_4_17968); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringOr__OptionAssignment_4_17839); 
              after(grammarAccess.getStringOrAccess().getOptionStringDescriptionInVariableIDTerminalRuleCall_4_1_0_1()); 
 
             }
@@ -10336,20 +10168,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringDescriptionInVariable__NameAssignment_0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3966:1: rule__StringDescriptionInVariable__NameAssignment_0 : ( RULE_ID ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3900:1: rule__StringDescriptionInVariable__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__StringDescriptionInVariable__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3970:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3971:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3904:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3905:1: ( RULE_ID )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3971:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3972:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3905:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3906:1: RULE_ID
             {
              before(grammarAccess.getStringDescriptionInVariableAccess().getNameIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringDescriptionInVariable__NameAssignment_08003); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringDescriptionInVariable__NameAssignment_07874); 
              after(grammarAccess.getStringDescriptionInVariableAccess().getNameIDTerminalRuleCall_0_0()); 
 
             }
@@ -10373,20 +10205,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringDescriptionInVariable__DescriptionAssignment_3"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3981:1: rule__StringDescriptionInVariable__DescriptionAssignment_3 : ( ruleStringDescriptionInner ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3915:1: rule__StringDescriptionInVariable__DescriptionAssignment_3 : ( ruleStringDescriptionInner ) ;
     public final void rule__StringDescriptionInVariable__DescriptionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3985:1: ( ( ruleStringDescriptionInner ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3986:1: ( ruleStringDescriptionInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3919:1: ( ( ruleStringDescriptionInner ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3920:1: ( ruleStringDescriptionInner )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3986:1: ( ruleStringDescriptionInner )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3987:1: ruleStringDescriptionInner
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3920:1: ( ruleStringDescriptionInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3921:1: ruleStringDescriptionInner
             {
              before(grammarAccess.getStringDescriptionInVariableAccess().getDescriptionStringDescriptionInnerParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleStringDescriptionInner_in_rule__StringDescriptionInVariable__DescriptionAssignment_38034);
+            pushFollow(FOLLOW_ruleStringDescriptionInner_in_rule__StringDescriptionInVariable__DescriptionAssignment_37905);
             ruleStringDescriptionInner();
 
             state._fsp--;
@@ -10413,26 +10245,30 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__StringDescriptionInVariable__DescriptionAssignment_3"
 
 
-    // $ANTLR start "rule__StringComplex__DescriptionAssignment_1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3996:1: rule__StringComplex__DescriptionAssignment_1 : ( ruleStringDescriptionInner ) ;
-    public final void rule__StringComplex__DescriptionAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__StringComplex__NameAssignment_0"
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3930:1: rule__StringComplex__NameAssignment_0 : ( ( RULE_ID ) ) ;
+    public final void rule__StringComplex__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4000:1: ( ( ruleStringDescriptionInner ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4001:1: ( ruleStringDescriptionInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3934:1: ( ( ( RULE_ID ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3935:1: ( ( RULE_ID ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4001:1: ( ruleStringDescriptionInner )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4002:1: ruleStringDescriptionInner
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3935:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3936:1: ( RULE_ID )
             {
-             before(grammarAccess.getStringComplexAccess().getDescriptionStringDescriptionInnerParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleStringDescriptionInner_in_rule__StringComplex__DescriptionAssignment_18065);
-            ruleStringDescriptionInner();
+             before(grammarAccess.getStringComplexAccess().getNameStringDescriptionInVariableCrossReference_0_0()); 
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3937:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3938:1: RULE_ID
+            {
+             before(grammarAccess.getStringComplexAccess().getNameStringDescriptionInVariableIDTerminalRuleCall_0_0_1()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StringComplex__NameAssignment_07940); 
+             after(grammarAccess.getStringComplexAccess().getNameStringDescriptionInVariableIDTerminalRuleCall_0_0_1()); 
 
-            state._fsp--;
+            }
 
-             after(grammarAccess.getStringComplexAccess().getDescriptionStringDescriptionInnerParserRuleCall_1_0()); 
+             after(grammarAccess.getStringComplexAccess().getNameStringDescriptionInVariableCrossReference_0_0()); 
 
             }
 
@@ -10451,33 +10287,33 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StringComplex__DescriptionAssignment_1"
+    // $ANTLR end "rule__StringComplex__NameAssignment_0"
 
 
-    // $ANTLR start "rule__StringComplex__ManyAssignment_3_0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4011:1: rule__StringComplex__ManyAssignment_3_0 : ( ( '*' ) ) ;
-    public final void rule__StringComplex__ManyAssignment_3_0() throws RecognitionException {
+    // $ANTLR start "rule__StringComplex__ManyAssignment_1_0"
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3949:1: rule__StringComplex__ManyAssignment_1_0 : ( ( '*' ) ) ;
+    public final void rule__StringComplex__ManyAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4015:1: ( ( ( '*' ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4016:1: ( ( '*' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3953:1: ( ( ( '*' ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3954:1: ( ( '*' ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4016:1: ( ( '*' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4017:1: ( '*' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3954:1: ( ( '*' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3955:1: ( '*' )
             {
-             before(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_3_0_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4018:1: ( '*' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4019:1: '*'
+             before(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_1_0_0()); 
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3956:1: ( '*' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3957:1: '*'
             {
-             before(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_3_0_0()); 
-            match(input,41,FOLLOW_41_in_rule__StringComplex__ManyAssignment_3_08101); 
-             after(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_3_0_0()); 
+             before(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_1_0_0()); 
+            match(input,41,FOLLOW_41_in_rule__StringComplex__ManyAssignment_1_07980); 
+             after(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_1_0_0()); 
 
             }
 
-             after(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_3_0_0()); 
+             after(grammarAccess.getStringComplexAccess().getManyAsteriskKeyword_1_0_0()); 
 
             }
 
@@ -10496,33 +10332,33 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StringComplex__ManyAssignment_3_0"
+    // $ANTLR end "rule__StringComplex__ManyAssignment_1_0"
 
 
-    // $ANTLR start "rule__StringComplex__MaybeAssignment_3_1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4034:1: rule__StringComplex__MaybeAssignment_3_1 : ( ( '?' ) ) ;
-    public final void rule__StringComplex__MaybeAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__StringComplex__MaybeAssignment_1_1"
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3972:1: rule__StringComplex__MaybeAssignment_1_1 : ( ( '?' ) ) ;
+    public final void rule__StringComplex__MaybeAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4038:1: ( ( ( '?' ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4039:1: ( ( '?' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3976:1: ( ( ( '?' ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3977:1: ( ( '?' ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4039:1: ( ( '?' ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4040:1: ( '?' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3977:1: ( ( '?' ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3978:1: ( '?' )
             {
-             before(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_3_1_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4041:1: ( '?' )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4042:1: '?'
+             before(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_1_1_0()); 
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3979:1: ( '?' )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3980:1: '?'
             {
-             before(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_3_1_0()); 
-            match(input,42,FOLLOW_42_in_rule__StringComplex__MaybeAssignment_3_18145); 
-             after(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_3_1_0()); 
+             before(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_1_1_0()); 
+            match(input,42,FOLLOW_42_in_rule__StringComplex__MaybeAssignment_1_18024); 
+             after(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_1_1_0()); 
 
             }
 
-             after(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_3_1_0()); 
+             after(grammarAccess.getStringComplexAccess().getMaybeQuestionMarkKeyword_1_1_0()); 
 
             }
 
@@ -10541,24 +10377,24 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StringComplex__MaybeAssignment_3_1"
+    // $ANTLR end "rule__StringComplex__MaybeAssignment_1_1"
 
 
     // $ANTLR start "rule__ObjectDescription__NameAssignment_1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4057:1: rule__ObjectDescription__NameAssignment_1 : ( RULE_ID ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3995:1: rule__ObjectDescription__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__ObjectDescription__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4061:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4062:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:3999:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4000:1: ( RULE_ID )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4062:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4063:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4000:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4001:1: RULE_ID
             {
              before(grammarAccess.getObjectDescriptionAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectDescription__NameAssignment_18184); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectDescription__NameAssignment_18063); 
              after(grammarAccess.getObjectDescriptionAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -10582,20 +10418,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectDescription__DescriptionAssignment_4"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4072:1: rule__ObjectDescription__DescriptionAssignment_4 : ( ruleObjectDescriptionInner ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4010:1: rule__ObjectDescription__DescriptionAssignment_4 : ( ruleObjectDescriptionInner ) ;
     public final void rule__ObjectDescription__DescriptionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4076:1: ( ( ruleObjectDescriptionInner ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4077:1: ( ruleObjectDescriptionInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4014:1: ( ( ruleObjectDescriptionInner ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4015:1: ( ruleObjectDescriptionInner )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4077:1: ( ruleObjectDescriptionInner )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4078:1: ruleObjectDescriptionInner
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4015:1: ( ruleObjectDescriptionInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4016:1: ruleObjectDescriptionInner
             {
              before(grammarAccess.getObjectDescriptionAccess().getDescriptionObjectDescriptionInnerParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleObjectDescriptionInner_in_rule__ObjectDescription__DescriptionAssignment_48215);
+            pushFollow(FOLLOW_ruleObjectDescriptionInner_in_rule__ObjectDescription__DescriptionAssignment_48094);
             ruleObjectDescriptionInner();
 
             state._fsp--;
@@ -10623,20 +10459,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectAttribute__AttributesAssignment_1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4087:1: rule__ObjectAttribute__AttributesAssignment_1 : ( RULE_ID ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4025:1: rule__ObjectAttribute__AttributesAssignment_1 : ( RULE_ID ) ;
     public final void rule__ObjectAttribute__AttributesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4091:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4092:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4029:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4030:1: ( RULE_ID )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4092:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4093:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4030:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4031:1: RULE_ID
             {
              before(grammarAccess.getObjectAttributeAccess().getAttributesIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectAttribute__AttributesAssignment_18246); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectAttribute__AttributesAssignment_18125); 
              after(grammarAccess.getObjectAttributeAccess().getAttributesIDTerminalRuleCall_1_0()); 
 
             }
@@ -10660,24 +10496,24 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectAttribute__StringMethodeAssignment_2_1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4102:1: rule__ObjectAttribute__StringMethodeAssignment_2_1 : ( ( RULE_ID ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4040:1: rule__ObjectAttribute__StringMethodeAssignment_2_1 : ( ( RULE_ID ) ) ;
     public final void rule__ObjectAttribute__StringMethodeAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4106:1: ( ( ( RULE_ID ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4107:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4044:1: ( ( ( RULE_ID ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4045:1: ( ( RULE_ID ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4107:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4108:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4045:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4046:1: ( RULE_ID )
             {
              before(grammarAccess.getObjectAttributeAccess().getStringMethodeStringDescriptionCrossReference_2_1_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4109:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4110:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4047:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4048:1: RULE_ID
             {
              before(grammarAccess.getObjectAttributeAccess().getStringMethodeStringDescriptionIDTerminalRuleCall_2_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectAttribute__StringMethodeAssignment_2_18281); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectAttribute__StringMethodeAssignment_2_18160); 
              after(grammarAccess.getObjectAttributeAccess().getStringMethodeStringDescriptionIDTerminalRuleCall_2_1_0_1()); 
 
             }
@@ -10705,20 +10541,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNode__AttributesAssignment_1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4121:1: rule__ObjectNode__AttributesAssignment_1 : ( RULE_ID ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4059:1: rule__ObjectNode__AttributesAssignment_1 : ( RULE_ID ) ;
     public final void rule__ObjectNode__AttributesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4125:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4126:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4063:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4064:1: ( RULE_ID )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4126:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4127:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4064:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4065:1: RULE_ID
             {
              before(grammarAccess.getObjectNodeAccess().getAttributesIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectNode__AttributesAssignment_18316); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectNode__AttributesAssignment_18195); 
              after(grammarAccess.getObjectNodeAccess().getAttributesIDTerminalRuleCall_1_0()); 
 
             }
@@ -10742,24 +10578,24 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNode__InnerAssignment_3"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4136:1: rule__ObjectNode__InnerAssignment_3 : ( ( RULE_ID ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4074:1: rule__ObjectNode__InnerAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__ObjectNode__InnerAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4140:1: ( ( ( RULE_ID ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4141:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4078:1: ( ( ( RULE_ID ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4079:1: ( ( RULE_ID ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4141:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4142:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4079:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4080:1: ( RULE_ID )
             {
              before(grammarAccess.getObjectNodeAccess().getInnerObjectDescriptionCrossReference_3_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4143:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4144:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4081:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4082:1: RULE_ID
             {
              before(grammarAccess.getObjectNodeAccess().getInnerObjectDescriptionIDTerminalRuleCall_3_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectNode__InnerAssignment_38351); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectNode__InnerAssignment_38230); 
              after(grammarAccess.getObjectNodeAccess().getInnerObjectDescriptionIDTerminalRuleCall_3_0_1()); 
 
             }
@@ -10787,20 +10623,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNext__AttributeAssignment_1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4155:1: rule__ObjectNext__AttributeAssignment_1 : ( ruleJavaCodeOrID ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4093:1: rule__ObjectNext__AttributeAssignment_1 : ( ruleJavaCodeOrID ) ;
     public final void rule__ObjectNext__AttributeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4159:1: ( ( ruleJavaCodeOrID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4160:1: ( ruleJavaCodeOrID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4097:1: ( ( ruleJavaCodeOrID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4098:1: ( ruleJavaCodeOrID )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4160:1: ( ruleJavaCodeOrID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4161:1: ruleJavaCodeOrID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4098:1: ( ruleJavaCodeOrID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4099:1: ruleJavaCodeOrID
             {
              before(grammarAccess.getObjectNextAccess().getAttributeJavaCodeOrIDParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleJavaCodeOrID_in_rule__ObjectNext__AttributeAssignment_18386);
+            pushFollow(FOLLOW_ruleJavaCodeOrID_in_rule__ObjectNext__AttributeAssignment_18265);
             ruleJavaCodeOrID();
 
             state._fsp--;
@@ -10828,24 +10664,24 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectNext__ObjectDesriptionAssignment_3"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4170:1: rule__ObjectNext__ObjectDesriptionAssignment_3 : ( ( RULE_ID ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4108:1: rule__ObjectNext__ObjectDesriptionAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__ObjectNext__ObjectDesriptionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4174:1: ( ( ( RULE_ID ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4175:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4112:1: ( ( ( RULE_ID ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4113:1: ( ( RULE_ID ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4175:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4176:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4113:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4114:1: ( RULE_ID )
             {
              before(grammarAccess.getObjectNextAccess().getObjectDesriptionObjectDescriptionCrossReference_3_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4177:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4178:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4115:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4116:1: RULE_ID
             {
              before(grammarAccess.getObjectNextAccess().getObjectDesriptionObjectDescriptionIDTerminalRuleCall_3_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectNext__ObjectDesriptionAssignment_38421); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectNext__ObjectDesriptionAssignment_38300); 
              after(grammarAccess.getObjectNextAccess().getObjectDesriptionObjectDescriptionIDTerminalRuleCall_3_0_1()); 
 
             }
@@ -10873,20 +10709,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JavaCodeOrID__CodeAssignment_0_2"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4189:1: rule__JavaCodeOrID__CodeAssignment_0_2 : ( RULE_STRING ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4127:1: rule__JavaCodeOrID__CodeAssignment_0_2 : ( RULE_STRING ) ;
     public final void rule__JavaCodeOrID__CodeAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4193:1: ( ( RULE_STRING ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4194:1: ( RULE_STRING )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4131:1: ( ( RULE_STRING ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4132:1: ( RULE_STRING )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4194:1: ( RULE_STRING )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4195:1: RULE_STRING
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4132:1: ( RULE_STRING )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4133:1: RULE_STRING
             {
              before(grammarAccess.getJavaCodeOrIDAccess().getCodeSTRINGTerminalRuleCall_0_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__JavaCodeOrID__CodeAssignment_0_28456); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__JavaCodeOrID__CodeAssignment_0_28335); 
              after(grammarAccess.getJavaCodeOrIDAccess().getCodeSTRINGTerminalRuleCall_0_2_0()); 
 
             }
@@ -10910,20 +10746,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__JavaCodeOrID__IdAssignment_1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4204:1: rule__JavaCodeOrID__IdAssignment_1 : ( RULE_ID ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4142:1: rule__JavaCodeOrID__IdAssignment_1 : ( RULE_ID ) ;
     public final void rule__JavaCodeOrID__IdAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4208:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4209:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4146:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4147:1: ( RULE_ID )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4209:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4210:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4147:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4148:1: RULE_ID
             {
              before(grammarAccess.getJavaCodeOrIDAccess().getIdIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__JavaCodeOrID__IdAssignment_18487); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__JavaCodeOrID__IdAssignment_18366); 
              after(grammarAccess.getJavaCodeOrIDAccess().getIdIDTerminalRuleCall_1_0()); 
 
             }
@@ -10947,20 +10783,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectMany__OptionAssignment_0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4219:1: rule__ObjectMany__OptionAssignment_0 : ( ruleObjectMaybeInner ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4157:1: rule__ObjectMany__OptionAssignment_0 : ( ruleObjectMaybeInner ) ;
     public final void rule__ObjectMany__OptionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4223:1: ( ( ruleObjectMaybeInner ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4224:1: ( ruleObjectMaybeInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4161:1: ( ( ruleObjectMaybeInner ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4162:1: ( ruleObjectMaybeInner )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4224:1: ( ruleObjectMaybeInner )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4225:1: ruleObjectMaybeInner
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4162:1: ( ruleObjectMaybeInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4163:1: ruleObjectMaybeInner
             {
              before(grammarAccess.getObjectManyAccess().getOptionObjectMaybeInnerParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleObjectMaybeInner_in_rule__ObjectMany__OptionAssignment_08518);
+            pushFollow(FOLLOW_ruleObjectMaybeInner_in_rule__ObjectMany__OptionAssignment_08397);
             ruleObjectMaybeInner();
 
             state._fsp--;
@@ -10988,20 +10824,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__OptionsAssignment_1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4234:1: rule__ObjectChoice__OptionsAssignment_1 : ( ruleObjectMaybeInner ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4172:1: rule__ObjectChoice__OptionsAssignment_1 : ( ruleObjectMaybeInner ) ;
     public final void rule__ObjectChoice__OptionsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4238:1: ( ( ruleObjectMaybeInner ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4239:1: ( ruleObjectMaybeInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4176:1: ( ( ruleObjectMaybeInner ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4177:1: ( ruleObjectMaybeInner )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4239:1: ( ruleObjectMaybeInner )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4240:1: ruleObjectMaybeInner
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4177:1: ( ruleObjectMaybeInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4178:1: ruleObjectMaybeInner
             {
              before(grammarAccess.getObjectChoiceAccess().getOptionsObjectMaybeInnerParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleObjectMaybeInner_in_rule__ObjectChoice__OptionsAssignment_18549);
+            pushFollow(FOLLOW_ruleObjectMaybeInner_in_rule__ObjectChoice__OptionsAssignment_18428);
             ruleObjectMaybeInner();
 
             state._fsp--;
@@ -11029,20 +10865,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectChoice__OptionsAssignment_2_1"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4249:1: rule__ObjectChoice__OptionsAssignment_2_1 : ( ruleObjectMaybeInner ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4187:1: rule__ObjectChoice__OptionsAssignment_2_1 : ( ruleObjectMaybeInner ) ;
     public final void rule__ObjectChoice__OptionsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4253:1: ( ( ruleObjectMaybeInner ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4254:1: ( ruleObjectMaybeInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4191:1: ( ( ruleObjectMaybeInner ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4192:1: ( ruleObjectMaybeInner )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4254:1: ( ruleObjectMaybeInner )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4255:1: ruleObjectMaybeInner
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4192:1: ( ruleObjectMaybeInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4193:1: ruleObjectMaybeInner
             {
              before(grammarAccess.getObjectChoiceAccess().getOptionsObjectMaybeInnerParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_ruleObjectMaybeInner_in_rule__ObjectChoice__OptionsAssignment_2_18580);
+            pushFollow(FOLLOW_ruleObjectMaybeInner_in_rule__ObjectChoice__OptionsAssignment_2_18459);
             ruleObjectMaybeInner();
 
             state._fsp--;
@@ -11070,24 +10906,24 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectMaybe__OptionAssignment_0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4264:1: rule__ObjectMaybe__OptionAssignment_0 : ( ( RULE_ID ) ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4202:1: rule__ObjectMaybe__OptionAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__ObjectMaybe__OptionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4268:1: ( ( ( RULE_ID ) ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4269:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4206:1: ( ( ( RULE_ID ) ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4207:1: ( ( RULE_ID ) )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4269:1: ( ( RULE_ID ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4270:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4207:1: ( ( RULE_ID ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4208:1: ( RULE_ID )
             {
              before(grammarAccess.getObjectMaybeAccess().getOptionObjectDescriptionCrossReference_0_0()); 
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4271:1: ( RULE_ID )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4272:1: RULE_ID
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4209:1: ( RULE_ID )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4210:1: RULE_ID
             {
              before(grammarAccess.getObjectMaybeAccess().getOptionObjectDescriptionIDTerminalRuleCall_0_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectMaybe__OptionAssignment_08615); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ObjectMaybe__OptionAssignment_08494); 
              after(grammarAccess.getObjectMaybeAccess().getOptionObjectDescriptionIDTerminalRuleCall_0_0_1()); 
 
             }
@@ -11115,20 +10951,20 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ObjectMaybe__DescriptionAssignment_1_0"
-    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4283:1: rule__ObjectMaybe__DescriptionAssignment_1_0 : ( ruleObjectMaybeInner ) ;
+    // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4221:1: rule__ObjectMaybe__DescriptionAssignment_1_0 : ( ruleObjectMaybeInner ) ;
     public final void rule__ObjectMaybe__DescriptionAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4287:1: ( ( ruleObjectMaybeInner ) )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4288:1: ( ruleObjectMaybeInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4225:1: ( ( ruleObjectMaybeInner ) )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4226:1: ( ruleObjectMaybeInner )
             {
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4288:1: ( ruleObjectMaybeInner )
-            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4289:1: ruleObjectMaybeInner
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4226:1: ( ruleObjectMaybeInner )
+            // ../de.wbg.DTDSL.ui/src-gen/de/wbg/ui/contentassist/antlr/internal/InternalDTDSL.g:4227:1: ruleObjectMaybeInner
             {
              before(grammarAccess.getObjectMaybeAccess().getDescriptionObjectMaybeInnerParserRuleCall_1_0_0()); 
-            pushFollow(FOLLOW_ruleObjectMaybeInner_in_rule__ObjectMaybe__DescriptionAssignment_1_08650);
+            pushFollow(FOLLOW_ruleObjectMaybeInner_in_rule__ObjectMaybe__DescriptionAssignment_1_08529);
             ruleObjectMaybeInner();
 
             state._fsp--;
@@ -11162,26 +10998,26 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
     static final String DFA3_eotS =
         "\12\uffff";
     static final String DFA3_eofS =
-        "\2\uffff\1\7\7\uffff";
+        "\2\uffff\1\10\7\uffff";
     static final String DFA3_minS =
-        "\1\4\1\uffff\1\4\5\uffff\1\33\1\uffff";
+        "\1\4\1\uffff\1\4\3\uffff\1\33\3\uffff";
     static final String DFA3_maxS =
-        "\1\40\1\uffff\1\41\5\uffff\1\35\1\uffff";
+        "\1\37\1\uffff\1\52\3\uffff\1\35\3\uffff";
     static final String DFA3_acceptS =
-        "\1\uffff\1\1\1\uffff\1\2\1\3\1\5\1\6\1\4\1\uffff\1\7";
+        "\1\uffff\1\1\1\uffff\1\2\1\3\1\6\1\uffff\1\5\1\4\1\7";
     static final String DFA3_specialS =
         "\12\uffff}>";
     static final String[] DFA3_transitionS = {
-            "\1\1\1\2\25\uffff\1\3\1\uffff\1\4\1\uffff\1\6\1\5",
+            "\1\1\1\2\25\uffff\1\3\1\uffff\1\4\1\uffff\1\5",
             "",
-            "\2\7\17\uffff\1\10\1\7\1\uffff\1\11\1\uffff\2\7\1\uffff\1"+
-            "\7\1\uffff\3\7",
-            "",
-            "",
+            "\2\10\17\uffff\1\6\1\10\1\uffff\1\11\1\uffff\2\10\1\uffff"+
+            "\1\10\1\uffff\1\10\11\uffff\2\7",
             "",
             "",
             "",
             "\1\3\1\uffff\1\4",
+            "",
+            "",
             ""
     };
 
@@ -11229,7 +11065,7 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
         "\1\47\2\5\1\50\2\uffff\1\45\1\52\1\30\1\45\2\5\2\uffff\1\4\1\5"+
         "\2\52\1\45\1\52\2\uffff";
     static final String DFA5_acceptS =
-        "\4\uffff\1\4\1\6\6\uffff\1\2\1\5\6\uffff\1\1\1\3";
+        "\4\uffff\1\4\1\6\6\uffff\1\5\1\2\6\uffff\1\1\1\3";
     static final String DFA5_specialS =
         "\26\uffff}>";
     static final String[] DFA5_transitionS = {
@@ -11240,7 +11076,7 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
             "",
             "",
             "\1\12",
-            "\1\14\16\uffff\1\13\3\uffff\1\15\1\4",
+            "\1\15\16\uffff\1\13\3\uffff\1\14\1\4",
             "\1\16",
             "\1\17",
             "\1\20",
@@ -11249,10 +11085,10 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
             "",
             "\1\22",
             "\1\23",
-            "\1\24\22\uffff\1\15\1\4",
-            "\1\14\22\uffff\1\15\1\4",
+            "\1\24\22\uffff\1\14\1\4",
+            "\1\15\22\uffff\1\14\1\4",
             "\1\17",
-            "\1\25\22\uffff\1\15\1\4",
+            "\1\25\22\uffff\1\14\1\4",
             "",
             ""
     };
@@ -11369,8 +11205,8 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleStringComplex_in_rule__StringDescriptionInner__Alternatives1559 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStringOr_in_rule__StringDescriptionInner__Alternatives1576 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStringDescriptionInVariable_in_rule__StringDescriptionInner__Alternatives1593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringComplex__ManyAssignment_3_0_in_rule__StringComplex__Alternatives_31625 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringComplex__MaybeAssignment_3_1_in_rule__StringComplex__Alternatives_31643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringComplex__ManyAssignment_1_0_in_rule__StringComplex__Alternatives_11625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringComplex__MaybeAssignment_1_1_in_rule__StringComplex__Alternatives_11643 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleObjectNode_in_rule__ObjectDescriptionInner__Alternatives_01676 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleObjectAttribute_in_rule__ObjectDescriptionInner__Alternatives_01693 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleObjectNext_in_rule__ObjectDescriptionInner__Alternatives_01710 = new BitSet(new long[]{0x0000000000000002L});
@@ -11432,12 +11268,12 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__StringDescription__Group__2__Impl_in_rule__StringDescription__Group__22962 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_rule__StringDescription__Group__3_in_rule__StringDescription__Group__22965 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_24_in_rule__StringDescription__Group__2__Impl2993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringDescription__Group__3__Impl_in_rule__StringDescription__Group__33024 = new BitSet(new long[]{0x00000001AC000030L});
+    public static final BitSet FOLLOW_rule__StringDescription__Group__3__Impl_in_rule__StringDescription__Group__33024 = new BitSet(new long[]{0x00000000AC000030L});
     public static final BitSet FOLLOW_rule__StringDescription__Group__4_in_rule__StringDescription__Group__33027 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_25_in_rule__StringDescription__Group__3__Impl3055 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringDescription__Group__4__Impl_in_rule__StringDescription__Group__43086 = new BitSet(new long[]{0x00000001AC000030L});
+    public static final BitSet FOLLOW_rule__StringDescription__Group__4__Impl_in_rule__StringDescription__Group__43086 = new BitSet(new long[]{0x00000000AC000030L});
     public static final BitSet FOLLOW_rule__StringDescription__Group__5_in_rule__StringDescription__Group__43089 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringDescription__DescriptionAssignment_4_in_rule__StringDescription__Group__4__Impl3116 = new BitSet(new long[]{0x00000001A8000032L});
+    public static final BitSet FOLLOW_rule__StringDescription__DescriptionAssignment_4_in_rule__StringDescription__Group__4__Impl3116 = new BitSet(new long[]{0x00000000A8000032L});
     public static final BitSet FOLLOW_rule__StringDescription__Group__5__Impl_in_rule__StringDescription__Group__53147 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_26_in_rule__StringDescription__Group__5__Impl3175 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__StringKey__Group__0__Impl_in_rule__StringKey__Group__03218 = new BitSet(new long[]{0x0000000008000020L});
@@ -11511,151 +11347,145 @@ public class InternalDTDSLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__StringDescriptionInVariable__Group__1__Impl_in_rule__StringDescriptionInVariable__Group__14836 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_rule__StringDescriptionInVariable__Group__2_in_rule__StringDescriptionInVariable__Group__14839 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_24_in_rule__StringDescriptionInVariable__Group__1__Impl4867 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringDescriptionInVariable__Group__2__Impl_in_rule__StringDescriptionInVariable__Group__24898 = new BitSet(new long[]{0x00000001A8400030L});
+    public static final BitSet FOLLOW_rule__StringDescriptionInVariable__Group__2__Impl_in_rule__StringDescriptionInVariable__Group__24898 = new BitSet(new long[]{0x00000000A8400030L});
     public static final BitSet FOLLOW_rule__StringDescriptionInVariable__Group__3_in_rule__StringDescriptionInVariable__Group__24901 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_21_in_rule__StringDescriptionInVariable__Group__2__Impl4929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringDescriptionInVariable__Group__3__Impl_in_rule__StringDescriptionInVariable__Group__34960 = new BitSet(new long[]{0x00000001A8400030L});
+    public static final BitSet FOLLOW_rule__StringDescriptionInVariable__Group__3__Impl_in_rule__StringDescriptionInVariable__Group__34960 = new BitSet(new long[]{0x00000000A8400030L});
     public static final BitSet FOLLOW_rule__StringDescriptionInVariable__Group__4_in_rule__StringDescriptionInVariable__Group__34963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringDescriptionInVariable__DescriptionAssignment_3_in_rule__StringDescriptionInVariable__Group__3__Impl4990 = new BitSet(new long[]{0x00000001A8000032L});
+    public static final BitSet FOLLOW_rule__StringDescriptionInVariable__DescriptionAssignment_3_in_rule__StringDescriptionInVariable__Group__3__Impl4990 = new BitSet(new long[]{0x00000000A8000032L});
     public static final BitSet FOLLOW_rule__StringDescriptionInVariable__Group__4__Impl_in_rule__StringDescriptionInVariable__Group__45021 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_rule__StringDescriptionInVariable__Group__4__Impl5049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringComplex__Group__0__Impl_in_rule__StringComplex__Group__05090 = new BitSet(new long[]{0x00000003A8000030L});
+    public static final BitSet FOLLOW_rule__StringComplex__Group__0__Impl_in_rule__StringComplex__Group__05090 = new BitSet(new long[]{0x0000060000000000L});
     public static final BitSet FOLLOW_rule__StringComplex__Group__1_in_rule__StringComplex__Group__05093 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__StringComplex__Group__0__Impl5121 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringComplex__Group__1__Impl_in_rule__StringComplex__Group__15152 = new BitSet(new long[]{0x00000003A8000030L});
-    public static final BitSet FOLLOW_rule__StringComplex__Group__2_in_rule__StringComplex__Group__15155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringComplex__DescriptionAssignment_1_in_rule__StringComplex__Group__1__Impl5182 = new BitSet(new long[]{0x00000001A8000032L});
-    public static final BitSet FOLLOW_rule__StringComplex__Group__2__Impl_in_rule__StringComplex__Group__25213 = new BitSet(new long[]{0x0000060000000000L});
-    public static final BitSet FOLLOW_rule__StringComplex__Group__3_in_rule__StringComplex__Group__25216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__StringComplex__Group__2__Impl5244 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringComplex__Group__3__Impl_in_rule__StringComplex__Group__35275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringComplex__Alternatives_3_in_rule__StringComplex__Group__3__Impl5302 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectDescription__Group__0__Impl_in_rule__ObjectDescription__Group__05340 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__ObjectDescription__Group__1_in_rule__ObjectDescription__Group__05343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__ObjectDescription__Group__0__Impl5371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectDescription__Group__1__Impl_in_rule__ObjectDescription__Group__15402 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__ObjectDescription__Group__2_in_rule__ObjectDescription__Group__15405 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectDescription__NameAssignment_1_in_rule__ObjectDescription__Group__1__Impl5432 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectDescription__Group__2__Impl_in_rule__ObjectDescription__Group__25462 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__ObjectDescription__Group__3_in_rule__ObjectDescription__Group__25465 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__ObjectDescription__Group__2__Impl5493 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectDescription__Group__3__Impl_in_rule__ObjectDescription__Group__35524 = new BitSet(new long[]{0x000000D104000020L});
-    public static final BitSet FOLLOW_rule__ObjectDescription__Group__4_in_rule__ObjectDescription__Group__35527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__ObjectDescription__Group__3__Impl5555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectDescription__Group__4__Impl_in_rule__ObjectDescription__Group__45586 = new BitSet(new long[]{0x000000D104000020L});
-    public static final BitSet FOLLOW_rule__ObjectDescription__Group__5_in_rule__ObjectDescription__Group__45589 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectDescription__DescriptionAssignment_4_in_rule__ObjectDescription__Group__4__Impl5616 = new BitSet(new long[]{0x000000D100000022L});
-    public static final BitSet FOLLOW_rule__ObjectDescription__Group__5__Impl_in_rule__ObjectDescription__Group__55647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__ObjectDescription__Group__5__Impl5675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectDescriptionInner__Group__0__Impl_in_rule__ObjectDescriptionInner__Group__05718 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__ObjectDescriptionInner__Group__1_in_rule__ObjectDescriptionInner__Group__05721 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectDescriptionInner__Alternatives_0_in_rule__ObjectDescriptionInner__Group__0__Impl5748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectDescriptionInner__Group__1__Impl_in_rule__ObjectDescriptionInner__Group__15778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__ObjectDescriptionInner__Group__1__Impl5806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectAttribute__Group__0__Impl_in_rule__ObjectAttribute__Group__05841 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__ObjectAttribute__Group__1_in_rule__ObjectAttribute__Group__05844 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__ObjectAttribute__Group__0__Impl5872 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectAttribute__Group__1__Impl_in_rule__ObjectAttribute__Group__15903 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__ObjectAttribute__Group__2_in_rule__ObjectAttribute__Group__15906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectAttribute__AttributesAssignment_1_in_rule__ObjectAttribute__Group__1__Impl5933 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectAttribute__Group__2__Impl_in_rule__ObjectAttribute__Group__25963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectAttribute__Group_2__0_in_rule__ObjectAttribute__Group__2__Impl5990 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectAttribute__Group_2__0__Impl_in_rule__ObjectAttribute__Group_2__06027 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__ObjectAttribute__Group_2__1_in_rule__ObjectAttribute__Group_2__06030 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__ObjectAttribute__Group_2__0__Impl6058 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectAttribute__Group_2__1__Impl_in_rule__ObjectAttribute__Group_2__16089 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectAttribute__StringMethodeAssignment_2_1_in_rule__ObjectAttribute__Group_2__1__Impl6116 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectNode__Group__0__Impl_in_rule__ObjectNode__Group__06150 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__ObjectNode__Group__1_in_rule__ObjectNode__Group__06153 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__ObjectNode__Group__0__Impl6181 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectNode__Group__1__Impl_in_rule__ObjectNode__Group__16212 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__ObjectNode__Group__2_in_rule__ObjectNode__Group__16215 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectNode__AttributesAssignment_1_in_rule__ObjectNode__Group__1__Impl6242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectNode__Group__2__Impl_in_rule__ObjectNode__Group__26272 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__ObjectNode__Group__3_in_rule__ObjectNode__Group__26275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__ObjectNode__Group__2__Impl6303 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectNode__Group__3__Impl_in_rule__ObjectNode__Group__36334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectNode__InnerAssignment_3_in_rule__ObjectNode__Group__3__Impl6361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectNext__Group__0__Impl_in_rule__ObjectNext__Group__06399 = new BitSet(new long[]{0x0000010000000020L});
-    public static final BitSet FOLLOW_rule__ObjectNext__Group__1_in_rule__ObjectNext__Group__06402 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__ObjectNext__Group__0__Impl6430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectNext__Group__1__Impl_in_rule__ObjectNext__Group__16461 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__ObjectNext__Group__2_in_rule__ObjectNext__Group__16464 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectNext__AttributeAssignment_1_in_rule__ObjectNext__Group__1__Impl6491 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectNext__Group__2__Impl_in_rule__ObjectNext__Group__26521 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__ObjectNext__Group__3_in_rule__ObjectNext__Group__26524 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__ObjectNext__Group__2__Impl6552 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectNext__Group__3__Impl_in_rule__ObjectNext__Group__36583 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectNext__ObjectDesriptionAssignment_3_in_rule__ObjectNext__Group__3__Impl6610 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JavaCodeOrID__Group_0__0__Impl_in_rule__JavaCodeOrID__Group_0__06648 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__JavaCodeOrID__Group_0__1_in_rule__JavaCodeOrID__Group_0__06651 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__JavaCodeOrID__Group_0__0__Impl6679 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JavaCodeOrID__Group_0__1__Impl_in_rule__JavaCodeOrID__Group_0__16710 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__JavaCodeOrID__Group_0__2_in_rule__JavaCodeOrID__Group_0__16713 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__JavaCodeOrID__Group_0__1__Impl6741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JavaCodeOrID__Group_0__2__Impl_in_rule__JavaCodeOrID__Group_0__26772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__JavaCodeOrID__CodeAssignment_0_2_in_rule__JavaCodeOrID__Group_0__2__Impl6799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectMany__Group__0__Impl_in_rule__ObjectMany__Group__06835 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_rule__ObjectMany__Group__1_in_rule__ObjectMany__Group__06838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectMany__OptionAssignment_0_in_rule__ObjectMany__Group__0__Impl6865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectMany__Group__1__Impl_in_rule__ObjectMany__Group__16895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_rule__ObjectMany__Group__1__Impl6923 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectChoice__Group__0__Impl_in_rule__ObjectChoice__Group__06958 = new BitSet(new long[]{0x000000D000000020L});
-    public static final BitSet FOLLOW_rule__ObjectChoice__Group__1_in_rule__ObjectChoice__Group__06961 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__ObjectChoice__Group__0__Impl6989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectChoice__Group__1__Impl_in_rule__ObjectChoice__Group__17020 = new BitSet(new long[]{0x0000000600000000L});
-    public static final BitSet FOLLOW_rule__ObjectChoice__Group__2_in_rule__ObjectChoice__Group__17023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectChoice__OptionsAssignment_1_in_rule__ObjectChoice__Group__1__Impl7050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectChoice__Group__2__Impl_in_rule__ObjectChoice__Group__27080 = new BitSet(new long[]{0x0000000600000000L});
-    public static final BitSet FOLLOW_rule__ObjectChoice__Group__3_in_rule__ObjectChoice__Group__27083 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectChoice__Group_2__0_in_rule__ObjectChoice__Group__2__Impl7110 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_rule__ObjectChoice__Group__3__Impl_in_rule__ObjectChoice__Group__37141 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__ObjectChoice__Group__3__Impl7169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectChoice__Group_2__0__Impl_in_rule__ObjectChoice__Group_2__07208 = new BitSet(new long[]{0x000000D000000020L});
-    public static final BitSet FOLLOW_rule__ObjectChoice__Group_2__1_in_rule__ObjectChoice__Group_2__07211 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__ObjectChoice__Group_2__0__Impl7239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectChoice__Group_2__1__Impl_in_rule__ObjectChoice__Group_2__17270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectChoice__OptionsAssignment_2_1_in_rule__ObjectChoice__Group_2__1__Impl7297 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectMaybe__Group_1__0__Impl_in_rule__ObjectMaybe__Group_1__07331 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_rule__ObjectMaybe__Group_1__1_in_rule__ObjectMaybe__Group_1__07334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectMaybe__DescriptionAssignment_1_0_in_rule__ObjectMaybe__Group_1__0__Impl7361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ObjectMaybe__Group_1__1__Impl_in_rule__ObjectMaybe__Group_1__17391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__ObjectMaybe__Group_1__1__Impl7419 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__DTDSL__ParserNameAssignment_27459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstract_in_rule__DTDSL__ObjDescriptionAssignment_47490 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStartPoint_in_rule__DTDSL__StartAssignment_57521 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__StartPoint__BeginAssignment_0_27556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__StartPoint__BeginAssignment_1_07595 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__StringDescription__NameAssignment_17630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringDescriptionInner_in_rule__StringDescription__DescriptionAssignment_47661 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__StringDescriptionInner__KeyRefAssignment_37696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__StringOverRead__OverReadAssignment7731 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__StringKey__NameAssignment_1_07762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_rule__StringKey__TypeAssignment_47793 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__StringValue__NameAssignment_1_07824 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_rule__StringValue__TypeAssignment_47855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__StringValue__ToKeyAssignment_5_17890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__StringOr__OptionAssignment_37929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__StringOr__OptionAssignment_4_17968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__StringDescriptionInVariable__NameAssignment_08003 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringDescriptionInner_in_rule__StringDescriptionInVariable__DescriptionAssignment_38034 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringDescriptionInner_in_rule__StringComplex__DescriptionAssignment_18065 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_rule__StringComplex__ManyAssignment_3_08101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__StringComplex__MaybeAssignment_3_18145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectDescription__NameAssignment_18184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleObjectDescriptionInner_in_rule__ObjectDescription__DescriptionAssignment_48215 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectAttribute__AttributesAssignment_18246 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectAttribute__StringMethodeAssignment_2_18281 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectNode__AttributesAssignment_18316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectNode__InnerAssignment_38351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJavaCodeOrID_in_rule__ObjectNext__AttributeAssignment_18386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectNext__ObjectDesriptionAssignment_38421 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__JavaCodeOrID__CodeAssignment_0_28456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__JavaCodeOrID__IdAssignment_18487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleObjectMaybeInner_in_rule__ObjectMany__OptionAssignment_08518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleObjectMaybeInner_in_rule__ObjectChoice__OptionsAssignment_18549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleObjectMaybeInner_in_rule__ObjectChoice__OptionsAssignment_2_18580 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectMaybe__OptionAssignment_08615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleObjectMaybeInner_in_rule__ObjectMaybe__DescriptionAssignment_1_08650 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringComplex__NameAssignment_0_in_rule__StringComplex__Group__0__Impl5120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringComplex__Group__1__Impl_in_rule__StringComplex__Group__15150 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringComplex__Alternatives_1_in_rule__StringComplex__Group__1__Impl5177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectDescription__Group__0__Impl_in_rule__ObjectDescription__Group__05211 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__ObjectDescription__Group__1_in_rule__ObjectDescription__Group__05214 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__ObjectDescription__Group__0__Impl5242 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectDescription__Group__1__Impl_in_rule__ObjectDescription__Group__15273 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__ObjectDescription__Group__2_in_rule__ObjectDescription__Group__15276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectDescription__NameAssignment_1_in_rule__ObjectDescription__Group__1__Impl5303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectDescription__Group__2__Impl_in_rule__ObjectDescription__Group__25333 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__ObjectDescription__Group__3_in_rule__ObjectDescription__Group__25336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__ObjectDescription__Group__2__Impl5364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectDescription__Group__3__Impl_in_rule__ObjectDescription__Group__35395 = new BitSet(new long[]{0x000000D104000020L});
+    public static final BitSet FOLLOW_rule__ObjectDescription__Group__4_in_rule__ObjectDescription__Group__35398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__ObjectDescription__Group__3__Impl5426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectDescription__Group__4__Impl_in_rule__ObjectDescription__Group__45457 = new BitSet(new long[]{0x000000D104000020L});
+    public static final BitSet FOLLOW_rule__ObjectDescription__Group__5_in_rule__ObjectDescription__Group__45460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectDescription__DescriptionAssignment_4_in_rule__ObjectDescription__Group__4__Impl5487 = new BitSet(new long[]{0x000000D100000022L});
+    public static final BitSet FOLLOW_rule__ObjectDescription__Group__5__Impl_in_rule__ObjectDescription__Group__55518 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__ObjectDescription__Group__5__Impl5546 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectDescriptionInner__Group__0__Impl_in_rule__ObjectDescriptionInner__Group__05589 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_rule__ObjectDescriptionInner__Group__1_in_rule__ObjectDescriptionInner__Group__05592 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectDescriptionInner__Alternatives_0_in_rule__ObjectDescriptionInner__Group__0__Impl5619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectDescriptionInner__Group__1__Impl_in_rule__ObjectDescriptionInner__Group__15649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__ObjectDescriptionInner__Group__1__Impl5677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectAttribute__Group__0__Impl_in_rule__ObjectAttribute__Group__05712 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__ObjectAttribute__Group__1_in_rule__ObjectAttribute__Group__05715 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__ObjectAttribute__Group__0__Impl5743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectAttribute__Group__1__Impl_in_rule__ObjectAttribute__Group__15774 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__ObjectAttribute__Group__2_in_rule__ObjectAttribute__Group__15777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectAttribute__AttributesAssignment_1_in_rule__ObjectAttribute__Group__1__Impl5804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectAttribute__Group__2__Impl_in_rule__ObjectAttribute__Group__25834 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectAttribute__Group_2__0_in_rule__ObjectAttribute__Group__2__Impl5861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectAttribute__Group_2__0__Impl_in_rule__ObjectAttribute__Group_2__05898 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__ObjectAttribute__Group_2__1_in_rule__ObjectAttribute__Group_2__05901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__ObjectAttribute__Group_2__0__Impl5929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectAttribute__Group_2__1__Impl_in_rule__ObjectAttribute__Group_2__15960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectAttribute__StringMethodeAssignment_2_1_in_rule__ObjectAttribute__Group_2__1__Impl5987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectNode__Group__0__Impl_in_rule__ObjectNode__Group__06021 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__ObjectNode__Group__1_in_rule__ObjectNode__Group__06024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__ObjectNode__Group__0__Impl6052 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectNode__Group__1__Impl_in_rule__ObjectNode__Group__16083 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__ObjectNode__Group__2_in_rule__ObjectNode__Group__16086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectNode__AttributesAssignment_1_in_rule__ObjectNode__Group__1__Impl6113 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectNode__Group__2__Impl_in_rule__ObjectNode__Group__26143 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__ObjectNode__Group__3_in_rule__ObjectNode__Group__26146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__ObjectNode__Group__2__Impl6174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectNode__Group__3__Impl_in_rule__ObjectNode__Group__36205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectNode__InnerAssignment_3_in_rule__ObjectNode__Group__3__Impl6232 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectNext__Group__0__Impl_in_rule__ObjectNext__Group__06270 = new BitSet(new long[]{0x0000010000000020L});
+    public static final BitSet FOLLOW_rule__ObjectNext__Group__1_in_rule__ObjectNext__Group__06273 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__ObjectNext__Group__0__Impl6301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectNext__Group__1__Impl_in_rule__ObjectNext__Group__16332 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_rule__ObjectNext__Group__2_in_rule__ObjectNext__Group__16335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectNext__AttributeAssignment_1_in_rule__ObjectNext__Group__1__Impl6362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectNext__Group__2__Impl_in_rule__ObjectNext__Group__26392 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__ObjectNext__Group__3_in_rule__ObjectNext__Group__26395 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__ObjectNext__Group__2__Impl6423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectNext__Group__3__Impl_in_rule__ObjectNext__Group__36454 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectNext__ObjectDesriptionAssignment_3_in_rule__ObjectNext__Group__3__Impl6481 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JavaCodeOrID__Group_0__0__Impl_in_rule__JavaCodeOrID__Group_0__06519 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__JavaCodeOrID__Group_0__1_in_rule__JavaCodeOrID__Group_0__06522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__JavaCodeOrID__Group_0__0__Impl6550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JavaCodeOrID__Group_0__1__Impl_in_rule__JavaCodeOrID__Group_0__16581 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__JavaCodeOrID__Group_0__2_in_rule__JavaCodeOrID__Group_0__16584 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__JavaCodeOrID__Group_0__1__Impl6612 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JavaCodeOrID__Group_0__2__Impl_in_rule__JavaCodeOrID__Group_0__26643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__JavaCodeOrID__CodeAssignment_0_2_in_rule__JavaCodeOrID__Group_0__2__Impl6670 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectMany__Group__0__Impl_in_rule__ObjectMany__Group__06706 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_rule__ObjectMany__Group__1_in_rule__ObjectMany__Group__06709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectMany__OptionAssignment_0_in_rule__ObjectMany__Group__0__Impl6736 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectMany__Group__1__Impl_in_rule__ObjectMany__Group__16766 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_rule__ObjectMany__Group__1__Impl6794 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectChoice__Group__0__Impl_in_rule__ObjectChoice__Group__06829 = new BitSet(new long[]{0x000000D000000020L});
+    public static final BitSet FOLLOW_rule__ObjectChoice__Group__1_in_rule__ObjectChoice__Group__06832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__ObjectChoice__Group__0__Impl6860 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectChoice__Group__1__Impl_in_rule__ObjectChoice__Group__16891 = new BitSet(new long[]{0x0000000600000000L});
+    public static final BitSet FOLLOW_rule__ObjectChoice__Group__2_in_rule__ObjectChoice__Group__16894 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectChoice__OptionsAssignment_1_in_rule__ObjectChoice__Group__1__Impl6921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectChoice__Group__2__Impl_in_rule__ObjectChoice__Group__26951 = new BitSet(new long[]{0x0000000600000000L});
+    public static final BitSet FOLLOW_rule__ObjectChoice__Group__3_in_rule__ObjectChoice__Group__26954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectChoice__Group_2__0_in_rule__ObjectChoice__Group__2__Impl6981 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_rule__ObjectChoice__Group__3__Impl_in_rule__ObjectChoice__Group__37012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__ObjectChoice__Group__3__Impl7040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectChoice__Group_2__0__Impl_in_rule__ObjectChoice__Group_2__07079 = new BitSet(new long[]{0x000000D000000020L});
+    public static final BitSet FOLLOW_rule__ObjectChoice__Group_2__1_in_rule__ObjectChoice__Group_2__07082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__ObjectChoice__Group_2__0__Impl7110 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectChoice__Group_2__1__Impl_in_rule__ObjectChoice__Group_2__17141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectChoice__OptionsAssignment_2_1_in_rule__ObjectChoice__Group_2__1__Impl7168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectMaybe__Group_1__0__Impl_in_rule__ObjectMaybe__Group_1__07202 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_rule__ObjectMaybe__Group_1__1_in_rule__ObjectMaybe__Group_1__07205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectMaybe__DescriptionAssignment_1_0_in_rule__ObjectMaybe__Group_1__0__Impl7232 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ObjectMaybe__Group_1__1__Impl_in_rule__ObjectMaybe__Group_1__17262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_rule__ObjectMaybe__Group_1__1__Impl7290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__DTDSL__ParserNameAssignment_27330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstract_in_rule__DTDSL__ObjDescriptionAssignment_47361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStartPoint_in_rule__DTDSL__StartAssignment_57392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StartPoint__BeginAssignment_0_27427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StartPoint__BeginAssignment_1_07466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StringDescription__NameAssignment_17501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringDescriptionInner_in_rule__StringDescription__DescriptionAssignment_47532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StringDescriptionInner__KeyRefAssignment_37567 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__StringOverRead__OverReadAssignment7602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StringKey__NameAssignment_1_07633 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_rule__StringKey__TypeAssignment_47664 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StringValue__NameAssignment_1_07695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_rule__StringValue__TypeAssignment_47726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StringValue__ToKeyAssignment_5_17761 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StringOr__OptionAssignment_37800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StringOr__OptionAssignment_4_17839 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StringDescriptionInVariable__NameAssignment_07874 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringDescriptionInner_in_rule__StringDescriptionInVariable__DescriptionAssignment_37905 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StringComplex__NameAssignment_07940 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_rule__StringComplex__ManyAssignment_1_07980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_rule__StringComplex__MaybeAssignment_1_18024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectDescription__NameAssignment_18063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleObjectDescriptionInner_in_rule__ObjectDescription__DescriptionAssignment_48094 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectAttribute__AttributesAssignment_18125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectAttribute__StringMethodeAssignment_2_18160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectNode__AttributesAssignment_18195 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectNode__InnerAssignment_38230 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJavaCodeOrID_in_rule__ObjectNext__AttributeAssignment_18265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectNext__ObjectDesriptionAssignment_38300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__JavaCodeOrID__CodeAssignment_0_28335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__JavaCodeOrID__IdAssignment_18366 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleObjectMaybeInner_in_rule__ObjectMany__OptionAssignment_08397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleObjectMaybeInner_in_rule__ObjectChoice__OptionsAssignment_18428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleObjectMaybeInner_in_rule__ObjectChoice__OptionsAssignment_2_18459 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ObjectMaybe__OptionAssignment_08494 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleObjectMaybeInner_in_rule__ObjectMaybe__DescriptionAssignment_1_08529 = new BitSet(new long[]{0x0000000000000002L});
 
 }

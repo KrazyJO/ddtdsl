@@ -55,7 +55,7 @@ StringDescriptionInVariable:
 ;
 
 StringComplex:
-	'(' description+=StringDescriptionInner* ')' (many='*' | maybe='?')
+	name=[StringDescriptionInVariable] (many='*' | maybe='?')
 ;
 
 //---------------------------  Object  ---------------------------

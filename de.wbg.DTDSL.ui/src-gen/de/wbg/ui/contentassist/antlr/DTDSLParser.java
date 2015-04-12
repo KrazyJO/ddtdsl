@@ -40,7 +40,7 @@ public class DTDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStartPointAccess().getAlternatives(), "rule__StartPoint__Alternatives");
 					put(grammarAccess.getAbstractAccess().getAlternatives(), "rule__Abstract__Alternatives");
 					put(grammarAccess.getStringDescriptionInnerAccess().getAlternatives(), "rule__StringDescriptionInner__Alternatives");
-					put(grammarAccess.getStringComplexAccess().getAlternatives_3(), "rule__StringComplex__Alternatives_3");
+					put(grammarAccess.getStringComplexAccess().getAlternatives_1(), "rule__StringComplex__Alternatives_1");
 					put(grammarAccess.getObjectDescriptionInnerAccess().getAlternatives_0(), "rule__ObjectDescriptionInner__Alternatives_0");
 					put(grammarAccess.getJavaCodeOrIDAccess().getAlternatives(), "rule__JavaCodeOrID__Alternatives");
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
@@ -88,9 +88,9 @@ public class DTDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStringOrAccess().getOptionAssignment_4_1(), "rule__StringOr__OptionAssignment_4_1");
 					put(grammarAccess.getStringDescriptionInVariableAccess().getNameAssignment_0(), "rule__StringDescriptionInVariable__NameAssignment_0");
 					put(grammarAccess.getStringDescriptionInVariableAccess().getDescriptionAssignment_3(), "rule__StringDescriptionInVariable__DescriptionAssignment_3");
-					put(grammarAccess.getStringComplexAccess().getDescriptionAssignment_1(), "rule__StringComplex__DescriptionAssignment_1");
-					put(grammarAccess.getStringComplexAccess().getManyAssignment_3_0(), "rule__StringComplex__ManyAssignment_3_0");
-					put(grammarAccess.getStringComplexAccess().getMaybeAssignment_3_1(), "rule__StringComplex__MaybeAssignment_3_1");
+					put(grammarAccess.getStringComplexAccess().getNameAssignment_0(), "rule__StringComplex__NameAssignment_0");
+					put(grammarAccess.getStringComplexAccess().getManyAssignment_1_0(), "rule__StringComplex__ManyAssignment_1_0");
+					put(grammarAccess.getStringComplexAccess().getMaybeAssignment_1_1(), "rule__StringComplex__MaybeAssignment_1_1");
 					put(grammarAccess.getObjectDescriptionAccess().getNameAssignment_1(), "rule__ObjectDescription__NameAssignment_1");
 					put(grammarAccess.getObjectDescriptionAccess().getDescriptionAssignment_4(), "rule__ObjectDescription__DescriptionAssignment_4");
 					put(grammarAccess.getObjectAttributeAccess().getAttributesAssignment_1(), "rule__ObjectAttribute__AttributesAssignment_1");

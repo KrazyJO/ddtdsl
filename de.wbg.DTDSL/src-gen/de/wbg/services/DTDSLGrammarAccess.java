@@ -478,49 +478,45 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class StringComplexElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StringComplex");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cDescriptionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cDescriptionStringDescriptionInnerParserRuleCall_1_0 = (RuleCall)cDescriptionAssignment_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Assignment cManyAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
-		private final Keyword cManyAsteriskKeyword_3_0_0 = (Keyword)cManyAssignment_3_0.eContents().get(0);
-		private final Assignment cMaybeAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
-		private final Keyword cMaybeQuestionMarkKeyword_3_1_0 = (Keyword)cMaybeAssignment_3_1.eContents().get(0);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cNameStringDescriptionInVariableCrossReference_0_0 = (CrossReference)cNameAssignment_0.eContents().get(0);
+		private final RuleCall cNameStringDescriptionInVariableIDTerminalRuleCall_0_0_1 = (RuleCall)cNameStringDescriptionInVariableCrossReference_0_0.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cManyAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final Keyword cManyAsteriskKeyword_1_0_0 = (Keyword)cManyAssignment_1_0.eContents().get(0);
+		private final Assignment cMaybeAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final Keyword cMaybeQuestionMarkKeyword_1_1_0 = (Keyword)cMaybeAssignment_1_1.eContents().get(0);
 		
 		//StringComplex:
-		//	"(" description+=StringDescriptionInner* ")" (many="*" | maybe="?");
+		//	name=[StringDescriptionInVariable] (many="*" | maybe="?");
 		public ParserRule getRule() { return rule; }
 
-		//"(" description+=StringDescriptionInner* ")" (many="*" | maybe="?")
+		//name=[StringDescriptionInVariable] (many="*" | maybe="?")
 		public Group getGroup() { return cGroup; }
 
-		//"("
-		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
+		//name=[StringDescriptionInVariable]
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 
-		//description+=StringDescriptionInner*
-		public Assignment getDescriptionAssignment_1() { return cDescriptionAssignment_1; }
+		//[StringDescriptionInVariable]
+		public CrossReference getNameStringDescriptionInVariableCrossReference_0_0() { return cNameStringDescriptionInVariableCrossReference_0_0; }
 
-		//StringDescriptionInner
-		public RuleCall getDescriptionStringDescriptionInnerParserRuleCall_1_0() { return cDescriptionStringDescriptionInnerParserRuleCall_1_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
+		//ID
+		public RuleCall getNameStringDescriptionInVariableIDTerminalRuleCall_0_0_1() { return cNameStringDescriptionInVariableIDTerminalRuleCall_0_0_1; }
 
 		//many="*" | maybe="?"
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//many="*"
-		public Assignment getManyAssignment_3_0() { return cManyAssignment_3_0; }
+		public Assignment getManyAssignment_1_0() { return cManyAssignment_1_0; }
 
 		//"*"
-		public Keyword getManyAsteriskKeyword_3_0_0() { return cManyAsteriskKeyword_3_0_0; }
+		public Keyword getManyAsteriskKeyword_1_0_0() { return cManyAsteriskKeyword_1_0_0; }
 
 		//maybe="?"
-		public Assignment getMaybeAssignment_3_1() { return cMaybeAssignment_3_1; }
+		public Assignment getMaybeAssignment_1_1() { return cMaybeAssignment_1_1; }
 
 		//"?"
-		public Keyword getMaybeQuestionMarkKeyword_3_1_0() { return cMaybeQuestionMarkKeyword_3_1_0; }
+		public Keyword getMaybeQuestionMarkKeyword_1_1_0() { return cMaybeQuestionMarkKeyword_1_1_0; }
 	}
 
 	public class ObjectDescriptionElements extends AbstractParserRuleElementFinder {
@@ -1149,7 +1145,7 @@ public class DTDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StringComplex:
-	//	"(" description+=StringDescriptionInner* ")" (many="*" | maybe="?");
+	//	name=[StringDescriptionInVariable] (many="*" | maybe="?");
 	public StringComplexElements getStringComplexAccess() {
 		return pStringComplex;
 	}
