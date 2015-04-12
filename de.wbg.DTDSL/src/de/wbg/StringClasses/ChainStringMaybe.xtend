@@ -21,27 +21,30 @@ class ChainStringMaybe extends ChainString{
 			if (i.maybe != null)
 			{
 				this.initMessageHandler
-				var ret = '''		{ //maybe
-			int scannerPosition = scanner.getPosition();
-			Head maybeHead = new Head("none");
-			maybeHead.setNodeNumber(n.getNodeNumber());
-			try 
-			{
-				//tada
-				parse«(i.eContainer as StringDescription).name»Option«i.name.name.toFirstUpper»(maybeHead);
-				
-				for (Element el : maybeHead.getChildren())
+				var ret = '''			{ //maybe
+				int scannerPosition = scanner.getPosition();
+				Head maybeHead = new Head("none");
+				maybeHead.setNodeNumber(n.getNodeNumber());
+				maybeHead.setAttributeNumber(n.getAttributeNumber());
+				try 
 				{
-					n.addChild(el);
-					el.setParent(n);
-					maybeHead.removeChild(el);
+					parse«(i.eContainer as StringDescription).name»Option«i.name.name.toFirstUpper»(maybeHead);
+					
+					for (Element el : maybeHead.getChildren())
+					{
+						n.addChild(el);
+						el.setParent(n);
+						maybeHead.removeChild(el);
+					}
+					
+					n.setNodeNumber(maybeHead.getNodeNumber());
+					n.setAttributeNumber(maybeHead.getAttributeNumber());
+				}
+				catch (Exception e)
+				{
+					scanner.resetToPosition(scannerPosition);
 				}
 			}
-			catch (Exception e)
-			{
-				scanner.resetToPosition(scannerPosition);
-			}
-		}
 				
 				'''
 				

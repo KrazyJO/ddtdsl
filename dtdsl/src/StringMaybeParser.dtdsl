@@ -1,0 +1,11 @@
+parserName = "SimpleStringMaybeParser";
+
+String XmlMaybe : 
+{
+	"<" key=Key ofType String ">" val=Value ofType String "</" key ">"
+	maybe?
+	
+	maybe := "<" key=Key ofType String ">" val=Value ofType String "</" key ">"; 
+}
+
+beginWith = XmlMaybe

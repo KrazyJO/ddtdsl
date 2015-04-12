@@ -1,0 +1,10 @@
+parserName = "SimpleStringManyParser";
+
+String XmlString:
+{
+	xmlString*
+	
+	xmlString := "<" key=Key ofType String  ">" val=Value ofType String "</" key ">";
+}
+
+beginWith = XmlString

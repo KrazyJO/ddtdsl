@@ -102,5 +102,31 @@ public class TestSimpleStingKeyValue {
 				+ "<el>val1</el>"
 				+ "<el>val2</el>"
 				+ "<el>val3</el>";
+		SimpleStringManyParser parser = new SimpleStringManyParser();
+		Head head = parser.parse(xmlString);
+		
+		assertEquals("Head doesnt have the right size", 9, head.getTotalLength());
+		
+		Node node0 = head.getNodeByName("HEAD.node0");
+		assertEquals("node should be key", true, node0.isKey());
+		assertEquals("node has wrong value", "el", node0.getValue());
+		Node node1 = head.getNodeByName("HEAD.node1");
+		assertEquals("node should be key", true, node1.isKey());
+		assertEquals("node has wrong value", "el", node1.getValue());
+		Node node2 = head.getNodeByName("HEAD.node2");
+		assertEquals("node should be key", true, node2.isKey());
+		assertEquals("node has wrong value", "el", node2.getValue());
+		Node node3 = head.getNodeByName("HEAD.node3");
+		assertEquals("node should be key", true, node3.isKey());
+		assertEquals("node has wrong value", "el", node3.getValue());
+		
+		Attribute node0attrib = node0.getAttributeByName("node0.attribute0");
+		assertEquals("wrong attribute value", "val0", node0attrib.getValue());
+		Attribute node1attrib = node1.getAttributeByName("node1.attribute0");
+		assertEquals("wrong attribute value", "val1", node1attrib.getValue());
+		Attribute node2attrib = node2.getAttributeByName("node2.attribute0");
+		assertEquals("wrong attribute value", "val2", node2attrib.getValue());
+		Attribute node3attrib = node3.getAttributeByName("node3.attribute0");
+		assertEquals("wrong attribute value", "val3", node3attrib.getValue());
 	}
 }

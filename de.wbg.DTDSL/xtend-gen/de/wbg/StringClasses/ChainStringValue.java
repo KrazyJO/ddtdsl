@@ -38,7 +38,7 @@ public class ChainStringValue extends ChainString {
       _builder.append("{");
       _builder.newLine();
       _builder.append("\t\t\t");
-      _builder.append("Attribute valueAttrib = new Attribute(n.getNameForAttribute());");
+      _builder.append("Attribute valueAttrib = new Attribute(nodeForValue.getNameForAttribute());");
       _builder.newLine();
       _builder.append("\t\t\t");
       _builder.append("valueAttrib.setType(String.class);");

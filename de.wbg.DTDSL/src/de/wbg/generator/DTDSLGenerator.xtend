@@ -10,6 +10,7 @@ import de.wbg.ScannerGen
 import de.wbg.StringClasses.ChainString
 import de.wbg.StringClasses.ChainStringKey
 import de.wbg.StringClasses.ChainStringKeyRef
+import de.wbg.StringClasses.ChainStringMany
 import de.wbg.StringClasses.ChainStringMaybe
 import de.wbg.StringClasses.ChainStringOr
 import de.wbg.StringClasses.ChainStringReadOver
@@ -23,6 +24,7 @@ import de.wbg.dTDSL.ObjectMany
 import de.wbg.dTDSL.ObjectMaybe
 import de.wbg.dTDSL.ObjectNext
 import de.wbg.dTDSL.ObjectNode
+import de.wbg.dTDSL.StringComplex
 import de.wbg.dTDSL.StringDescription
 import de.wbg.dTDSL.StringDescriptionInVariable
 import de.wbg.extra.ChainMaybe
@@ -40,7 +42,6 @@ import java.util.LinkedList
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
-import de.wbg.dTDSL.StringComplex
 
 /**
  * Generates code from your model files on save.
@@ -839,6 +840,7 @@ class DTDSLGenerator implements IGenerator {
 		this.chainString.add(new ChainStringValue(this))
 		this.chainString.add(new ChainStringOr(this))
 		this.chainString.add(new ChainStringMaybe(this));
+		this.chainString.add(new ChainStringMany(this));
 	}
 	
 	

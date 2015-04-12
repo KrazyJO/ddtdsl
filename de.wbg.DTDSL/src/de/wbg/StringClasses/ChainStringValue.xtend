@@ -17,7 +17,7 @@ class ChainStringValue extends ChainString {
 			{
 				this.returnValue = '''		//parseValue «if (i.name != null) {this.generator.needStringValueStore = true; i.name}»
 		{
-			Attribute valueAttrib = new Attribute(n.getNameForAttribute());
+			Attribute valueAttrib = new Attribute(nodeForValue.getNameForAttribute());
 			valueAttrib.setType(String.class);
 			//parse Value
 			«if (index == (getDescriptionSize(i.eContainer)-1)) 
