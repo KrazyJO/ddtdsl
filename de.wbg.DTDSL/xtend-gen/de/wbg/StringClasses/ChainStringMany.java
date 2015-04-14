@@ -22,6 +22,13 @@ public class ChainStringMany extends ChainString {
       String _many = ((StringComplex)i).getMany();
       boolean _notEquals = (!Objects.equal(_many, null));
       if (_notEquals) {
+        StringDescription stringDescription = null;
+        Object o = ((StringComplex)i).eContainer();
+        while ((!(o instanceof StringDescription))) {
+          EObject _eContainer = ((StringComplex)i).eContainer();
+          o = _eContainer;
+        }
+        stringDescription = ((StringDescription) o);
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("\t");
         _builder.append("{ //many");
@@ -60,8 +67,7 @@ public class ChainStringMany extends ChainString {
         _builder.newLine();
         _builder.append("\t\t\t\t\t");
         _builder.append("parse");
-        EObject _eContainer = ((StringComplex)i).eContainer();
-        String _name = ((StringDescription) _eContainer).getName();
+        String _name = stringDescription.getName();
         _builder.append(_name, "\t\t\t\t\t");
         _builder.append("Option");
         StringDescriptionInVariable _name_1 = ((StringComplex)i).getName();

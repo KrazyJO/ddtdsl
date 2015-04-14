@@ -1,13 +1,22 @@
 package de.wbg.StringClasses;
 
 import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
 import de.wbg.StringClasses.ChainString;
+import de.wbg.dTDSL.StringComplex;
+import de.wbg.dTDSL.StringDescriptionInVariable;
 import de.wbg.dTDSL.StringDescriptionInner;
 import de.wbg.dTDSL.StringOverRead;
 import de.wbg.dTDSL.StringValue;
 import de.wbg.generator.DTDSLGenerator;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
 public class ChainStringValue extends ChainString {
@@ -41,8 +50,11 @@ public class ChainStringValue extends ChainString {
       _builder.append("Attribute valueAttrib = new Attribute(nodeForValue.getNameForAttribute());");
       _builder.newLine();
       _builder.append("\t\t\t");
-      _builder.append("valueAttrib.setType(String.class);");
-      _builder.newLine();
+      _builder.append("valueAttrib.setType(");
+      String _type = ((StringValue)i).getType();
+      _builder.append(_type, "\t\t\t");
+      _builder.append(".class);");
+      _builder.newLineIfNotEmpty();
       _builder.append("\t\t\t");
       _builder.append("//parse Value");
       _builder.newLine();
@@ -63,16 +75,107 @@ public class ChainStringValue extends ChainString {
           StringDescriptionInner temp = this.getDescriptionObjectGet(_eContainer_1, (index + 1));
           CharSequence _xifexpression_2 = null;
           if ((temp instanceof StringOverRead)) {
-            StringConcatenation _builder_2 = new StringConcatenation();
-            _builder_2.append("String value = scanner.scanUpToString(\"");
-            String _overRead = ((StringOverRead)temp).getOverRead();
-            _builder_2.append(_overRead, "");
-            _builder_2.append("\");");
-            _xifexpression_2 = _builder_2;
+            CharSequence _xifexpression_3 = null;
+            String _type_1 = ((StringValue)i).getType();
+            boolean _notEquals_1 = (!Objects.equal(_type_1, "String"));
+            if (_notEquals_1) {
+              StringConcatenation _builder_2 = new StringConcatenation();
+              String _type_2 = ((StringValue)i).getType();
+              _builder_2.append(_type_2, "");
+              _builder_2.append(" value = scanner.scanUpToStringAs");
+              String _type_3 = ((StringValue)i).getType();
+              String _firstUpper = StringExtensions.toFirstUpper(_type_3);
+              _builder_2.append(_firstUpper, "");
+              _builder_2.append("(\"");
+              String _overRead = ((StringOverRead)temp).getOverRead();
+              _builder_2.append(_overRead, "");
+              _builder_2.append("\");");
+              _xifexpression_3 = _builder_2;
+            } else {
+              StringConcatenation _builder_3 = new StringConcatenation();
+              _builder_3.append("String value = scanner.scanUpToString(\"");
+              String _overRead_1 = ((StringOverRead)temp).getOverRead();
+              _builder_3.append(_overRead_1, "");
+              _builder_3.append("\");");
+              _xifexpression_3 = _builder_3;
+            }
+            _xifexpression_2 = _xifexpression_3;
           } else {
-            StringConcatenation _builder_3 = new StringConcatenation();
-            _builder_3.append("//this case is not implemented yet -> scan value, no next");
-            _xifexpression_2 = _builder_3;
+            CharSequence _xifexpression_4 = null;
+            if ((temp instanceof StringComplex)) {
+              CharSequence _xblockexpression_2 = null;
+              {
+                String next = this.getNextElementFromComplex(((StringComplex)temp));
+                CharSequence _xifexpression_5 = null;
+                boolean _notEquals_2 = (!Objects.equal(next, null));
+                if (_notEquals_2) {
+                  CharSequence _xifexpression_6 = null;
+                  boolean _equals_1 = Objects.equal(next, "");
+                  if (_equals_1) {
+                    StringConcatenation _builder_4 = new StringConcatenation();
+                    _builder_4.append("String value = scanner.scanUpToSpace();");
+                    _xifexpression_6 = _builder_4;
+                  } else {
+                    CharSequence _xifexpression_7 = null;
+                    String _maybe = ((StringComplex)temp).getMaybe();
+                    boolean _notEquals_3 = (!Objects.equal(_maybe, null));
+                    if (_notEquals_3) {
+                      StringConcatenation _builder_5 = new StringConcatenation();
+                      _builder_5.append("String value = null;");
+                      _builder_5.newLine();
+                      _builder_5.append("{");
+                      _builder_5.newLine();
+                      _builder_5.append("\t");
+                      _builder_5.append("int scannerPos = scanner.getPosition();");
+                      _builder_5.newLine();
+                      _builder_5.append("\t");
+                      _builder_5.append("try");
+                      _builder_5.newLine();
+                      _builder_5.append("\t");
+                      _builder_5.append("{");
+                      _builder_5.newLine();
+                      _builder_5.append("\t\t");
+                      _builder_5.append("value = scanner.scanUpToString(\"");
+                      _builder_5.append(next, "\t\t");
+                      _builder_5.append("\");");
+                      _builder_5.newLineIfNotEmpty();
+                      _builder_5.append("\t");
+                      _builder_5.append("}");
+                      _builder_5.newLine();
+                      _builder_5.append("\t");
+                      _builder_5.append("catch (Exception e)");
+                      _builder_5.newLine();
+                      _builder_5.append("\t");
+                      _builder_5.append("{");
+                      _builder_5.newLine();
+                      _builder_5.append("\t\t");
+                      _builder_5.append("scanner.resetToPosition(scannerPos);");
+                      _builder_5.newLine();
+                      _builder_5.append("\t");
+                      _builder_5.append("}");
+                      _builder_5.newLine();
+                      _builder_5.append("}");
+                      _builder_5.newLine();
+                      _builder_5.newLine();
+                      _xifexpression_7 = _builder_5;
+                    }
+                    _xifexpression_6 = _xifexpression_7;
+                  }
+                  _xifexpression_5 = _xifexpression_6;
+                } else {
+                  StringConcatenation _builder_6 = new StringConcatenation();
+                  _builder_6.append("String value = scanner.scanUpToEnd();");
+                  _xifexpression_5 = _builder_6;
+                }
+                _xblockexpression_2 = _xifexpression_5;
+              }
+              _xifexpression_4 = _xblockexpression_2;
+            } else {
+              StringConcatenation _builder_4 = new StringConcatenation();
+              _builder_4.append("//this case is not implemented yet -> scan value, no next");
+              _xifexpression_4 = _builder_4;
+            }
+            _xifexpression_2 = _xifexpression_4;
           }
           _xblockexpression_1 = _xifexpression_2;
         }
@@ -81,13 +184,24 @@ public class ChainStringValue extends ChainString {
       _builder.append(_xifexpression_1, "\t\t\t");
       _builder.newLineIfNotEmpty();
       _builder.append("\t\t\t");
+      _builder.append("if (value != null)");
+      _builder.newLine();
+      _builder.append("\t\t\t");
+      _builder.append("{");
+      _builder.newLine();
+      _builder.append("\t\t\t\t");
       _builder.append("valueAttrib.setValue(value);");
       _builder.newLine();
-      _builder.append("\t\t\t");
+      _builder.append("\t\t\t\t");
       _builder.append("valueAttrib.setParent(nodeForValue);");
       _builder.newLine();
-      _builder.append("\t\t\t");
+      _builder.append("\t\t\t\t");
       _builder.append("nodeForValue.addChild(valueAttrib);");
+      _builder.newLine();
+      _builder.append("\t\t\t");
+      _builder.append("}");
+      _builder.newLine();
+      _builder.append("\t\t\t");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("}");
@@ -96,5 +210,45 @@ public class ChainStringValue extends ChainString {
       return true;
     }
     return false;
+  }
+  
+  public String getNextElementFromComplex(final StringComplex c) {
+    String _xblockexpression = null;
+    {
+      Resource _eResource = c.eResource();
+      TreeIterator<EObject> _allContents = _eResource.getAllContents();
+      Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
+      Iterable<StringDescriptionInVariable> _filter = Iterables.<StringDescriptionInVariable>filter(_iterable, StringDescriptionInVariable.class);
+      for (final StringDescriptionInVariable el : _filter) {
+        String _name = el.getName();
+        StringDescriptionInVariable _name_1 = c.getName();
+        String _name_2 = _name_1.getName();
+        boolean _equals = Objects.equal(_name, _name_2);
+        if (_equals) {
+          EList<EObject> _eContents = el.eContents();
+          EObject n = _eContents.get(0);
+          boolean _and = false;
+          boolean _notEquals = (!Objects.equal(n, null));
+          if (!_notEquals) {
+            _and = false;
+          } else {
+            _and = (n instanceof StringOverRead);
+          }
+          if (_and) {
+            return ((StringOverRead) n).getOverRead();
+          } else {
+            boolean _equals_1 = Objects.equal(n, null);
+            if (_equals_1) {
+              InputOutput.<String>println("found null");
+              return null;
+            } else {
+              return "";
+            }
+          }
+        }
+      }
+      _xblockexpression = InputOutput.<String>println("nicht das richtige dabei");
+    }
+    return _xblockexpression;
   }
 }

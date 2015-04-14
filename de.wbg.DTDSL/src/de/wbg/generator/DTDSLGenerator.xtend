@@ -42,6 +42,7 @@ import java.util.LinkedList
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
+import de.wbg.dTDSL.StringDescriptionInner
 
 /**
  * Generates code from your model files on save.
@@ -230,7 +231,8 @@ class DTDSLGenerator implements IGenerator {
 //-----------------------------------------  String  -----------------------------------------
 	def CharSequence compileStringManyMethode(StringComplex v)
 	{
-		var ret = '''	private void parseString«(v.eContainer as StringDescription).name»Maybe(Element n) throws Exception
+		var StringDescription sDescription = this.goUpToStringDescription(v)
+		var ret = '''	private void parseString«sDescription.name»Maybe(Element n) throws Exception
 	{
 		
 	}
@@ -843,6 +845,25 @@ class DTDSLGenerator implements IGenerator {
 		this.chainString.add(new ChainStringMany(this));
 	}
 	
+	def StringDescription goUpToStringDescription(Object o)
+	{
+		if (o instanceof StringDescription)
+		{
+			return (o as StringDescription)	
+		}
+		else if (o instanceof StringComplex)
+		{
+			return this.goUpToStringDescription((o as StringComplex).eContainer)
+		}
+		else if (o instanceof StringDescriptionInVariable)
+		{
+			return this.goUpToStringDescription((o as StringDescriptionInVariable).eContainer)
+		}		
+		else if (o instanceof StringDescriptionInner)
+		{
+			return this.goUpToStringDescription((o as StringDescriptionInner).eContainer)
+		}
+	}
 	
 	//------------------------------ Getters / Setters ------------------------------
 	def void setGenerateStringFeatures(boolean value)

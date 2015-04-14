@@ -1,0 +1,11 @@
+parserName = "SimpleStringJsonArrayParser";
+
+String JsonArray:
+{
+	"[" many* "]"
+	
+	many := key =  Value ofType String comma?;
+	comma := ",";
+}
+
+beginWith = JsonArray

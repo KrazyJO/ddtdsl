@@ -1,6 +1,7 @@
 package de.wbg.dtdsl;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
@@ -128,5 +129,31 @@ public class TestSimpleStingKeyValue {
 		assertEquals("wrong attribute value", "val2", node2attrib.getValue());
 		Attribute node3attrib = node3.getAttributeByName("node3.attribute0");
 		assertEquals("wrong attribute value", "val3", node3attrib.getValue());
+	}
+	
+	@Test
+	public void testScanInt()
+	{
+		String parserString = "<1.2>123</1.2>";
+		SimpleStringScanNotString parser = new SimpleStringScanNotString();
+		Head head = parser.parse(parserString);
+		
+		Node node = head.getNodeByName("HEAD.node0");
+		assertNotNull(node);
+		Attribute attrib = node.getAttributeByName("node0.attribute0");
+		assertNotNull(attrib);
+		assertEquals("attribute type should be int.class", int.class, attrib.getType());
+		assertEquals("attribute value should be 123 as int", 123, attrib.getValue());
+//		Attribute attrib = node.getAttributeByName("node0.attribute0");
+		
+	}
+	
+	@Test
+	public void testSimpleStringJsonArray()
+	{
+		String parserString = "[1,2,3]";
+		SimpleStringJsonArrayParser parser = new SimpleStringJsonArrayParser();
+		Head head = parser.parse(parserString);
+		
 	}
 }

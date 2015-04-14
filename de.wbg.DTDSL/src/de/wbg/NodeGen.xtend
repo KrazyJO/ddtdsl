@@ -10,7 +10,8 @@ package de.wbg.dtdsl;
 public class Node extends Element{
 
 	private String name;
-	private String value;
+	private Object value;
+	private Class valueClass;
 	private boolean key;
 	
 «««	private Node parent;
@@ -37,6 +38,16 @@ public class Node extends Element{
 		return rNode;
 	}
 	
+	public void setValueClass(Class c)
+	{
+		this.valueClass = c;
+	}
+	
+	public Class getValueClass()
+	{
+		return this.valueClass;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -54,30 +65,12 @@ public class Node extends Element{
 		this.key = key;
 	}
 	
-	public String getValue()
+	public Object getValue()
 	{
 		return value;
 	}
 	
-«««	public void addChildren(Node child)
-«««	{
-«««		this.children.add(child);
-«««	}
-«««	
-«««	public ArrayList<Node> getChildren()
-«««	{
-«««		return this.children;
-«««	}
-	
-«««	public void setParent(Node parent) {
-«««		this.parent = parent;
-«««	}
-«««	
-«««	public Node getParent() {
-«««		return parent;
-«««	}
-	
-	public void setValue(String value) {
+	public void setValue(Object value) {
 		this.value = value;
 	}
 }

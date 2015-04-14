@@ -1,0 +1,10 @@
+parserName = "SimpleStringScanNotString";
+
+String Desc:
+{
+	des*
+	
+	des := "<" key = Key ofType double ">" Value ofType int "</" key ">";
+}
+
+beginWith = Desc

@@ -30,6 +30,7 @@ public class ChainStringMaybe extends ChainString {
       String _maybe = ((StringComplex)i).getMaybe();
       boolean _notEquals = (!Objects.equal(_maybe, null));
       if (_notEquals) {
+        StringDescription stringDescription = this.goUpToStringDescription(i);
         this.initMessageHandler();
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("\t\t\t");
@@ -55,8 +56,7 @@ public class ChainStringMaybe extends ChainString {
         _builder.newLine();
         _builder.append("\t\t\t\t\t");
         _builder.append("parse");
-        EObject _eContainer = ((StringComplex)i).eContainer();
-        String _name = ((StringDescription) _eContainer).getName();
+        String _name = stringDescription.getName();
         _builder.append(_name, "\t\t\t\t\t");
         _builder.append("Option");
         StringDescriptionInVariable _name_1 = ((StringComplex)i).getName();
@@ -142,5 +142,22 @@ public class ChainStringMaybe extends ChainString {
     DTDSLGenerator _generator_5 = this.getGenerator();
     ChainStringMaybe _chainStringMaybe = new ChainStringMaybe(_generator_5);
     this.handlerList.add(_chainStringMaybe);
+  }
+  
+  public StringDescription goUpToStringDescription(final Object o) {
+    if ((o instanceof StringDescription)) {
+      return ((StringDescription) o);
+    } else {
+      if ((o instanceof StringDescriptionInVariable)) {
+        EObject _eContainer = ((StringDescriptionInVariable) o).eContainer();
+        return this.goUpToStringDescription(_eContainer);
+      } else {
+        if ((o instanceof StringDescriptionInner)) {
+          EObject _eContainer_1 = ((StringDescriptionInner) o).eContainer();
+          return this.goUpToStringDescription(_eContainer_1);
+        }
+      }
+    }
+    return null;
   }
 }

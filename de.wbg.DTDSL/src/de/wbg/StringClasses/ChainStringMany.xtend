@@ -17,6 +17,13 @@ class ChainStringMany extends ChainString {
 		{
 			if (i.many != null)
 			{
+				var StringDescription stringDescription;
+				var Object o = i.eContainer
+				while (!(o instanceof StringDescription))
+				{
+					o = i.eContainer
+				}
+				stringDescription = o as StringDescription
 				var ret = '''	{ //many
 			boolean runLoop = true;
 			int scannerPosition;
@@ -29,7 +36,7 @@ class ChainStringMany extends ChainString {
 					manyHead.setNodeNumber(n.getNodeNumber());
 					manyHead.setAttributeNumber(n.getAttributeNumber());
 					
-					parse«(i.eContainer as StringDescription).name»Option«i.name.name.toFirstUpper»(manyHead);
+					parse«stringDescription.name»Option«i.name.name.toFirstUpper»(manyHead);
 					
 					for (Element el : manyHead.getChildren())
 					{

@@ -5,6 +5,7 @@ import de.wbg.dTDSL.StringDescriptionInner
 import de.wbg.dTDSL.StringComplex
 import java.util.LinkedList
 import de.wbg.dTDSL.StringDescription
+import de.wbg.dTDSL.StringDescriptionInVariable
 
 class ChainStringMaybe extends ChainString{
 	
@@ -20,6 +21,7 @@ class ChainStringMaybe extends ChainString{
 		{
 			if (i.maybe != null)
 			{
+				var StringDescription stringDescription = this.goUpToStringDescription(i)
 				this.initMessageHandler
 				var ret = '''			{ //maybe
 				int scannerPosition = scanner.getPosition();
@@ -28,7 +30,7 @@ class ChainStringMaybe extends ChainString{
 				maybeHead.setAttributeNumber(n.getAttributeNumber());
 				try 
 				{
-					parse«(i.eContainer as StringDescription).name»Option«i.name.name.toFirstUpper»(maybeHead);
+					parse«stringDescription.name»Option«i.name.name.toFirstUpper»(maybeHead);
 					
 					for (Element el : maybeHead.getChildren())
 					{
@@ -65,6 +67,22 @@ class ChainStringMaybe extends ChainString{
 		this.handlerList.add(new ChainStringValue(this.generator))
 		this.handlerList.add(new ChainStringOr(this.generator))
 		this.handlerList.add(new ChainStringMaybe(this.generator));
+	}
+	
+	def StringDescription goUpToStringDescription(Object o)
+	{
+		if (o instanceof StringDescription)
+		{
+			return (o as StringDescription)	
+		}
+		else if (o instanceof StringDescriptionInVariable)
+		{
+			return this.goUpToStringDescription((o as StringDescriptionInVariable).eContainer)
+		}		
+		else if (o instanceof StringDescriptionInner)
+		{
+			return this.goUpToStringDescription((o as StringDescriptionInner).eContainer)
+		}
 	}
 	
 }

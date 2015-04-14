@@ -59,6 +59,45 @@ public class SimpleScanner {
 		return ret.trim();
 	}
 	
+	public int scanUpToStringAsInt(String s) throws Exception
+	{
+		try
+		{
+			int rValue = Integer.valueOf(this.scanUpToString(s));
+			return rValue;
+		}
+		catch (Exception e)
+		{
+			throw new ParserException("could not scan int");
+		}
+	}
+	
+	public double scanUpToStringAsDouble(String s) throws Exception
+	{
+		try
+		{
+			double rValue = Double.valueOf(this.scanUpToString(s));
+			return rValue;
+		}
+		catch (Exception e)
+		{
+			throw new ParserException("could not scan Double");
+		}
+	}
+	
+	public double scanUpToStringAsFloat(String s) throws Exception
+	{
+		try
+		{
+			float rValue = Float.valueOf(this.scanUpToString(s));
+			return rValue;
+		}
+		catch (Exception e)
+		{
+			throw new ParserException("could not scan float");
+		}
+	}
+	
 	public String scanUpToSpace() throws Exception
 	{
 		//string herausschneiden und position weiter setzen

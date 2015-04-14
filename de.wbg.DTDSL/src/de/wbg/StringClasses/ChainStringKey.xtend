@@ -5,6 +5,8 @@ import de.wbg.dTDSL.StringDescriptionInner
 import de.wbg.dTDSL.StringKey
 import de.wbg.dTDSL.StringOverRead
 import de.wbg.generator.DTDSLGenerator
+import de.wbg.dTDSL.StringDescriptionInVariable
+import de.wbg.dTDSL.StringComplex
 
 class ChainStringKey extends ChainString {
 	
@@ -28,18 +30,41 @@ class ChainStringKey extends ChainString {
 				var temp = getDescriptionObjectGet(i.eContainer, index+1);
 				if (temp instanceof StringOverRead)
 				{
-					'''String key = scanner.scanUpToString("«temp.overRead»");'''
+					
+					if (i.type != "String")
+					{
+						'''«i.type» key = scanner.scanUpToStringAs«i.type.toFirstUpper»("«temp.overRead»");'''
+							
+					}
+					else
+					{
+						'''String key = scanner.scanUpToString("«temp.overRead»");'''
+					}
+//					'''String key = scanner.scanUpToString("«temp.overRead»");'''
 				}
-				else
+				else if (temp instanceof StringDescriptionInVariable)
 				{
-					'''//this case is not implemented yet -> scan key, no next'''	
+					var next = temp.eContents.get(0);
+					if (next != null && next instanceof StringOverRead)
+					{
+						'''String key = scanner.scanUpToString("«(next as StringOverRead).overRead»")'''	
+					}
+				}
+				else if (temp == null)
+				{
+					'''String key = scanner.scanUpToEnd();'''
+				}
+				else 
+				{
+					'''//this case is not implemented yet -> scan key, no next -> «temp.class»'''
 				}
 			}
 				»
+			stringNode.setValueClass(«i.type».class);
 			stringNode.setValue(key);
 			stringNode.setKey(true);
 			«IF i.name != null»
-			this.stringKeyVariables.put("«i.name»", key);
+			this.stringKeyVariables.put("«i.name»", String.valueOf(key));
 			«ENDIF»
 			
 			stringNode.setParent(n);
