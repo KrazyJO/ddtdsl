@@ -147,6 +147,7 @@ class DTDSLGenerator implements IGenerator {
 			«ENDIF»
 			«ENDIF»
 			private ArrayList<Integer> visited;
+			private HashMap<Integer, Node> allObjectNodes;
 			
 			public «model.parserName.toFirstUpper»()
 			{
@@ -167,6 +168,7 @@ class DTDSLGenerator implements IGenerator {
 				this.stringValueVariables = new HashMap<>();
 				«ENDIF»
 				«ENDIF»
+				this.allObjectNodes = new HashMap<>();
 				//model.start
 				try {
 					int nextVisit = System.identityHashCode(o);
@@ -341,6 +343,8 @@ class DTDSLGenerator implements IGenerator {
 «««		}
 	
 		Node newNode = new Node(n.getNameForNode());
+		newNode.setOriginalHashCode(this.visited.get(this.visited.size()-1));
+		this.allObjectNodes.put(this.visited.get(this.visited.size()-1) ,newNode);
 		newNode.setParent(n);
 		n.addChild(newNode);
 	'''
@@ -467,6 +471,8 @@ class DTDSLGenerator implements IGenerator {
 						//entry is primitiv
 						//=> Node with key -> Attribute with value
 						Node node = new Node(manyHead.getNameForNode());
+						node.setOriginalHashCode(this.visited.get(this.visited.size()-1));
+						this.allObjectNodes.put(this.visited.get(this.visited.size()-1) ,newNode);
 						node.setKey(true);
 						node.setValue(String.valueOf(entry));
 						node.setName(entry.getClass().toString().replace("class ", ""));
@@ -508,6 +514,10 @@ class DTDSLGenerator implements IGenerator {
 				int nextVisit = System.identityHashCode(next);
 				if (this.visited.contains(nextVisit))
 				{
+					Node actNode = this.allObjectNodes.get(this.visited.get(this.visited.size()-1));
+					Node circleNode = this.allObjectNodes.get(nextVisit);
+					actNode.setNext(circleNode);
+					circleNode.setPrevious(actNode);
 					return;
 				}
 				else
@@ -582,6 +592,10 @@ class DTDSLGenerator implements IGenerator {
 				int nextVisit = System.identityHashCode(next);
 				if (this.visited.contains(nextVisit))
 				{
+					Node actNode = this.allObjectNodes.get(this.visited.get(this.visited.size()-1));
+					Node circleNode = this.allObjectNodes.get(nextVisit);
+					actNode.setNext(circleNode);
+					circleNode.setPrevious(actNode);
 					return;
 				}
 				else
@@ -690,6 +704,10 @@ class DTDSLGenerator implements IGenerator {
 			int nextVisit = System.identityHashCode(next);
 			if (this.visited.contains(nextVisit))
 			{
+				Node actNode = this.allObjectNodes.get(this.visited.get(this.visited.size()-1));
+				Node circleNode = this.allObjectNodes.get(nextVisit);
+				actNode.setNext(circleNode);
+				circleNode.setPrevious(actNode);
 				return;
 			}
 			else
@@ -770,6 +788,10 @@ class DTDSLGenerator implements IGenerator {
 			int nextVisit = System.identityHashCode(next);
 			if (this.visited.contains(nextVisit))
 			{
+				Node actNode = this.allObjectNodes.get(this.visited.get(this.visited.size()-1));
+				Node circleNode = this.allObjectNodes.get(nextVisit);
+				actNode.setNext(circleNode);
+				circleNode.setPrevious(actNode);
 				return;
 			}
 			else

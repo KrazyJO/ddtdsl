@@ -29,6 +29,11 @@ class ChainMethodsInnerObjectNext extends ChainMethodsInner {
 				int nextVisit = System.identityHashCode(next);
 				if (this.visited.contains(nextVisit))
 				{
+					//complete parser circle
+					Node actNode = this.allObjectNodes.get(this.visited.size()-1);
+					Node circleNode = this.allObjectNodes.get(nextVisit);
+					actNode.setNext(circleNode);
+					circleNode.setPrevious(actNode);
 					return;
 				}
 				else
