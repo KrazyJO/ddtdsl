@@ -3,6 +3,21 @@
  */
 package de.wbg.scoping
 
+import de.wbg.dTDSL.Abstract
+import de.wbg.dTDSL.DTDSL
+import de.wbg.dTDSL.ObjectAttribute
+import de.wbg.dTDSL.ObjectNext
+import de.wbg.dTDSL.ObjectNode
+import de.wbg.dTDSL.StartPoint
+import org.eclipse.emf.common.util.EList
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtext.scoping.IScope
+import org.eclipse.xtext.scoping.Scopes
+import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
+import de.wbg.dTDSL.ObjectMaybe
+import de.wbg.dTDSL.StringDescription
+import org.eclipse.emf.ecore.EObject
+
 /**
  * This class contains custom scoping description.
  * 
@@ -10,6 +25,141 @@ package de.wbg.scoping
  * on how and when to use it 
  *
  */
-class DTDSLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
+class DTDSLScopeProvider extends AbstractDeclarativeScopeProvider {
 
+	//ObjectNext -> objectDescription
+	def IScope scope_ObjectNext_objectDesription(ObjectNext next, EReference ref)
+	{
+//		println("scope provider next");
+		var EList<Abstract> descriptions; 
+		for (model : next.eResource.allContents.toIterable.filter(DTDSL))
+		{
+			descriptions = model.objDescription;
+		}
+		
+		for (objDesc: descriptions)
+		{
+			if (objDesc instanceof StringDescription)
+			 {
+			 	descriptions.remove(objDesc)
+			 }
+		}
+		
+//		println(descriptions)
+		
+		return Scopes.scopeFor(descriptions)
+	}
+	
+	//ObjectNode -> inner
+	def IScope scope_ObjectNode_inner(ObjectNode node, EReference ref)
+	{
+//		println("scope provider node");
+		var EList<Abstract> descriptions; 
+		for (model : node.eResource.allContents.toIterable.filter(DTDSL))
+		{
+			descriptions = model.objDescription;
+		}
+		
+		for (objDesc: descriptions)
+		{
+			if (objDesc instanceof StringDescription)
+			 {
+			 	descriptions.remove(objDesc)
+			 }
+		}
+		
+//		println(descriptions)
+		
+		return Scopes.scopeFor(descriptions)
+	}
+	
+	//ObjectAttribute -> stringMethode
+	def IScope scope_ObjectAttribute_stringMethode(ObjectAttribute attribute, EReference ref)
+	{
+//		println("scope provider attribute");
+		var EList<Abstract> descriptions; 
+		for (model : attribute.eResource.allContents.toIterable.filter(DTDSL))
+		{
+			descriptions = model.objDescription;
+		}
+		
+		for (objDesc: descriptions)
+		{
+			if (objDesc instanceof StringDescription)
+			 {
+			 	descriptions.remove(objDesc)
+			 }
+		}
+		
+//		println(descriptions)
+		
+		return Scopes.scopeFor(descriptions)
+	}
+	
+	//ObjectMaybe -> options
+	def IScope scope_ObjectMaybe_option(ObjectMaybe maybe, EReference ref)
+	{
+//		println("scope provider maybe");
+		var EList<Abstract> descriptions; 
+		for (model : maybe.eResource.allContents.toIterable.filter(DTDSL))
+		{
+			descriptions = model.objDescription;
+		}
+				
+				
+		for (objDesc: descriptions)
+		{
+			if (objDesc instanceof StringDescription)
+			 {
+			 	descriptions.remove(objDesc)
+			 }
+		}
+		
+//		println(descriptions)
+		
+		return Scopes.scopeFor(descriptions)
+	}
+	
+	//StartPoing
+	def IScope scope_StartPoint_begin(StartPoint point, EReference ref)
+	{
+//		println("scope provider startpoint")
+		var EList<Abstract> descriptions; 
+		for (model : point.eResource.allContents.toIterable.filter(DTDSL))
+		{
+			descriptions = model.objDescription;
+		}
+//		println(descriptions)
+		
+		return Scopes.scopeFor(descriptions)
+	}
+//	
+//	def IScope scope_Other(EObject o, EReference ref)
+//	{
+//		println(o)
+//		return null
+//	}
+	
+//	//Inner
+//	def IScope scope_ObjectDescription(ObjectNode node, EReference ref)
+//	{
+////		println("scope provider node");
+//		var EList<Abstract> descriptions; 
+//		for (model : node.eResource.allContents.toIterable.filter(DTDSL))
+//		{
+//			descriptions = model.objDescription;
+//		}
+//		
+//		for (objDesc: descriptions)
+//		{
+//			if (objDesc instanceof StringDescription)
+//			 {
+//			 	descriptions.remove(objDesc)
+//			 }
+//		}
+//		
+//		println(descriptions)
+//		
+//		return Scopes.scopeFor(descriptions)
+//	}
 }

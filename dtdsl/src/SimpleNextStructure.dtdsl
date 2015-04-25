@@ -3,7 +3,7 @@ parserName = "SimpleNextParser";
 Node Skv: {
 	hasAttribute s;
 	hasAttribute i;
-	hasNext next as Next;
+	hasNext next as Next; 
 }
 
 Node Next :

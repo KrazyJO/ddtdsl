@@ -184,10 +184,6 @@ public class ChainStringValue extends ChainString {
       _builder.append(_xifexpression_1, "\t\t\t");
       _builder.newLineIfNotEmpty();
       _builder.append("\t\t\t");
-      _builder.append("if (value != null)");
-      _builder.newLine();
-      _builder.append("\t\t\t");
-      _builder.append("{");
       _builder.newLine();
       _builder.append("\t\t\t\t");
       _builder.append("valueAttrib.setValue(value);");
@@ -197,9 +193,6 @@ public class ChainStringValue extends ChainString {
       _builder.newLine();
       _builder.append("\t\t\t\t");
       _builder.append("nodeForValue.addChild(valueAttrib);");
-      _builder.newLine();
-      _builder.append("\t\t\t");
-      _builder.append("}");
       _builder.newLine();
       _builder.append("\t\t\t");
       _builder.newLine();

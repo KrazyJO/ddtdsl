@@ -8,3 +8,13 @@
 /.ObjectMaybeAttribute.java._trace
 /.ObjectMaybeNext.java._trace
 /.ObjectMaybeNode.java._trace
+/ChainMethodsInnerObjectNext.java
+/ChainMaybe.java
+/ChainMethodsInner.java
+/ChainMethodsInnerObjectAttribute.java
+/ChainMethodsInnerObjectMany.java
+/ChainMethodsInnerObjectMaybe.java
+/ChainMethodsInnerObjectNode.java
+/ObjectMaybeAttribute.java
+/ObjectMaybeNext.java
+/ObjectMaybeNode.java

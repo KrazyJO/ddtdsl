@@ -83,12 +83,13 @@ class ChainStringValue extends ChainString {
 				}
 			}
 			»
-			if (value != null)
-			{
+			
+«««			if (value != null)
+«««			{
 				valueAttrib.setValue(value);
 				valueAttrib.setParent(nodeForValue);
 				nodeForValue.addChild(valueAttrib);
-			}
+«««			}
 			
 		}
 				'''

@@ -2,6 +2,7 @@ package de.wbg.dtdsl;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
@@ -151,6 +152,7 @@ public class TestSimpleStingKeyValue {
 	@Test
 	public void testSimpleStringJsonArray()
 	{
+		fail("not ready");
 		String parserString = "[1,2,3]";
 		SimpleStringJsonArrayParser parser = new SimpleStringJsonArrayParser();
 		Head head = parser.parse(parserString);

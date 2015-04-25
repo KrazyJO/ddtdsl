@@ -126,9 +126,9 @@ class DTDSLGenerator implements IGenerator {
 		import java.util.LinkedList;
 		import java.lang.reflect.Array;
 		«ENDIF»
-		«IF needGetInstanceGenerated || needStringKeyStore || needStringValueStore»
+«««		«IF needGetInstanceGenerated || needStringKeyStore || needStringValueStore»
 		import java.util.HashMap;
-		«ENDIF»
+«««		«ENDIF»
 		
 		class «model.parserName.toFirstUpper» {
 			
