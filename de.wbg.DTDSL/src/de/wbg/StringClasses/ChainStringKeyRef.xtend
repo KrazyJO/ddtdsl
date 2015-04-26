@@ -16,7 +16,7 @@ class ChainStringKeyRef extends ChainString {
 		{
 			this.returnValue = '''		{
 			//keyRef «i.keyRef»
-			String storedValue = this.stringKeyVariables.get("«i.keyRef.name»");	
+			Node storedValue = this.stringKeyVariables.get("«i.keyRef.name»");	
 			if (storedValue == null)
 			{
 				throw new ParserException("Variable is not exsisting");
@@ -43,7 +43,7 @@ class ChainStringKeyRef extends ChainString {
 					}
 				}
 			»
-				if (!value.equals(storedValue))
+				if (!value.equals(storedValue.getValue()))
 				{
 					throw new ParserException("Different key values are not allowed at this context");
 				}

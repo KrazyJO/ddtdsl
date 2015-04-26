@@ -64,7 +64,7 @@ class ChainStringKey extends ChainString {
 			stringNode.setValue(key);
 			stringNode.setKey(true);
 			«IF i.name != null»
-			this.stringKeyVariables.put("«i.name»", String.valueOf(key));
+			this.stringKeyVariables.put("«i.name»", stringNode);
 			«ENDIF»
 			
 			stringNode.setParent(n);

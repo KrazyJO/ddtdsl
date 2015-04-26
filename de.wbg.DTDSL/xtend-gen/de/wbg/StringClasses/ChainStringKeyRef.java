@@ -29,7 +29,7 @@ public class ChainStringKeyRef extends ChainString {
       _builder.append(_keyRef_1, "\t\t\t");
       _builder.newLineIfNotEmpty();
       _builder.append("\t\t\t");
-      _builder.append("String storedValue = this.stringKeyVariables.get(\"");
+      _builder.append("Node storedValue = this.stringKeyVariables.get(\"");
       StringKey _keyRef_2 = i.getKeyRef();
       String _name = _keyRef_2.getName();
       _builder.append(_name, "\t\t\t");
@@ -91,7 +91,7 @@ public class ChainStringKeyRef extends ChainString {
       _builder.append(_xifexpression, "\t\t\t\t");
       _builder.newLineIfNotEmpty();
       _builder.append("\t\t\t\t");
-      _builder.append("if (!value.equals(storedValue))");
+      _builder.append("if (!value.equals(storedValue.getValue()))");
       _builder.newLine();
       _builder.append("\t\t\t\t");
       _builder.append("{");

@@ -6,6 +6,7 @@ import de.wbg.StringClasses.ChainString;
 import de.wbg.dTDSL.StringComplex;
 import de.wbg.dTDSL.StringDescriptionInVariable;
 import de.wbg.dTDSL.StringDescriptionInner;
+import de.wbg.dTDSL.StringKey;
 import de.wbg.dTDSL.StringOverRead;
 import de.wbg.dTDSL.StringValue;
 import de.wbg.generator.DTDSLGenerator;
@@ -46,6 +47,21 @@ public class ChainStringValue extends ChainString {
       _builder.append("\t\t");
       _builder.append("{");
       _builder.newLine();
+      {
+        StringKey _toKey = ((StringValue)i).getToKey();
+        boolean _notEquals_1 = (!Objects.equal(_toKey, null));
+        if (_notEquals_1) {
+          _builder.append("\t\t\t");
+          _builder.append("nodeForValue = this.stringKeyVariables.get(\"");
+          StringKey _toKey_1 = ((StringValue)i).getToKey();
+          String _name_1 = _toKey_1.getName();
+          _builder.append(_name_1, "\t\t\t");
+          _builder.append("\");");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t\t\t");
+          _builder.newLine();
+        }
+      }
       _builder.append("\t\t\t");
       _builder.append("Attribute valueAttrib = new Attribute(nodeForValue.getNameForAttribute());");
       _builder.newLine();
@@ -77,8 +93,8 @@ public class ChainStringValue extends ChainString {
           if ((temp instanceof StringOverRead)) {
             CharSequence _xifexpression_3 = null;
             String _type_1 = ((StringValue)i).getType();
-            boolean _notEquals_1 = (!Objects.equal(_type_1, "String"));
-            if (_notEquals_1) {
+            boolean _notEquals_2 = (!Objects.equal(_type_1, "String"));
+            if (_notEquals_2) {
               StringConcatenation _builder_2 = new StringConcatenation();
               String _type_2 = ((StringValue)i).getType();
               _builder_2.append(_type_2, "");
@@ -107,8 +123,8 @@ public class ChainStringValue extends ChainString {
               {
                 String next = this.getNextElementFromComplex(((StringComplex)temp));
                 CharSequence _xifexpression_5 = null;
-                boolean _notEquals_2 = (!Objects.equal(next, null));
-                if (_notEquals_2) {
+                boolean _notEquals_3 = (!Objects.equal(next, null));
+                if (_notEquals_3) {
                   CharSequence _xifexpression_6 = null;
                   boolean _equals_1 = Objects.equal(next, "");
                   if (_equals_1) {
@@ -118,8 +134,8 @@ public class ChainStringValue extends ChainString {
                   } else {
                     CharSequence _xifexpression_7 = null;
                     String _maybe = ((StringComplex)temp).getMaybe();
-                    boolean _notEquals_3 = (!Objects.equal(_maybe, null));
-                    if (_notEquals_3) {
+                    boolean _notEquals_4 = (!Objects.equal(_maybe, null));
+                    if (_notEquals_4) {
                       StringConcatenation _builder_5 = new StringConcatenation();
                       _builder_5.append("String value = null;");
                       _builder_5.newLine();
@@ -185,16 +201,14 @@ public class ChainStringValue extends ChainString {
       _builder.newLineIfNotEmpty();
       _builder.append("\t\t\t");
       _builder.newLine();
-      _builder.append("\t\t\t\t");
+      _builder.append("\t\t\t");
       _builder.append("valueAttrib.setValue(value);");
       _builder.newLine();
-      _builder.append("\t\t\t\t");
+      _builder.append("\t\t\t");
       _builder.append("valueAttrib.setParent(nodeForValue);");
       _builder.newLine();
-      _builder.append("\t\t\t\t");
-      _builder.append("nodeForValue.addChild(valueAttrib);");
-      _builder.newLine();
       _builder.append("\t\t\t");
+      _builder.append("nodeForValue.addChild(valueAttrib);");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("}");

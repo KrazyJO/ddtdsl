@@ -20,7 +20,6 @@ class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
 		
 //			if (i.inner == null) {
 				this.returnValue  = this.returnValue + '''		//inner == null
-«««		//«i.types.qualifiedName» «i.attributes» as ;
 				'''
 				
 			
@@ -29,20 +28,21 @@ class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
 			
 			Field f = o.getClass().getDeclaredField("«i.attributes»"); //NoSuchFieldException
 			f.setAccessible(true);
-«««			«i.types» iWantThis = («i.types») f.get(o); //IllegalAccessException
 			Object iWantThis = f.get(o); //IllegalAccessException
 		
 			Attribute valueNode = new Attribute("attribute" + n.increaseAttributeNumber());
-«««			Attribute valueNode = new Attribute(n.getNameForAttribute());
-			
 		
 			valueNode.setName("«i.attributes»");
 			valueNode.setValue(iWantThis);
-«««			valueNode.setType("value");
 			valueNode.setType(iWantThis.getClass());
 			
 			valueNode.setParent(n);
 			n.getChildren().add(valueNode);
+			
+			«if (i.stringMethode != null)
+			{
+				'''parse«i.stringMethode.name.toFirstUpper»(iWantThis, valueNode);'''
+			}»
 		}
 		catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 		{
@@ -53,15 +53,6 @@ class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
 	}
 	
 	'''
-	
-//			}
-//			else
-//			{
-//				this.returnValue = this.returnValue + '''
-//				}
-//				'''
-//			}
-			
 		}
 		else
 		{

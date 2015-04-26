@@ -1,0 +1,13 @@
+parserName = "SimpleObjectIntoStringParser";
+
+Node Blupp:
+{
+	hasAttribute stringToTest as InnerString;
+}
+
+String InnerString:
+{
+	"<" key=Key ofType String ">" val=Value ofType String to key "</" key ">"
+}
+
+beginWith = Blupp

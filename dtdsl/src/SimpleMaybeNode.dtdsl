@@ -4,7 +4,7 @@ Node Skv:
 {
 	hasAttribute i;
 	hasAttribute s;
-	hasNode next as Next;
+	hasNode next as Next?;
 }
 
 Node Next: 

@@ -140,7 +140,7 @@ class DTDSLGenerator implements IGenerator {
 			«IF generateStringFeatures»
 			private SimpleScanner scanner;
 			«IF needStringKeyStore»
-			private HashMap<String, String> stringKeyVariables;
+			private HashMap<String, Node> stringKeyVariables;
 			«ENDIF»
 			«IF needStringValueStore»
 			private HashMap<String, String> stringValueVariables;

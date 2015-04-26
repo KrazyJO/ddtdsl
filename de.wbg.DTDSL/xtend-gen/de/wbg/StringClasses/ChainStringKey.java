@@ -155,7 +155,7 @@ public class ChainStringKey extends ChainString {
           _builder.append("this.stringKeyVariables.put(\"");
           String _name_2 = ((StringKey)i).getName();
           _builder.append(_name_2, "\t\t\t");
-          _builder.append("\", String.valueOf(key));");
+          _builder.append("\", stringNode);");
           _builder.newLineIfNotEmpty();
         }
       }

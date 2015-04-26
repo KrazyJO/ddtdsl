@@ -18,6 +18,10 @@ class ChainStringValue extends ChainString {
 			{
 				this.returnValue = '''		//parseValue «if (i.name != null) {this.generator.needStringValueStore = true; i.name}»
 		{
+			«IF i.toKey != null»
+			nodeForValue = this.stringKeyVariables.get("«i.toKey.name»");
+			
+			«ENDIF»
 			Attribute valueAttrib = new Attribute(nodeForValue.getNameForAttribute());
 			valueAttrib.setType(«i.type».class);
 			//parse Value
@@ -84,13 +88,9 @@ class ChainStringValue extends ChainString {
 			}
 			»
 			
-«««			if (value != null)
-«««			{
-				valueAttrib.setValue(value);
-				valueAttrib.setParent(nodeForValue);
-				nodeForValue.addChild(valueAttrib);
-«««			}
-			
+			valueAttrib.setValue(value);
+			valueAttrib.setParent(nodeForValue);
+			nodeForValue.addChild(valueAttrib);
 		}
 				'''
 				

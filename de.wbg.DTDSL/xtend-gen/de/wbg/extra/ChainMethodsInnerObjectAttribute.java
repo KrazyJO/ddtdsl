@@ -1,8 +1,10 @@
 package de.wbg.extra;
 
+import com.google.common.base.Objects;
 import de.wbg.dTDSL.ObjectAttribute;
 import de.wbg.dTDSL.ObjectDescription;
 import de.wbg.dTDSL.ObjectDescriptionInner;
+import de.wbg.dTDSL.StringDescription;
 import de.wbg.extra.ChainMethodsInner;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
@@ -70,8 +72,6 @@ public class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
         _builder_3.append("\t\t\t");
         _builder_3.append("Attribute valueNode = new Attribute(\"attribute\" + n.increaseAttributeNumber());");
         _builder_3.newLine();
-        _builder_3.append("\t\t\t");
-        _builder_3.newLine();
         _builder_3.append("\t\t");
         _builder_3.newLine();
         _builder_3.append("\t\t\t");
@@ -94,6 +94,24 @@ public class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
         _builder_3.append("\t\t\t");
         _builder_3.append("n.getChildren().add(valueNode);");
         _builder_3.newLine();
+        _builder_3.append("\t\t\t");
+        _builder_3.newLine();
+        _builder_3.append("\t\t\t");
+        CharSequence _xifexpression = null;
+        StringDescription _stringMethode = ((ObjectAttribute)i).getStringMethode();
+        boolean _notEquals = (!Objects.equal(_stringMethode, null));
+        if (_notEquals) {
+          StringConcatenation _builder_4 = new StringConcatenation();
+          _builder_4.append("parse");
+          StringDescription _stringMethode_1 = ((ObjectAttribute)i).getStringMethode();
+          String _name_1 = _stringMethode_1.getName();
+          String _firstUpper_2 = StringExtensions.toFirstUpper(_name_1);
+          _builder_4.append(_firstUpper_2, "");
+          _builder_4.append("(iWantThis, valueNode);");
+          _xifexpression = _builder_4;
+        }
+        _builder_3.append(_xifexpression, "\t\t\t");
+        _builder_3.newLineIfNotEmpty();
         _builder_3.append("\t\t");
         _builder_3.append("}");
         _builder_3.newLine();
