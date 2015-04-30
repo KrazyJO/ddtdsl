@@ -43,7 +43,7 @@ class ChainStringKeyRef extends ChainString {
 					}
 				}
 			»
-				if (!value.equals(storedValue.getValue()))
+				if (!value.equals(String.valueOf(storedValue.getValue())))
 				{
 					throw new ParserException("Different key values are not allowed at this context");
 				}

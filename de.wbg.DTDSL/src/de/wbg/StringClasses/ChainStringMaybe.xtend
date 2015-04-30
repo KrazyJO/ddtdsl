@@ -44,7 +44,8 @@ class ChainStringMaybe extends ChainString{
 				}
 				catch (Exception e)
 				{
-					scanner.resetToPosition(scannerPosition);
+«««					scanner.resetToPosition(scannerPosition);
+					throw e;
 				}
 			}
 				

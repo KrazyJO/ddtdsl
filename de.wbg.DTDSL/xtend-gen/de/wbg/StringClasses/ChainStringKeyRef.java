@@ -91,7 +91,7 @@ public class ChainStringKeyRef extends ChainString {
       _builder.append(_xifexpression, "\t\t\t\t");
       _builder.newLineIfNotEmpty();
       _builder.append("\t\t\t\t");
-      _builder.append("if (!value.equals(storedValue.getValue()))");
+      _builder.append("if (!value.equals(String.valueOf(storedValue.getValue())))");
       _builder.newLine();
       _builder.append("\t\t\t\t");
       _builder.append("{");

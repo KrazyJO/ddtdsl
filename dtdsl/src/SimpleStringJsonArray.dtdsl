@@ -3,8 +3,7 @@ parserName = "SimpleStringJsonArrayParser";
 String JsonArray:
 {
 	"[" many* "]"
-	
-	many := key =  Value ofType String comma?;
+	many := key =  Value ofType int comma?;
 	comma := ",";
 }
 

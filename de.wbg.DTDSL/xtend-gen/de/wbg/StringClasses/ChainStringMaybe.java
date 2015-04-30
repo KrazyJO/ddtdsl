@@ -103,7 +103,7 @@ public class ChainStringMaybe extends ChainString {
         _builder.append("{");
         _builder.newLine();
         _builder.append("\t\t\t\t\t");
-        _builder.append("scanner.resetToPosition(scannerPosition);");
+        _builder.append("throw e;");
         _builder.newLine();
         _builder.append("\t\t\t\t");
         _builder.append("}");

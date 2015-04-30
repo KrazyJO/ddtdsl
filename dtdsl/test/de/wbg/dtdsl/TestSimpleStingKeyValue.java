@@ -152,7 +152,7 @@ public class TestSimpleStingKeyValue {
 	@Test
 	public void testSimpleStringJsonArray()
 	{
-		fail("not ready");
+//		fail("not ready");
 		String parserString = "[1,2,3]";
 		SimpleStringJsonArrayParser parser = new SimpleStringJsonArrayParser();
 		Head head = parser.parse(parserString);
