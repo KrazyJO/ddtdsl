@@ -7,6 +7,7 @@ import de.wbg.dTDSL.StringDescriptionInner;
 import de.wbg.dTDSL.StringKey;
 import de.wbg.dTDSL.StringOverRead;
 import de.wbg.generator.DTDSLGenerator;
+import java.util.HashMap;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -20,17 +21,25 @@ public class ChainStringKey extends ChainString {
   
   public boolean handle(final int index, final StringDescriptionInner i) {
     if ((i instanceof StringKey)) {
+      String _name = ((StringKey)i).getName();
+      boolean _notEquals = (!Objects.equal(_name, null));
+      if (_notEquals) {
+        DTDSLGenerator _generator = this.getGenerator();
+        HashMap<String, Object> keyContainer = _generator.getKeyContainer();
+        String _name_1 = ((StringKey)i).getName();
+        keyContainer.put(_name_1, i);
+      }
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("\t\t");
       _builder.append("//parseKey ");
       String _xifexpression = null;
-      String _name = ((StringKey)i).getName();
-      boolean _notEquals = (!Objects.equal(_name, null));
-      if (_notEquals) {
+      String _name_2 = ((StringKey)i).getName();
+      boolean _notEquals_1 = (!Objects.equal(_name_2, null));
+      if (_notEquals_1) {
         String _xblockexpression = null;
         {
-          DTDSLGenerator _generator = this.getGenerator();
-          _generator.setNeedStringKeyStore(true);
+          DTDSLGenerator _generator_1 = this.getGenerator();
+          _generator_1.setNeedStringKeyStore(true);
           _xblockexpression = ((StringKey)i).getName();
         }
         _xifexpression = _xblockexpression;
@@ -62,8 +71,8 @@ public class ChainStringKey extends ChainString {
           if ((temp instanceof StringOverRead)) {
             CharSequence _xifexpression_3 = null;
             String _type = ((StringKey)i).getType();
-            boolean _notEquals_1 = (!Objects.equal(_type, "String"));
-            if (_notEquals_1) {
+            boolean _notEquals_2 = (!Objects.equal(_type, "String"));
+            if (_notEquals_2) {
               StringConcatenation _builder_2 = new StringConcatenation();
               String _type_1 = ((StringKey)i).getType();
               _builder_2.append(_type_1, "");
@@ -94,8 +103,8 @@ public class ChainStringKey extends ChainString {
                 EObject next = _eContents.get(0);
                 CharSequence _xifexpression_5 = null;
                 boolean _and = false;
-                boolean _notEquals_2 = (!Objects.equal(next, null));
-                if (!_notEquals_2) {
+                boolean _notEquals_3 = (!Objects.equal(next, null));
+                if (!_notEquals_3) {
                   _and = false;
                 } else {
                   _and = (next instanceof StringOverRead);
@@ -148,13 +157,13 @@ public class ChainStringKey extends ChainString {
       _builder.append("stringNode.setKey(true);");
       _builder.newLine();
       {
-        String _name_1 = ((StringKey)i).getName();
-        boolean _notEquals_1 = (!Objects.equal(_name_1, null));
-        if (_notEquals_1) {
+        String _name_3 = ((StringKey)i).getName();
+        boolean _notEquals_2 = (!Objects.equal(_name_3, null));
+        if (_notEquals_2) {
           _builder.append("\t\t\t");
           _builder.append("this.stringKeyVariables.put(\"");
-          String _name_2 = ((StringKey)i).getName();
-          _builder.append(_name_2, "\t\t\t");
+          String _name_4 = ((StringKey)i).getName();
+          _builder.append(_name_4, "\t\t\t");
           _builder.append("\", stringNode);");
           _builder.newLineIfNotEmpty();
         }

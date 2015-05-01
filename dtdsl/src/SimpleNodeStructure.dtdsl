@@ -13,7 +13,4 @@ Node Inner:
 	hasAttribute i; 
 }
 
-Node bla:
-{
-	
-}
+beginWith = Skv

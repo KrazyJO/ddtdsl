@@ -18,6 +18,12 @@ class ChainStringKey extends ChainString {
 	{
 		if (i instanceof StringKey)
 		{
+			if (i.name != null)
+			{
+				var keyContainer = generator.keyContainer;
+				keyContainer.put(i.name, i)	
+			}
+			
 			this.returnValue = '''		//parseKey «if (i.name != null) {generator.needStringKeyStore = true; i.name}»
 		{
 			Node stringNode = new Node(n.getNameForNode());

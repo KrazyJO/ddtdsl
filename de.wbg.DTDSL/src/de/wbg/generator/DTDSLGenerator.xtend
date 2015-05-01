@@ -43,6 +43,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import de.wbg.dTDSL.StringDescriptionInner
+import java.util.HashMap
 
 /**
  * Generates code from your model files on save.
@@ -61,6 +62,7 @@ class DTDSLGenerator implements IGenerator {
 	var needStringValueStore = false;
 	var generateObjectFeatures = false;
 	var LinkedList<ChainString> chainString;
+	var HashMap<String, Object> keyContainer;
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 
@@ -70,6 +72,7 @@ class DTDSLGenerator implements IGenerator {
 		this.initObjectMaybeChain();
 		this.initMethodsInnerChain();
 		this.initChainString();
+		this.keyContainer = new HashMap()
 
 		fsa.generateFile('de/wbg/dtdsl/Node.java', nodeGen.generateNode)
 		fsa.generateFile('de/wbg/dtdsl/Head.java', nodeGen.generateHead)
@@ -926,5 +929,10 @@ class DTDSLGenerator implements IGenerator {
 	def void setNeedGetInstanceGenerated(boolean value)
 	{
 		this.needGetInstanceGenerated = value
+	}
+	
+	def HashMap<String, Object> getKeyContainer()
+	{
+		return this.keyContainer;
 	}
 }
