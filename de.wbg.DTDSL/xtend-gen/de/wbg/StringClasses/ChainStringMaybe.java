@@ -25,6 +25,7 @@ public class ChainStringMaybe extends ChainString {
     super(g);
   }
   
+  @Override
   public boolean handle(final int index, final StringDescriptionInner i) {
     if ((i instanceof StringComplex)) {
       String _maybe = ((StringComplex)i).getMaybe();

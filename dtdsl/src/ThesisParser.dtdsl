@@ -1,0 +1,25 @@
+parserName = "ThesisParser";
+
+Node ThesisClassA:
+{
+	hasNext brother as ThesisClassB;
+	hasAttribute objectNumber;
+}
+
+Node ThesisClassB:
+{
+	hasNext brother as ThesisClassA;
+	hasAttribute objectNumber;
+	hasAttribute xmlStructure as ThesisXMLString; 
+}
+
+String ThesisXMLString:
+{
+	"<" key=Key ofType String ">" Value ofType String to key "</" key ">"
+	"<" innerKey=Key ofType String ">" val=Value ofType String to innerKey "</" innerKey ">"
+	xml*
+	
+	xml := "<" innerKey ">" val=Value ofType String to innerKey "</" innerKey ">";
+}
+
+beginWith = ThesisClassA

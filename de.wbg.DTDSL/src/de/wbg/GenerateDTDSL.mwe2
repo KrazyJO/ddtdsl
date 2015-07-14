@@ -35,7 +35,7 @@ Workflow {
     component = DirectoryCleaner {
     	directory = "${runtimeProject}.tests/src-gen"
     }
-    
+      
     component = Generator {
     	pathRtProject = runtimeProject
     	pathUiProject = "${runtimeProject}.ui"
@@ -87,7 +87,7 @@ Workflow {
     
     		// generator API
     		fragment = generator.GeneratorFragment auto-inject {}
-    
+    		    
     		// formatter API
     		fragment = formatting.FormatterFragment auto-inject {}
     

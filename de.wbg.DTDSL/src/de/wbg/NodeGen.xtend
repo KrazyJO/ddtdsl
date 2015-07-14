@@ -4,147 +4,61 @@ class NodeGen {
 	
 	def CharSequence generateNode() 
 	{
-				'''
-package de.wbg.dtdsl;
-
-public class Node extends Element{
-
-	private String name;
-	private Object value;
-	private Class valueClass;
-	private boolean key;
-	
-«««	private Node parent;
-«««	private ArrayList<Node> children;
-	
-	public Node(String id)
-	{
-		//children = new ArrayList<Node>();
-		super(id);
-	}
-	
-	@Override
-	public Element copy()
-	{
-		//TODO deep copy
-		Node rNode = new Node(this.getId());
-		rNode.setChildren(this.getChildren());
-		rNode.setParent(this.getParent());
-		rNode.setNodeNumber(this.getNodeNumber());
-		rNode.setAttributeNumber(this.getNodeNumber());
-		rNode.setName(this.getName());
-		rNode.setValue(this.getValue());
-		rNode.setKey(this.isKey());
-		return rNode;
-	}
-	
-	public void setValueClass(Class c)
-	{
-		this.valueClass = c;
-	}
-	
-	public Class getValueClass()
-	{
-		return this.valueClass;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public boolean isKey()
-	{
-		return key;
-	}
-	
-	public void setKey(boolean key) {
-		this.key = key;
-	}
-	
-	public Object getValue()
-	{
-		return value;
-	}
-	
-	public void setValue(Object value) {
-		this.value = value;
-	}
-}
+		'''
+		package de.wbg.ddtdsl;
+		
+		public class Node extends Element{
+		
+			private Class valueClass;
+			private boolean key;
+			
+			public Node(String id)
+			{
+				//children = new ArrayList<Node>();
+				super(id);
+			}
+			
+			public void setValueClass(Class c)
+			{
+				this.valueClass = c;
+			}
+			
+			public Class getValueClass()
+			{
+				return this.valueClass;
+			}
+			
+			public boolean isKey()
+			{
+				return key;
+			}
+			
+			public void setKey(boolean key) {
+				this.key = key;
+			}
+		}
 		'''
 	}
 	
 	def CharSequence generateAttribute()
 	{
 		'''
-		package de.wbg.dtdsl;
+		package de.wbg.ddtdsl;
 		
-		class Attribute extends Element
+		public class Attribute extends Element
 		{
-			
-			private String name;
-			private Object value;
-			private Class type;
 			
 			public Attribute(String name, Object value, Class type, String id)
 			{
 				super(id);
-				this.name = name;
-				this.value = value;
-				this.type = type;
-			}
-			
-			@Override
-			public Element copy()
-			{
-				Attribute rAttribute = new Attribute(this.getId());
-				rAttribute.setChildren(this.getChildren());
-				rAttribute.setParent(this.getParent());
-				rAttribute.setNodeNumber(this.getNodeNumber());
-				rAttribute.setAttributeNumber(this.getAttributeNumber());
-				rAttribute.setName(this.getName());
-				rAttribute.setValue(this.getValue());
-				rAttribute.setType(this.getType());
-				
-				return rAttribute;
+				this.setName(name);
+				this.setValue(value);
+				this.setType(type);
 			}
 			
 			public Attribute(String id)
 			{
 				super(id);
-			}
-			
-			public String getName()
-			{
-				return this.name;
-			}
-			
-			public void setName(String value) 
-			{
-				this.name = value;
-			}
-			
-			public Object getValue()
-			{
-				return this.value;
-			}
-			
-			public void setValue(Object value) 
-			{
-				this.value = value;
-			}
-			
-			public Class getType()
-			{
-				return this.type;
-			}
-			
-			public void setType(Class value) 
-			{
-				this.type = value;
 			}
 		}
 		'''
@@ -153,9 +67,9 @@ public class Node extends Element{
 	def CharSequence generateHead()
 	{
 		'''
-		package de.wbg.dtdsl;
+		package de.wbg.ddtdsl;
 		
-		class Head extends Element
+		public class Head extends Element
 		{
 			
 			public Head(String id)
@@ -175,11 +89,11 @@ public class Node extends Element{
 	def CharSequence generateElement()
 	{
 		'''
-		package de.wbg.dtdsl;
+		package de.wbg.ddtdsl;
 		
 		import java.util.ArrayList;
 		
-		class Element
+		public class Element
 		{
 			
 			private ArrayList<Element> children;
@@ -190,6 +104,9 @@ public class Node extends Element{
 			private Element next;
 			private Element previous;
 			private int originalHashCode;
+			private String name;
+			private Object value;
+			private Class type;
 			
 			public Element(String id)
 			{
@@ -408,6 +325,36 @@ public class Node extends Element{
 			public Element copy()
 			{
 				return null;
+			}
+			
+			public String getName()
+			{
+				return this.name;
+			}
+			
+			public void setName(String value) 
+			{
+				this.name = value;
+			}
+			
+			public Object getValue()
+			{
+				return this.value;
+			}
+			
+			public void setValue(Object value) 
+			{
+				this.value = value;
+			}
+			
+			public Class getType()
+			{
+				return this.type;
+			}
+			
+			public void setType(Class value) 
+			{
+				this.type = value;
 			}
 		}
 		'''

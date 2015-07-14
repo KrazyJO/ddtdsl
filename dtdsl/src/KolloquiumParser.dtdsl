@@ -1,0 +1,36 @@
+parserName = "KollParser";
+
+Node ContainerClass:
+{
+	hasAttribute numbers*;
+	hasNext f as StringClass;
+	hasAttribute object;
+}
+
+//Node Circle:
+//{
+//	hasNext sister as StringClass;
+//	hasAttribute object;
+//}
+
+Node StringClass:
+{
+	hasAttribute parseString as StringToParse;
+	hasNext f as ContainerClass;
+	hasAttribute object;
+}
+
+String StringToParse:
+{
+	xml := "<" innerKey ">" val=Value ofType String to innerKey "</" innerKey ">";
+	
+	"<" key=Key ofType String ">" Value ofType String to key "</" key ">"
+	"<" innerKey=Key ofType String ">" val=Value ofType String to innerKey "</" innerKey ">"
+	xml*
+	"<" key3=Key ofType String ">" Value ofType String to key3 "</" key3 ">"
+	
+	
+	 
+}
+
+beginWith = ContainerClass

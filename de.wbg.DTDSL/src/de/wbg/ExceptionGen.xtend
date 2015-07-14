@@ -5,7 +5,7 @@ class ExceptionGen {
 	def CharSequence exceptionGenerator()
 	{
 		'''
-		package de.wbg.dtdsl;
+		package de.wbg.ddtdsl;
 		
 		class ParserException extends Exception
 		{

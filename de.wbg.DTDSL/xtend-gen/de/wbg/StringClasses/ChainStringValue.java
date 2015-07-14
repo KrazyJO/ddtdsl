@@ -25,6 +25,7 @@ public class ChainStringValue extends ChainString {
     super(g);
   }
   
+  @Override
   public boolean handle(final int index, final StringDescriptionInner i) {
     if ((i instanceof StringValue)) {
       StringConcatenation _builder = new StringConcatenation();

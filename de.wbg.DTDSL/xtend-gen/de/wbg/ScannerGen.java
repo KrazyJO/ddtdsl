@@ -6,7 +6,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 public class ScannerGen {
   public CharSequence generateScanner() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("package de.wbg.dtdsl;");
+    _builder.append("package de.wbg.ddtdsl;");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.newLine();

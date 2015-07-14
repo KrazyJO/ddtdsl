@@ -5,7 +5,7 @@ class ScannerGen {
 	def CharSequence generateScanner()
 	{
 		'''
-package de.wbg.dtdsl;
+package de.wbg.ddtdsl;
 		
 public class SimpleScanner {
 	private String scanString;

@@ -44,11 +44,16 @@ class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
 				'''parse«i.stringMethode.name.toFirstUpper»(iWantThis, valueNode);'''
 			}»
 		}
-		catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
+		catch (NoSuchFieldException e)
+		{
+			n.setAttributeNumber(oldAttributeNumber);
+			throw new ParserException("could not find field \"«i.attributes»\" in «d.name»");
+		}
+		catch ( SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 		{
 			//e.printStackTrace();
 			n.setAttributeNumber(oldAttributeNumber);
-			throw new ParserException("Error while parsing : «i.attributes»");
+			throw new ParserException("Error while parsing: «i.attributes»");
 		}
 	}
 	

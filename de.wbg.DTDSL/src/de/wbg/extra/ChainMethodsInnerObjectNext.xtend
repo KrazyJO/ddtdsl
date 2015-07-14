@@ -18,7 +18,7 @@ class ChainMethodsInnerObjectNext extends ChainMethodsInner {
 			this.returnValue = this.returnValue + '''		//Next: 
 		«if (i.attribute.code == null)
 		{
-			var ret = '''//kein code: «i.attribute.id»
+			var ret = '''
 			'''
 			ret += '''
 			try {
@@ -30,7 +30,7 @@ class ChainMethodsInnerObjectNext extends ChainMethodsInner {
 				if (this.visited.contains(nextVisit))
 				{
 					//complete parser circle
-					Node actNode = this.allObjectNodes.get(this.visited.size()-1);
+					Node actNode = this.allObjectNodes.get(this.visited.get(this.visited.size()-1));
 					Node circleNode = this.allObjectNodes.get(nextVisit);
 					actNode.setNext(circleNode);
 					circleNode.setPrevious(actNode);
@@ -41,12 +41,14 @@ class ChainMethodsInnerObjectNext extends ChainMethodsInner {
 					this.visited.add(nextVisit);
 				}
 			
-«««				this.prev = newNode;
-			
 				parse«i.objectDesription.name»(next, n);
 				actualNode = n;
 			}
-			catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
+			catch (NoSuchFieldException e)
+			{
+				throw new ParserException("could not find field \"«i.attribute.id»\" in «i.objectDesription.name»");
+			}
+			catch (SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)
 			{
 				throw new ParserException("Error while parsing «i.attribute.id»");
 			}

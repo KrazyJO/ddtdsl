@@ -17,6 +17,7 @@ public class ChainStringOr extends ChainString {
     super(g);
   }
   
+  @Override
   public boolean handle(final int index, final StringDescriptionInner i) {
     if ((i instanceof StringOr)) {
       StringConcatenation _builder = new StringConcatenation();
@@ -184,27 +185,31 @@ public class ChainStringOr extends ChainString {
       _builder.append("{");
       _builder.newLine();
       _builder.append("\t\t\t\t");
-      _builder.append("throw new ParserException(\"No valid option found\");");
-      _builder.newLine();
+      _builder.append("throw new ParserException(\"no possible or-option found in StringDescription \\\"");
+      EObject _eContainer_1 = ((StringOr)i).eContainer();
+      String _descriptionName = this.getDescriptionName(_eContainer_1);
+      _builder.append(_descriptionName, "\t\t\t\t");
+      _builder.append("\\\"\");");
+      _builder.newLineIfNotEmpty();
       _builder.append("\t\t\t");
       _builder.append("}");
       _builder.newLine();
       _builder.append("\t\t\t\t");
       _builder.newLine();
-      _builder.append("\t\t\t\t");
+      _builder.append("\t\t\t");
       _builder.append("if (!optionFound)");
       _builder.newLine();
-      _builder.append("\t\t\t\t");
+      _builder.append("\t\t\t");
       _builder.append("{");
       _builder.newLine();
-      _builder.append("\t\t\t\t\t");
-      _builder.append("throw new ParserException(\"no possible option found in stringobject ");
-      EObject _eContainer_1 = ((StringOr)i).eContainer();
-      String _descriptionName = this.getDescriptionName(_eContainer_1);
-      _builder.append(_descriptionName, "\t\t\t\t\t");
+      _builder.append("\t\t\t\t");
+      _builder.append("throw new ParserException(\"no possible or option found in stringobject ");
+      EObject _eContainer_2 = ((StringOr)i).eContainer();
+      String _descriptionName_1 = this.getDescriptionName(_eContainer_2);
+      _builder.append(_descriptionName_1, "\t\t\t\t");
       _builder.append("\");");
       _builder.newLineIfNotEmpty();
-      _builder.append("\t\t\t\t");
+      _builder.append("\t\t\t");
       _builder.append("}");
       _builder.newLine();
       _builder.append("\t\t\t");

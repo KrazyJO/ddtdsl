@@ -26,9 +26,12 @@ import de.wbg.dTDSL.ObjectDescription
 class DTDSLScopeProvider extends AbstractDeclarativeScopeProvider {
 
 	//ObjectNext -> objectDescription
-	def IScope scope_ObjectNext_objectDesription(ObjectNext next, EReference ref)
+	def IScope scope_ObjectNext_objectDesription(
+		ObjectNext next, EReference ref 	)
 	{
-		return Scopes.scopeFor(next.eResource.allContents.toIterable.filter(ObjectDescription))
+		return Scopes.scopeFor(
+			next.eResource.allContents.toIterable.filter(ObjectDescription)
+		)
 	}
 	
 	//ObjectNode -> inner
@@ -49,7 +52,7 @@ class DTDSLScopeProvider extends AbstractDeclarativeScopeProvider {
 		return Scopes.scopeFor(maybe.eResource.allContents.toIterable.filter(ObjectDescription))
 	}
 	
-	//StartPoing
+	//StartPoint
 	def IScope scope_StartPoint_begin(StartPoint point, EReference ref)
 	{
 		return Scopes.scopeFor(point.eResource.allContents.toIterable.filter(Abstract))

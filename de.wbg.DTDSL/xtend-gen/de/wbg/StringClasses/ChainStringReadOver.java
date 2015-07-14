@@ -12,6 +12,7 @@ public class ChainStringReadOver extends ChainString {
     super(g);
   }
   
+  @Override
   public boolean handle(final int index, final StringDescriptionInner i) {
     if ((i instanceof StringOverRead)) {
       StringConcatenation _builder = new StringConcatenation();

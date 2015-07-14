@@ -74,12 +74,12 @@ class DTDSLGenerator implements IGenerator {
 		this.initChainString();
 		this.keyContainer = new HashMap()
 
-		fsa.generateFile('de/wbg/dtdsl/Node.java', nodeGen.generateNode)
-		fsa.generateFile('de/wbg/dtdsl/Head.java', nodeGen.generateHead)
-		fsa.generateFile('de/wbg/dtdsl/Attribute.java', nodeGen.generateAttribute)
-		fsa.generateFile('de/wbg/dtdsl/Element.java', nodeGen.generateElement)
+		fsa.generateFile('de/wbg/ddtdsl/Node.java', nodeGen.generateNode)
+		fsa.generateFile('de/wbg/ddtdsl/Head.java', nodeGen.generateHead)
+		fsa.generateFile('de/wbg/ddtdsl/Attribute.java', nodeGen.generateAttribute)
+		fsa.generateFile('de/wbg/ddtdsl/Element.java', nodeGen.generateElement)
 
-		fsa.generateFile('de/wbg/dtdsl/ParserException.java', exceptionGen.exceptionGenerator)
+		fsa.generateFile('de/wbg/ddtdsl/ParserException.java', exceptionGen.exceptionGenerator)
 		
 		var sf = resource.allContents.toIterable.filter(StringDescription)
 		if (sf.length > 0)
@@ -102,13 +102,13 @@ class DTDSLGenerator implements IGenerator {
 		if (generateStringFeatures)
 		{
 			var scannerGeg = new ScannerGen();
-			fsa.generateFile('de/wbg/dtdsl/SimpleScanner.java', scannerGeg.generateScanner);
+			fsa.generateFile('de/wbg/ddtdsl/SimpleScanner.java', scannerGeg.generateScanner);
 		}
 		
 
 		for (model: resource.allContents.toIterable.filter(DTDSL))
 		{
-			fsa.generateFile('de/wbg/dtdsl/' + model.parserName + '.java', 
+			fsa.generateFile('de/wbg/ddtdsl/' + model.parserName + '.java', 
 				model.compile	
 			);	
 		}
@@ -119,7 +119,7 @@ class DTDSLGenerator implements IGenerator {
 		var ret = ''''''
 		
 		ret += '''
-		package de.wbg.dtdsl;
+		package de.wbg.ddtdsl;
 		
 		«IF generateObjectFeatures»
 		import java.lang.reflect.Field;
@@ -346,6 +346,7 @@ class DTDSLGenerator implements IGenerator {
 «««		}
 	
 		Node newNode = new Node(n.getNameForNode());
+		newNode.setName("«d.name»");
 		newNode.setOriginalHashCode(this.visited.get(this.visited.size()-1));
 		this.allObjectNodes.put(this.visited.get(this.visited.size()-1) ,newNode);
 		newNode.setParent(n);
@@ -368,11 +369,13 @@ class DTDSLGenerator implements IGenerator {
 	parent.setAttributeNumber(n.getAttributeNumber());
 	parse«d.name.toFirstUpper»«i.objectDesription.name.toFirstUpper»(o, parent);
 	
-	Node tempNode = (Node) parent.getChildren().get(0);
-	tempNode.setParent(n);
-	n.addChild(tempNode);
-	n.increaseNodeNumber();
-	newNode.setNext(tempNode);
+	for (Element ch : parent.getChildren())
+	{
+		ch.setParent(n);
+		n.addChild(ch);
+		n.increaseNodeNumber();
+		newNode.setNext(ch);
+	}
 	
 	'''
 //			 parse«d.name.toFirstUpper»«i.objectDesription.name.toFirstUpper»(o, «i.argument»);
@@ -395,14 +398,7 @@ class DTDSLGenerator implements IGenerator {
 			'''		}
 		catch (ParserException e)
 		{
-			newNode.setParent(null);
-			n.removeChild(newNode);
-			throw e;
-		}
-		
-		if (newNode.getTotalLength() == 1)
-		{
-			//remove newNode
+			System.err.println(e.getMessage());
 			newNode.setParent(null);
 			n.removeChild(newNode);
 		}
@@ -431,72 +427,70 @@ class DTDSLGenerator implements IGenerator {
 		if (i instanceof ObjectAttribute)
 		{
 			ret += 
-			'''
-			Field f = o.getClass().getDeclaredField("«i.attributes»");
-			f.setAccessible(true);
-			Object next = (Object) f.get(o);
-			Head manyHead = new Head("MANYHEAD");
+			'''	Field f = o.getClass().getDeclaredField("«i.attributes»");
+	f.setAccessible(true);
+	Object next = (Object) f.get(o);
+	Head manyHead = new Head("MANYHEAD");
+	
+	if (next.getClass().isArray())
+	{
+		for (int index = 0; index < Array.getLength(next); index++)
+		{
+			parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(Array.get(next ,index), manyHead);
+		}
+	}
+	else if (next instanceof ArrayList)
+	{
+		ArrayList al = (ArrayList)next;
+		for (int index = 0; index < al.size(); index++)
+		{
+			Object obj = al.get(index);
+			parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(obj, manyHead);
+		}
+	}
+	else if (next instanceof LinkedList)
+	{
+		LinkedList al = (LinkedList)next;
+		for (int index = 0; index < al.size(); index++)
+		{
+			Object obj = al.get(index);
+			parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(obj, manyHead);
+		}
+	}
+	else if (next instanceof HashMap)
+	{
+		HashMap hashMap = (HashMap) next;
+		
+		for (Object entry : hashMap.keySet())
+		{
+			Object valueForEntry = hashMap.get(entry);
 			
-			if (next.getClass().isArray())
-			{
-				for (int index = 0; index < Array.getLength(next); index++)
-				{
-					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(Array.get(next ,index), manyHead);
-				}
-			}
-			else if (next instanceof ArrayList)
-			{
-				ArrayList al = (ArrayList)next;
-				for (int index = 0; index < al.size(); index++)
-				{
-					Object obj = al.get(index);
-					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(obj, manyHead);
-				}
-			}
-			else if (next instanceof LinkedList)
-			{
-				LinkedList al = (LinkedList)next;
-				for (int index = 0; index < al.size(); index++)
-				{
-					Object obj = al.get(index);
-					parseMany«description.name.toFirstUpper»Attribute«i.attributes.toFirstUpper»(obj, manyHead);
-				}
-			}
-			else if (next instanceof HashMap)
-				{
-					HashMap hashMap = (HashMap) next;
-					
-					for (Object entry : hashMap.keySet())
-					{
-«««						//Attribute
-						Object valueForEntry = hashMap.get(entry);
-						
-						//entry is primitiv
-						//=> Node with key -> Attribute with value
-						Node node = new Node(manyHead.getNameForNode());
-						node.setOriginalHashCode(this.visited.get(this.visited.size()-1));
-						this.allObjectNodes.put(this.visited.get(this.visited.size()-1) ,newNode);
-						node.setKey(true);
-						node.setValue(String.valueOf(entry));
-						node.setName(entry.getClass().toString().replace("class ", ""));
-						Attribute attrib = new Attribute(node.getNameForAttribute());
-						attrib.setName("«i.attributes»");
-						attrib.setValue(hashMap.get(entry));
-						attrib.setType(hashMap.get(entry).getClass());
-						
-						node.addChild(attrib);
-						attrib.setParent(node);
-						
-						manyHead.addChild(node);
-						node.setParent(manyHead);
-					}
-				}
+			//entry is primitiv
+			//=> Node with key -> Attribute with value
+			Node node = new Node(manyHead.getNameForNode());
+			node.setOriginalHashCode(this.visited.get(this.visited.size()-1));
+			this.allObjectNodes.put(this.visited.get(this.visited.size()-1) ,newNode);
+			node.setKey(true);
+			node.setValue(String.valueOf(entry));
+			node.setName(entry.getClass().toString().replace("class ", ""));
+			Attribute attrib = new Attribute(node.getNameForAttribute());
+			attrib.setName("«i.attributes»");
+			attrib.setValue(hashMap.get(entry));
+			attrib.setType(hashMap.get(entry).getClass());
 			
-			for (Element el: manyHead.getChildren())
-			{
-				newNode.addChild(el);
-				el.setParent(newNode);
-			}
+			node.addChild(attrib);
+			attrib.setParent(node);
+			
+			manyHead.addChild(node);
+			node.setParent(manyHead);
+		}
+	}
+
+	for (Element el: manyHead.getChildren())
+	{
+		newNode.addChild(el);
+		el.setParent(newNode);
+	}
 			'''
 		}
 		else if (i instanceof ObjectNext)
@@ -657,6 +651,14 @@ class DTDSLGenerator implements IGenerator {
 				}
 			'''	
 		}
+		
+		ret += '''
+		if (newNode.getTotalLength() == 1)
+		{
+			//remove newNode
+			newNode.setParent(null);
+			n.removeChild(newNode);
+		}'''
 		
 		ret
 	}

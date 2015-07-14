@@ -11,6 +11,7 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
 public class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
+  @Override
   public boolean handle(final ObjectDescription d, final ObjectDescriptionInner i) {
     boolean _xblockexpression = false;
     {
@@ -116,7 +117,28 @@ public class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
         _builder_3.append("}");
         _builder_3.newLine();
         _builder_3.append("\t\t");
-        _builder_3.append("catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)");
+        _builder_3.append("catch (NoSuchFieldException e)");
+        _builder_3.newLine();
+        _builder_3.append("\t\t");
+        _builder_3.append("{");
+        _builder_3.newLine();
+        _builder_3.append("\t\t\t");
+        _builder_3.append("n.setAttributeNumber(oldAttributeNumber);");
+        _builder_3.newLine();
+        _builder_3.append("\t\t\t");
+        _builder_3.append("throw new ParserException(\"could not find field \\\"");
+        String _attributes_3 = ((ObjectAttribute)i).getAttributes();
+        _builder_3.append(_attributes_3, "\t\t\t");
+        _builder_3.append("\\\" in ");
+        String _name_2 = d.getName();
+        _builder_3.append(_name_2, "\t\t\t");
+        _builder_3.append("\");");
+        _builder_3.newLineIfNotEmpty();
+        _builder_3.append("\t\t");
+        _builder_3.append("}");
+        _builder_3.newLine();
+        _builder_3.append("\t\t");
+        _builder_3.append("catch ( SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)");
         _builder_3.newLine();
         _builder_3.append("\t\t");
         _builder_3.append("{");
@@ -128,9 +150,9 @@ public class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
         _builder_3.append("n.setAttributeNumber(oldAttributeNumber);");
         _builder_3.newLine();
         _builder_3.append("\t\t\t");
-        _builder_3.append("throw new ParserException(\"Error while parsing : ");
-        String _attributes_3 = ((ObjectAttribute)i).getAttributes();
-        _builder_3.append(_attributes_3, "\t\t\t");
+        _builder_3.append("throw new ParserException(\"Error while parsing: ");
+        String _attributes_4 = ((ObjectAttribute)i).getAttributes();
+        _builder_3.append(_attributes_4, "\t\t\t");
         _builder_3.append("\");");
         _builder_3.newLineIfNotEmpty();
         _builder_3.append("\t\t");

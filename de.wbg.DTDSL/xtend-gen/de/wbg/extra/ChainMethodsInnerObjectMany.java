@@ -20,6 +20,7 @@ public class ChainMethodsInnerObjectMany extends ChainMethodsInner {
     this.generator = g;
   }
   
+  @Override
   public boolean handle(final ObjectDescription d, final ObjectDescriptionInner i) {
     boolean _xblockexpression = false;
     {

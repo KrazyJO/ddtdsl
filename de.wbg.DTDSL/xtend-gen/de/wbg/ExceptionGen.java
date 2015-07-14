@@ -6,7 +6,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 public class ExceptionGen {
   public CharSequence exceptionGenerator() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("package de.wbg.dtdsl;");
+    _builder.append("package de.wbg.ddtdsl;");
     _builder.newLine();
     _builder.newLine();
     _builder.append("class ParserException extends Exception");

@@ -64,13 +64,14 @@ class ChainStringOr extends ChainString{
 			}
 			else
 			{
-				throw new ParserException("No valid option found");
+«««				throw new ParserException("No valid option found");
+				throw new ParserException("no possible or-option found in StringDescription \"«getDescriptionName(i.eContainer)»\"");
 			}
 				
-				if (!optionFound)
-				{
-					throw new ParserException("no possible option found in stringobject «getDescriptionName(i.eContainer)»");
-				}
+			if (!optionFound)
+			{
+				throw new ParserException("no possible or option found in stringobject «getDescriptionName(i.eContainer)»");
+			}
 			}
 				'''
 			return true;

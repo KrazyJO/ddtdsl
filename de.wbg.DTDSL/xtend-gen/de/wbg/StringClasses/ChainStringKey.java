@@ -19,6 +19,7 @@ public class ChainStringKey extends ChainString {
     super(g);
   }
   
+  @Override
   public boolean handle(final int index, final StringDescriptionInner i) {
     if ((i instanceof StringKey)) {
       String _name = ((StringKey)i).getName();

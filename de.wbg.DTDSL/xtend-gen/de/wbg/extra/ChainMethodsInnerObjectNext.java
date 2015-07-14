@@ -11,6 +11,7 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
 public class ChainMethodsInnerObjectNext extends ChainMethodsInner {
+  @Override
   public boolean handle(final ObjectDescription d, final ObjectDescriptionInner i) {
     boolean _xblockexpression = false;
     {
@@ -45,11 +46,6 @@ public class ChainMethodsInnerObjectNext extends ChainMethodsInner {
           String _xblockexpression_1 = null;
           {
             StringConcatenation _builder_2 = new StringConcatenation();
-            _builder_2.append("//kein code: ");
-            JavaCodeOrID _attribute_1 = ((ObjectNext)i).getAttribute();
-            String _id = _attribute_1.getId();
-            _builder_2.append(_id, "");
-            _builder_2.newLineIfNotEmpty();
             String ret = _builder_2.toString();
             String _ret = ret;
             StringConcatenation _builder_3 = new StringConcatenation();
@@ -57,9 +53,9 @@ public class ChainMethodsInnerObjectNext extends ChainMethodsInner {
             _builder_3.newLine();
             _builder_3.append("\t");
             _builder_3.append("Field f = o.getClass().getDeclaredField(\"");
-            JavaCodeOrID _attribute_2 = ((ObjectNext)i).getAttribute();
-            String _id_1 = _attribute_2.getId();
-            _builder_3.append(_id_1, "\t");
+            JavaCodeOrID _attribute_1 = ((ObjectNext)i).getAttribute();
+            String _id = _attribute_1.getId();
+            _builder_3.append(_id, "\t");
             _builder_3.append("\"); //NoSuchFieldException");
             _builder_3.newLineIfNotEmpty();
             _builder_3.append("\t");
@@ -83,7 +79,7 @@ public class ChainMethodsInnerObjectNext extends ChainMethodsInner {
             _builder_3.append("//complete parser circle");
             _builder_3.newLine();
             _builder_3.append("\t\t");
-            _builder_3.append("Node actNode = this.allObjectNodes.get(this.visited.size()-1);");
+            _builder_3.append("Node actNode = this.allObjectNodes.get(this.visited.get(this.visited.size()-1));");
             _builder_3.newLine();
             _builder_3.append("\t\t");
             _builder_3.append("Node circleNode = this.allObjectNodes.get(nextVisit);");
@@ -113,7 +109,6 @@ public class ChainMethodsInnerObjectNext extends ChainMethodsInner {
             _builder_3.append("}");
             _builder_3.newLine();
             _builder_3.newLine();
-            _builder_3.newLine();
             _builder_3.append("\t");
             _builder_3.append("parse");
             ObjectDescription _objectDesription_1 = ((ObjectNext)i).getObjectDesription();
@@ -126,7 +121,24 @@ public class ChainMethodsInnerObjectNext extends ChainMethodsInner {
             _builder_3.newLine();
             _builder_3.append("}");
             _builder_3.newLine();
-            _builder_3.append("catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)");
+            _builder_3.append("catch (NoSuchFieldException e)");
+            _builder_3.newLine();
+            _builder_3.append("{");
+            _builder_3.newLine();
+            _builder_3.append("\t");
+            _builder_3.append("throw new ParserException(\"could not find field \\\"");
+            JavaCodeOrID _attribute_2 = ((ObjectNext)i).getAttribute();
+            String _id_1 = _attribute_2.getId();
+            _builder_3.append(_id_1, "\t");
+            _builder_3.append("\\\" in ");
+            ObjectDescription _objectDesription_2 = ((ObjectNext)i).getObjectDesription();
+            String _name_3 = _objectDesription_2.getName();
+            _builder_3.append(_name_3, "\t");
+            _builder_3.append("\");");
+            _builder_3.newLineIfNotEmpty();
+            _builder_3.append("}");
+            _builder_3.newLine();
+            _builder_3.append("catch (SecurityException | IllegalArgumentException | IllegalAccessException | NullPointerException e)");
             _builder_3.newLine();
             _builder_3.append("{");
             _builder_3.newLine();

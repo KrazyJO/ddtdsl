@@ -45,11 +45,6 @@ StringOr:
 	'or' '(' (option+=[StringDescriptionInVariable]) ('|' option+=[StringDescriptionInVariable])* ')'
 ;
 
-//StringDescriptionStore:
-//	{StringDescriptionStore}
-//	store+=StringDescriptionInner*
-//;
-
 StringDescriptionInVariable:
 	name=ID ':' '=' description+=StringDescriptionInner* ';'
 ;

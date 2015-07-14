@@ -17,6 +17,7 @@ public class ChainStringMany extends ChainString {
     super(g);
   }
   
+  @Override
   public boolean handle(final int index, final StringDescriptionInner i) {
     if ((i instanceof StringComplex)) {
       String _many = ((StringComplex)i).getMany();

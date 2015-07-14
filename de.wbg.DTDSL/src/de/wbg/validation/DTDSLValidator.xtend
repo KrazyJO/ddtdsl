@@ -29,7 +29,7 @@ class DTDSLValidator extends AbstractDTDSLValidator {
 		}
 		if (Character.isLowerCase(model.parserName.charAt(0)))
 		{
-			error("Parsername must begin with capital letter", DTDSLPackage.Literals.DTDSL__PARSER_NAME)
+			warning("Parsername should begin with capital letter", DTDSLPackage.Literals.DTDSL__PARSER_NAME)
 		}
 	}
 	
@@ -78,7 +78,9 @@ class DTDSLValidator extends AbstractDTDSLValidator {
 	{
 		if (Character.isLowerCase(a.name.charAt(0)))
 		{
-			warning("Object name should start with capital letter", DTDSLPackage.Literals.ABSTRACT__NAME)
+			warning("Object name should start with capital letter", 
+				DTDSLPackage.Literals.ABSTRACT__NAME
+			)
 		}
 	}
 

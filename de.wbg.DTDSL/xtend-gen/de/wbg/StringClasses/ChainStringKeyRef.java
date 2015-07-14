@@ -17,6 +17,7 @@ public class ChainStringKeyRef extends ChainString {
     super(g);
   }
   
+  @Override
   public boolean handle(final int index, final StringDescriptionInner i) {
     StringKey _keyRef = i.getKeyRef();
     boolean _notEquals = (!Objects.equal(_keyRef, null));
