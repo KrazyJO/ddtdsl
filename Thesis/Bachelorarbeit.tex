@@ -1,0 +1,85 @@
+\documentclass[a4paper,12pt,titlepage]{article}
+\usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\pagestyle{headings}
+\usepackage{graphicx}
+\usepackage{lstcustom}
+
+%Sprachdefinitionen
+\lstloadlanguages{Java, XML}
+\lstset{
+	language=Java,
+	showspaces=false,
+	showstringspaces=false,
+	basicstyle=\small\ttfamily\footnotesize,
+	columns=fullflexible,% typewriter font look better with fullflex
+	keywordstyle=\color[rgb]{0.627,0.165,0.467},
+	stringstyle=\color[rgb]{0.286,0.172,0.980},
+	commentstyle=\color[rgb]{0.294,0.565,0.478},
+	tabsize=2,
+	numbers=left,
+	numberstyle=\scriptsize,
+	breaklines=true,
+	identifierstyle=\ttfamily,
+	backgroundcolor=\color[rgb]{0.99, 0.99, 0.99},
+	rulesepcolor=\color[rgb]{0.3, 0.3, 0.3},
+	captionpos=b,
+	frame=shadowbox,
+	otherkeywords={@SuppressWarnings,@Singleton,@Check,@Inject}
+}
+%praeambel zu ende
+\begin{document}
+\tableofcontents
+\newpage
+\section{Einführung / Ziele}
+\begin{lstlisting}[language=Java, caption={Erster Test}]
+	class Testclass
+	{
+		String value = "Stringvalue";
+	}
+\end{lstlisting}
+\section{DDTDSL}
+\subsection{Objektbeschreibung}
+\subsubsection{Node}
+\subsubsection{Next}
+\subsubsection{Attribute}
+\subsubsection{Maybe}
+\subsubsection{Many}
+\subsection{Stringbeschreibung}
+\subsubsection{Key}
+\subsubsection{Value}
+\subsubsection{Variablen}
+\subsubsection{Maybe}
+\subsubsection{Many}
+\subsubsection{Or}
+\section{Verwendete Technologien}
+\subsection{Xtext}
+\subsection{Xtend}
+\subsection{Java Reflection}
+\section{Programming - Compilergenerator}
+\subsection{Was ist ein Compilergenerator?}
+\subsection{Fehlerbehandlung}
+\subsection{SimpleScanner}
+\subsection{Objekte}
+\subsubsection{Node}
+\subsubsection{Next}
+\subsubsection{Attribute}
+\subsubsection{Maybe}
+\subsubsection{Many}
+\subsubsection{Parserkreise}
+\subsection{Strings}
+\subsubsection{Key}
+\subsubsection{Value}
+\subsubsection{Variablen}
+\subsubsection{Maybe}
+\subsubsection{Many}
+\subsubsection{Or}
+\section{Testing}
+\subsection{Validation - Generator Syntax}
+\subsection{JUnit - Generator Model}
+\subsection{JUnit - Compiler}
+\section{Anwedungsbeispiel}
+\section{Fazit}
+\section{Anhang}
+\end{document}
