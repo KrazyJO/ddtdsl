@@ -14,3 +14,11 @@
 /.ChainStringMany.java._trace
 /ChainStringMany.java
 /ChainStringMaybe.java
+/.ChainString.xtendbin
+/.ChainStringKey.xtendbin
+/.ChainStringKeyRef.xtendbin
+/.ChainStringMany.xtendbin
+/.ChainStringMaybe.xtendbin
+/.ChainStringOr.xtendbin
+/.ChainStringReadOver.xtendbin
+/.ChainStringValue.xtendbin
