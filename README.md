@@ -14,5 +14,5 @@ Import following folders to Eclipse:
 - de.wbg.DTDSL.ui
 - DTDSL
  
-## Branches
-There are 2 branches: dev and runtime. 
+Folder DTDSL contains the generated project. In this project the parser plugin
+is available for use with DDTDSL.
