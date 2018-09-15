@@ -9,6 +9,7 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
 public class ChainMethodsInnerObjectAttribute extends ChainMethodsInner {
+  @Override
   public boolean handle(final ObjectDescription d, final ObjectDescriptionInner i) {
     boolean _xblockexpression = false;
     {

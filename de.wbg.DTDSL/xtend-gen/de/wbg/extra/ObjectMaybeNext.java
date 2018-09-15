@@ -10,6 +10,7 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
 public class ObjectMaybeNext extends ChainMaybe {
+  @Override
   public boolean handle(final ObjectMaybeInner inner, final ObjectDescription d, final ObjectDescriptionInner i) {
     if ((inner instanceof ObjectNext)) {
       StringConcatenation _builder = new StringConcatenation();

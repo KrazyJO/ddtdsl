@@ -11,6 +11,7 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
 public class ObjectMaybeAttribute extends ChainMaybe {
+  @Override
   public boolean handle(final ObjectMaybeInner inner, final ObjectDescription d, final ObjectDescriptionInner i) {
     boolean _xblockexpression = false;
     {
